@@ -1,0 +1,5 @@
+Change Component Designator: OldDesignator=CN1 NewDesignator=BAT
+Change Component Designator: OldDesignator=CN2 NewDesignator=Motor
+Change Component Designator: OldDesignator=CN3 NewDesignator=Head_LED
+Change Component Designator: OldDesignator=JP7 NewDesignator=SWD
+Added Member To Class: ClassName=Dart_Controller_SCH2 Member=Component Head_LED XT30UPB-F
