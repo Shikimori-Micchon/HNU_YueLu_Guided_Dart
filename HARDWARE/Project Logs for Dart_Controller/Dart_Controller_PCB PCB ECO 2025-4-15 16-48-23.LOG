@@ -1,0 +1,21 @@
+Removed Pin From Net: NetName=GND Pin=D5-1
+Removed Pin From Net: NetName=GND Pin=D?-1
+Removed Member From Class: ClassName=Dart_Controller_SCH Member=D?
+Change Component Footprint: Designator=D5 Old Footprint=LED0603-RD_RED New Footprint=LED-0603B
+Change Component Comment : Designator=D5 Old Comment=LED New Comment=LED_B/0603
+Change Component Designator: OldDesignator=SWD? NewDesignator=SWD1
+Added Component: Designator=D4(LED-0603G)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "08-Jul-2005"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Mech Layer 1 removed."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "LED-0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=D4-K
+Added Pin To Net: NetName=GND Pin=D5-K
+Added Pin To Net: NetName=NetD4_A Pin=D4-A
+Added Pin To Net: NetName=NetD4_A Pin=R1-1
+Added Net: Name=NetD4_A
+Added Pin To Net: NetName=NetD5_A Pin=D5-A
+Added Pin To Net: NetName=NetD5_A Pin=R2-1
+Added Net: Name=NetD5_A
+Added Member To Class: ClassName=Dart_Controller_SCH Member=Component D4 LED_G/0603

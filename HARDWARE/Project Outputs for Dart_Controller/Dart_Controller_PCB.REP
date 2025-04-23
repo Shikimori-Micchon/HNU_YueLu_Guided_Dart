@@ -1,0 +1,455 @@
+*************************************************************
+FileName = Dart_Controller_PCB.GBR
+AutoAperture = True
+*************************************************************
+Generating : Mechanical 15
+      File : Dart_Controller_PCB.GM15
+
+    Adding Layer      : Mechanical 15
+
+
+Used DCodes :
+    D12
+    D17
+    D22
+    D119
+    D120
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 13
+      File : Dart_Controller_PCB.GM13
+
+    Adding Layer      : Mechanical 13
+
+
+Used DCodes :
+    D22
+    D118
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : Dart_Controller_PCB.GM1
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D10
+    D18
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : Dart_Controller_PCB.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : BOTTOM
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D28
+    D110
+    D111
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : Dart_Controller_PCB.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : TOP
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : Dart_Controller_PCB.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : BOTTOM
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D57
+    D84
+    D85
+    D86
+    D87
+    D88
+    D89
+    D90
+    D91
+    D92
+    D114
+    D115
+    D116
+    D117
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : Dart_Controller_PCB.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : TOP
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D54
+    D55
+    D56
+    D57
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+    D67
+    D68
+    D69
+    D70
+    D71
+    D72
+    D73
+    D74
+    D75
+    D76
+    D77
+    D78
+    D79
+    D80
+    D81
+    D82
+    D83
+    D84
+    D85
+    D86
+    D87
+    D88
+    D89
+    D90
+    D91
+    D92
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : Dart_Controller_PCB.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D13
+    D14
+    D18
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : Dart_Controller_PCB.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : Dart_Controller_PCB.GPT
+
+    Adding Layer      : TOP
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D84
+    D91
+    D93
+    D95
+    D96
+    D97
+    D98
+    D99
+    D100
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : Dart_Controller_PCB.GPB
+
+    Adding Layer      : BOTTOM
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D28
+    D84
+    D91
+    D95
+    D96
+    D97
+    D98
+    D99
+    D100
+    D110
+    D111
+    D112
+    D113
+*************************************************************
+
+*************************************************************
+Generating : BOTTOM
+      File : Dart_Controller_PCB.GBL
+
+    Adding Layer      : BOTTOM
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D14
+    D16
+    D28
+    D84
+    D91
+    D94
+    D95
+    D96
+    D97
+    D98
+    D99
+    D100
+    D101
+    D110
+    D111
+    D112
+    D113
+*************************************************************
+
+*************************************************************
+Generating : PWR03
+      File : Dart_Controller_PCB.GP2
+
+    Adding Layer      : PWR03
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D102
+    D103
+    D104
+    D105
+    D106
+    D107
+    D108
+    D109
+*************************************************************
+
+*************************************************************
+Generating : GND02
+      File : Dart_Controller_PCB.GP1
+
+    Adding Layer      : GND02
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D102
+    D103
+    D104
+    D105
+    D106
+    D107
+*************************************************************
+
+*************************************************************
+Generating : TOP
+      File : Dart_Controller_PCB.GTL
+
+    Adding Layer      : TOP
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D14
+    D16
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D84
+    D91
+    D93
+    D94
+    D95
+    D96
+    D97
+    D98
+    D99
+    D100
+    D101
+*************************************************************
+
+*************************************************************
+Generating : Drill Drawing
+      File : Dart_Controller_PCB.GD1
+
+    Adding Drill Pair : TOP-BOTTOM
+
+    Adding Layer      : Drill Drawing
+
+
+Used DCodes :
+    D121
+    D122
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : Dart_Controller_PCB.GG1
+
+    Adding Drill Pair : TOP-BOTTOM
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D121
+*************************************************************
+
+*************************************************************
+Generating : Profile
+      File : Dart_Controller_PCB.GM
+
+
+Used DCodes :
+    D123
+*************************************************************
+

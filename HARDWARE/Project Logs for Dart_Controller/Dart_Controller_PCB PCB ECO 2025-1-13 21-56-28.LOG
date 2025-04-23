@@ -1,0 +1,73 @@
+Removed Pin From Net: NetName=VBAT Pin=CN1-1
+Removed Pin From Net: NetName=VBAT Pin=CN2-1
+Removed Pin From Net: NetName=VBAT Pin=D1-1
+Added Component: Designator=CN3(XT30UPB-F)
+Added Component: Designator=Q2(POWERVDFN-8_L6.0-W5.0-P1.27-BL)
+Added Component: Designator=Q3(SOT23-3L)
+Add component (AddParameter): Name = "BOM名称"; Value = "高频放大-NPN型"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "属性"; Value = "40V 1.5A 1W 100MHZ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "版权归属"; Value = "封装库来自淘宝 ID：黄晶宝石"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "联系售后"; Value = "https://shop463601444.taobao.com"; VariantName = "[No Variations]"
+Added Component: Designator=R15(R 0603_M)
+Add component (AddParameter): Name = "BOM名称"; Value = "贴片电阻"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "版权归属"; Value = "来自淘宝 ID：黄晶宝石"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "联系售后"; Value = "https://shop463601444.taobao.com"; VariantName = "[No Variations]"
+Added Component: Designator=R16(R 0603_M)
+Add component (AddParameter): Name = "BOM名称"; Value = "贴片电阻"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "版权归属"; Value = "来自淘宝 ID：黄晶宝石"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "联系售后"; Value = "https://shop463601444.taobao.com"; VariantName = "[No Variations]"
+Added Component: Designator=R17(R 0603_M)
+Add component (AddParameter): Name = "BOM名称"; Value = "贴片电阻"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "版权归属"; Value = "来自淘宝 ID：黄晶宝石"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "联系售后"; Value = "https://shop463601444.taobao.com"; VariantName = "[No Variations]"
+Added Component: Designator=R18(R 0603_M)
+Add component (AddParameter): Name = "BOM名称"; Value = "贴片电阻"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "版权归属"; Value = "来自淘宝 ID：黄晶宝石"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "联系售后"; Value = "https://shop463601444.taobao.com"; VariantName = "[No Variations]"
+Added Component: Designator=SW2(SW-TH_SS-12D10L5)
+Add component (AddParameter): Name = "Contributor"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "XKB Connectivity(中国星坤)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part"; Value = "SS-12D10L5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "spicePre"; Value = "S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "spiceSymbolName"; Value = "SS-12D10L5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part"; Value = "C319012"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VCC_5V Pin=CN3-1
+Added Pin To Net: NetName=GND Pin=CN3-2
+Add Pin To Net: Unknown Pin: Pin JP7-5
+Add Pin To Net: Unknown Pin: Pin JP7-6
+Add Pin To Net: Unknown Pin: Pin JP12-5
+Add Pin To Net: Unknown Pin: Pin JP12-6
+Added Pin To Net: NetName=GND Pin=Q3-2
+Added Pin To Net: NetName=GND Pin=R18-2
+Added Pin To Net: NetName=VBAT Pin=SW2-2
+Change Net Name : Old Net Name=VBAT New Net Name=VBAT_IN
+Added Pin To Net: NetName=Motor_Power_Ctrl Pin=R17-2
+Added Pin To Net: NetName=Motor_Power_Ctrl Pin=U3-20
+Added Net: Name=Motor_Power_Ctrl
+Added Pin To Net: NetName=NetQ2_G Pin=Q2-G
+Added Pin To Net: NetName=NetQ2_G Pin=R15-1
+Added Pin To Net: NetName=NetQ2_G Pin=R16-2
+Added Net: Name=NetQ2_G
+Added Pin To Net: NetName=NetQ3_1 Pin=Q3-1
+Added Pin To Net: NetName=NetQ3_1 Pin=R17-1
+Added Pin To Net: NetName=NetQ3_1 Pin=R18-1
+Added Net: Name=NetQ3_1
+Added Pin To Net: NetName=NetQ3_3 Pin=Q3-3
+Added Pin To Net: NetName=NetQ3_3 Pin=R16-1
+Added Net: Name=NetQ3_3
+Added Pin To Net: NetName=VBAT_Motor Pin=CN2-1
+Added Pin To Net: NetName=VBAT_Motor Pin=Q2-D
+Added Pin To Net: NetName=VBAT_Motor Pin=Q2-D
+Added Pin To Net: NetName=VBAT_Motor Pin=Q2-D
+Added Pin To Net: NetName=VBAT_Motor Pin=Q2-D
+Added Pin To Net: NetName=VBAT_Motor Pin=Q2-D
+Added Net: Name=VBAT_Motor
+Added Pin To Net: NetName=VBAT Pin=CN1-1
+Added Pin To Net: NetName=VBAT Pin=D1-1
+Added Pin To Net: NetName=VBAT Pin=Q2-S
+Added Pin To Net: NetName=VBAT Pin=Q2-S
+Added Pin To Net: NetName=VBAT Pin=Q2-S
+Added Pin To Net: NetName=VBAT Pin=R15-2
+Added Pin To Net: NetName=VBAT Pin=SW2-1
+Added Net: Name=VBAT

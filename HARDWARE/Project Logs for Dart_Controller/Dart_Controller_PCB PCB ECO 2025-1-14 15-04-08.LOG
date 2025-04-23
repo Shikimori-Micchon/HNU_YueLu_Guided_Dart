@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=UART3_RX Pin=JP12-1
+Removed Pin From Net: NetName=UART3_TX Pin=JP12-2
+Removed Pin From Net: NetName=UART1_TX Pin=U4-3
+Removed Pin From Net: NetName=UART1_RX Pin=U4-4
+Added Pin To Net: NetName=UART1_RX Pin=JP12-1
+Added Pin To Net: NetName=UART1_TX Pin=JP12-2
+Added Pin To Net: NetName=UART3_TX Pin=U4-3
+Added Pin To Net: NetName=UART3_RX Pin=U4-4

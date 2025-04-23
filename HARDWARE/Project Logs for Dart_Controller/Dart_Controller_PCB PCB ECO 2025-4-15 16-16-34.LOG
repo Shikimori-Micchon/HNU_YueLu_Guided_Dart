@@ -1,0 +1,16 @@
+Added Component: Designator=U5(SOP8_N)
+Add component (AddParameter): Name = "BOM_Manufacturer Part"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contributor"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "JLCPCB Part Class"; Value = "Extended Part"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "TI(µÂÖÝÒÇÆ÷)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part"; Value = "OPA365AIDBVR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "spicePre"; Value = "U"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "spiceSymbolName"; Value = "OPA365AIDBVR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part"; Value = "C96626"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetR10_2 Pin=U5-1
+Added Pin To Net: NetName=NetR10_1 Pin=U5-2
+Added Pin To Net: NetName=NetR13_2 Pin=U5-3
+Added Pin To Net: NetName=GND Pin=U5-4
+Added Pin To Net: NetName=VCC_3V3 Pin=U5-8
+Added Member To Class: ClassName=Dart_Controller_SCH Member=Component U5 TLV9062IDR

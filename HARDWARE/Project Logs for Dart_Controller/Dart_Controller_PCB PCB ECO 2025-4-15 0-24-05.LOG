@@ -1,0 +1,13 @@
+Removed Pin From Net: NetName=TIM3_CH1 Pin=JP8-1
+Removed Pin From Net: NetName=VCC_5V Pin=JP8-2
+Removed Pin From Net: NetName=GND Pin=JP8-3
+Removed Pin From Net: NetName=GND Pin=JP8-4
+Removed Pin From Net: NetName=GND Pin=JP8-5
+Removed Pin From Net: NetName=TIM3_CH2 Pin=JP9-1
+Removed Pin From Net: NetName=VCC_5V Pin=JP9-2
+Removed Pin From Net: NetName=GND Pin=JP9-3
+Removed Pin From Net: NetName=GND Pin=JP9-4
+Removed Pin From Net: NetName=GND Pin=JP9-5
+Removed Member From Class: ClassName=Dart_Controller_SCH Member=JP8
+Removed Member From Class: ClassName=Dart_Controller_SCH Member=JP9
+Change Component Comment : Designator=C21 Old Comment=10uf/0603 New Comment=100nf/0603

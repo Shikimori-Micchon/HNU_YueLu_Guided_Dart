@@ -1,6 +1,0 @@
-Added Component: Designator=U6(Digital_Transfer)
-Added Pin To Net: NetName=VCC_5V Pin=U6-1
-Added Pin To Net: NetName=GND Pin=U6-2
-Added Pin To Net: NetName=UART2_TX Pin=U6-3
-Added Pin To Net: NetName=UART2_RX Pin=U6-4
-Added Member To Class: ClassName=Dart_Controller_SCH Member=Component U6 Digital_Transfer

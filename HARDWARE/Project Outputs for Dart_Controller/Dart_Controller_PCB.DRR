@@ -1,0 +1,21 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: Dart_Controller_PCB.PcbDoc   2025/1/16  15:59:30
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : TOP to BOTTOM
+ASCII RoundHoles File : Dart_Controller_PCB-RoundHoles.TXT
+ASCII SlotHoles File : Dart_Controller_PCB-SlotHoles.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      0.305mm (12mil)                                           Round             161       PTH        541.13mm (21.30inch)
+T2      0.9mm (35mil)                                             Round             10        PTH        61.12mm (2.41inch)
+T3      1mm (39mil)                                               Round             2         PTH        5.00mm (0.20inch)
+T4      1.3mm (51mil)                                             Slot              3         PTH        21.00mm (0.83inch)
+T5      1.9mm (75mil)                                             Round             6         PTH        103.07mm (4.06inch)
+T6      2.2mm (87mil)                                             Round             4         PTH        60.50mm (2.38inch)
+T7      3.2mm (126mil)                                            Round             4         PTH        175.00mm (6.89inch)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              190
+
+Total Processing Time (hh:mm:ss) : 00:00:00

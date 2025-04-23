@@ -1,5 +1,0 @@
-Removed Pin From Net: NetName=VCC_5V Pin=CN3-1
-Removed Pin From Net: NetName=GND Pin=CN3-2
-Added Component: Designator=CN3(XT30UPB-F)
-Added Pin To Net: NetName=VCC_5V Pin=CN3-1
-Added Pin To Net: NetName=GND Pin=CN3-2
