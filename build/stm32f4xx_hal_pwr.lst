@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 1
   28:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /** @addtogroup STM32F4xx_HAL_Driver
   29:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @{
   30:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   */
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 2
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s 			page 2
 
 
   31:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 1
   85:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @{
   86:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   */
   87:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 3
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s 			page 3
 
 
   88:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 1
  107:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *(__IO uint32_t *) CR_DBP_BB = (uint32_t)ENABLE;
   66              		.loc 1 107 3 view .LVU5
   67              		.loc 1 107 32 is_stmt 0 view .LVU6
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 4
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s 			page 4
 
 
   68 0000 014B     		ldr	r3, .L5
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 1
  112              		.thumb
  113              		.thumb_func
  115              	HAL_PWR_ConfigPVD:
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 5
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s 			page 5
 
 
  116              	.LVL0:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 1
  173:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****       -@@- The Regulator parameter is not used for the STM32F4 family 
  174:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****               and is kept as parameter just to maintain compatibility with the 
  175:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****               lower power families (STM32L).
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 6
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s 			page 6
 
 
  176:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****       (+) Exit:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 1
  230:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****               configure the RTC to generate the RTC alarm using the HAL_RTC_SetAlarm_IT() function.
  231:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
  232:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****         (++) To wake up from the Stop mode with an RTC Tamper or time stamp event, it 
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 7
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s 			page 7
 
 
  233:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****              is necessary to configure the RTC to detect the tamper or time stamp event using the
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 1
  264:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   __HAL_PWR_PVD_EXTI_DISABLE_RISING_EDGE();
  141              		.loc 1 264 3 view .LVU18
  142 0020 9A68     		ldr	r2, [r3, #8]
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 8
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s 			page 8
 
 
  143 0022 22F48032 		bic	r2, r2, #65536
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 1
  179              		.loc 1 282 5 is_stmt 1 view .LVU31
  180 005c 084A     		ldr	r2, .L15+4
  181 005e 9368     		ldr	r3, [r2, #8]
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 9
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s 			page 9
 
 
  182 0060 43F48033 		orr	r3, r3, #65536
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 1
  223 0000 014B     		ldr	r3, .L18
  224 0002 0122     		movs	r2, #1
  225 0004 1A61     		str	r2, [r3, #16]
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 10
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s 			page 10
 
 
  298:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** }
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 1
  309:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
  310:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @brief Enables the Wake-up PINx functionality.
  311:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @param WakeUpPinx Specifies the Power Wake-Up pin to enable.
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 11
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s 			page 11
 
 
  312:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *         This parameter can be one of the following values:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 1
  303              		.loc 1 337 1 is_stmt 1 view -0
  304              		.cfi_startproc
  305              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 12
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s 			page 12
 
 
  306              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 1
  333              		.loc 1 366 1 is_stmt 1 view -0
  334              		.cfi_startproc
  335              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 13
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s 			page 13
 
 
  336              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 1
  368              		.syntax unified
  369              	@ 378 "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" 1
  370 0016 30BF     		wfi
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 14
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s 			page 14
 
 
  371              	@ 0 "" 2
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 1
  399              		.loc 1 415 3 view .LVU67
  400 0000 0B4A     		ldr	r2, .L39
  401 0002 1368     		ldr	r3, [r2]
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 15
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s 			page 15
 
 
  402 0004 23F00303 		bic	r3, r3, #3
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 1
  436 002a 7047     		bx	lr
  437              	.L38:
  424:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   }
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 16
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s 			page 16
 
 
  438              		.loc 1 424 5 is_stmt 1 view .LVU76
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 1
  476 000e 43F00403 		orr	r3, r3, #4
  477 0012 1361     		str	r3, [r2, #16]
  454:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 17
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s 			page 17
 
 
  455:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   /* This option is used to ensure that store operations are completed */
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 1
  485:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** __weak void HAL_PWR_PVDCallback(void)
  486:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** {
  504              		.loc 1 486 1 is_stmt 1 view -0
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 18
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s 			page 18
 
 
  505              		.cfi_startproc
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 1
  479:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
  550              		.loc 1 479 1 is_stmt 0 view .LVU91
  551 001a F7E7     		b	.L45
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 19
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s 			page 19
 
 
  552              	.L50:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 1
  505:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
  506:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
  507:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @brief Disables Sleep-On-Exit feature when returning from Handler mode to Thread mode. 
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 20
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s 			page 20
 
 
  508:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @note Clears SLEEPONEXIT bit of SCR register. When this bit is set, the processor 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 1
  632 0004 43F01003 		orr	r3, r3, #16
  633 0008 1361     		str	r3, [r2, #16]
  528:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** }
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 21
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s 			page 21
 
 
  634              		.loc 1 528 1 is_stmt 0 view .LVU100
@@ -1249,66 +1249,66 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 1
  669              	.LFE146:
  671              		.text
  672              	.Letext0:
- 673              		.file 2 "e:\\rm\\ec\\gcc-arm-none-eabi-10.3-2021.10-win32\\arm-gnu-toolchian\\arm-none-eabi\\inclu
- 674              		.file 3 "e:\\rm\\ec\\gcc-arm-none-eabi-10.3-2021.10-win32\\arm-gnu-toolchian\\arm-none-eabi\\inclu
+ 673              		.file 2 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
+ 674              		.file 3 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
  675              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
  676              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
  677              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
  678              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h"
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s 			page 22
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s 			page 22
 
 
 DEFINED SYMBOLS
-                            *ABS*:00000000 stm32f4xx_hal_pwr.c
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:20     .text.HAL_PWR_DeInit:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:26     .text.HAL_PWR_DeInit:00000000 HAL_PWR_DeInit
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:48     .text.HAL_PWR_DeInit:00000014 $d
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:53     .text.HAL_PWR_EnableBkUpAccess:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:59     .text.HAL_PWR_EnableBkUpAccess:00000000 HAL_PWR_EnableBkUpAccess
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:76     .text.HAL_PWR_EnableBkUpAccess:00000008 $d
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:81     .text.HAL_PWR_DisableBkUpAccess:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:87     .text.HAL_PWR_DisableBkUpAccess:00000000 HAL_PWR_DisableBkUpAccess
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:104    .text.HAL_PWR_DisableBkUpAccess:00000008 $d
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:109    .text.HAL_PWR_ConfigPVD:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:115    .text.HAL_PWR_ConfigPVD:00000000 HAL_PWR_ConfigPVD
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:202    .text.HAL_PWR_ConfigPVD:0000007c $d
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:208    .text.HAL_PWR_EnablePVD:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:214    .text.HAL_PWR_EnablePVD:00000000 HAL_PWR_EnablePVD
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:231    .text.HAL_PWR_EnablePVD:00000008 $d
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:236    .text.HAL_PWR_DisablePVD:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:242    .text.HAL_PWR_DisablePVD:00000000 HAL_PWR_DisablePVD
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:259    .text.HAL_PWR_DisablePVD:00000008 $d
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:264    .text.HAL_PWR_EnableWakeUpPin:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:270    .text.HAL_PWR_EnableWakeUpPin:00000000 HAL_PWR_EnableWakeUpPin
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:289    .text.HAL_PWR_EnableWakeUpPin:0000000c $d
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:294    .text.HAL_PWR_DisableWakeUpPin:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:300    .text.HAL_PWR_DisableWakeUpPin:00000000 HAL_PWR_DisableWakeUpPin
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:319    .text.HAL_PWR_DisableWakeUpPin:0000000c $d
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:324    .text.HAL_PWR_EnterSLEEPMode:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:330    .text.HAL_PWR_EnterSLEEPMode:00000000 HAL_PWR_EnterSLEEPMode
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:378    .text.HAL_PWR_EnterSLEEPMode:0000001c $d
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:383    .text.HAL_PWR_EnterSTOPMode:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:389    .text.HAL_PWR_EnterSTOPMode:00000000 HAL_PWR_EnterSTOPMode
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:449    .text.HAL_PWR_EnterSTOPMode:00000030 $d
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:455    .text.HAL_PWR_EnterSTANDBYMode:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:461    .text.HAL_PWR_EnterSTANDBYMode:00000000 HAL_PWR_EnterSTANDBYMode
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:490    .text.HAL_PWR_EnterSTANDBYMode:00000018 $d
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:496    .text.HAL_PWR_PVDCallback:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:502    .text.HAL_PWR_PVDCallback:00000000 HAL_PWR_PVDCallback
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:515    .text.HAL_PWR_PVD_IRQHandler:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:521    .text.HAL_PWR_PVD_IRQHandler:00000000 HAL_PWR_PVD_IRQHandler
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:555    .text.HAL_PWR_PVD_IRQHandler:0000001c $d
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:560    .text.HAL_PWR_EnableSleepOnExit:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:566    .text.HAL_PWR_EnableSleepOnExit:00000000 HAL_PWR_EnableSleepOnExit
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:583    .text.HAL_PWR_EnableSleepOnExit:0000000c $d
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:588    .text.HAL_PWR_DisableSleepOnExit:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:594    .text.HAL_PWR_DisableSleepOnExit:00000000 HAL_PWR_DisableSleepOnExit
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:611    .text.HAL_PWR_DisableSleepOnExit:0000000c $d
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:616    .text.HAL_PWR_EnableSEVOnPend:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:622    .text.HAL_PWR_EnableSEVOnPend:00000000 HAL_PWR_EnableSEVOnPend
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:639    .text.HAL_PWR_EnableSEVOnPend:0000000c $d
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:644    .text.HAL_PWR_DisableSEVOnPend:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:650    .text.HAL_PWR_DisableSEVOnPend:00000000 HAL_PWR_DisableSEVOnPend
-C:\Users\ADMINI~1\AppData\Local\Temp\cc0aPLLS.s:667    .text.HAL_PWR_DisableSEVOnPend:0000000c $d
+                            *ABS*:0000000000000000 stm32f4xx_hal_pwr.c
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:20     .text.HAL_PWR_DeInit:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:26     .text.HAL_PWR_DeInit:0000000000000000 HAL_PWR_DeInit
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:48     .text.HAL_PWR_DeInit:0000000000000014 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:53     .text.HAL_PWR_EnableBkUpAccess:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:59     .text.HAL_PWR_EnableBkUpAccess:0000000000000000 HAL_PWR_EnableBkUpAccess
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:76     .text.HAL_PWR_EnableBkUpAccess:0000000000000008 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:81     .text.HAL_PWR_DisableBkUpAccess:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:87     .text.HAL_PWR_DisableBkUpAccess:0000000000000000 HAL_PWR_DisableBkUpAccess
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:104    .text.HAL_PWR_DisableBkUpAccess:0000000000000008 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:109    .text.HAL_PWR_ConfigPVD:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:115    .text.HAL_PWR_ConfigPVD:0000000000000000 HAL_PWR_ConfigPVD
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:202    .text.HAL_PWR_ConfigPVD:000000000000007c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:208    .text.HAL_PWR_EnablePVD:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:214    .text.HAL_PWR_EnablePVD:0000000000000000 HAL_PWR_EnablePVD
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:231    .text.HAL_PWR_EnablePVD:0000000000000008 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:236    .text.HAL_PWR_DisablePVD:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:242    .text.HAL_PWR_DisablePVD:0000000000000000 HAL_PWR_DisablePVD
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:259    .text.HAL_PWR_DisablePVD:0000000000000008 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:264    .text.HAL_PWR_EnableWakeUpPin:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:270    .text.HAL_PWR_EnableWakeUpPin:0000000000000000 HAL_PWR_EnableWakeUpPin
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:289    .text.HAL_PWR_EnableWakeUpPin:000000000000000c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:294    .text.HAL_PWR_DisableWakeUpPin:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:300    .text.HAL_PWR_DisableWakeUpPin:0000000000000000 HAL_PWR_DisableWakeUpPin
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:319    .text.HAL_PWR_DisableWakeUpPin:000000000000000c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:324    .text.HAL_PWR_EnterSLEEPMode:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:330    .text.HAL_PWR_EnterSLEEPMode:0000000000000000 HAL_PWR_EnterSLEEPMode
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:378    .text.HAL_PWR_EnterSLEEPMode:000000000000001c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:383    .text.HAL_PWR_EnterSTOPMode:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:389    .text.HAL_PWR_EnterSTOPMode:0000000000000000 HAL_PWR_EnterSTOPMode
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:449    .text.HAL_PWR_EnterSTOPMode:0000000000000030 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:455    .text.HAL_PWR_EnterSTANDBYMode:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:461    .text.HAL_PWR_EnterSTANDBYMode:0000000000000000 HAL_PWR_EnterSTANDBYMode
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:490    .text.HAL_PWR_EnterSTANDBYMode:0000000000000018 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:496    .text.HAL_PWR_PVDCallback:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:502    .text.HAL_PWR_PVDCallback:0000000000000000 HAL_PWR_PVDCallback
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:515    .text.HAL_PWR_PVD_IRQHandler:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:521    .text.HAL_PWR_PVD_IRQHandler:0000000000000000 HAL_PWR_PVD_IRQHandler
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:555    .text.HAL_PWR_PVD_IRQHandler:000000000000001c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:560    .text.HAL_PWR_EnableSleepOnExit:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:566    .text.HAL_PWR_EnableSleepOnExit:0000000000000000 HAL_PWR_EnableSleepOnExit
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:583    .text.HAL_PWR_EnableSleepOnExit:000000000000000c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:588    .text.HAL_PWR_DisableSleepOnExit:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:594    .text.HAL_PWR_DisableSleepOnExit:0000000000000000 HAL_PWR_DisableSleepOnExit
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:611    .text.HAL_PWR_DisableSleepOnExit:000000000000000c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:616    .text.HAL_PWR_EnableSEVOnPend:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:622    .text.HAL_PWR_EnableSEVOnPend:0000000000000000 HAL_PWR_EnableSEVOnPend
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:639    .text.HAL_PWR_EnableSEVOnPend:000000000000000c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:644    .text.HAL_PWR_DisableSEVOnPend:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:650    .text.HAL_PWR_DisableSEVOnPend:0000000000000000 HAL_PWR_DisableSEVOnPend
+C:\Users\HUAWEI\AppData\Local\Temp\ccvaGEPC.s:667    .text.HAL_PWR_DisableSEVOnPend:000000000000000c $d
 
 NO UNDEFINED SYMBOLS

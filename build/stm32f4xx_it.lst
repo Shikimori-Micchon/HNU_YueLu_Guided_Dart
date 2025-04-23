@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s 			page 1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s 			page 1
   28:Core/Src/stm32f4xx_it.c **** /* Private typedef -----------------------------------------------------------*/
   29:Core/Src/stm32f4xx_it.c **** /* USER CODE BEGIN TD */
   30:Core/Src/stm32f4xx_it.c **** 
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s 			page 2
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s 			page 2
 
 
   31:Core/Src/stm32f4xx_it.c **** /* USER CODE END TD */
@@ -89,40 +89,43 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s 			page 1
   56:Core/Src/stm32f4xx_it.c **** /* USER CODE END 0 */
   57:Core/Src/stm32f4xx_it.c **** 
   58:Core/Src/stm32f4xx_it.c **** /* External variables --------------------------------------------------------*/
-  59:Core/Src/stm32f4xx_it.c **** extern UART_HandleTypeDef huart3;
-  60:Core/Src/stm32f4xx_it.c **** /* USER CODE BEGIN EV */
-  61:Core/Src/stm32f4xx_it.c **** 
-  62:Core/Src/stm32f4xx_it.c **** /* USER CODE END EV */
-  63:Core/Src/stm32f4xx_it.c **** 
-  64:Core/Src/stm32f4xx_it.c **** /******************************************************************************/
-  65:Core/Src/stm32f4xx_it.c **** /*           Cortex-M4 Processor Interruption and Exception Handlers          */
-  66:Core/Src/stm32f4xx_it.c **** /******************************************************************************/
-  67:Core/Src/stm32f4xx_it.c **** /**
-  68:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Non maskable interrupt.
-  69:Core/Src/stm32f4xx_it.c ****   */
-  70:Core/Src/stm32f4xx_it.c **** void NMI_Handler(void)
-  71:Core/Src/stm32f4xx_it.c **** {
-  29              		.loc 1 71 1 view -0
+  59:Core/Src/stm32f4xx_it.c **** extern DMA_HandleTypeDef hdma_usart3_rx;
+  60:Core/Src/stm32f4xx_it.c **** extern UART_HandleTypeDef huart3;
+  61:Core/Src/stm32f4xx_it.c **** extern TIM_HandleTypeDef htim14;
+  62:Core/Src/stm32f4xx_it.c **** 
+  63:Core/Src/stm32f4xx_it.c **** /* USER CODE BEGIN EV */
+  64:Core/Src/stm32f4xx_it.c **** 
+  65:Core/Src/stm32f4xx_it.c **** /* USER CODE END EV */
+  66:Core/Src/stm32f4xx_it.c **** 
+  67:Core/Src/stm32f4xx_it.c **** /******************************************************************************/
+  68:Core/Src/stm32f4xx_it.c **** /*           Cortex-M4 Processor Interruption and Exception Handlers          */
+  69:Core/Src/stm32f4xx_it.c **** /******************************************************************************/
+  70:Core/Src/stm32f4xx_it.c **** /**
+  71:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Non maskable interrupt.
+  72:Core/Src/stm32f4xx_it.c ****   */
+  73:Core/Src/stm32f4xx_it.c **** void NMI_Handler(void)
+  74:Core/Src/stm32f4xx_it.c **** {
+  29              		.loc 1 74 1 view -0
   30              		.cfi_startproc
   31              		@ Volatile: function does not return.
   32              		@ args = 0, pretend = 0, frame = 0
   33              		@ frame_needed = 0, uses_anonymous_args = 0
   34              		@ link register save eliminated.
   35              	.L2:
-  72:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN NonMaskableInt_IRQn 0 */
-  73:Core/Src/stm32f4xx_it.c **** 
-  74:Core/Src/stm32f4xx_it.c ****   /* USER CODE END NonMaskableInt_IRQn 0 */
-  75:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN NonMaskableInt_IRQn 1 */
-  76:Core/Src/stm32f4xx_it.c ****   while (1)
-  36              		.loc 1 76 3 discriminator 1 view .LVU1
-  77:Core/Src/stm32f4xx_it.c ****   {
-  78:Core/Src/stm32f4xx_it.c ****   }
-  37              		.loc 1 78 3 discriminator 1 view .LVU2
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s 			page 3
+  75:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN NonMaskableInt_IRQn 0 */
+  76:Core/Src/stm32f4xx_it.c **** 
+  77:Core/Src/stm32f4xx_it.c ****   /* USER CODE END NonMaskableInt_IRQn 0 */
+  78:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN NonMaskableInt_IRQn 1 */
+  79:Core/Src/stm32f4xx_it.c ****   while (1)
+  36              		.loc 1 79 3 discriminator 1 view .LVU1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s 			page 3
 
 
-  76:Core/Src/stm32f4xx_it.c ****   {
-  38              		.loc 1 76 9 discriminator 1 view .LVU3
+  80:Core/Src/stm32f4xx_it.c ****   {
+  81:Core/Src/stm32f4xx_it.c ****   }
+  37              		.loc 1 81 3 discriminator 1 view .LVU2
+  79:Core/Src/stm32f4xx_it.c ****   {
+  38              		.loc 1 79 9 discriminator 1 view .LVU3
   39 0000 FEE7     		b	.L2
   40              		.cfi_endproc
   41              	.LFE130:
@@ -134,33 +137,33 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s 			page 1
   48              		.thumb_func
   50              	HardFault_Handler:
   51              	.LFB131:
-  79:Core/Src/stm32f4xx_it.c ****   /* USER CODE END NonMaskableInt_IRQn 1 */
-  80:Core/Src/stm32f4xx_it.c **** }
-  81:Core/Src/stm32f4xx_it.c **** 
-  82:Core/Src/stm32f4xx_it.c **** /**
-  83:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Hard fault interrupt.
-  84:Core/Src/stm32f4xx_it.c ****   */
-  85:Core/Src/stm32f4xx_it.c **** void HardFault_Handler(void)
-  86:Core/Src/stm32f4xx_it.c **** {
-  52              		.loc 1 86 1 view -0
+  82:Core/Src/stm32f4xx_it.c ****   /* USER CODE END NonMaskableInt_IRQn 1 */
+  83:Core/Src/stm32f4xx_it.c **** }
+  84:Core/Src/stm32f4xx_it.c **** 
+  85:Core/Src/stm32f4xx_it.c **** /**
+  86:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Hard fault interrupt.
+  87:Core/Src/stm32f4xx_it.c ****   */
+  88:Core/Src/stm32f4xx_it.c **** void HardFault_Handler(void)
+  89:Core/Src/stm32f4xx_it.c **** {
+  52              		.loc 1 89 1 view -0
   53              		.cfi_startproc
   54              		@ Volatile: function does not return.
   55              		@ args = 0, pretend = 0, frame = 0
   56              		@ frame_needed = 0, uses_anonymous_args = 0
   57              		@ link register save eliminated.
   58              	.L4:
-  87:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN HardFault_IRQn 0 */
-  88:Core/Src/stm32f4xx_it.c **** 
-  89:Core/Src/stm32f4xx_it.c ****   /* USER CODE END HardFault_IRQn 0 */
-  90:Core/Src/stm32f4xx_it.c ****   while (1)
-  59              		.loc 1 90 3 discriminator 1 view .LVU5
-  91:Core/Src/stm32f4xx_it.c ****   {
-  92:Core/Src/stm32f4xx_it.c ****     /* USER CODE BEGIN W1_HardFault_IRQn 0 */
-  93:Core/Src/stm32f4xx_it.c ****     /* USER CODE END W1_HardFault_IRQn 0 */
-  94:Core/Src/stm32f4xx_it.c ****   }
-  60              		.loc 1 94 3 discriminator 1 view .LVU6
-  90:Core/Src/stm32f4xx_it.c ****   {
-  61              		.loc 1 90 9 discriminator 1 view .LVU7
+  90:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN HardFault_IRQn 0 */
+  91:Core/Src/stm32f4xx_it.c **** 
+  92:Core/Src/stm32f4xx_it.c ****   /* USER CODE END HardFault_IRQn 0 */
+  93:Core/Src/stm32f4xx_it.c ****   while (1)
+  59              		.loc 1 93 3 discriminator 1 view .LVU5
+  94:Core/Src/stm32f4xx_it.c ****   {
+  95:Core/Src/stm32f4xx_it.c ****     /* USER CODE BEGIN W1_HardFault_IRQn 0 */
+  96:Core/Src/stm32f4xx_it.c ****     /* USER CODE END W1_HardFault_IRQn 0 */
+  97:Core/Src/stm32f4xx_it.c ****   }
+  60              		.loc 1 97 3 discriminator 1 view .LVU6
+  93:Core/Src/stm32f4xx_it.c ****   {
+  61              		.loc 1 93 9 discriminator 1 view .LVU7
   62 0000 FEE7     		b	.L4
   63              		.cfi_endproc
   64              	.LFE131:
@@ -172,35 +175,35 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s 			page 1
   71              		.thumb_func
   73              	MemManage_Handler:
   74              	.LFB132:
-  95:Core/Src/stm32f4xx_it.c **** }
-  96:Core/Src/stm32f4xx_it.c **** 
-  97:Core/Src/stm32f4xx_it.c **** /**
-  98:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Memory management fault.
-  99:Core/Src/stm32f4xx_it.c ****   */
- 100:Core/Src/stm32f4xx_it.c **** void MemManage_Handler(void)
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s 			page 4
+  98:Core/Src/stm32f4xx_it.c **** }
+  99:Core/Src/stm32f4xx_it.c **** 
+ 100:Core/Src/stm32f4xx_it.c **** /**
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s 			page 4
 
 
- 101:Core/Src/stm32f4xx_it.c **** {
-  75              		.loc 1 101 1 view -0
+ 101:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Memory management fault.
+ 102:Core/Src/stm32f4xx_it.c ****   */
+ 103:Core/Src/stm32f4xx_it.c **** void MemManage_Handler(void)
+ 104:Core/Src/stm32f4xx_it.c **** {
+  75              		.loc 1 104 1 view -0
   76              		.cfi_startproc
   77              		@ Volatile: function does not return.
   78              		@ args = 0, pretend = 0, frame = 0
   79              		@ frame_needed = 0, uses_anonymous_args = 0
   80              		@ link register save eliminated.
   81              	.L6:
- 102:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN MemoryManagement_IRQn 0 */
- 103:Core/Src/stm32f4xx_it.c **** 
- 104:Core/Src/stm32f4xx_it.c ****   /* USER CODE END MemoryManagement_IRQn 0 */
- 105:Core/Src/stm32f4xx_it.c ****   while (1)
-  82              		.loc 1 105 3 discriminator 1 view .LVU9
- 106:Core/Src/stm32f4xx_it.c ****   {
- 107:Core/Src/stm32f4xx_it.c ****     /* USER CODE BEGIN W1_MemoryManagement_IRQn 0 */
- 108:Core/Src/stm32f4xx_it.c ****     /* USER CODE END W1_MemoryManagement_IRQn 0 */
- 109:Core/Src/stm32f4xx_it.c ****   }
-  83              		.loc 1 109 3 discriminator 1 view .LVU10
- 105:Core/Src/stm32f4xx_it.c ****   {
-  84              		.loc 1 105 9 discriminator 1 view .LVU11
+ 105:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN MemoryManagement_IRQn 0 */
+ 106:Core/Src/stm32f4xx_it.c **** 
+ 107:Core/Src/stm32f4xx_it.c ****   /* USER CODE END MemoryManagement_IRQn 0 */
+ 108:Core/Src/stm32f4xx_it.c ****   while (1)
+  82              		.loc 1 108 3 discriminator 1 view .LVU9
+ 109:Core/Src/stm32f4xx_it.c ****   {
+ 110:Core/Src/stm32f4xx_it.c ****     /* USER CODE BEGIN W1_MemoryManagement_IRQn 0 */
+ 111:Core/Src/stm32f4xx_it.c ****     /* USER CODE END W1_MemoryManagement_IRQn 0 */
+ 112:Core/Src/stm32f4xx_it.c ****   }
+  83              		.loc 1 112 3 discriminator 1 view .LVU10
+ 108:Core/Src/stm32f4xx_it.c ****   {
+  84              		.loc 1 108 9 discriminator 1 view .LVU11
   85 0000 FEE7     		b	.L6
   86              		.cfi_endproc
   87              	.LFE132:
@@ -212,35 +215,35 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s 			page 1
   94              		.thumb_func
   96              	BusFault_Handler:
   97              	.LFB133:
- 110:Core/Src/stm32f4xx_it.c **** }
- 111:Core/Src/stm32f4xx_it.c **** 
- 112:Core/Src/stm32f4xx_it.c **** /**
- 113:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Pre-fetch fault, memory access fault.
- 114:Core/Src/stm32f4xx_it.c ****   */
- 115:Core/Src/stm32f4xx_it.c **** void BusFault_Handler(void)
- 116:Core/Src/stm32f4xx_it.c **** {
-  98              		.loc 1 116 1 view -0
+ 113:Core/Src/stm32f4xx_it.c **** }
+ 114:Core/Src/stm32f4xx_it.c **** 
+ 115:Core/Src/stm32f4xx_it.c **** /**
+ 116:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Pre-fetch fault, memory access fault.
+ 117:Core/Src/stm32f4xx_it.c ****   */
+ 118:Core/Src/stm32f4xx_it.c **** void BusFault_Handler(void)
+ 119:Core/Src/stm32f4xx_it.c **** {
+  98              		.loc 1 119 1 view -0
   99              		.cfi_startproc
  100              		@ Volatile: function does not return.
  101              		@ args = 0, pretend = 0, frame = 0
  102              		@ frame_needed = 0, uses_anonymous_args = 0
  103              		@ link register save eliminated.
  104              	.L8:
- 117:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN BusFault_IRQn 0 */
- 118:Core/Src/stm32f4xx_it.c **** 
- 119:Core/Src/stm32f4xx_it.c ****   /* USER CODE END BusFault_IRQn 0 */
- 120:Core/Src/stm32f4xx_it.c ****   while (1)
- 105              		.loc 1 120 3 discriminator 1 view .LVU13
- 121:Core/Src/stm32f4xx_it.c ****   {
- 122:Core/Src/stm32f4xx_it.c ****     /* USER CODE BEGIN W1_BusFault_IRQn 0 */
- 123:Core/Src/stm32f4xx_it.c ****     /* USER CODE END W1_BusFault_IRQn 0 */
- 124:Core/Src/stm32f4xx_it.c ****   }
- 106              		.loc 1 124 3 discriminator 1 view .LVU14
- 120:Core/Src/stm32f4xx_it.c ****   {
- 107              		.loc 1 120 9 discriminator 1 view .LVU15
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s 			page 5
+ 120:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN BusFault_IRQn 0 */
+ 121:Core/Src/stm32f4xx_it.c **** 
+ 122:Core/Src/stm32f4xx_it.c ****   /* USER CODE END BusFault_IRQn 0 */
+ 123:Core/Src/stm32f4xx_it.c ****   while (1)
+ 105              		.loc 1 123 3 discriminator 1 view .LVU13
+ 124:Core/Src/stm32f4xx_it.c ****   {
+ 125:Core/Src/stm32f4xx_it.c ****     /* USER CODE BEGIN W1_BusFault_IRQn 0 */
+ 126:Core/Src/stm32f4xx_it.c ****     /* USER CODE END W1_BusFault_IRQn 0 */
+ 127:Core/Src/stm32f4xx_it.c ****   }
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s 			page 5
 
 
+ 106              		.loc 1 127 3 discriminator 1 view .LVU14
+ 123:Core/Src/stm32f4xx_it.c ****   {
+ 107              		.loc 1 123 9 discriminator 1 view .LVU15
  108 0000 FEE7     		b	.L8
  109              		.cfi_endproc
  110              	.LFE133:
@@ -252,263 +255,251 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s 			page 1
  117              		.thumb_func
  119              	UsageFault_Handler:
  120              	.LFB134:
- 125:Core/Src/stm32f4xx_it.c **** }
- 126:Core/Src/stm32f4xx_it.c **** 
- 127:Core/Src/stm32f4xx_it.c **** /**
- 128:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Undefined instruction or illegal state.
- 129:Core/Src/stm32f4xx_it.c ****   */
- 130:Core/Src/stm32f4xx_it.c **** void UsageFault_Handler(void)
- 131:Core/Src/stm32f4xx_it.c **** {
- 121              		.loc 1 131 1 view -0
+ 128:Core/Src/stm32f4xx_it.c **** }
+ 129:Core/Src/stm32f4xx_it.c **** 
+ 130:Core/Src/stm32f4xx_it.c **** /**
+ 131:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Undefined instruction or illegal state.
+ 132:Core/Src/stm32f4xx_it.c ****   */
+ 133:Core/Src/stm32f4xx_it.c **** void UsageFault_Handler(void)
+ 134:Core/Src/stm32f4xx_it.c **** {
+ 121              		.loc 1 134 1 view -0
  122              		.cfi_startproc
  123              		@ Volatile: function does not return.
  124              		@ args = 0, pretend = 0, frame = 0
  125              		@ frame_needed = 0, uses_anonymous_args = 0
  126              		@ link register save eliminated.
  127              	.L10:
- 132:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN UsageFault_IRQn 0 */
- 133:Core/Src/stm32f4xx_it.c **** 
- 134:Core/Src/stm32f4xx_it.c ****   /* USER CODE END UsageFault_IRQn 0 */
- 135:Core/Src/stm32f4xx_it.c ****   while (1)
- 128              		.loc 1 135 3 discriminator 1 view .LVU17
- 136:Core/Src/stm32f4xx_it.c ****   {
- 137:Core/Src/stm32f4xx_it.c ****     /* USER CODE BEGIN W1_UsageFault_IRQn 0 */
- 138:Core/Src/stm32f4xx_it.c ****     /* USER CODE END W1_UsageFault_IRQn 0 */
- 139:Core/Src/stm32f4xx_it.c ****   }
- 129              		.loc 1 139 3 discriminator 1 view .LVU18
- 135:Core/Src/stm32f4xx_it.c ****   {
- 130              		.loc 1 135 9 discriminator 1 view .LVU19
+ 135:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN UsageFault_IRQn 0 */
+ 136:Core/Src/stm32f4xx_it.c **** 
+ 137:Core/Src/stm32f4xx_it.c ****   /* USER CODE END UsageFault_IRQn 0 */
+ 138:Core/Src/stm32f4xx_it.c ****   while (1)
+ 128              		.loc 1 138 3 discriminator 1 view .LVU17
+ 139:Core/Src/stm32f4xx_it.c ****   {
+ 140:Core/Src/stm32f4xx_it.c ****     /* USER CODE BEGIN W1_UsageFault_IRQn 0 */
+ 141:Core/Src/stm32f4xx_it.c ****     /* USER CODE END W1_UsageFault_IRQn 0 */
+ 142:Core/Src/stm32f4xx_it.c ****   }
+ 129              		.loc 1 142 3 discriminator 1 view .LVU18
+ 138:Core/Src/stm32f4xx_it.c ****   {
+ 130              		.loc 1 138 9 discriminator 1 view .LVU19
  131 0000 FEE7     		b	.L10
  132              		.cfi_endproc
  133              	.LFE134:
- 135              		.section	.text.SVC_Handler,"ax",%progbits
+ 135              		.section	.text.DebugMon_Handler,"ax",%progbits
  136              		.align	1
- 137              		.global	SVC_Handler
+ 137              		.global	DebugMon_Handler
  138              		.syntax unified
  139              		.thumb
  140              		.thumb_func
- 142              	SVC_Handler:
+ 142              	DebugMon_Handler:
  143              	.LFB135:
- 140:Core/Src/stm32f4xx_it.c **** }
- 141:Core/Src/stm32f4xx_it.c **** 
- 142:Core/Src/stm32f4xx_it.c **** /**
- 143:Core/Src/stm32f4xx_it.c ****   * @brief This function handles System service call via SWI instruction.
- 144:Core/Src/stm32f4xx_it.c ****   */
- 145:Core/Src/stm32f4xx_it.c **** void SVC_Handler(void)
- 146:Core/Src/stm32f4xx_it.c **** {
- 144              		.loc 1 146 1 view -0
+ 143:Core/Src/stm32f4xx_it.c **** }
+ 144:Core/Src/stm32f4xx_it.c **** 
+ 145:Core/Src/stm32f4xx_it.c **** /**
+ 146:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Debug monitor.
+ 147:Core/Src/stm32f4xx_it.c ****   */
+ 148:Core/Src/stm32f4xx_it.c **** void DebugMon_Handler(void)
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s 			page 6
+
+
+ 149:Core/Src/stm32f4xx_it.c **** {
+ 144              		.loc 1 149 1 view -0
  145              		.cfi_startproc
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s 			page 6
-
-
  146              		@ args = 0, pretend = 0, frame = 0
  147              		@ frame_needed = 0, uses_anonymous_args = 0
  148              		@ link register save eliminated.
- 147:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN SVCall_IRQn 0 */
- 148:Core/Src/stm32f4xx_it.c **** 
- 149:Core/Src/stm32f4xx_it.c ****   /* USER CODE END SVCall_IRQn 0 */
- 150:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN SVCall_IRQn 1 */
+ 150:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DebugMonitor_IRQn 0 */
  151:Core/Src/stm32f4xx_it.c **** 
- 152:Core/Src/stm32f4xx_it.c ****   /* USER CODE END SVCall_IRQn 1 */
- 153:Core/Src/stm32f4xx_it.c **** }
- 149              		.loc 1 153 1 view .LVU21
+ 152:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DebugMonitor_IRQn 0 */
+ 153:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DebugMonitor_IRQn 1 */
+ 154:Core/Src/stm32f4xx_it.c **** 
+ 155:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DebugMonitor_IRQn 1 */
+ 156:Core/Src/stm32f4xx_it.c **** }
+ 149              		.loc 1 156 1 view .LVU21
  150 0000 7047     		bx	lr
  151              		.cfi_endproc
  152              	.LFE135:
- 154              		.section	.text.DebugMon_Handler,"ax",%progbits
+ 154              		.section	.text.DMA1_Stream1_IRQHandler,"ax",%progbits
  155              		.align	1
- 156              		.global	DebugMon_Handler
+ 156              		.global	DMA1_Stream1_IRQHandler
  157              		.syntax unified
  158              		.thumb
  159              		.thumb_func
- 161              	DebugMon_Handler:
+ 161              	DMA1_Stream1_IRQHandler:
  162              	.LFB136:
- 154:Core/Src/stm32f4xx_it.c **** 
- 155:Core/Src/stm32f4xx_it.c **** /**
- 156:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Debug monitor.
- 157:Core/Src/stm32f4xx_it.c ****   */
- 158:Core/Src/stm32f4xx_it.c **** void DebugMon_Handler(void)
- 159:Core/Src/stm32f4xx_it.c **** {
- 163              		.loc 1 159 1 view -0
+ 157:Core/Src/stm32f4xx_it.c **** 
+ 158:Core/Src/stm32f4xx_it.c **** /******************************************************************************/
+ 159:Core/Src/stm32f4xx_it.c **** /* STM32F4xx Peripheral Interrupt Handlers                                    */
+ 160:Core/Src/stm32f4xx_it.c **** /* Add here the Interrupt Handlers for the used peripherals.                  */
+ 161:Core/Src/stm32f4xx_it.c **** /* For the available peripheral interrupt handler names,                      */
+ 162:Core/Src/stm32f4xx_it.c **** /* please refer to the startup file (startup_stm32f4xx.s).                    */
+ 163:Core/Src/stm32f4xx_it.c **** /******************************************************************************/
+ 164:Core/Src/stm32f4xx_it.c **** 
+ 165:Core/Src/stm32f4xx_it.c **** /**
+ 166:Core/Src/stm32f4xx_it.c ****   * @brief This function handles DMA1 stream1 global interrupt.
+ 167:Core/Src/stm32f4xx_it.c ****   */
+ 168:Core/Src/stm32f4xx_it.c **** void DMA1_Stream1_IRQHandler(void)
+ 169:Core/Src/stm32f4xx_it.c **** {
+ 163              		.loc 1 169 1 view -0
  164              		.cfi_startproc
  165              		@ args = 0, pretend = 0, frame = 0
  166              		@ frame_needed = 0, uses_anonymous_args = 0
- 167              		@ link register save eliminated.
- 160:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DebugMonitor_IRQn 0 */
- 161:Core/Src/stm32f4xx_it.c **** 
- 162:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DebugMonitor_IRQn 0 */
- 163:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DebugMonitor_IRQn 1 */
- 164:Core/Src/stm32f4xx_it.c **** 
- 165:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DebugMonitor_IRQn 1 */
- 166:Core/Src/stm32f4xx_it.c **** }
- 168              		.loc 1 166 1 view .LVU23
- 169 0000 7047     		bx	lr
- 170              		.cfi_endproc
- 171              	.LFE136:
- 173              		.section	.text.PendSV_Handler,"ax",%progbits
- 174              		.align	1
- 175              		.global	PendSV_Handler
- 176              		.syntax unified
- 177              		.thumb
- 178              		.thumb_func
- 180              	PendSV_Handler:
- 181              	.LFB137:
- 167:Core/Src/stm32f4xx_it.c **** 
- 168:Core/Src/stm32f4xx_it.c **** /**
- 169:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Pendable request for system service.
- 170:Core/Src/stm32f4xx_it.c ****   */
- 171:Core/Src/stm32f4xx_it.c **** void PendSV_Handler(void)
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s 			page 7
+ 167 0000 08B5     		push	{r3, lr}
+ 168              	.LCFI0:
+ 169              		.cfi_def_cfa_offset 8
+ 170              		.cfi_offset 3, -8
+ 171              		.cfi_offset 14, -4
+ 170:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream1_IRQn 0 */
+ 171:Core/Src/stm32f4xx_it.c **** 
+ 172:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream1_IRQn 0 */
+ 173:Core/Src/stm32f4xx_it.c ****   HAL_DMA_IRQHandler(&hdma_usart3_rx);
+ 172              		.loc 1 173 3 view .LVU23
+ 173 0002 0248     		ldr	r0, .L14
+ 174 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
+ 175              	.LVL0:
+ 174:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream1_IRQn 1 */
+ 175:Core/Src/stm32f4xx_it.c **** 
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s 			page 7
 
 
- 172:Core/Src/stm32f4xx_it.c **** {
- 182              		.loc 1 172 1 view -0
- 183              		.cfi_startproc
- 184              		@ args = 0, pretend = 0, frame = 0
- 185              		@ frame_needed = 0, uses_anonymous_args = 0
- 186              		@ link register save eliminated.
- 173:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN PendSV_IRQn 0 */
- 174:Core/Src/stm32f4xx_it.c **** 
- 175:Core/Src/stm32f4xx_it.c ****   /* USER CODE END PendSV_IRQn 0 */
- 176:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN PendSV_IRQn 1 */
- 177:Core/Src/stm32f4xx_it.c **** 
- 178:Core/Src/stm32f4xx_it.c ****   /* USER CODE END PendSV_IRQn 1 */
- 179:Core/Src/stm32f4xx_it.c **** }
- 187              		.loc 1 179 1 view .LVU25
- 188 0000 7047     		bx	lr
- 189              		.cfi_endproc
- 190              	.LFE137:
- 192              		.section	.text.SysTick_Handler,"ax",%progbits
- 193              		.align	1
- 194              		.global	SysTick_Handler
- 195              		.syntax unified
- 196              		.thumb
- 197              		.thumb_func
- 199              	SysTick_Handler:
- 200              	.LFB138:
- 180:Core/Src/stm32f4xx_it.c **** 
- 181:Core/Src/stm32f4xx_it.c **** /**
- 182:Core/Src/stm32f4xx_it.c ****   * @brief This function handles System tick timer.
- 183:Core/Src/stm32f4xx_it.c ****   */
- 184:Core/Src/stm32f4xx_it.c **** void SysTick_Handler(void)
- 185:Core/Src/stm32f4xx_it.c **** {
- 201              		.loc 1 185 1 view -0
- 202              		.cfi_startproc
- 203              		@ args = 0, pretend = 0, frame = 0
- 204              		@ frame_needed = 0, uses_anonymous_args = 0
- 205 0000 08B5     		push	{r3, lr}
- 206              	.LCFI0:
- 207              		.cfi_def_cfa_offset 8
- 208              		.cfi_offset 3, -8
- 209              		.cfi_offset 14, -4
- 186:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN SysTick_IRQn 0 */
- 187:Core/Src/stm32f4xx_it.c **** 
- 188:Core/Src/stm32f4xx_it.c ****   /* USER CODE END SysTick_IRQn 0 */
- 189:Core/Src/stm32f4xx_it.c ****   HAL_IncTick();
- 210              		.loc 1 189 3 view .LVU27
- 211 0002 FFF7FEFF 		bl	HAL_IncTick
- 212              	.LVL0:
- 190:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN SysTick_IRQn 1 */
- 191:Core/Src/stm32f4xx_it.c **** 
- 192:Core/Src/stm32f4xx_it.c ****   /* USER CODE END SysTick_IRQn 1 */
- 193:Core/Src/stm32f4xx_it.c **** }
- 213              		.loc 1 193 1 is_stmt 0 view .LVU28
- 214 0006 08BD     		pop	{r3, pc}
- 215              		.cfi_endproc
- 216              	.LFE138:
- 218              		.section	.text.USART3_IRQHandler,"ax",%progbits
- 219              		.align	1
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s 			page 8
+ 176:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream1_IRQn 1 */
+ 177:Core/Src/stm32f4xx_it.c **** }
+ 176              		.loc 1 177 1 is_stmt 0 view .LVU24
+ 177 0008 08BD     		pop	{r3, pc}
+ 178              	.L15:
+ 179 000a 00BF     		.align	2
+ 180              	.L14:
+ 181 000c 00000000 		.word	hdma_usart3_rx
+ 182              		.cfi_endproc
+ 183              	.LFE136:
+ 185              		.section	.text.USART3_IRQHandler,"ax",%progbits
+ 186              		.align	1
+ 187              		.global	USART3_IRQHandler
+ 188              		.syntax unified
+ 189              		.thumb
+ 190              		.thumb_func
+ 192              	USART3_IRQHandler:
+ 193              	.LFB137:
+ 178:Core/Src/stm32f4xx_it.c **** 
+ 179:Core/Src/stm32f4xx_it.c **** /**
+ 180:Core/Src/stm32f4xx_it.c ****   * @brief This function handles USART3 global interrupt.
+ 181:Core/Src/stm32f4xx_it.c ****   */
+ 182:Core/Src/stm32f4xx_it.c **** void USART3_IRQHandler(void)
+ 183:Core/Src/stm32f4xx_it.c **** {
+ 194              		.loc 1 183 1 is_stmt 1 view -0
+ 195              		.cfi_startproc
+ 196              		@ args = 0, pretend = 0, frame = 0
+ 197              		@ frame_needed = 0, uses_anonymous_args = 0
+ 198 0000 08B5     		push	{r3, lr}
+ 199              	.LCFI1:
+ 200              		.cfi_def_cfa_offset 8
+ 201              		.cfi_offset 3, -8
+ 202              		.cfi_offset 14, -4
+ 184:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN USART3_IRQn 0 */
+ 185:Core/Src/stm32f4xx_it.c **** 
+ 186:Core/Src/stm32f4xx_it.c ****   /* USER CODE END USART3_IRQn 0 */
+ 187:Core/Src/stm32f4xx_it.c ****   HAL_UART_IRQHandler(&huart3);
+ 203              		.loc 1 187 3 view .LVU26
+ 204 0002 0248     		ldr	r0, .L18
+ 205 0004 FFF7FEFF 		bl	HAL_UART_IRQHandler
+ 206              	.LVL1:
+ 188:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN USART3_IRQn 1 */
+ 189:Core/Src/stm32f4xx_it.c **** 
+ 190:Core/Src/stm32f4xx_it.c ****   /* USER CODE END USART3_IRQn 1 */
+ 191:Core/Src/stm32f4xx_it.c **** }
+ 207              		.loc 1 191 1 is_stmt 0 view .LVU27
+ 208 0008 08BD     		pop	{r3, pc}
+ 209              	.L19:
+ 210 000a 00BF     		.align	2
+ 211              	.L18:
+ 212 000c 00000000 		.word	huart3
+ 213              		.cfi_endproc
+ 214              	.LFE137:
+ 216              		.section	.text.TIM8_TRG_COM_TIM14_IRQHandler,"ax",%progbits
+ 217              		.align	1
+ 218              		.global	TIM8_TRG_COM_TIM14_IRQHandler
+ 219              		.syntax unified
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s 			page 8
 
 
- 220              		.global	USART3_IRQHandler
- 221              		.syntax unified
- 222              		.thumb
- 223              		.thumb_func
- 225              	USART3_IRQHandler:
- 226              	.LFB139:
- 194:Core/Src/stm32f4xx_it.c **** 
- 195:Core/Src/stm32f4xx_it.c **** /******************************************************************************/
- 196:Core/Src/stm32f4xx_it.c **** /* STM32F4xx Peripheral Interrupt Handlers                                    */
- 197:Core/Src/stm32f4xx_it.c **** /* Add here the Interrupt Handlers for the used peripherals.                  */
- 198:Core/Src/stm32f4xx_it.c **** /* For the available peripheral interrupt handler names,                      */
- 199:Core/Src/stm32f4xx_it.c **** /* please refer to the startup file (startup_stm32f4xx.s).                    */
- 200:Core/Src/stm32f4xx_it.c **** /******************************************************************************/
- 201:Core/Src/stm32f4xx_it.c **** 
- 202:Core/Src/stm32f4xx_it.c **** /**
- 203:Core/Src/stm32f4xx_it.c ****   * @brief This function handles USART3 global interrupt.
- 204:Core/Src/stm32f4xx_it.c ****   */
- 205:Core/Src/stm32f4xx_it.c **** void USART3_IRQHandler(void)
- 206:Core/Src/stm32f4xx_it.c **** {
- 227              		.loc 1 206 1 is_stmt 1 view -0
- 228              		.cfi_startproc
- 229              		@ args = 0, pretend = 0, frame = 0
- 230              		@ frame_needed = 0, uses_anonymous_args = 0
- 231 0000 08B5     		push	{r3, lr}
- 232              	.LCFI1:
- 233              		.cfi_def_cfa_offset 8
- 234              		.cfi_offset 3, -8
- 235              		.cfi_offset 14, -4
- 207:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN USART3_IRQn 0 */
- 208:Core/Src/stm32f4xx_it.c **** 
- 209:Core/Src/stm32f4xx_it.c ****   /* USER CODE END USART3_IRQn 0 */
- 210:Core/Src/stm32f4xx_it.c ****   HAL_UART_IRQHandler(&huart3);
- 236              		.loc 1 210 3 view .LVU30
- 237 0002 0248     		ldr	r0, .L18
- 238 0004 FFF7FEFF 		bl	HAL_UART_IRQHandler
- 239              	.LVL1:
- 211:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN USART3_IRQn 1 */
- 212:Core/Src/stm32f4xx_it.c **** 
- 213:Core/Src/stm32f4xx_it.c ****   /* USER CODE END USART3_IRQn 1 */
- 214:Core/Src/stm32f4xx_it.c **** }
- 240              		.loc 1 214 1 is_stmt 0 view .LVU31
- 241 0008 08BD     		pop	{r3, pc}
- 242              	.L19:
- 243 000a 00BF     		.align	2
- 244              	.L18:
- 245 000c 00000000 		.word	huart3
- 246              		.cfi_endproc
- 247              	.LFE139:
- 249              		.text
- 250              	.Letext0:
- 251              		.file 2 "e:\\rm\\ec\\gcc-arm-none-eabi-10.3-2021.10-win32\\arm-gnu-toolchian\\arm-none-eabi\\inclu
- 252              		.file 3 "e:\\rm\\ec\\gcc-arm-none-eabi-10.3-2021.10-win32\\arm-gnu-toolchian\\arm-none-eabi\\inclu
- 253              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
- 254              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 255              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 256              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 257              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s 			page 9
-
-
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s 			page 10
+ 220              		.thumb
+ 221              		.thumb_func
+ 223              	TIM8_TRG_COM_TIM14_IRQHandler:
+ 224              	.LFB138:
+ 192:Core/Src/stm32f4xx_it.c **** 
+ 193:Core/Src/stm32f4xx_it.c **** /**
+ 194:Core/Src/stm32f4xx_it.c ****   * @brief This function handles TIM8 trigger and commutation interrupts and TIM14 global interrupt
+ 195:Core/Src/stm32f4xx_it.c ****   */
+ 196:Core/Src/stm32f4xx_it.c **** void TIM8_TRG_COM_TIM14_IRQHandler(void)
+ 197:Core/Src/stm32f4xx_it.c **** {
+ 225              		.loc 1 197 1 is_stmt 1 view -0
+ 226              		.cfi_startproc
+ 227              		@ args = 0, pretend = 0, frame = 0
+ 228              		@ frame_needed = 0, uses_anonymous_args = 0
+ 229 0000 08B5     		push	{r3, lr}
+ 230              	.LCFI2:
+ 231              		.cfi_def_cfa_offset 8
+ 232              		.cfi_offset 3, -8
+ 233              		.cfi_offset 14, -4
+ 198:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN TIM8_TRG_COM_TIM14_IRQn 0 */
+ 199:Core/Src/stm32f4xx_it.c **** 
+ 200:Core/Src/stm32f4xx_it.c ****   /* USER CODE END TIM8_TRG_COM_TIM14_IRQn 0 */
+ 201:Core/Src/stm32f4xx_it.c ****   HAL_TIM_IRQHandler(&htim14);
+ 234              		.loc 1 201 3 view .LVU29
+ 235 0002 0248     		ldr	r0, .L22
+ 236 0004 FFF7FEFF 		bl	HAL_TIM_IRQHandler
+ 237              	.LVL2:
+ 202:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN TIM8_TRG_COM_TIM14_IRQn 1 */
+ 203:Core/Src/stm32f4xx_it.c **** 
+ 204:Core/Src/stm32f4xx_it.c ****   /* USER CODE END TIM8_TRG_COM_TIM14_IRQn 1 */
+ 205:Core/Src/stm32f4xx_it.c **** }
+ 238              		.loc 1 205 1 is_stmt 0 view .LVU30
+ 239 0008 08BD     		pop	{r3, pc}
+ 240              	.L23:
+ 241 000a 00BF     		.align	2
+ 242              	.L22:
+ 243 000c 00000000 		.word	htim14
+ 244              		.cfi_endproc
+ 245              	.LFE138:
+ 247              		.text
+ 248              	.Letext0:
+ 249              		.file 2 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
+ 250              		.file 3 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
+ 251              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ 252              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 253              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 254              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 255              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s 			page 9
 
 
 DEFINED SYMBOLS
-                            *ABS*:00000000 stm32f4xx_it.c
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s:20     .text.NMI_Handler:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s:26     .text.NMI_Handler:00000000 NMI_Handler
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s:44     .text.HardFault_Handler:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s:50     .text.HardFault_Handler:00000000 HardFault_Handler
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s:67     .text.MemManage_Handler:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s:73     .text.MemManage_Handler:00000000 MemManage_Handler
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s:90     .text.BusFault_Handler:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s:96     .text.BusFault_Handler:00000000 BusFault_Handler
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s:113    .text.UsageFault_Handler:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s:119    .text.UsageFault_Handler:00000000 UsageFault_Handler
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s:136    .text.SVC_Handler:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s:142    .text.SVC_Handler:00000000 SVC_Handler
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s:155    .text.DebugMon_Handler:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s:161    .text.DebugMon_Handler:00000000 DebugMon_Handler
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s:174    .text.PendSV_Handler:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s:180    .text.PendSV_Handler:00000000 PendSV_Handler
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s:193    .text.SysTick_Handler:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s:199    .text.SysTick_Handler:00000000 SysTick_Handler
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s:219    .text.USART3_IRQHandler:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s:225    .text.USART3_IRQHandler:00000000 USART3_IRQHandler
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIje86R.s:245    .text.USART3_IRQHandler:0000000c $d
+                            *ABS*:0000000000000000 stm32f4xx_it.c
+C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s:20     .text.NMI_Handler:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s:26     .text.NMI_Handler:0000000000000000 NMI_Handler
+C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s:44     .text.HardFault_Handler:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s:50     .text.HardFault_Handler:0000000000000000 HardFault_Handler
+C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s:67     .text.MemManage_Handler:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s:73     .text.MemManage_Handler:0000000000000000 MemManage_Handler
+C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s:90     .text.BusFault_Handler:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s:96     .text.BusFault_Handler:0000000000000000 BusFault_Handler
+C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s:113    .text.UsageFault_Handler:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s:119    .text.UsageFault_Handler:0000000000000000 UsageFault_Handler
+C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s:136    .text.DebugMon_Handler:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s:142    .text.DebugMon_Handler:0000000000000000 DebugMon_Handler
+C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s:155    .text.DMA1_Stream1_IRQHandler:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s:161    .text.DMA1_Stream1_IRQHandler:0000000000000000 DMA1_Stream1_IRQHandler
+C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s:181    .text.DMA1_Stream1_IRQHandler:000000000000000c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s:186    .text.USART3_IRQHandler:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s:192    .text.USART3_IRQHandler:0000000000000000 USART3_IRQHandler
+C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s:212    .text.USART3_IRQHandler:000000000000000c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s:217    .text.TIM8_TRG_COM_TIM14_IRQHandler:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s:223    .text.TIM8_TRG_COM_TIM14_IRQHandler:0000000000000000 TIM8_TRG_COM_TIM14_IRQHandler
+C:\Users\HUAWEI\AppData\Local\Temp\ccIvsl5a.s:243    .text.TIM8_TRG_COM_TIM14_IRQHandler:000000000000000c $d
 
 UNDEFINED SYMBOLS
-HAL_IncTick
+HAL_DMA_IRQHandler
+hdma_usart3_rx
 HAL_UART_IRQHandler
 huart3
+HAL_TIM_IRQHandler
+htim14

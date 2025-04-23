@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccY1wCyR.s 			page 1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc8wbxR7.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -39,10 +39,10 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccY1wCyR.s 			page 1
    9:Core/Src/gpio.c ****   * <h2><center>&copy; Copyright (c) 2025 STMicroelectronics.
   10:Core/Src/gpio.c ****   * All rights reserved.</center></h2>
   11:Core/Src/gpio.c ****   *
-  12:Core/Src/gpio.c ****   * This software component is licensed by ST under BSD 3-Clause license,
-  13:Core/Src/gpio.c ****   * the "License"; You may not use this file except in compliance with the
-  14:Core/Src/gpio.c ****   * License. You may obtain a copy of the License at:
-  15:Core/Src/gpio.c ****   *                        opensource.org/licenses/BSD-3-Clause
+  12:Core/Src/gpio.c ****   * This software component is licensed by ST under Ultimate Liberty license
+  13:Core/Src/gpio.c ****   * SLA0044, the "License"; You may not use this file except in compliance with
+  14:Core/Src/gpio.c ****   * the License. You may obtain a copy of the License at:
+  15:Core/Src/gpio.c ****   *                             www.st.com/SLA0044
   16:Core/Src/gpio.c ****   *
   17:Core/Src/gpio.c ****   ******************************************************************************
   18:Core/Src/gpio.c ****   */
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccY1wCyR.s 			page 1
   28:Core/Src/gpio.c **** /* Configure GPIO                                                             */
   29:Core/Src/gpio.c **** /*----------------------------------------------------------------------------*/
   30:Core/Src/gpio.c **** /* USER CODE BEGIN 1 */
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccY1wCyR.s 			page 2
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc8wbxR7.s 			page 2
 
 
   31:Core/Src/gpio.c **** 
@@ -75,79 +75,96 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccY1wCyR.s 			page 1
   42:Core/Src/gpio.c **** {
   29              		.loc 1 42 1 view -0
   30              		.cfi_startproc
-  31              		@ args = 0, pretend = 0, frame = 8
+  31              		@ args = 0, pretend = 0, frame = 16
   32              		@ frame_needed = 0, uses_anonymous_args = 0
   33              		@ link register save eliminated.
-  34 0000 82B0     		sub	sp, sp, #8
+  34 0000 84B0     		sub	sp, sp, #16
   35              	.LCFI0:
-  36              		.cfi_def_cfa_offset 8
+  36              		.cfi_def_cfa_offset 16
   43:Core/Src/gpio.c **** 
   44:Core/Src/gpio.c ****   /* GPIO Ports Clock Enable */
   45:Core/Src/gpio.c ****   __HAL_RCC_GPIOH_CLK_ENABLE();
   37              		.loc 1 45 3 view .LVU1
   38              	.LBB2:
   39              		.loc 1 45 3 view .LVU2
-  40 0002 0021     		movs	r1, #0
-  41 0004 0091     		str	r1, [sp]
+  40 0002 0022     		movs	r2, #0
+  41 0004 0192     		str	r2, [sp, #4]
   42              		.loc 1 45 3 view .LVU3
-  43 0006 0B4B     		ldr	r3, .L3
-  44 0008 1A6B     		ldr	r2, [r3, #48]
-  45 000a 42F08002 		orr	r2, r2, #128
-  46 000e 1A63     		str	r2, [r3, #48]
+  43 0006 104B     		ldr	r3, .L3
+  44 0008 196B     		ldr	r1, [r3, #48]
+  45 000a 41F08001 		orr	r1, r1, #128
+  46 000e 1963     		str	r1, [r3, #48]
   47              		.loc 1 45 3 view .LVU4
-  48 0010 1A6B     		ldr	r2, [r3, #48]
-  49 0012 02F08002 		and	r2, r2, #128
-  50 0016 0092     		str	r2, [sp]
+  48 0010 196B     		ldr	r1, [r3, #48]
+  49 0012 01F08001 		and	r1, r1, #128
+  50 0016 0191     		str	r1, [sp, #4]
   51              		.loc 1 45 3 view .LVU5
-  52 0018 009A     		ldr	r2, [sp]
+  52 0018 0199     		ldr	r1, [sp, #4]
   53              	.LBE2:
   54              		.loc 1 45 3 view .LVU6
   46:Core/Src/gpio.c ****   __HAL_RCC_GPIOB_CLK_ENABLE();
   55              		.loc 1 46 3 view .LVU7
   56              	.LBB3:
   57              		.loc 1 46 3 view .LVU8
-  58 001a 0191     		str	r1, [sp, #4]
+  58 001a 0292     		str	r2, [sp, #8]
   59              		.loc 1 46 3 view .LVU9
-  60 001c 1A6B     		ldr	r2, [r3, #48]
-  61 001e 42F00202 		orr	r2, r2, #2
-  62 0022 1A63     		str	r2, [r3, #48]
+  60 001c 196B     		ldr	r1, [r3, #48]
+  61 001e 41F00201 		orr	r1, r1, #2
+  62 0022 1963     		str	r1, [r3, #48]
   63              		.loc 1 46 3 view .LVU10
-  64 0024 1B6B     		ldr	r3, [r3, #48]
-  65 0026 03F00203 		and	r3, r3, #2
-  66 002a 0193     		str	r3, [sp, #4]
+  64 0024 196B     		ldr	r1, [r3, #48]
+  65 0026 01F00201 		and	r1, r1, #2
+  66 002a 0291     		str	r1, [sp, #8]
   67              		.loc 1 46 3 view .LVU11
-  68 002c 019B     		ldr	r3, [sp, #4]
+  68 002c 0299     		ldr	r1, [sp, #8]
   69              	.LBE3:
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccY1wCyR.s 			page 3
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc8wbxR7.s 			page 3
 
 
   70              		.loc 1 46 3 view .LVU12
-  47:Core/Src/gpio.c **** 
-  48:Core/Src/gpio.c **** }
-  71              		.loc 1 48 1 is_stmt 0 view .LVU13
-  72 002e 02B0     		add	sp, sp, #8
-  73              	.LCFI1:
-  74              		.cfi_def_cfa_offset 0
-  75              		@ sp needed
-  76 0030 7047     		bx	lr
-  77              	.L4:
-  78 0032 00BF     		.align	2
-  79              	.L3:
-  80 0034 00380240 		.word	1073887232
-  81              		.cfi_endproc
-  82              	.LFE130:
-  84              		.text
-  85              	.Letext0:
-  86              		.file 2 "e:\\rm\\ec\\gcc-arm-none-eabi-10.3-2021.10-win32\\arm-gnu-toolchian\\arm-none-eabi\\inclu
-  87              		.file 3 "e:\\rm\\ec\\gcc-arm-none-eabi-10.3-2021.10-win32\\arm-gnu-toolchian\\arm-none-eabi\\inclu
-  88              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccY1wCyR.s 			page 4
+  47:Core/Src/gpio.c ****   __HAL_RCC_GPIOA_CLK_ENABLE();
+  71              		.loc 1 47 3 view .LVU13
+  72              	.LBB4:
+  73              		.loc 1 47 3 view .LVU14
+  74 002e 0392     		str	r2, [sp, #12]
+  75              		.loc 1 47 3 view .LVU15
+  76 0030 1A6B     		ldr	r2, [r3, #48]
+  77 0032 42F00102 		orr	r2, r2, #1
+  78 0036 1A63     		str	r2, [r3, #48]
+  79              		.loc 1 47 3 view .LVU16
+  80 0038 1B6B     		ldr	r3, [r3, #48]
+  81 003a 03F00103 		and	r3, r3, #1
+  82 003e 0393     		str	r3, [sp, #12]
+  83              		.loc 1 47 3 view .LVU17
+  84 0040 039B     		ldr	r3, [sp, #12]
+  85              	.LBE4:
+  86              		.loc 1 47 3 view .LVU18
+  48:Core/Src/gpio.c **** 
+  49:Core/Src/gpio.c **** }
+  87              		.loc 1 49 1 is_stmt 0 view .LVU19
+  88 0042 04B0     		add	sp, sp, #16
+  89              	.LCFI1:
+  90              		.cfi_def_cfa_offset 0
+  91              		@ sp needed
+  92 0044 7047     		bx	lr
+  93              	.L4:
+  94 0046 00BF     		.align	2
+  95              	.L3:
+  96 0048 00380240 		.word	1073887232
+  97              		.cfi_endproc
+  98              	.LFE130:
+ 100              		.text
+ 101              	.Letext0:
+ 102              		.file 2 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
+ 103              		.file 3 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
+ 104              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc8wbxR7.s 			page 4
 
 
 DEFINED SYMBOLS
-                            *ABS*:00000000 gpio.c
-C:\Users\ADMINI~1\AppData\Local\Temp\ccY1wCyR.s:20     .text.MX_GPIO_Init:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccY1wCyR.s:26     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\ADMINI~1\AppData\Local\Temp\ccY1wCyR.s:80     .text.MX_GPIO_Init:00000034 $d
+                            *ABS*:0000000000000000 gpio.c
+C:\Users\HUAWEI\AppData\Local\Temp\cc8wbxR7.s:20     .text.MX_GPIO_Init:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\cc8wbxR7.s:26     .text.MX_GPIO_Init:0000000000000000 MX_GPIO_Init
+C:\Users\HUAWEI\AppData\Local\Temp\cc8wbxR7.s:96     .text.MX_GPIO_Init:0000000000000048 $d
 
 NO UNDEFINED SYMBOLS
