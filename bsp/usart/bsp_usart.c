@@ -9,7 +9,6 @@
  *
  */
 #include "bsp_usart.h"
-#include "bsp_log.h"
 #include "stdlib.h"
 #include "memory.h"
 

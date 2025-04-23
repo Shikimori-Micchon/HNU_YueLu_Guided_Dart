@@ -1,5 +1,16 @@
 {
     "cSpell.words": [
         "CMSIS"
-    ]
+    ],
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "d:\\Research\\dart\\HNU_YueLu_Guided_Dart\\build",
+            "binaryPath": "d:\\Research\\dart\\HNU_YueLu_Guided_Dart\\build\\Guided_Dart.elf",
+            "binaryArgs": []
+        }
+    ],
+    "files.associations": {
+        "bsp_dwt.h": "c",
+        "jy61p.h": "c"
+    }
 }

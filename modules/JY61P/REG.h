@@ -224,7 +224,7 @@ extern "C" {
 #define RRATE_20HZ	0x07
 #define RRATE_50HZ	0x08
 #define RRATE_100HZ	0x09
-#define RRATE_125HZ	0x0a	//only WT931
+#define RRATE_125HZ	0x0a	//only JY61P
 #define RRATE_200HZ	0x0b
 #define RRATE_ONCE 	0x0c
 

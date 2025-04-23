@@ -16,7 +16,7 @@
 
 #include "main.h"
 #include "stdint.h"
-#include "bsp_log.h"
+
 
 typedef struct
 {
