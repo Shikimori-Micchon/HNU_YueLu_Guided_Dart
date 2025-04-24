@@ -54,6 +54,12 @@ Middlewares/Third_Party/FreeRTOS/Source/timers.c \
 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c \
 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c \
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c \
+bsp/dwt/bsp_dwt.c \
+bsp/gpio/bsp_gpio.c \
+bsp/pwm/bsp_pwm.c \
+bsp/usart/bsp_usart.c \
+modules/JY61P/wit_c_sdk.c \
+modules/JY61P/JY61P.c \
 Core/Src/sysmem.c \
 Core/Src/syscalls.c \
 Core/Src/stm32f4xx_hal_timebase_tim.c \
@@ -131,6 +137,11 @@ AS_INCLUDES =
 # C includes
 C_INCLUDES =  \
 -ICore/Inc \
+-Imodules/JY61P \
+-Ibsp/dwt \
+-Ibsp/gpio \
+-Ibsp/pwm \
+-Ibsp/usart \
 -IDrivers/STM32F4xx_HAL_Driver/Inc \
 -IDrivers/STM32F4xx_HAL_Driver/Inc/Legacy \
 -IDrivers/CMSIS/Device/ST/STM32F4xx/Include \

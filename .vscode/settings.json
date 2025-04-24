@@ -1,6 +1,10 @@
 {
     "cSpell.words": [
-        "CMSIS"
+        "CMSIS",
+        "CYCCNT",
+        "Ibsp",
+        "Imodules",
+        "Rount"
     ],
     "makefile.launchConfigurations": [
         {
@@ -11,6 +15,7 @@
     ],
     "files.associations": {
         "bsp_dwt.h": "c",
-        "jy61p.h": "c"
+        "jy61p.h": "c",
+        "stm32f405xx.h": "c"
     }
 }

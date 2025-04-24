@@ -1,0 +1,885 @@
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"bsp_pwm.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.PWMSelectTclk,"ax",%progbits
+  20              		.align	1
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	PWMSelectTclk:
+  26              	.LVL0:
+  27              	.LFB137:
+  28              		.file 1 "bsp/pwm/bsp_pwm.c"
+   1:bsp/pwm/bsp_pwm.c **** #include "bsp_pwm.h"
+   2:bsp/pwm/bsp_pwm.c **** #include "stdlib.h"
+   3:bsp/pwm/bsp_pwm.c **** #include "memory.h"
+   4:bsp/pwm/bsp_pwm.c **** 
+   5:bsp/pwm/bsp_pwm.c **** // 配合中断以及初始化
+   6:bsp/pwm/bsp_pwm.c **** static uint8_t idx;
+   7:bsp/pwm/bsp_pwm.c **** static PWMInstance *pwm_instance[PWM_DEVICE_CNT] = {NULL}; // 所有的pwm instance保存于此,用
+   8:bsp/pwm/bsp_pwm.c **** static uint32_t PWMSelectTclk(TIM_HandleTypeDef *htim );
+   9:bsp/pwm/bsp_pwm.c **** /**
+  10:bsp/pwm/bsp_pwm.c ****  * @brief pwm dma传输完成回调函数
+  11:bsp/pwm/bsp_pwm.c ****  *
+  12:bsp/pwm/bsp_pwm.c ****  * @param htim 发生中断的定时器句柄
+  13:bsp/pwm/bsp_pwm.c ****  */
+  14:bsp/pwm/bsp_pwm.c **** void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim)
+  15:bsp/pwm/bsp_pwm.c **** {
+  16:bsp/pwm/bsp_pwm.c ****     for (uint8_t i = 0; i < idx; i++)
+  17:bsp/pwm/bsp_pwm.c ****     { // 来自同一个定时器的中断且通道相同
+  18:bsp/pwm/bsp_pwm.c ****         if (pwm_instance[i]->htim == htim && htim->Channel == (1<<(pwm_instance[i]->channel/4)))
+  19:bsp/pwm/bsp_pwm.c ****         {
+  20:bsp/pwm/bsp_pwm.c ****             if (pwm_instance[i]->callback) // 如果有回调函数
+  21:bsp/pwm/bsp_pwm.c ****                 pwm_instance[i]->callback(pwm_instance[i]);
+  22:bsp/pwm/bsp_pwm.c ****             return; // 一次只能有一个通道的中断,所以直接返回
+  23:bsp/pwm/bsp_pwm.c ****         }
+  24:bsp/pwm/bsp_pwm.c ****     }
+  25:bsp/pwm/bsp_pwm.c **** }
+  26:bsp/pwm/bsp_pwm.c **** 
+  27:bsp/pwm/bsp_pwm.c **** PWMInstance *PWMRegister(PWM_Init_Config_s *config)
+  28:bsp/pwm/bsp_pwm.c **** {
+  29:bsp/pwm/bsp_pwm.c ****     if (idx >= PWM_DEVICE_CNT) // 超过最大实例数,考虑增加或查看是否有内存泄漏
+  30:bsp/pwm/bsp_pwm.c ****         while (1)
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s 			page 2
+
+
+  31:bsp/pwm/bsp_pwm.c ****             ;
+  32:bsp/pwm/bsp_pwm.c ****     PWMInstance *pwm = (PWMInstance *)malloc(sizeof(PWMInstance));
+  33:bsp/pwm/bsp_pwm.c ****     memset(pwm, 0, sizeof(PWMInstance));
+  34:bsp/pwm/bsp_pwm.c **** 
+  35:bsp/pwm/bsp_pwm.c ****     pwm->htim = config->htim;
+  36:bsp/pwm/bsp_pwm.c ****     pwm->channel = config->channel;
+  37:bsp/pwm/bsp_pwm.c ****     pwm->period = config->period;
+  38:bsp/pwm/bsp_pwm.c ****     pwm->dutyratio = config->dutyratio;
+  39:bsp/pwm/bsp_pwm.c ****     pwm->callback = config->callback;
+  40:bsp/pwm/bsp_pwm.c ****     pwm->id = config->id;
+  41:bsp/pwm/bsp_pwm.c ****     pwm->tclk = PWMSelectTclk(pwm->htim);
+  42:bsp/pwm/bsp_pwm.c ****     // 启动PWM
+  43:bsp/pwm/bsp_pwm.c ****     HAL_TIM_PWM_Start(pwm->htim, pwm->channel);
+  44:bsp/pwm/bsp_pwm.c ****     PWMSetPeriod(pwm, pwm->period);
+  45:bsp/pwm/bsp_pwm.c ****     PWMSetDutyRatio(pwm, pwm->dutyratio);
+  46:bsp/pwm/bsp_pwm.c ****     pwm_instance[idx++] = pwm;
+  47:bsp/pwm/bsp_pwm.c ****     return pwm;
+  48:bsp/pwm/bsp_pwm.c **** }
+  49:bsp/pwm/bsp_pwm.c **** 
+  50:bsp/pwm/bsp_pwm.c **** /* 只是对HAL的函数进行了形式上的封装 */
+  51:bsp/pwm/bsp_pwm.c **** void PWMStart(PWMInstance *pwm)
+  52:bsp/pwm/bsp_pwm.c **** {
+  53:bsp/pwm/bsp_pwm.c ****     HAL_TIM_PWM_Start(pwm->htim, pwm->channel);
+  54:bsp/pwm/bsp_pwm.c **** }
+  55:bsp/pwm/bsp_pwm.c **** 
+  56:bsp/pwm/bsp_pwm.c **** /* 只是对HAL的函数进行了形式上的封装 */
+  57:bsp/pwm/bsp_pwm.c **** void PWMStop(PWMInstance *pwm)
+  58:bsp/pwm/bsp_pwm.c **** {
+  59:bsp/pwm/bsp_pwm.c ****     HAL_TIM_PWM_Stop(pwm->htim, pwm->channel);
+  60:bsp/pwm/bsp_pwm.c **** }
+  61:bsp/pwm/bsp_pwm.c **** 
+  62:bsp/pwm/bsp_pwm.c **** /*
+  63:bsp/pwm/bsp_pwm.c ****  * @brief 设置pwm周期
+  64:bsp/pwm/bsp_pwm.c ****  *
+  65:bsp/pwm/bsp_pwm.c ****  * @param pwm pwm实例
+  66:bsp/pwm/bsp_pwm.c ****  * @param period 周期 单位 s
+  67:bsp/pwm/bsp_pwm.c ****  */
+  68:bsp/pwm/bsp_pwm.c **** void PWMSetPeriod(PWMInstance *pwm, float period)
+  69:bsp/pwm/bsp_pwm.c **** {
+  70:bsp/pwm/bsp_pwm.c ****     __HAL_TIM_SetAutoreload(pwm->htim, period*((pwm->tclk)/(pwm->htim->Init.Prescaler+1)));
+  71:bsp/pwm/bsp_pwm.c **** }
+  72:bsp/pwm/bsp_pwm.c **** /*
+  73:bsp/pwm/bsp_pwm.c ****     * @brief 设置pwm占空比
+  74:bsp/pwm/bsp_pwm.c ****     *
+  75:bsp/pwm/bsp_pwm.c ****     * @param pwm pwm实例
+  76:bsp/pwm/bsp_pwm.c ****     * @param dutyratio 占空比 0~1
+  77:bsp/pwm/bsp_pwm.c **** */
+  78:bsp/pwm/bsp_pwm.c **** void PWMSetDutyRatio(PWMInstance *pwm, float dutyratio)
+  79:bsp/pwm/bsp_pwm.c **** {
+  80:bsp/pwm/bsp_pwm.c ****     __HAL_TIM_SetCompare(pwm->htim, pwm->channel, dutyratio * (pwm->htim->Instance->ARR));
+  81:bsp/pwm/bsp_pwm.c **** }
+  82:bsp/pwm/bsp_pwm.c **** 
+  83:bsp/pwm/bsp_pwm.c **** /* 只是对HAL的函数进行了形式上的封装 */
+  84:bsp/pwm/bsp_pwm.c **** void PWMStartDMA(PWMInstance *pwm, uint32_t *pData, uint32_t Size)
+  85:bsp/pwm/bsp_pwm.c **** {
+  86:bsp/pwm/bsp_pwm.c ****     HAL_TIM_PWM_Start_DMA(pwm->htim, pwm->channel, pData, Size);
+  87:bsp/pwm/bsp_pwm.c **** }
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s 			page 3
+
+
+  88:bsp/pwm/bsp_pwm.c **** 
+  89:bsp/pwm/bsp_pwm.c **** // 设置pwm对应定时器时钟源频率
+  90:bsp/pwm/bsp_pwm.c **** //tim2~7,12~14:APB1  tim1,8~11:APB2
+  91:bsp/pwm/bsp_pwm.c **** static uint32_t PWMSelectTclk(TIM_HandleTypeDef *htim )
+  92:bsp/pwm/bsp_pwm.c **** {
+  29              		.loc 1 92 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		.loc 1 92 1 is_stmt 0 view .LVU1
+  34 0000 08B5     		push	{r3, lr}
+  35              	.LCFI0:
+  36              		.cfi_def_cfa_offset 8
+  37              		.cfi_offset 3, -8
+  38              		.cfi_offset 14, -4
+  93:bsp/pwm/bsp_pwm.c ****     uintptr_t tclk_temp  = ((uintptr_t)((htim)->Instance));
+  39              		.loc 1 93 5 is_stmt 1 view .LVU2
+  40              		.loc 1 93 47 is_stmt 0 view .LVU3
+  41 0002 0368     		ldr	r3, [r0]
+  42              	.LVL1:
+  94:bsp/pwm/bsp_pwm.c ****     if (
+  43              		.loc 1 94 5 is_stmt 1 view .LVU4
+  95:bsp/pwm/bsp_pwm.c ****             (tclk_temp <= (APB1PERIPH_BASE + 0x2000UL)) &&
+  44              		.loc 1 95 57 is_stmt 0 view .LVU5
+  45 0004 03F14042 		add	r2, r3, #-1073741824
+  94:bsp/pwm/bsp_pwm.c ****     if (
+  46              		.loc 1 94 8 view .LVU6
+  47 0008 B2F5005F 		cmp	r2, #8192
+  48 000c 0FD9     		bls	.L11
+  96:bsp/pwm/bsp_pwm.c ****             (tclk_temp >= (APB1PERIPH_BASE + 0x0000UL)))
+  97:bsp/pwm/bsp_pwm.c ****     {
+  98:bsp/pwm/bsp_pwm.c ****         return (HAL_RCC_GetPCLK1Freq() * (APBPrescTable[(RCC->CFGR & RCC_CFGR_PPRE1)>> RCC_CFGR_PPR
+  99:bsp/pwm/bsp_pwm.c ****     }
+ 100:bsp/pwm/bsp_pwm.c ****     else if (
+  49              		.loc 1 100 10 is_stmt 1 view .LVU7
+ 101:bsp/pwm/bsp_pwm.c ****             ((tclk_temp <= (APB2PERIPH_BASE + 0x0400UL)) &&
+  50              		.loc 1 101 58 is_stmt 0 view .LVU8
+  51 000e 03F13F42 		add	r2, r3, #-1090519040
+  52 0012 02F57F02 		add	r2, r2, #16711680
+ 100:bsp/pwm/bsp_pwm.c ****             ((tclk_temp <= (APB2PERIPH_BASE + 0x0400UL)) &&
+  53              		.loc 1 100 13 view .LVU9
+  54 0016 B2F5806F 		cmp	r2, #1024
+  55 001a 17D9     		bls	.L5
+ 102:bsp/pwm/bsp_pwm.c ****              (tclk_temp >= (APB2PERIPH_BASE + 0x0000UL))) ||
+ 103:bsp/pwm/bsp_pwm.c ****             ((tclk_temp <= (APB2PERIPH_BASE + 0x4800UL)) &&
+  56              		.loc 1 103 58 view .LVU10
+  57 001c A3F14023 		sub	r3, r3, #1073758208
+  58              	.LVL2:
+  59              		.loc 1 103 58 view .LVU11
+  60 0020 A3F58033 		sub	r3, r3, #65536
+ 102:bsp/pwm/bsp_pwm.c ****              (tclk_temp >= (APB2PERIPH_BASE + 0x0000UL))) ||
+  61              		.loc 1 102 59 view .LVU12
+  62 0024 B3F5006F 		cmp	r3, #2048
+  63 0028 10D9     		bls	.L5
+ 104:bsp/pwm/bsp_pwm.c ****              (tclk_temp >= (APB2PERIPH_BASE + 0x4000UL))))
+ 105:bsp/pwm/bsp_pwm.c ****     {
+ 106:bsp/pwm/bsp_pwm.c ****         return (HAL_RCC_GetPCLK2Freq() * (APBPrescTable[(RCC->CFGR & RCC_CFGR_PPRE1)>> RCC_CFGR_PPR
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s 			page 4
+
+
+ 107:bsp/pwm/bsp_pwm.c ****     }
+ 108:bsp/pwm/bsp_pwm.c ****     return 0;
+  64              		.loc 1 108 12 view .LVU13
+  65 002a 0020     		movs	r0, #0
+  66              	.LVL3:
+  67              	.L1:
+ 109:bsp/pwm/bsp_pwm.c **** }...
+  68              		.loc 1 109 1 view .LVU14
+  69 002c 08BD     		pop	{r3, pc}
+  70              	.LVL4:
+  71              	.L11:
+  98:bsp/pwm/bsp_pwm.c ****         return (HAL_RCC_GetPCLK1Freq() * (APBPrescTable[(RCC->CFGR & RCC_CFGR_PPRE1)>> RCC_CFGR_PPR
+  72              		.loc 1 98 9 is_stmt 1 view .LVU15
+  98:bsp/pwm/bsp_pwm.c ****         return (HAL_RCC_GetPCLK1Freq() * (APBPrescTable[(RCC->CFGR & RCC_CFGR_PPRE1)>> RCC_CFGR_PPR
+  73              		.loc 1 98 17 is_stmt 0 view .LVU16
+  74 002e FFF7FEFF 		bl	HAL_RCC_GetPCLK1Freq
+  75              	.LVL5:
+  98:bsp/pwm/bsp_pwm.c ****         return (HAL_RCC_GetPCLK1Freq() * (APBPrescTable[(RCC->CFGR & RCC_CFGR_PPRE1)>> RCC_CFGR_PPR
+  76              		.loc 1 98 61 view .LVU17
+  77 0032 0E4B     		ldr	r3, .L12
+  78 0034 9B68     		ldr	r3, [r3, #8]
+  98:bsp/pwm/bsp_pwm.c ****         return (HAL_RCC_GetPCLK1Freq() * (APBPrescTable[(RCC->CFGR & RCC_CFGR_PPRE1)>> RCC_CFGR_PPR
+  79              		.loc 1 98 85 view .LVU18
+  80 0036 C3F38223 		ubfx	r3, r3, #10, #3
+  98:bsp/pwm/bsp_pwm.c ****         return (HAL_RCC_GetPCLK1Freq() * (APBPrescTable[(RCC->CFGR & RCC_CFGR_PPRE1)>> RCC_CFGR_PPR
+  81              		.loc 1 98 56 view .LVU19
+  82 003a 0D4A     		ldr	r2, .L12+4
+  83 003c D35C     		ldrb	r3, [r2, r3]	@ zero_extendqisi2
+  98:bsp/pwm/bsp_pwm.c ****         return (HAL_RCC_GetPCLK1Freq() * (APBPrescTable[(RCC->CFGR & RCC_CFGR_PPRE1)>> RCC_CFGR_PPR
+  84              		.loc 1 98 117 view .LVU20
+  85 003e 1BB9     		cbnz	r3, .L7
+  86 0040 0123     		movs	r3, #1
+  87              	.L3:
+  98:bsp/pwm/bsp_pwm.c ****         return (HAL_RCC_GetPCLK1Freq() * (APBPrescTable[(RCC->CFGR & RCC_CFGR_PPRE1)>> RCC_CFGR_PPR
+  88              		.loc 1 98 40 discriminator 4 view .LVU21
+  89 0042 03FB00F0 		mul	r0, r3, r0
+  90 0046 F1E7     		b	.L1
+  91              	.L7:
+  98:bsp/pwm/bsp_pwm.c ****         return (HAL_RCC_GetPCLK1Freq() * (APBPrescTable[(RCC->CFGR & RCC_CFGR_PPRE1)>> RCC_CFGR_PPR
+  92              		.loc 1 98 117 view .LVU22
+  93 0048 0223     		movs	r3, #2
+  94 004a FAE7     		b	.L3
+  95              	.LVL6:
+  96              	.L5:
+ 106:bsp/pwm/bsp_pwm.c ****         return (HAL_RCC_GetPCLK2Freq() * (APBPrescTable[(RCC->CFGR & RCC_CFGR_PPRE1)>> RCC_CFGR_PPR
+  97              		.loc 1 106 9 is_stmt 1 view .LVU23
+ 106:bsp/pwm/bsp_pwm.c ****         return (HAL_RCC_GetPCLK2Freq() * (APBPrescTable[(RCC->CFGR & RCC_CFGR_PPRE1)>> RCC_CFGR_PPR
+  98              		.loc 1 106 17 is_stmt 0 view .LVU24
+  99 004c FFF7FEFF 		bl	HAL_RCC_GetPCLK2Freq
+ 100              	.LVL7:
+ 106:bsp/pwm/bsp_pwm.c ****         return (HAL_RCC_GetPCLK2Freq() * (APBPrescTable[(RCC->CFGR & RCC_CFGR_PPRE1)>> RCC_CFGR_PPR
+ 101              		.loc 1 106 61 view .LVU25
+ 102 0050 064B     		ldr	r3, .L12
+ 103 0052 9B68     		ldr	r3, [r3, #8]
+ 106:bsp/pwm/bsp_pwm.c ****         return (HAL_RCC_GetPCLK2Freq() * (APBPrescTable[(RCC->CFGR & RCC_CFGR_PPRE1)>> RCC_CFGR_PPR
+ 104              		.loc 1 106 85 view .LVU26
+ 105 0054 C3F38223 		ubfx	r3, r3, #10, #3
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s 			page 5
+
+
+ 106:bsp/pwm/bsp_pwm.c ****         return (HAL_RCC_GetPCLK2Freq() * (APBPrescTable[(RCC->CFGR & RCC_CFGR_PPRE1)>> RCC_CFGR_PPR
+ 106              		.loc 1 106 56 view .LVU27
+ 107 0058 054A     		ldr	r2, .L12+4
+ 108 005a D35C     		ldrb	r3, [r2, r3]	@ zero_extendqisi2
+ 106:bsp/pwm/bsp_pwm.c ****         return (HAL_RCC_GetPCLK2Freq() * (APBPrescTable[(RCC->CFGR & RCC_CFGR_PPRE1)>> RCC_CFGR_PPR
+ 109              		.loc 1 106 117 view .LVU28
+ 110 005c 1BB9     		cbnz	r3, .L9
+ 111 005e 0123     		movs	r3, #1
+ 112              	.L6:
+ 106:bsp/pwm/bsp_pwm.c ****         return (HAL_RCC_GetPCLK2Freq() * (APBPrescTable[(RCC->CFGR & RCC_CFGR_PPRE1)>> RCC_CFGR_PPR
+ 113              		.loc 1 106 40 discriminator 4 view .LVU29
+ 114 0060 03FB00F0 		mul	r0, r3, r0
+ 115 0064 E2E7     		b	.L1
+ 116              	.L9:
+ 106:bsp/pwm/bsp_pwm.c ****         return (HAL_RCC_GetPCLK2Freq() * (APBPrescTable[(RCC->CFGR & RCC_CFGR_PPRE1)>> RCC_CFGR_PPR
+ 117              		.loc 1 106 117 view .LVU30
+ 118 0066 0223     		movs	r3, #2
+ 119 0068 FAE7     		b	.L6
+ 120              	.L13:
+ 121 006a 00BF     		.align	2
+ 122              	.L12:
+ 123 006c 00380240 		.word	1073887232
+ 124 0070 00000000 		.word	APBPrescTable
+ 125              		.cfi_endproc
+ 126              	.LFE137:
+ 128              		.section	.text.HAL_TIM_PWM_PulseFinishedCallback,"ax",%progbits
+ 129              		.align	1
+ 130              		.global	HAL_TIM_PWM_PulseFinishedCallback
+ 131              		.syntax unified
+ 132              		.thumb
+ 133              		.thumb_func
+ 135              	HAL_TIM_PWM_PulseFinishedCallback:
+ 136              	.LVL8:
+ 137              	.LFB130:
+  15:bsp/pwm/bsp_pwm.c **** {
+ 138              		.loc 1 15 1 is_stmt 1 view -0
+ 139              		.cfi_startproc
+ 140              		@ args = 0, pretend = 0, frame = 0
+ 141              		@ frame_needed = 0, uses_anonymous_args = 0
+  15:bsp/pwm/bsp_pwm.c **** {
+ 142              		.loc 1 15 1 is_stmt 0 view .LVU32
+ 143 0000 08B5     		push	{r3, lr}
+ 144              	.LCFI1:
+ 145              		.cfi_def_cfa_offset 8
+ 146              		.cfi_offset 3, -8
+ 147              		.cfi_offset 14, -4
+  16:bsp/pwm/bsp_pwm.c ****     for (uint8_t i = 0; i < idx; i++)
+ 148              		.loc 1 16 5 is_stmt 1 view .LVU33
+ 149              	.LBB2:
+  16:bsp/pwm/bsp_pwm.c ****     for (uint8_t i = 0; i < idx; i++)
+ 150              		.loc 1 16 10 view .LVU34
+ 151              	.LVL9:
+  16:bsp/pwm/bsp_pwm.c ****     for (uint8_t i = 0; i < idx; i++)
+ 152              		.loc 1 16 18 is_stmt 0 view .LVU35
+ 153 0002 0023     		movs	r3, #0
+  16:bsp/pwm/bsp_pwm.c ****     for (uint8_t i = 0; i < idx; i++)
+ 154              		.loc 1 16 5 view .LVU36
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s 			page 6
+
+
+ 155 0004 01E0     		b	.L15
+ 156              	.LVL10:
+ 157              	.L16:
+  16:bsp/pwm/bsp_pwm.c ****     for (uint8_t i = 0; i < idx; i++)
+ 158              		.loc 1 16 35 is_stmt 1 discriminator 2 view .LVU37
+ 159 0006 0133     		adds	r3, r3, #1
+ 160              	.LVL11:
+  16:bsp/pwm/bsp_pwm.c ****     for (uint8_t i = 0; i < idx; i++)
+ 161              		.loc 1 16 35 is_stmt 0 discriminator 2 view .LVU38
+ 162 0008 DBB2     		uxtb	r3, r3
+ 163              	.LVL12:
+ 164              	.L15:
+  16:bsp/pwm/bsp_pwm.c ****     for (uint8_t i = 0; i < idx; i++)
+ 165              		.loc 1 16 27 is_stmt 1 discriminator 1 view .LVU39
+ 166 000a 0C4A     		ldr	r2, .L21
+ 167 000c 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ 168 000e 9A42     		cmp	r2, r3
+ 169 0010 13D9     		bls	.L14
+  18:bsp/pwm/bsp_pwm.c ****         if (pwm_instance[i]->htim == htim && htim->Channel == (1<<(pwm_instance[i]->channel/4)))
+ 170              		.loc 1 18 9 view .LVU40
+  18:bsp/pwm/bsp_pwm.c ****         if (pwm_instance[i]->htim == htim && htim->Channel == (1<<(pwm_instance[i]->channel/4)))
+ 171              		.loc 1 18 25 is_stmt 0 view .LVU41
+ 172 0012 0B4A     		ldr	r2, .L21+4
+ 173 0014 52F82320 		ldr	r2, [r2, r3, lsl #2]
+  18:bsp/pwm/bsp_pwm.c ****         if (pwm_instance[i]->htim == htim && htim->Channel == (1<<(pwm_instance[i]->channel/4)))
+ 174              		.loc 1 18 28 view .LVU42
+ 175 0018 1168     		ldr	r1, [r2]
+  18:bsp/pwm/bsp_pwm.c ****         if (pwm_instance[i]->htim == htim && htim->Channel == (1<<(pwm_instance[i]->channel/4)))
+ 176              		.loc 1 18 12 view .LVU43
+ 177 001a 8142     		cmp	r1, r0
+ 178 001c F3D1     		bne	.L16
+  18:bsp/pwm/bsp_pwm.c ****         if (pwm_instance[i]->htim == htim && htim->Channel == (1<<(pwm_instance[i]->channel/4)))
+ 179              		.loc 1 18 50 discriminator 1 view .LVU44
+ 180 001e 90F81CE0 		ldrb	lr, [r0, #28]	@ zero_extendqisi2
+  18:bsp/pwm/bsp_pwm.c ****         if (pwm_instance[i]->htim == htim && htim->Channel == (1<<(pwm_instance[i]->channel/4)))
+ 181              		.loc 1 18 83 discriminator 1 view .LVU45
+ 182 0022 5168     		ldr	r1, [r2, #4]
+  18:bsp/pwm/bsp_pwm.c ****         if (pwm_instance[i]->htim == htim && htim->Channel == (1<<(pwm_instance[i]->channel/4)))
+ 183              		.loc 1 18 92 discriminator 1 view .LVU46
+ 184 0024 4FEA910C 		lsr	ip, r1, #2
+  18:bsp/pwm/bsp_pwm.c ****         if (pwm_instance[i]->htim == htim && htim->Channel == (1<<(pwm_instance[i]->channel/4)))
+ 185              		.loc 1 18 65 discriminator 1 view .LVU47
+ 186 0028 0121     		movs	r1, #1
+ 187 002a 01FA0CF1 		lsl	r1, r1, ip
+  18:bsp/pwm/bsp_pwm.c ****         if (pwm_instance[i]->htim == htim && htim->Channel == (1<<(pwm_instance[i]->channel/4)))
+ 188              		.loc 1 18 43 discriminator 1 view .LVU48
+ 189 002e 8E45     		cmp	lr, r1
+ 190 0030 E9D1     		bne	.L16
+  20:bsp/pwm/bsp_pwm.c ****             if (pwm_instance[i]->callback) // 如果有回调函数
+ 191              		.loc 1 20 13 is_stmt 1 view .LVU49
+  20:bsp/pwm/bsp_pwm.c ****             if (pwm_instance[i]->callback) // 如果有回调函数
+ 192              		.loc 1 20 32 is_stmt 0 view .LVU50
+ 193 0032 5369     		ldr	r3, [r2, #20]
+ 194              	.LVL13:
+  20:bsp/pwm/bsp_pwm.c ****             if (pwm_instance[i]->callback) // 如果有回调函数
+ 195              		.loc 1 20 16 view .LVU51
+ 196 0034 0BB1     		cbz	r3, .L14
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s 			page 7
+
+
+  21:bsp/pwm/bsp_pwm.c ****                 pwm_instance[i]->callback(pwm_instance[i]);
+ 197              		.loc 1 21 17 is_stmt 1 view .LVU52
+ 198 0036 1046     		mov	r0, r2
+ 199              	.LVL14:
+  21:bsp/pwm/bsp_pwm.c ****                 pwm_instance[i]->callback(pwm_instance[i]);
+ 200              		.loc 1 21 17 is_stmt 0 view .LVU53
+ 201 0038 9847     		blx	r3
+ 202              	.LVL15:
+  22:bsp/pwm/bsp_pwm.c ****             return; // 一次只能有一个通道的中断,所以直接返回
+ 203              		.loc 1 22 13 is_stmt 1 view .LVU54
+ 204              	.L14:
+  22:bsp/pwm/bsp_pwm.c ****             return; // 一次只能有一个通道的中断,所以直接返回
+ 205              		.loc 1 22 13 is_stmt 0 view .LVU55
+ 206              	.LBE2:
+  25:bsp/pwm/bsp_pwm.c **** }
+ 207              		.loc 1 25 1 view .LVU56
+ 208 003a 08BD     		pop	{r3, pc}
+ 209              	.L22:
+ 210              		.align	2
+ 211              	.L21:
+ 212 003c 00000000 		.word	.LANCHOR1
+ 213 0040 00000000 		.word	.LANCHOR0
+ 214              		.cfi_endproc
+ 215              	.LFE130:
+ 217              		.section	.text.PWMStart,"ax",%progbits
+ 218              		.align	1
+ 219              		.global	PWMStart
+ 220              		.syntax unified
+ 221              		.thumb
+ 222              		.thumb_func
+ 224              	PWMStart:
+ 225              	.LVL16:
+ 226              	.LFB132:
+  52:bsp/pwm/bsp_pwm.c **** {
+ 227              		.loc 1 52 1 is_stmt 1 view -0
+ 228              		.cfi_startproc
+ 229              		@ args = 0, pretend = 0, frame = 0
+ 230              		@ frame_needed = 0, uses_anonymous_args = 0
+  52:bsp/pwm/bsp_pwm.c **** {
+ 231              		.loc 1 52 1 is_stmt 0 view .LVU58
+ 232 0000 08B5     		push	{r3, lr}
+ 233              	.LCFI2:
+ 234              		.cfi_def_cfa_offset 8
+ 235              		.cfi_offset 3, -8
+ 236              		.cfi_offset 14, -4
+  53:bsp/pwm/bsp_pwm.c ****     HAL_TIM_PWM_Start(pwm->htim, pwm->channel);
+ 237              		.loc 1 53 5 is_stmt 1 view .LVU59
+ 238 0002 4168     		ldr	r1, [r0, #4]
+ 239 0004 0068     		ldr	r0, [r0]
+ 240              	.LVL17:
+  53:bsp/pwm/bsp_pwm.c ****     HAL_TIM_PWM_Start(pwm->htim, pwm->channel);
+ 241              		.loc 1 53 5 is_stmt 0 view .LVU60
+ 242 0006 FFF7FEFF 		bl	HAL_TIM_PWM_Start
+ 243              	.LVL18:
+  54:bsp/pwm/bsp_pwm.c **** }
+ 244              		.loc 1 54 1 view .LVU61
+ 245 000a 08BD     		pop	{r3, pc}
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s 			page 8
+
+
+ 246              		.cfi_endproc
+ 247              	.LFE132:
+ 249              		.section	.text.PWMStop,"ax",%progbits
+ 250              		.align	1
+ 251              		.global	PWMStop
+ 252              		.syntax unified
+ 253              		.thumb
+ 254              		.thumb_func
+ 256              	PWMStop:
+ 257              	.LVL19:
+ 258              	.LFB133:
+  58:bsp/pwm/bsp_pwm.c **** {
+ 259              		.loc 1 58 1 is_stmt 1 view -0
+ 260              		.cfi_startproc
+ 261              		@ args = 0, pretend = 0, frame = 0
+ 262              		@ frame_needed = 0, uses_anonymous_args = 0
+  58:bsp/pwm/bsp_pwm.c **** {
+ 263              		.loc 1 58 1 is_stmt 0 view .LVU63
+ 264 0000 08B5     		push	{r3, lr}
+ 265              	.LCFI3:
+ 266              		.cfi_def_cfa_offset 8
+ 267              		.cfi_offset 3, -8
+ 268              		.cfi_offset 14, -4
+  59:bsp/pwm/bsp_pwm.c ****     HAL_TIM_PWM_Stop(pwm->htim, pwm->channel);
+ 269              		.loc 1 59 5 is_stmt 1 view .LVU64
+ 270 0002 4168     		ldr	r1, [r0, #4]
+ 271 0004 0068     		ldr	r0, [r0]
+ 272              	.LVL20:
+  59:bsp/pwm/bsp_pwm.c ****     HAL_TIM_PWM_Stop(pwm->htim, pwm->channel);
+ 273              		.loc 1 59 5 is_stmt 0 view .LVU65
+ 274 0006 FFF7FEFF 		bl	HAL_TIM_PWM_Stop
+ 275              	.LVL21:
+  60:bsp/pwm/bsp_pwm.c **** }
+ 276              		.loc 1 60 1 view .LVU66
+ 277 000a 08BD     		pop	{r3, pc}
+ 278              		.cfi_endproc
+ 279              	.LFE133:
+ 281              		.section	.text.PWMSetPeriod,"ax",%progbits
+ 282              		.align	1
+ 283              		.global	PWMSetPeriod
+ 284              		.syntax unified
+ 285              		.thumb
+ 286              		.thumb_func
+ 288              	PWMSetPeriod:
+ 289              	.LVL22:
+ 290              	.LFB134:
+  69:bsp/pwm/bsp_pwm.c **** {
+ 291              		.loc 1 69 1 is_stmt 1 view -0
+ 292              		.cfi_startproc
+ 293              		@ args = 0, pretend = 0, frame = 0
+ 294              		@ frame_needed = 0, uses_anonymous_args = 0
+ 295              		@ link register save eliminated.
+  70:bsp/pwm/bsp_pwm.c ****     __HAL_TIM_SetAutoreload(pwm->htim, period*((pwm->tclk)/(pwm->htim->Init.Prescaler+1)));
+ 296              		.loc 1 70 5 view .LVU68
+  70:bsp/pwm/bsp_pwm.c ****     __HAL_TIM_SetAutoreload(pwm->htim, period*((pwm->tclk)/(pwm->htim->Init.Prescaler+1)));
+ 297              		.loc 1 70 5 view .LVU69
+ 298 0000 8368     		ldr	r3, [r0, #8]
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s 			page 9
+
+
+ 299 0002 0168     		ldr	r1, [r0]
+ 300 0004 4A68     		ldr	r2, [r1, #4]
+ 301 0006 0132     		adds	r2, r2, #1
+ 302 0008 B3FBF2F3 		udiv	r3, r3, r2
+ 303 000c 07EE903A 		vmov	s15, r3	@ int
+ 304 0010 F8EE677A 		vcvt.f32.u32	s15, s15
+ 305 0014 67EE807A 		vmul.f32	s15, s15, s0
+ 306 0018 0B68     		ldr	r3, [r1]
+ 307 001a FCEEE77A 		vcvt.u32.f32	s15, s15
+ 308 001e C3ED0B7A 		vstr.32	s15, [r3, #44]	@ int
+  70:bsp/pwm/bsp_pwm.c ****     __HAL_TIM_SetAutoreload(pwm->htim, period*((pwm->tclk)/(pwm->htim->Init.Prescaler+1)));
+ 309              		.loc 1 70 5 view .LVU70
+ 310 0022 8368     		ldr	r3, [r0, #8]
+ 311 0024 0168     		ldr	r1, [r0]
+ 312 0026 4A68     		ldr	r2, [r1, #4]
+ 313 0028 0132     		adds	r2, r2, #1
+ 314 002a B3FBF2F3 		udiv	r3, r3, r2
+ 315 002e 07EE903A 		vmov	s15, r3	@ int
+ 316 0032 F8EE677A 		vcvt.f32.u32	s15, s15
+ 317 0036 27EE800A 		vmul.f32	s0, s15, s0
+ 318              	.LVL23:
+  70:bsp/pwm/bsp_pwm.c ****     __HAL_TIM_SetAutoreload(pwm->htim, period*((pwm->tclk)/(pwm->htim->Init.Prescaler+1)));
+ 319              		.loc 1 70 5 is_stmt 0 view .LVU71
+ 320 003a BCEEC00A 		vcvt.u32.f32	s0, s0
+ 321 003e 81ED030A 		vstr.32	s0, [r1, #12]	@ int
+  70:bsp/pwm/bsp_pwm.c ****     __HAL_TIM_SetAutoreload(pwm->htim, period*((pwm->tclk)/(pwm->htim->Init.Prescaler+1)));
+ 322              		.loc 1 70 5 is_stmt 1 view .LVU72
+  71:bsp/pwm/bsp_pwm.c **** }
+ 323              		.loc 1 71 1 is_stmt 0 view .LVU73
+ 324 0042 7047     		bx	lr
+ 325              		.cfi_endproc
+ 326              	.LFE134:
+ 328              		.section	.text.PWMSetDutyRatio,"ax",%progbits
+ 329              		.align	1
+ 330              		.global	PWMSetDutyRatio
+ 331              		.syntax unified
+ 332              		.thumb
+ 333              		.thumb_func
+ 335              	PWMSetDutyRatio:
+ 336              	.LVL24:
+ 337              	.LFB135:
+  79:bsp/pwm/bsp_pwm.c **** {
+ 338              		.loc 1 79 1 is_stmt 1 view -0
+ 339              		.cfi_startproc
+ 340              		@ args = 0, pretend = 0, frame = 0
+ 341              		@ frame_needed = 0, uses_anonymous_args = 0
+ 342              		@ link register save eliminated.
+  80:bsp/pwm/bsp_pwm.c ****     __HAL_TIM_SetCompare(pwm->htim, pwm->channel, dutyratio * (pwm->htim->Instance->ARR));
+ 343              		.loc 1 80 5 view .LVU75
+ 344 0000 4368     		ldr	r3, [r0, #4]
+ 345 0002 63B9     		cbnz	r3, .L29
+  80:bsp/pwm/bsp_pwm.c ****     __HAL_TIM_SetCompare(pwm->htim, pwm->channel, dutyratio * (pwm->htim->Instance->ARR));
+ 346              		.loc 1 80 5 is_stmt 0 discriminator 1 view .LVU76
+ 347 0004 0368     		ldr	r3, [r0]
+ 348 0006 1B68     		ldr	r3, [r3]
+ 349 0008 D3ED0B7A 		vldr.32	s15, [r3, #44]	@ int
+ 350 000c F8EE677A 		vcvt.f32.u32	s15, s15
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s 			page 10
+
+
+ 351 0010 27EE800A 		vmul.f32	s0, s15, s0
+ 352              	.LVL25:
+  80:bsp/pwm/bsp_pwm.c ****     __HAL_TIM_SetCompare(pwm->htim, pwm->channel, dutyratio * (pwm->htim->Instance->ARR));
+ 353              		.loc 1 80 5 discriminator 1 view .LVU77
+ 354 0014 BCEEC00A 		vcvt.u32.f32	s0, s0
+ 355 0018 83ED0D0A 		vstr.32	s0, [r3, #52]	@ int
+ 356 001c 7047     		bx	lr
+ 357              	.LVL26:
+ 358              	.L29:
+  80:bsp/pwm/bsp_pwm.c ****     __HAL_TIM_SetCompare(pwm->htim, pwm->channel, dutyratio * (pwm->htim->Instance->ARR));
+ 359              		.loc 1 80 5 discriminator 2 view .LVU78
+ 360 001e 042B     		cmp	r3, #4
+ 361 0020 0ED0     		beq	.L33
+  80:bsp/pwm/bsp_pwm.c ****     __HAL_TIM_SetCompare(pwm->htim, pwm->channel, dutyratio * (pwm->htim->Instance->ARR));
+ 362              		.loc 1 80 5 discriminator 4 view .LVU79
+ 363 0022 082B     		cmp	r3, #8
+ 364 0024 19D0     		beq	.L34
+  80:bsp/pwm/bsp_pwm.c ****     __HAL_TIM_SetCompare(pwm->htim, pwm->channel, dutyratio * (pwm->htim->Instance->ARR));
+ 365              		.loc 1 80 5 discriminator 7 view .LVU80
+ 366 0026 0368     		ldr	r3, [r0]
+ 367 0028 1B68     		ldr	r3, [r3]
+ 368 002a D3ED0B7A 		vldr.32	s15, [r3, #44]	@ int
+ 369 002e F8EE677A 		vcvt.f32.u32	s15, s15
+ 370 0032 67EE807A 		vmul.f32	s15, s15, s0
+ 371 0036 FCEEE77A 		vcvt.u32.f32	s15, s15
+ 372 003a C3ED107A 		vstr.32	s15, [r3, #64]	@ int
+  81:bsp/pwm/bsp_pwm.c **** }
+ 373              		.loc 1 81 1 discriminator 7 view .LVU81
+ 374 003e 7047     		bx	lr
+ 375              	.L33:
+  80:bsp/pwm/bsp_pwm.c ****     __HAL_TIM_SetCompare(pwm->htim, pwm->channel, dutyratio * (pwm->htim->Instance->ARR));
+ 376              		.loc 1 80 5 discriminator 3 view .LVU82
+ 377 0040 0368     		ldr	r3, [r0]
+ 378 0042 1B68     		ldr	r3, [r3]
+ 379 0044 D3ED0B7A 		vldr.32	s15, [r3, #44]	@ int
+ 380 0048 F8EE677A 		vcvt.f32.u32	s15, s15
+ 381 004c 67EE807A 		vmul.f32	s15, s15, s0
+ 382 0050 FCEEE77A 		vcvt.u32.f32	s15, s15
+ 383 0054 C3ED0E7A 		vstr.32	s15, [r3, #56]	@ int
+ 384 0058 7047     		bx	lr
+ 385              	.L34:
+  80:bsp/pwm/bsp_pwm.c ****     __HAL_TIM_SetCompare(pwm->htim, pwm->channel, dutyratio * (pwm->htim->Instance->ARR));
+ 386              		.loc 1 80 5 discriminator 6 view .LVU83
+ 387 005a 0368     		ldr	r3, [r0]
+ 388 005c 1B68     		ldr	r3, [r3]
+ 389 005e D3ED0B7A 		vldr.32	s15, [r3, #44]	@ int
+ 390 0062 F8EE677A 		vcvt.f32.u32	s15, s15
+ 391 0066 67EE807A 		vmul.f32	s15, s15, s0
+ 392 006a FCEEE77A 		vcvt.u32.f32	s15, s15
+ 393 006e C3ED0F7A 		vstr.32	s15, [r3, #60]	@ int
+ 394 0072 7047     		bx	lr
+ 395              		.cfi_endproc
+ 396              	.LFE135:
+ 398              		.section	.text.PWMRegister,"ax",%progbits
+ 399              		.align	1
+ 400              		.global	PWMRegister
+ 401              		.syntax unified
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s 			page 11
+
+
+ 402              		.thumb
+ 403              		.thumb_func
+ 405              	PWMRegister:
+ 406              	.LVL27:
+ 407              	.LFB131:
+  28:bsp/pwm/bsp_pwm.c **** {
+ 408              		.loc 1 28 1 is_stmt 1 view -0
+ 409              		.cfi_startproc
+ 410              		@ args = 0, pretend = 0, frame = 0
+ 411              		@ frame_needed = 0, uses_anonymous_args = 0
+  28:bsp/pwm/bsp_pwm.c **** {
+ 412              		.loc 1 28 1 is_stmt 0 view .LVU85
+ 413 0000 38B5     		push	{r3, r4, r5, lr}
+ 414              	.LCFI4:
+ 415              		.cfi_def_cfa_offset 16
+ 416              		.cfi_offset 3, -16
+ 417              		.cfi_offset 4, -12
+ 418              		.cfi_offset 5, -8
+ 419              		.cfi_offset 14, -4
+  29:bsp/pwm/bsp_pwm.c ****     if (idx >= PWM_DEVICE_CNT) // 超过最大实例数,考虑增加或查看是否有内存泄漏
+ 420              		.loc 1 29 5 is_stmt 1 view .LVU86
+  29:bsp/pwm/bsp_pwm.c ****     if (idx >= PWM_DEVICE_CNT) // 超过最大实例数,考虑增加或查看是否有内存泄漏
+ 421              		.loc 1 29 13 is_stmt 0 view .LVU87
+ 422 0002 1C4B     		ldr	r3, .L39
+ 423 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  29:bsp/pwm/bsp_pwm.c ****     if (idx >= PWM_DEVICE_CNT) // 超过最大实例数,考虑增加或查看是否有内存泄漏
+ 424              		.loc 1 29 8 view .LVU88
+ 425 0006 0F2B     		cmp	r3, #15
+ 426 0008 00D9     		bls	.L36
+ 427              	.L37:
+  30:bsp/pwm/bsp_pwm.c ****         while (1)
+ 428              		.loc 1 30 9 is_stmt 1 discriminator 1 view .LVU89
+  30:bsp/pwm/bsp_pwm.c ****         while (1)
+ 429              		.loc 1 30 15 discriminator 1 view .LVU90
+ 430 000a FEE7     		b	.L37
+ 431              	.L36:
+ 432 000c 0546     		mov	r5, r0
+  32:bsp/pwm/bsp_pwm.c ****     PWMInstance *pwm = (PWMInstance *)malloc(sizeof(PWMInstance));
+ 433              		.loc 1 32 5 view .LVU91
+  32:bsp/pwm/bsp_pwm.c ****     PWMInstance *pwm = (PWMInstance *)malloc(sizeof(PWMInstance));
+ 434              		.loc 1 32 39 is_stmt 0 view .LVU92
+ 435 000e 1C20     		movs	r0, #28
+ 436              	.LVL28:
+  32:bsp/pwm/bsp_pwm.c ****     PWMInstance *pwm = (PWMInstance *)malloc(sizeof(PWMInstance));
+ 437              		.loc 1 32 39 view .LVU93
+ 438 0010 FFF7FEFF 		bl	malloc
+ 439              	.LVL29:
+ 440 0014 0446     		mov	r4, r0
+ 441              	.LVL30:
+  33:bsp/pwm/bsp_pwm.c ****     memset(pwm, 0, sizeof(PWMInstance));
+ 442              		.loc 1 33 5 is_stmt 1 view .LVU94
+ 443 0016 0023     		movs	r3, #0
+ 444 0018 0360     		str	r3, [r0]	@ unaligned
+ 445 001a 4360     		str	r3, [r0, #4]	@ unaligned
+ 446 001c 8360     		str	r3, [r0, #8]	@ unaligned
+ 447 001e C360     		str	r3, [r0, #12]	@ unaligned
+ 448 0020 0361     		str	r3, [r0, #16]	@ unaligned
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s 			page 12
+
+
+ 449 0022 4361     		str	r3, [r0, #20]	@ unaligned
+ 450 0024 8361     		str	r3, [r0, #24]	@ unaligned
+  35:bsp/pwm/bsp_pwm.c ****     pwm->htim = config->htim;
+ 451              		.loc 1 35 5 view .LVU95
+  35:bsp/pwm/bsp_pwm.c ****     pwm->htim = config->htim;
+ 452              		.loc 1 35 23 is_stmt 0 view .LVU96
+ 453 0026 2868     		ldr	r0, [r5]
+ 454              	.LVL31:
+  35:bsp/pwm/bsp_pwm.c ****     pwm->htim = config->htim;
+ 455              		.loc 1 35 15 view .LVU97
+ 456 0028 2060     		str	r0, [r4]
+  36:bsp/pwm/bsp_pwm.c ****     pwm->channel = config->channel;
+ 457              		.loc 1 36 5 is_stmt 1 view .LVU98
+  36:bsp/pwm/bsp_pwm.c ****     pwm->channel = config->channel;
+ 458              		.loc 1 36 26 is_stmt 0 view .LVU99
+ 459 002a 6B68     		ldr	r3, [r5, #4]
+  36:bsp/pwm/bsp_pwm.c ****     pwm->channel = config->channel;
+ 460              		.loc 1 36 18 view .LVU100
+ 461 002c 6360     		str	r3, [r4, #4]
+  37:bsp/pwm/bsp_pwm.c ****     pwm->period = config->period;
+ 462              		.loc 1 37 5 is_stmt 1 view .LVU101
+  37:bsp/pwm/bsp_pwm.c ****     pwm->period = config->period;
+ 463              		.loc 1 37 25 is_stmt 0 view .LVU102
+ 464 002e AB68     		ldr	r3, [r5, #8]	@ float
+  37:bsp/pwm/bsp_pwm.c ****     pwm->period = config->period;
+ 465              		.loc 1 37 17 view .LVU103
+ 466 0030 E360     		str	r3, [r4, #12]	@ float
+  38:bsp/pwm/bsp_pwm.c ****     pwm->dutyratio = config->dutyratio;
+ 467              		.loc 1 38 5 is_stmt 1 view .LVU104
+  38:bsp/pwm/bsp_pwm.c ****     pwm->dutyratio = config->dutyratio;
+ 468              		.loc 1 38 28 is_stmt 0 view .LVU105
+ 469 0032 EB68     		ldr	r3, [r5, #12]	@ float
+  38:bsp/pwm/bsp_pwm.c ****     pwm->dutyratio = config->dutyratio;
+ 470              		.loc 1 38 20 view .LVU106
+ 471 0034 2361     		str	r3, [r4, #16]	@ float
+  39:bsp/pwm/bsp_pwm.c ****     pwm->callback = config->callback;
+ 472              		.loc 1 39 5 is_stmt 1 view .LVU107
+  39:bsp/pwm/bsp_pwm.c ****     pwm->callback = config->callback;
+ 473              		.loc 1 39 27 is_stmt 0 view .LVU108
+ 474 0036 2B69     		ldr	r3, [r5, #16]
+  39:bsp/pwm/bsp_pwm.c ****     pwm->callback = config->callback;
+ 475              		.loc 1 39 19 view .LVU109
+ 476 0038 6361     		str	r3, [r4, #20]
+  40:bsp/pwm/bsp_pwm.c ****     pwm->id = config->id;
+ 477              		.loc 1 40 5 is_stmt 1 view .LVU110
+  40:bsp/pwm/bsp_pwm.c ****     pwm->id = config->id;
+ 478              		.loc 1 40 21 is_stmt 0 view .LVU111
+ 479 003a 6B69     		ldr	r3, [r5, #20]
+  40:bsp/pwm/bsp_pwm.c ****     pwm->id = config->id;
+ 480              		.loc 1 40 13 view .LVU112
+ 481 003c A361     		str	r3, [r4, #24]
+  41:bsp/pwm/bsp_pwm.c ****     pwm->tclk = PWMSelectTclk(pwm->htim);
+ 482              		.loc 1 41 5 is_stmt 1 view .LVU113
+  41:bsp/pwm/bsp_pwm.c ****     pwm->tclk = PWMSelectTclk(pwm->htim);
+ 483              		.loc 1 41 17 is_stmt 0 view .LVU114
+ 484 003e FFF7FEFF 		bl	PWMSelectTclk
+ 485              	.LVL32:
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s 			page 13
+
+
+  41:bsp/pwm/bsp_pwm.c ****     pwm->tclk = PWMSelectTclk(pwm->htim);
+ 486              		.loc 1 41 15 view .LVU115
+ 487 0042 A060     		str	r0, [r4, #8]
+  43:bsp/pwm/bsp_pwm.c ****     HAL_TIM_PWM_Start(pwm->htim, pwm->channel);
+ 488              		.loc 1 43 5 is_stmt 1 view .LVU116
+ 489 0044 6168     		ldr	r1, [r4, #4]
+ 490 0046 2068     		ldr	r0, [r4]
+ 491 0048 FFF7FEFF 		bl	HAL_TIM_PWM_Start
+ 492              	.LVL33:
+  44:bsp/pwm/bsp_pwm.c ****     PWMSetPeriod(pwm, pwm->period);
+ 493              		.loc 1 44 5 view .LVU117
+ 494 004c 94ED030A 		vldr.32	s0, [r4, #12]
+ 495 0050 2046     		mov	r0, r4
+ 496 0052 FFF7FEFF 		bl	PWMSetPeriod
+ 497              	.LVL34:
+  45:bsp/pwm/bsp_pwm.c ****     PWMSetDutyRatio(pwm, pwm->dutyratio);
+ 498              		.loc 1 45 5 view .LVU118
+ 499 0056 94ED040A 		vldr.32	s0, [r4, #16]
+ 500 005a 2046     		mov	r0, r4
+ 501 005c FFF7FEFF 		bl	PWMSetDutyRatio
+ 502              	.LVL35:
+  46:bsp/pwm/bsp_pwm.c ****     pwm_instance[idx++] = pwm;
+ 503              		.loc 1 46 5 view .LVU119
+  46:bsp/pwm/bsp_pwm.c ****     pwm_instance[idx++] = pwm;
+ 504              		.loc 1 46 21 is_stmt 0 view .LVU120
+ 505 0060 044A     		ldr	r2, .L39
+ 506 0062 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 507 0064 591C     		adds	r1, r3, #1
+ 508 0066 1170     		strb	r1, [r2]
+  46:bsp/pwm/bsp_pwm.c ****     pwm_instance[idx++] = pwm;
+ 509              		.loc 1 46 25 view .LVU121
+ 510 0068 034A     		ldr	r2, .L39+4
+ 511 006a 42F82340 		str	r4, [r2, r3, lsl #2]
+  47:bsp/pwm/bsp_pwm.c ****     return pwm;
+ 512              		.loc 1 47 5 is_stmt 1 view .LVU122
+  48:bsp/pwm/bsp_pwm.c **** }
+ 513              		.loc 1 48 1 is_stmt 0 view .LVU123
+ 514 006e 2046     		mov	r0, r4
+ 515 0070 38BD     		pop	{r3, r4, r5, pc}
+ 516              	.LVL36:
+ 517              	.L40:
+  48:bsp/pwm/bsp_pwm.c **** }
+ 518              		.loc 1 48 1 view .LVU124
+ 519 0072 00BF     		.align	2
+ 520              	.L39:
+ 521 0074 00000000 		.word	.LANCHOR1
+ 522 0078 00000000 		.word	.LANCHOR0
+ 523              		.cfi_endproc
+ 524              	.LFE131:
+ 526              		.section	.text.PWMStartDMA,"ax",%progbits
+ 527              		.align	1
+ 528              		.global	PWMStartDMA
+ 529              		.syntax unified
+ 530              		.thumb
+ 531              		.thumb_func
+ 533              	PWMStartDMA:
+ 534              	.LVL37:
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s 			page 14
+
+
+ 535              	.LFB136:
+  85:bsp/pwm/bsp_pwm.c **** {
+ 536              		.loc 1 85 1 is_stmt 1 view -0
+ 537              		.cfi_startproc
+ 538              		@ args = 0, pretend = 0, frame = 0
+ 539              		@ frame_needed = 0, uses_anonymous_args = 0
+  85:bsp/pwm/bsp_pwm.c **** {
+ 540              		.loc 1 85 1 is_stmt 0 view .LVU126
+ 541 0000 08B5     		push	{r3, lr}
+ 542              	.LCFI5:
+ 543              		.cfi_def_cfa_offset 8
+ 544              		.cfi_offset 3, -8
+ 545              		.cfi_offset 14, -4
+  86:bsp/pwm/bsp_pwm.c ****     HAL_TIM_PWM_Start_DMA(pwm->htim, pwm->channel, pData, Size);
+ 546              		.loc 1 86 5 is_stmt 1 view .LVU127
+ 547 0002 93B2     		uxth	r3, r2
+ 548 0004 0A46     		mov	r2, r1
+ 549              	.LVL38:
+  86:bsp/pwm/bsp_pwm.c ****     HAL_TIM_PWM_Start_DMA(pwm->htim, pwm->channel, pData, Size);
+ 550              		.loc 1 86 5 is_stmt 0 view .LVU128
+ 551 0006 4168     		ldr	r1, [r0, #4]
+ 552              	.LVL39:
+  86:bsp/pwm/bsp_pwm.c ****     HAL_TIM_PWM_Start_DMA(pwm->htim, pwm->channel, pData, Size);
+ 553              		.loc 1 86 5 view .LVU129
+ 554 0008 0068     		ldr	r0, [r0]
+ 555              	.LVL40:
+  86:bsp/pwm/bsp_pwm.c ****     HAL_TIM_PWM_Start_DMA(pwm->htim, pwm->channel, pData, Size);
+ 556              		.loc 1 86 5 view .LVU130
+ 557 000a FFF7FEFF 		bl	HAL_TIM_PWM_Start_DMA
+ 558              	.LVL41:
+  87:bsp/pwm/bsp_pwm.c **** }
+ 559              		.loc 1 87 1 view .LVU131
+ 560 000e 08BD     		pop	{r3, pc}
+ 561              		.cfi_endproc
+ 562              	.LFE136:
+ 564              		.section	.bss.idx,"aw",%nobits
+ 565              		.set	.LANCHOR1,. + 0
+ 568              	idx:
+ 569 0000 00       		.space	1
+ 570              		.section	.bss.pwm_instance,"aw",%nobits
+ 571              		.align	2
+ 572              		.set	.LANCHOR0,. + 0
+ 575              	pwm_instance:
+ 576 0000 00000000 		.space	64
+ 576      00000000 
+ 576      00000000 
+ 576      00000000 
+ 576      00000000 
+ 577              		.text
+ 578              	.Letext0:
+ 579              		.file 2 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
+ 580              		.file 3 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
+ 581              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ 582              		.file 5 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
+ 583              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 584              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 585              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s 			page 15
+
+
+ 586              		.file 9 "bsp/pwm/bsp_pwm.h"
+ 587              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
+ 588              		.file 11 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.e
+ 589              		.file 12 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.e
+ 590              		.file 13 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s 			page 16
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 bsp_pwm.c
+C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s:20     .text.PWMSelectTclk:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s:25     .text.PWMSelectTclk:0000000000000000 PWMSelectTclk
+C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s:123    .text.PWMSelectTclk:000000000000006c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s:129    .text.HAL_TIM_PWM_PulseFinishedCallback:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s:135    .text.HAL_TIM_PWM_PulseFinishedCallback:0000000000000000 HAL_TIM_PWM_PulseFinishedCallback
+C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s:212    .text.HAL_TIM_PWM_PulseFinishedCallback:000000000000003c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s:218    .text.PWMStart:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s:224    .text.PWMStart:0000000000000000 PWMStart
+C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s:250    .text.PWMStop:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s:256    .text.PWMStop:0000000000000000 PWMStop
+C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s:282    .text.PWMSetPeriod:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s:288    .text.PWMSetPeriod:0000000000000000 PWMSetPeriod
+C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s:329    .text.PWMSetDutyRatio:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s:335    .text.PWMSetDutyRatio:0000000000000000 PWMSetDutyRatio
+C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s:399    .text.PWMRegister:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s:405    .text.PWMRegister:0000000000000000 PWMRegister
+C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s:521    .text.PWMRegister:0000000000000074 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s:527    .text.PWMStartDMA:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s:533    .text.PWMStartDMA:0000000000000000 PWMStartDMA
+C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s:568    .bss.idx:0000000000000000 idx
+C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s:569    .bss.idx:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s:571    .bss.pwm_instance:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccYmfNd8.s:575    .bss.pwm_instance:0000000000000000 pwm_instance
+
+UNDEFINED SYMBOLS
+HAL_RCC_GetPCLK1Freq
+HAL_RCC_GetPCLK2Freq
+APBPrescTable
+HAL_TIM_PWM_Start
+HAL_TIM_PWM_Stop
+malloc
+HAL_TIM_PWM_Start_DMA

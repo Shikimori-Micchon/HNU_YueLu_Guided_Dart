@@ -1,0 +1,1059 @@
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"bsp_dwt.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.DWT_CNT_Update,"ax",%progbits
+  20              		.align	1
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	DWT_CNT_Update:
+  26              	.LFB135:
+  27              		.file 1 "bsp/dwt/bsp_dwt.c"
+   1:bsp/dwt/bsp_dwt.c **** /**
+   2:bsp/dwt/bsp_dwt.c ****  ******************************************************************************
+   3:bsp/dwt/bsp_dwt.c ****  * @file	bsp_dwt.c
+   4:bsp/dwt/bsp_dwt.c ****  * @author  Wang Hongxi
+   5:bsp/dwt/bsp_dwt.c ****  * @author modified by Neo with annotation
+   6:bsp/dwt/bsp_dwt.c ****  * @version V1.1.0
+   7:bsp/dwt/bsp_dwt.c ****  * @date    2022/3/8
+   8:bsp/dwt/bsp_dwt.c ****  * @brief
+   9:bsp/dwt/bsp_dwt.c ****  */
+  10:bsp/dwt/bsp_dwt.c **** 
+  11:bsp/dwt/bsp_dwt.c **** #include "bsp_dwt.h"
+  12:bsp/dwt/bsp_dwt.c **** #include "cmsis_os.h"
+  13:bsp/dwt/bsp_dwt.c **** 
+  14:bsp/dwt/bsp_dwt.c **** static DWT_Time_t SysTime;
+  15:bsp/dwt/bsp_dwt.c **** static uint32_t CPU_FREQ_Hz, CPU_FREQ_Hz_ms, CPU_FREQ_Hz_us;
+  16:bsp/dwt/bsp_dwt.c **** static uint32_t CYCCNT_RountCount;
+  17:bsp/dwt/bsp_dwt.c **** static uint32_t CYCCNT_LAST;
+  18:bsp/dwt/bsp_dwt.c **** static uint64_t CYCCNT64;
+  19:bsp/dwt/bsp_dwt.c **** 
+  20:bsp/dwt/bsp_dwt.c **** /**
+  21:bsp/dwt/bsp_dwt.c ****  * @brief 私有函数,用于检查DWT CYCCNT寄存器是否溢出,并更新CYCCNT_RountCount
+  22:bsp/dwt/bsp_dwt.c ****  * @attention 此函数假设两次调用之间的时间间隔不超过一次溢出
+  23:bsp/dwt/bsp_dwt.c ****  *
+  24:bsp/dwt/bsp_dwt.c ****  * @todo 更好的方案是为dwt的时间更新单独设置一个任务?
+  25:bsp/dwt/bsp_dwt.c ****  *       不过,使用dwt的初衷是定时不被中断/任务等因素影响,因此该实现仍然
+  26:bsp/dwt/bsp_dwt.c ****  *
+  27:bsp/dwt/bsp_dwt.c ****  */
+  28:bsp/dwt/bsp_dwt.c **** static void DWT_CNT_Update(void)
+  29:bsp/dwt/bsp_dwt.c **** {
+  28              		.loc 1 29 1 view -0
+  29              		.cfi_startproc
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s 			page 2
+
+
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  30:bsp/dwt/bsp_dwt.c ****     static volatile uint8_t bit_locker = 0;
+  33              		.loc 1 30 5 view .LVU1
+  31:bsp/dwt/bsp_dwt.c ****     if (!bit_locker)
+  34              		.loc 1 31 5 view .LVU2
+  35              		.loc 1 31 9 is_stmt 0 view .LVU3
+  36 0000 0E4B     		ldr	r3, .L8
+  37 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  38              		.loc 1 31 8 view .LVU4
+  39 0004 C3B9     		cbnz	r3, .L5
+  29:bsp/dwt/bsp_dwt.c ****     static volatile uint8_t bit_locker = 0;
+  40              		.loc 1 29 1 view .LVU5
+  41 0006 82B0     		sub	sp, sp, #8
+  42              	.LCFI0:
+  43              		.cfi_def_cfa_offset 8
+  44              	.LBB2:
+  32:bsp/dwt/bsp_dwt.c ****     {
+  33:bsp/dwt/bsp_dwt.c ****         bit_locker = 1;
+  45              		.loc 1 33 9 is_stmt 1 view .LVU6
+  46              		.loc 1 33 20 is_stmt 0 view .LVU7
+  47 0008 0C4B     		ldr	r3, .L8
+  48 000a 0122     		movs	r2, #1
+  49 000c 1A70     		strb	r2, [r3]
+  34:bsp/dwt/bsp_dwt.c ****         volatile uint32_t cnt_now = DWT->CYCCNT;
+  50              		.loc 1 34 9 is_stmt 1 view .LVU8
+  51              		.loc 1 34 40 is_stmt 0 view .LVU9
+  52 000e 0C4B     		ldr	r3, .L8+4
+  53 0010 5B68     		ldr	r3, [r3, #4]
+  54              		.loc 1 34 27 view .LVU10
+  55 0012 0193     		str	r3, [sp, #4]
+  35:bsp/dwt/bsp_dwt.c ****         if (cnt_now < CYCCNT_LAST)
+  56              		.loc 1 35 9 is_stmt 1 view .LVU11
+  57              		.loc 1 35 21 is_stmt 0 view .LVU12
+  58 0014 019A     		ldr	r2, [sp, #4]
+  59 0016 0B4B     		ldr	r3, .L8+8
+  60 0018 1B68     		ldr	r3, [r3]
+  61              		.loc 1 35 12 view .LVU13
+  62 001a 9A42     		cmp	r2, r3
+  63 001c 03D2     		bcs	.L3
+  36:bsp/dwt/bsp_dwt.c ****             CYCCNT_RountCount++;
+  64              		.loc 1 36 13 is_stmt 1 view .LVU14
+  65              		.loc 1 36 30 is_stmt 0 view .LVU15
+  66 001e 0A4A     		ldr	r2, .L8+12
+  67 0020 1368     		ldr	r3, [r2]
+  68 0022 0133     		adds	r3, r3, #1
+  69 0024 1360     		str	r3, [r2]
+  70              	.L3:
+  37:bsp/dwt/bsp_dwt.c **** 
+  38:bsp/dwt/bsp_dwt.c ****         CYCCNT_LAST = DWT->CYCCNT;
+  71              		.loc 1 38 9 is_stmt 1 view .LVU16
+  72              		.loc 1 38 26 is_stmt 0 view .LVU17
+  73 0026 064B     		ldr	r3, .L8+4
+  74 0028 5A68     		ldr	r2, [r3, #4]
+  75              		.loc 1 38 21 view .LVU18
+  76 002a 064B     		ldr	r3, .L8+8
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s 			page 3
+
+
+  77 002c 1A60     		str	r2, [r3]
+  39:bsp/dwt/bsp_dwt.c ****         bit_locker = 0;
+  78              		.loc 1 39 9 is_stmt 1 view .LVU19
+  79              		.loc 1 39 20 is_stmt 0 view .LVU20
+  80 002e 034B     		ldr	r3, .L8
+  81 0030 0022     		movs	r2, #0
+  82 0032 1A70     		strb	r2, [r3]
+  83              	.LBE2:
+  40:bsp/dwt/bsp_dwt.c ****     }
+  41:bsp/dwt/bsp_dwt.c **** }
+  84              		.loc 1 41 1 view .LVU21
+  85 0034 02B0     		add	sp, sp, #8
+  86              	.LCFI1:
+  87              		.cfi_def_cfa_offset 0
+  88              		@ sp needed
+  89 0036 7047     		bx	lr
+  90              	.L5:
+  91 0038 7047     		bx	lr
+  92              	.L9:
+  93 003a 00BF     		.align	2
+  94              	.L8:
+  95 003c 00000000 		.word	.LANCHOR0
+  96 0040 001000E0 		.word	-536866816
+  97 0044 00000000 		.word	.LANCHOR1
+  98 0048 00000000 		.word	.LANCHOR2
+  99              		.cfi_endproc
+ 100              	.LFE135:
+ 102              		.section	.text.DWT_Init,"ax",%progbits
+ 103              		.align	1
+ 104              		.global	DWT_Init
+ 105              		.syntax unified
+ 106              		.thumb
+ 107              		.thumb_func
+ 109              	DWT_Init:
+ 110              	.LVL0:
+ 111              	.LFB136:
+  42:bsp/dwt/bsp_dwt.c **** 
+  43:bsp/dwt/bsp_dwt.c **** void DWT_Init(uint32_t CPU_Freq_mHz)
+  44:bsp/dwt/bsp_dwt.c **** {
+ 112              		.loc 1 44 1 is_stmt 1 view -0
+ 113              		.cfi_startproc
+ 114              		@ args = 0, pretend = 0, frame = 0
+ 115              		@ frame_needed = 0, uses_anonymous_args = 0
+ 116              		.loc 1 44 1 is_stmt 0 view .LVU23
+ 117 0000 08B5     		push	{r3, lr}
+ 118              	.LCFI2:
+ 119              		.cfi_def_cfa_offset 8
+ 120              		.cfi_offset 3, -8
+ 121              		.cfi_offset 14, -4
+  45:bsp/dwt/bsp_dwt.c ****     /* 使能DWT外设 */
+  46:bsp/dwt/bsp_dwt.c ****     CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
+ 122              		.loc 1 46 5 is_stmt 1 view .LVU24
+ 123              		.loc 1 46 22 is_stmt 0 view .LVU25
+ 124 0002 124A     		ldr	r2, .L12
+ 125 0004 D2F8FC30 		ldr	r3, [r2, #252]
+ 126 0008 43F08073 		orr	r3, r3, #16777216
+ 127 000c C2F8FC30 		str	r3, [r2, #252]
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s 			page 4
+
+
+  47:bsp/dwt/bsp_dwt.c **** 
+  48:bsp/dwt/bsp_dwt.c ****     /* DWT CYCCNT寄存器计数清0 */
+  49:bsp/dwt/bsp_dwt.c ****     DWT->CYCCNT = (uint32_t)0u;
+ 128              		.loc 1 49 5 is_stmt 1 view .LVU26
+ 129              		.loc 1 49 17 is_stmt 0 view .LVU27
+ 130 0010 0F4B     		ldr	r3, .L12+4
+ 131 0012 0021     		movs	r1, #0
+ 132 0014 5960     		str	r1, [r3, #4]
+  50:bsp/dwt/bsp_dwt.c **** 
+  51:bsp/dwt/bsp_dwt.c ****     /* 使能Cortex-M DWT CYCCNT寄存器 */
+  52:bsp/dwt/bsp_dwt.c ****     DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
+ 133              		.loc 1 52 5 is_stmt 1 view .LVU28
+ 134              		.loc 1 52 15 is_stmt 0 view .LVU29
+ 135 0016 1A68     		ldr	r2, [r3]
+ 136 0018 42F00102 		orr	r2, r2, #1
+ 137 001c 1A60     		str	r2, [r3]
+  53:bsp/dwt/bsp_dwt.c **** 
+  54:bsp/dwt/bsp_dwt.c ****     CPU_FREQ_Hz = CPU_Freq_mHz * 1000000;
+ 138              		.loc 1 54 5 is_stmt 1 view .LVU30
+ 139              		.loc 1 54 32 is_stmt 0 view .LVU31
+ 140 001e 0D4B     		ldr	r3, .L12+8
+ 141 0020 03FB00F0 		mul	r0, r3, r0
+ 142              	.LVL1:
+ 143              		.loc 1 54 17 view .LVU32
+ 144 0024 0C4B     		ldr	r3, .L12+12
+ 145 0026 1860     		str	r0, [r3]
+  55:bsp/dwt/bsp_dwt.c ****     CPU_FREQ_Hz_ms = CPU_FREQ_Hz / 1000;
+ 146              		.loc 1 55 5 is_stmt 1 view .LVU33
+ 147              		.loc 1 55 34 is_stmt 0 view .LVU34
+ 148 0028 0C4B     		ldr	r3, .L12+16
+ 149 002a A3FB0023 		umull	r2, r3, r3, r0
+ 150 002e 9B09     		lsrs	r3, r3, #6
+ 151              		.loc 1 55 20 view .LVU35
+ 152 0030 0B4A     		ldr	r2, .L12+20
+ 153 0032 1360     		str	r3, [r2]
+  56:bsp/dwt/bsp_dwt.c ****     CPU_FREQ_Hz_us = CPU_FREQ_Hz / 1000000;
+ 154              		.loc 1 56 5 is_stmt 1 view .LVU36
+ 155              		.loc 1 56 34 is_stmt 0 view .LVU37
+ 156 0034 0B4B     		ldr	r3, .L12+24
+ 157 0036 A3FB0030 		umull	r3, r0, r3, r0
+ 158 003a 800C     		lsrs	r0, r0, #18
+ 159              		.loc 1 56 20 view .LVU38
+ 160 003c 0A4B     		ldr	r3, .L12+28
+ 161 003e 1860     		str	r0, [r3]
+  57:bsp/dwt/bsp_dwt.c ****     CYCCNT_RountCount = 0;
+ 162              		.loc 1 57 5 is_stmt 1 view .LVU39
+ 163              		.loc 1 57 23 is_stmt 0 view .LVU40
+ 164 0040 0A4B     		ldr	r3, .L12+32
+ 165 0042 1960     		str	r1, [r3]
+  58:bsp/dwt/bsp_dwt.c **** 
+  59:bsp/dwt/bsp_dwt.c ****     DWT_CNT_Update();
+ 166              		.loc 1 59 5 is_stmt 1 view .LVU41
+ 167 0044 FFF7FEFF 		bl	DWT_CNT_Update
+ 168              	.LVL2:
+  60:bsp/dwt/bsp_dwt.c **** }
+ 169              		.loc 1 60 1 is_stmt 0 view .LVU42
+ 170 0048 08BD     		pop	{r3, pc}
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s 			page 5
+
+
+ 171              	.L13:
+ 172 004a 00BF     		.align	2
+ 173              	.L12:
+ 174 004c 00ED00E0 		.word	-536810240
+ 175 0050 001000E0 		.word	-536866816
+ 176 0054 40420F00 		.word	1000000
+ 177 0058 00000000 		.word	.LANCHOR3
+ 178 005c D34D6210 		.word	274877907
+ 179 0060 00000000 		.word	.LANCHOR4
+ 180 0064 83DE1B43 		.word	1125899907
+ 181 0068 00000000 		.word	.LANCHOR5
+ 182 006c 00000000 		.word	.LANCHOR2
+ 183              		.cfi_endproc
+ 184              	.LFE136:
+ 186              		.section	.text.DWT_GetDeltaT,"ax",%progbits
+ 187              		.align	1
+ 188              		.global	DWT_GetDeltaT
+ 189              		.syntax unified
+ 190              		.thumb
+ 191              		.thumb_func
+ 193              	DWT_GetDeltaT:
+ 194              	.LVL3:
+ 195              	.LFB137:
+  61:bsp/dwt/bsp_dwt.c **** 
+  62:bsp/dwt/bsp_dwt.c **** float DWT_GetDeltaT(uint32_t *cnt_last)
+  63:bsp/dwt/bsp_dwt.c **** {
+ 196              		.loc 1 63 1 is_stmt 1 view -0
+ 197              		.cfi_startproc
+ 198              		@ args = 0, pretend = 0, frame = 8
+ 199              		@ frame_needed = 0, uses_anonymous_args = 0
+ 200              		.loc 1 63 1 is_stmt 0 view .LVU44
+ 201 0000 00B5     		push	{lr}
+ 202              	.LCFI3:
+ 203              		.cfi_def_cfa_offset 4
+ 204              		.cfi_offset 14, -4
+ 205 0002 2DED028B 		vpush.64	{d8}
+ 206              	.LCFI4:
+ 207              		.cfi_def_cfa_offset 12
+ 208              		.cfi_offset 80, -12
+ 209              		.cfi_offset 81, -8
+ 210 0006 83B0     		sub	sp, sp, #12
+ 211              	.LCFI5:
+ 212              		.cfi_def_cfa_offset 24
+  64:bsp/dwt/bsp_dwt.c ****     volatile uint32_t cnt_now = DWT->CYCCNT;
+ 213              		.loc 1 64 5 is_stmt 1 view .LVU45
+ 214              		.loc 1 64 36 is_stmt 0 view .LVU46
+ 215 0008 0D4B     		ldr	r3, .L16
+ 216 000a 5B68     		ldr	r3, [r3, #4]
+ 217              		.loc 1 64 23 view .LVU47
+ 218 000c 0193     		str	r3, [sp, #4]
+  65:bsp/dwt/bsp_dwt.c ****     float dt = ((uint32_t)(cnt_now - *cnt_last)) / ((float)(CPU_FREQ_Hz));
+ 219              		.loc 1 65 5 is_stmt 1 view .LVU48
+ 220              		.loc 1 65 36 is_stmt 0 view .LVU49
+ 221 000e 019B     		ldr	r3, [sp, #4]
+ 222              		.loc 1 65 38 view .LVU50
+ 223 0010 0268     		ldr	r2, [r0]
+ 224              		.loc 1 65 36 view .LVU51
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s 			page 6
+
+
+ 225 0012 9B1A     		subs	r3, r3, r2
+ 226              		.loc 1 65 50 view .LVU52
+ 227 0014 07EE903A 		vmov	s15, r3	@ int
+ 228 0018 F8EE677A 		vcvt.f32.u32	s15, s15
+ 229              		.loc 1 65 53 view .LVU53
+ 230 001c 094B     		ldr	r3, .L16+4
+ 231 001e 93ED007A 		vldr.32	s14, [r3]	@ int
+ 232 0022 B8EE477A 		vcvt.f32.u32	s14, s14
+ 233              		.loc 1 65 11 view .LVU54
+ 234 0026 87EE878A 		vdiv.f32	s16, s15, s14
+ 235              	.LVL4:
+  66:bsp/dwt/bsp_dwt.c ****     *cnt_last = cnt_now;
+ 236              		.loc 1 66 5 is_stmt 1 view .LVU55
+ 237              		.loc 1 66 15 is_stmt 0 view .LVU56
+ 238 002a 019B     		ldr	r3, [sp, #4]
+ 239 002c 0360     		str	r3, [r0]
+  67:bsp/dwt/bsp_dwt.c **** 
+  68:bsp/dwt/bsp_dwt.c ****     DWT_CNT_Update();
+ 240              		.loc 1 68 5 is_stmt 1 view .LVU57
+ 241 002e FFF7FEFF 		bl	DWT_CNT_Update
+ 242              	.LVL5:
+  69:bsp/dwt/bsp_dwt.c **** 
+  70:bsp/dwt/bsp_dwt.c ****     return dt;
+ 243              		.loc 1 70 5 view .LVU58
+  71:bsp/dwt/bsp_dwt.c **** }
+ 244              		.loc 1 71 1 is_stmt 0 view .LVU59
+ 245 0032 B0EE480A 		vmov.f32	s0, s16
+ 246 0036 03B0     		add	sp, sp, #12
+ 247              	.LCFI6:
+ 248              		.cfi_def_cfa_offset 12
+ 249              		@ sp needed
+ 250 0038 BDEC028B 		vldm	sp!, {d8}
+ 251              	.LCFI7:
+ 252              		.cfi_restore 80
+ 253              		.cfi_restore 81
+ 254              		.cfi_def_cfa_offset 4
+ 255              	.LVL6:
+ 256              		.loc 1 71 1 view .LVU60
+ 257 003c 5DF804FB 		ldr	pc, [sp], #4
+ 258              	.L17:
+ 259              		.align	2
+ 260              	.L16:
+ 261 0040 001000E0 		.word	-536866816
+ 262 0044 00000000 		.word	.LANCHOR3
+ 263              		.cfi_endproc
+ 264              	.LFE137:
+ 266              		.global	__aeabi_ui2d
+ 267              		.global	__aeabi_ddiv
+ 268              		.section	.text.DWT_GetDeltaT64,"ax",%progbits
+ 269              		.align	1
+ 270              		.global	DWT_GetDeltaT64
+ 271              		.syntax unified
+ 272              		.thumb
+ 273              		.thumb_func
+ 275              	DWT_GetDeltaT64:
+ 276              	.LVL7:
+ 277              	.LFB138:
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s 			page 7
+
+
+  72:bsp/dwt/bsp_dwt.c **** 
+  73:bsp/dwt/bsp_dwt.c **** double DWT_GetDeltaT64(uint32_t *cnt_last)
+  74:bsp/dwt/bsp_dwt.c **** {
+ 278              		.loc 1 74 1 is_stmt 1 view -0
+ 279              		.cfi_startproc
+ 280              		@ args = 0, pretend = 0, frame = 8
+ 281              		@ frame_needed = 0, uses_anonymous_args = 0
+ 282              		.loc 1 74 1 is_stmt 0 view .LVU62
+ 283 0000 D0B5     		push	{r4, r6, r7, lr}
+ 284              	.LCFI8:
+ 285              		.cfi_def_cfa_offset 16
+ 286              		.cfi_offset 4, -16
+ 287              		.cfi_offset 6, -12
+ 288              		.cfi_offset 7, -8
+ 289              		.cfi_offset 14, -4
+ 290 0002 2DED028B 		vpush.64	{d8}
+ 291              	.LCFI9:
+ 292              		.cfi_def_cfa_offset 24
+ 293              		.cfi_offset 80, -24
+ 294              		.cfi_offset 81, -20
+ 295 0006 82B0     		sub	sp, sp, #8
+ 296              	.LCFI10:
+ 297              		.cfi_def_cfa_offset 32
+ 298 0008 0446     		mov	r4, r0
+  75:bsp/dwt/bsp_dwt.c ****     volatile uint32_t cnt_now = DWT->CYCCNT;
+ 299              		.loc 1 75 5 is_stmt 1 view .LVU63
+ 300              		.loc 1 75 36 is_stmt 0 view .LVU64
+ 301 000a 114B     		ldr	r3, .L20
+ 302 000c 5B68     		ldr	r3, [r3, #4]
+ 303              		.loc 1 75 23 view .LVU65
+ 304 000e 0193     		str	r3, [sp, #4]
+  76:bsp/dwt/bsp_dwt.c ****     double dt = ((uint32_t)(cnt_now - *cnt_last)) / ((double)(CPU_FREQ_Hz));
+ 305              		.loc 1 76 5 is_stmt 1 view .LVU66
+ 306              		.loc 1 76 37 is_stmt 0 view .LVU67
+ 307 0010 0198     		ldr	r0, [sp, #4]
+ 308              	.LVL8:
+ 309              		.loc 1 76 39 view .LVU68
+ 310 0012 2368     		ldr	r3, [r4]
+ 311              		.loc 1 76 51 view .LVU69
+ 312 0014 C01A     		subs	r0, r0, r3
+ 313 0016 FFF7FEFF 		bl	__aeabi_ui2d
+ 314              	.LVL9:
+ 315 001a 0646     		mov	r6, r0
+ 316 001c 0F46     		mov	r7, r1
+ 317              		.loc 1 76 54 view .LVU70
+ 318 001e 0D4B     		ldr	r3, .L20+4
+ 319 0020 1868     		ldr	r0, [r3]
+ 320 0022 FFF7FEFF 		bl	__aeabi_ui2d
+ 321              	.LVL10:
+ 322 0026 0246     		mov	r2, r0
+ 323 0028 0B46     		mov	r3, r1
+ 324              		.loc 1 76 12 view .LVU71
+ 325 002a 3046     		mov	r0, r6
+ 326 002c 3946     		mov	r1, r7
+ 327 002e FFF7FEFF 		bl	__aeabi_ddiv
+ 328              	.LVL11:
+ 329 0032 41EC180B 		vmov	d8, r0, r1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s 			page 8
+
+
+ 330              	.LVL12:
+  77:bsp/dwt/bsp_dwt.c ****     *cnt_last = cnt_now;
+ 331              		.loc 1 77 5 is_stmt 1 view .LVU72
+ 332              		.loc 1 77 15 is_stmt 0 view .LVU73
+ 333 0036 019B     		ldr	r3, [sp, #4]
+ 334 0038 2360     		str	r3, [r4]
+  78:bsp/dwt/bsp_dwt.c **** 
+  79:bsp/dwt/bsp_dwt.c ****     DWT_CNT_Update();
+ 335              		.loc 1 79 5 is_stmt 1 view .LVU74
+ 336 003a FFF7FEFF 		bl	DWT_CNT_Update
+ 337              	.LVL13:
+  80:bsp/dwt/bsp_dwt.c **** 
+  81:bsp/dwt/bsp_dwt.c ****     return dt;
+ 338              		.loc 1 81 5 view .LVU75
+  82:bsp/dwt/bsp_dwt.c **** }
+ 339              		.loc 1 82 1 is_stmt 0 view .LVU76
+ 340 003e B0EE480A 		vmov.f32	s0, s16
+ 341 0042 F0EE680A 		vmov.f32	s1, s17
+ 342 0046 02B0     		add	sp, sp, #8
+ 343              	.LCFI11:
+ 344              		.cfi_def_cfa_offset 24
+ 345              		@ sp needed
+ 346 0048 BDEC028B 		vldm	sp!, {d8}
+ 347              	.LCFI12:
+ 348              		.cfi_restore 80
+ 349              		.cfi_restore 81
+ 350              		.cfi_def_cfa_offset 16
+ 351              	.LVL14:
+ 352              		.loc 1 82 1 view .LVU77
+ 353 004c D0BD     		pop	{r4, r6, r7, pc}
+ 354              	.LVL15:
+ 355              	.L21:
+ 356              		.loc 1 82 1 view .LVU78
+ 357 004e 00BF     		.align	2
+ 358              	.L20:
+ 359 0050 001000E0 		.word	-536866816
+ 360 0054 00000000 		.word	.LANCHOR3
+ 361              		.cfi_endproc
+ 362              	.LFE138:
+ 364              		.global	__aeabi_uldivmod
+ 365              		.section	.text.DWT_SysTimeUpdate,"ax",%progbits
+ 366              		.align	1
+ 367              		.global	DWT_SysTimeUpdate
+ 368              		.syntax unified
+ 369              		.thumb
+ 370              		.thumb_func
+ 372              	DWT_SysTimeUpdate:
+ 373              	.LFB139:
+  83:bsp/dwt/bsp_dwt.c **** 
+  84:bsp/dwt/bsp_dwt.c **** void DWT_SysTimeUpdate(void)
+  85:bsp/dwt/bsp_dwt.c **** {
+ 374              		.loc 1 85 1 is_stmt 1 view -0
+ 375              		.cfi_startproc
+ 376              		@ args = 0, pretend = 0, frame = 8
+ 377              		@ frame_needed = 0, uses_anonymous_args = 0
+ 378 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 379              	.LCFI13:
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s 			page 9
+
+
+ 380              		.cfi_def_cfa_offset 24
+ 381              		.cfi_offset 4, -24
+ 382              		.cfi_offset 5, -20
+ 383              		.cfi_offset 6, -16
+ 384              		.cfi_offset 7, -12
+ 385              		.cfi_offset 8, -8
+ 386              		.cfi_offset 14, -4
+ 387 0004 82B0     		sub	sp, sp, #8
+ 388              	.LCFI14:
+ 389              		.cfi_def_cfa_offset 32
+  86:bsp/dwt/bsp_dwt.c ****     volatile uint32_t cnt_now = DWT->CYCCNT;
+ 390              		.loc 1 86 5 view .LVU80
+ 391              		.loc 1 86 36 is_stmt 0 view .LVU81
+ 392 0006 274B     		ldr	r3, .L24
+ 393 0008 5B68     		ldr	r3, [r3, #4]
+ 394              		.loc 1 86 23 view .LVU82
+ 395 000a 0193     		str	r3, [sp, #4]
+  87:bsp/dwt/bsp_dwt.c ****     static uint64_t CNT_TEMP1, CNT_TEMP2, CNT_TEMP3;
+ 396              		.loc 1 87 5 is_stmt 1 view .LVU83
+  88:bsp/dwt/bsp_dwt.c **** 
+  89:bsp/dwt/bsp_dwt.c ****     DWT_CNT_Update();
+ 397              		.loc 1 89 5 view .LVU84
+ 398 000c FFF7FEFF 		bl	DWT_CNT_Update
+ 399              	.LVL16:
+  90:bsp/dwt/bsp_dwt.c **** 
+  91:bsp/dwt/bsp_dwt.c ****     CYCCNT64 = (uint64_t)CYCCNT_RountCount * (uint64_t)UINT32_MAX + (uint64_t)cnt_now;
+ 400              		.loc 1 91 5 view .LVU85
+ 401              		.loc 1 91 16 is_stmt 0 view .LVU86
+ 402 0010 254B     		ldr	r3, .L24+4
+ 403 0012 1A68     		ldr	r2, [r3]
+ 404 0014 0026     		movs	r6, #0
+ 405              		.loc 1 91 44 view .LVU87
+ 406 0016 5508     		lsrs	r5, r2, #1
+ 407 0018 D307     		lsls	r3, r2, #31
+ 408 001a 9B1A     		subs	r3, r3, r2
+ 409 001c 65F10005 		sbc	r5, r5, #0
+ 410 0020 DC18     		adds	r4, r3, r3
+ 411 0022 6D41     		adcs	r5, r5, r5
+ 412 0024 A418     		adds	r4, r4, r2
+ 413 0026 45F10005 		adc	r5, r5, #0
+ 414              		.loc 1 91 69 view .LVU88
+ 415 002a 019B     		ldr	r3, [sp, #4]
+ 416              		.loc 1 91 67 view .LVU89
+ 417 002c E418     		adds	r4, r4, r3
+ 418 002e 45F10005 		adc	r5, r5, #0
+ 419              		.loc 1 91 14 view .LVU90
+ 420 0032 1E4B     		ldr	r3, .L24+8
+ 421 0034 1C60     		str	r4, [r3]
+ 422 0036 5D60     		str	r5, [r3, #4]
+  92:bsp/dwt/bsp_dwt.c ****     CNT_TEMP1 = CYCCNT64 / CPU_FREQ_Hz;
+ 423              		.loc 1 92 5 is_stmt 1 view .LVU91
+ 424              		.loc 1 92 26 is_stmt 0 view .LVU92
+ 425 0038 1D4B     		ldr	r3, .L24+12
+ 426 003a 1F68     		ldr	r7, [r3]
+ 427 003c 3A46     		mov	r2, r7
+ 428 003e 3346     		mov	r3, r6
+ 429 0040 2046     		mov	r0, r4
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s 			page 10
+
+
+ 430 0042 2946     		mov	r1, r5
+ 431 0044 FFF7FEFF 		bl	__aeabi_uldivmod
+ 432              	.LVL17:
+ 433              		.loc 1 92 15 view .LVU93
+ 434 0048 1A4A     		ldr	r2, .L24+16
+ 435 004a 1060     		str	r0, [r2]
+ 436 004c 5160     		str	r1, [r2, #4]
+  93:bsp/dwt/bsp_dwt.c ****     CNT_TEMP2 = CYCCNT64 - CNT_TEMP1 * CPU_FREQ_Hz;
+ 437              		.loc 1 93 5 is_stmt 1 view .LVU94
+ 438              		.loc 1 93 38 is_stmt 0 view .LVU95
+ 439 004e A7FB0032 		umull	r3, r2, r7, r0
+ 440 0052 07FB0122 		mla	r2, r7, r1, r2
+ 441              		.loc 1 93 26 view .LVU96
+ 442 0056 E41A     		subs	r4, r4, r3
+ 443 0058 65EB0205 		sbc	r5, r5, r2
+ 444              		.loc 1 93 15 view .LVU97
+ 445 005c 164B     		ldr	r3, .L24+20
+ 446 005e 1C60     		str	r4, [r3]
+ 447 0060 5D60     		str	r5, [r3, #4]
+  94:bsp/dwt/bsp_dwt.c ****     SysTime.s = CNT_TEMP1;
+ 448              		.loc 1 94 5 is_stmt 1 view .LVU98
+ 449              		.loc 1 94 15 is_stmt 0 view .LVU99
+ 450 0062 DFF86480 		ldr	r8, .L24+36
+ 451 0066 C8F80000 		str	r0, [r8]
+  95:bsp/dwt/bsp_dwt.c ****     SysTime.ms = CNT_TEMP2 / CPU_FREQ_Hz_ms;
+ 452              		.loc 1 95 5 is_stmt 1 view .LVU100
+ 453              		.loc 1 95 28 is_stmt 0 view .LVU101
+ 454 006a 144B     		ldr	r3, .L24+24
+ 455 006c 1F68     		ldr	r7, [r3]
+ 456 006e 3A46     		mov	r2, r7
+ 457 0070 3346     		mov	r3, r6
+ 458 0072 2046     		mov	r0, r4
+ 459 0074 2946     		mov	r1, r5
+ 460 0076 FFF7FEFF 		bl	__aeabi_uldivmod
+ 461              	.LVL18:
+ 462              		.loc 1 95 16 view .LVU102
+ 463 007a 80B2     		uxth	r0, r0
+ 464 007c A8F80400 		strh	r0, [r8, #4]	@ movhi
+  96:bsp/dwt/bsp_dwt.c ****     CNT_TEMP3 = CNT_TEMP2 - SysTime.ms * CPU_FREQ_Hz_ms;
+ 465              		.loc 1 96 5 is_stmt 1 view .LVU103
+ 466              		.loc 1 96 40 is_stmt 0 view .LVU104
+ 467 0080 00FB07F7 		mul	r7, r0, r7
+ 468              		.loc 1 96 27 view .LVU105
+ 469 0084 E01B     		subs	r0, r4, r7
+ 470 0086 65F10001 		sbc	r1, r5, #0
+ 471              		.loc 1 96 15 view .LVU106
+ 472 008a 0D4B     		ldr	r3, .L24+28
+ 473 008c 1860     		str	r0, [r3]
+ 474 008e 5960     		str	r1, [r3, #4]
+  97:bsp/dwt/bsp_dwt.c ****     SysTime.us = CNT_TEMP3 / CPU_FREQ_Hz_us;
+ 475              		.loc 1 97 5 is_stmt 1 view .LVU107
+ 476              		.loc 1 97 28 is_stmt 0 view .LVU108
+ 477 0090 0C4B     		ldr	r3, .L24+32
+ 478 0092 1A68     		ldr	r2, [r3]
+ 479 0094 3346     		mov	r3, r6
+ 480 0096 FFF7FEFF 		bl	__aeabi_uldivmod
+ 481              	.LVL19:
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s 			page 11
+
+
+ 482              		.loc 1 97 16 view .LVU109
+ 483 009a A8F80600 		strh	r0, [r8, #6]	@ movhi
+  98:bsp/dwt/bsp_dwt.c **** }
+ 484              		.loc 1 98 1 view .LVU110
+ 485 009e 02B0     		add	sp, sp, #8
+ 486              	.LCFI15:
+ 487              		.cfi_def_cfa_offset 24
+ 488              		@ sp needed
+ 489 00a0 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 490              	.L25:
+ 491              		.align	2
+ 492              	.L24:
+ 493 00a4 001000E0 		.word	-536866816
+ 494 00a8 00000000 		.word	.LANCHOR2
+ 495 00ac 00000000 		.word	.LANCHOR6
+ 496 00b0 00000000 		.word	.LANCHOR3
+ 497 00b4 00000000 		.word	.LANCHOR7
+ 498 00b8 00000000 		.word	.LANCHOR8
+ 499 00bc 00000000 		.word	.LANCHOR4
+ 500 00c0 00000000 		.word	.LANCHOR10
+ 501 00c4 00000000 		.word	.LANCHOR5
+ 502 00c8 00000000 		.word	.LANCHOR9
+ 503              		.cfi_endproc
+ 504              	.LFE139:
+ 506              		.section	.text.DWT_GetTimeline_s,"ax",%progbits
+ 507              		.align	1
+ 508              		.global	DWT_GetTimeline_s
+ 509              		.syntax unified
+ 510              		.thumb
+ 511              		.thumb_func
+ 513              	DWT_GetTimeline_s:
+ 514              	.LFB140:
+  99:bsp/dwt/bsp_dwt.c **** 
+ 100:bsp/dwt/bsp_dwt.c **** float DWT_GetTimeline_s(void)
+ 101:bsp/dwt/bsp_dwt.c **** {
+ 515              		.loc 1 101 1 is_stmt 1 view -0
+ 516              		.cfi_startproc
+ 517              		@ args = 0, pretend = 0, frame = 0
+ 518              		@ frame_needed = 0, uses_anonymous_args = 0
+ 519 0000 08B5     		push	{r3, lr}
+ 520              	.LCFI16:
+ 521              		.cfi_def_cfa_offset 8
+ 522              		.cfi_offset 3, -8
+ 523              		.cfi_offset 14, -4
+ 102:bsp/dwt/bsp_dwt.c ****     DWT_SysTimeUpdate();
+ 524              		.loc 1 102 5 view .LVU112
+ 525 0002 FFF7FEFF 		bl	DWT_SysTimeUpdate
+ 526              	.LVL20:
+ 103:bsp/dwt/bsp_dwt.c **** 
+ 104:bsp/dwt/bsp_dwt.c ****     float DWT_Timelinef32 = SysTime.s + SysTime.ms * 0.001f + SysTime.us * 0.000001f;
+ 527              		.loc 1 104 5 view .LVU113
+ 528              		.loc 1 104 36 is_stmt 0 view .LVU114
+ 529 0006 0E4B     		ldr	r3, .L28
+ 530              		.loc 1 104 48 view .LVU115
+ 531 0008 9A88     		ldrh	r2, [r3, #4]
+ 532 000a 07EE902A 		vmov	s15, r2	@ int
+ 533              		.loc 1 104 52 view .LVU116
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s 			page 12
+
+
+ 534 000e F8EEE77A 		vcvt.f32.s32	s15, s15
+ 535 0012 9FED0C7A 		vldr.32	s14, .L28+4
+ 536 0016 67EE877A 		vmul.f32	s15, s15, s14
+ 537              		.loc 1 104 39 view .LVU117
+ 538 001a 93ED007A 		vldr.32	s14, [r3]	@ int
+ 539 001e B8EE470A 		vcvt.f32.u32	s0, s14
+ 540 0022 30EE270A 		vadd.f32	s0, s0, s15
+ 541              		.loc 1 104 70 view .LVU118
+ 542 0026 DB88     		ldrh	r3, [r3, #6]
+ 543 0028 07EE903A 		vmov	s15, r3	@ int
+ 544              		.loc 1 104 74 view .LVU119
+ 545 002c F8EEE77A 		vcvt.f32.s32	s15, s15
+ 546 0030 9FED057A 		vldr.32	s14, .L28+8
+ 547 0034 67EE877A 		vmul.f32	s15, s15, s14
+ 548              	.LVL21:
+ 105:bsp/dwt/bsp_dwt.c **** 
+ 106:bsp/dwt/bsp_dwt.c ****     return DWT_Timelinef32;
+ 549              		.loc 1 106 5 is_stmt 1 view .LVU120
+ 107:bsp/dwt/bsp_dwt.c **** }
+ 550              		.loc 1 107 1 is_stmt 0 view .LVU121
+ 551 0038 30EE270A 		vadd.f32	s0, s0, s15
+ 552              	.LVL22:
+ 553              		.loc 1 107 1 view .LVU122
+ 554 003c 08BD     		pop	{r3, pc}
+ 555              	.L29:
+ 556 003e 00BF     		.align	2
+ 557              	.L28:
+ 558 0040 00000000 		.word	.LANCHOR9
+ 559 0044 6F12833A 		.word	981668463
+ 560 0048 BD378635 		.word	897988541
+ 561              		.cfi_endproc
+ 562              	.LFE140:
+ 564              		.section	.text.DWT_GetTimeline_ms,"ax",%progbits
+ 565              		.align	1
+ 566              		.global	DWT_GetTimeline_ms
+ 567              		.syntax unified
+ 568              		.thumb
+ 569              		.thumb_func
+ 571              	DWT_GetTimeline_ms:
+ 572              	.LFB141:
+ 108:bsp/dwt/bsp_dwt.c **** 
+ 109:bsp/dwt/bsp_dwt.c **** float DWT_GetTimeline_ms(void)
+ 110:bsp/dwt/bsp_dwt.c **** {
+ 573              		.loc 1 110 1 is_stmt 1 view -0
+ 574              		.cfi_startproc
+ 575              		@ args = 0, pretend = 0, frame = 0
+ 576              		@ frame_needed = 0, uses_anonymous_args = 0
+ 577 0000 08B5     		push	{r3, lr}
+ 578              	.LCFI17:
+ 579              		.cfi_def_cfa_offset 8
+ 580              		.cfi_offset 3, -8
+ 581              		.cfi_offset 14, -4
+ 111:bsp/dwt/bsp_dwt.c ****     DWT_SysTimeUpdate();
+ 582              		.loc 1 111 5 view .LVU124
+ 583 0002 FFF7FEFF 		bl	DWT_SysTimeUpdate
+ 584              	.LVL23:
+ 112:bsp/dwt/bsp_dwt.c **** 
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s 			page 13
+
+
+ 113:bsp/dwt/bsp_dwt.c ****     float DWT_Timelinef32 = SysTime.s * 1000 + SysTime.ms + SysTime.us * 0.001f;
+ 585              		.loc 1 113 5 view .LVU125
+ 586              		.loc 1 113 36 is_stmt 0 view .LVU126
+ 587 0006 0B4A     		ldr	r2, .L32
+ 588 0008 1168     		ldr	r1, [r2]
+ 589              		.loc 1 113 55 view .LVU127
+ 590 000a 9388     		ldrh	r3, [r2, #4]
+ 591              		.loc 1 113 46 view .LVU128
+ 592 000c 4FF47A70 		mov	r0, #1000
+ 593 0010 00FB0133 		mla	r3, r0, r1, r3
+ 594 0014 00EE103A 		vmov	s0, r3	@ int
+ 595              		.loc 1 113 59 view .LVU129
+ 596 0018 B8EE400A 		vcvt.f32.u32	s0, s0
+ 597              		.loc 1 113 68 view .LVU130
+ 598 001c D388     		ldrh	r3, [r2, #6]
+ 599 001e 07EE903A 		vmov	s15, r3	@ int
+ 600              		.loc 1 113 72 view .LVU131
+ 601 0022 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 602 0026 9FED047A 		vldr.32	s14, .L32+4
+ 603 002a 67EE877A 		vmul.f32	s15, s15, s14
+ 604              	.LVL24:
+ 114:bsp/dwt/bsp_dwt.c **** 
+ 115:bsp/dwt/bsp_dwt.c ****     return DWT_Timelinef32;
+ 605              		.loc 1 115 5 is_stmt 1 view .LVU132
+ 116:bsp/dwt/bsp_dwt.c **** }
+ 606              		.loc 1 116 1 is_stmt 0 view .LVU133
+ 607 002e 30EE270A 		vadd.f32	s0, s0, s15
+ 608              	.LVL25:
+ 609              		.loc 1 116 1 view .LVU134
+ 610 0032 08BD     		pop	{r3, pc}
+ 611              	.L33:
+ 612              		.align	2
+ 613              	.L32:
+ 614 0034 00000000 		.word	.LANCHOR9
+ 615 0038 6F12833A 		.word	981668463
+ 616              		.cfi_endproc
+ 617              	.LFE141:
+ 619              		.section	.text.DWT_GetTimeline_us,"ax",%progbits
+ 620              		.align	1
+ 621              		.global	DWT_GetTimeline_us
+ 622              		.syntax unified
+ 623              		.thumb
+ 624              		.thumb_func
+ 626              	DWT_GetTimeline_us:
+ 627              	.LFB142:
+ 117:bsp/dwt/bsp_dwt.c **** 
+ 118:bsp/dwt/bsp_dwt.c **** uint64_t DWT_GetTimeline_us(void)
+ 119:bsp/dwt/bsp_dwt.c **** {
+ 628              		.loc 1 119 1 is_stmt 1 view -0
+ 629              		.cfi_startproc
+ 630              		@ args = 0, pretend = 0, frame = 0
+ 631              		@ frame_needed = 0, uses_anonymous_args = 0
+ 632 0000 08B5     		push	{r3, lr}
+ 633              	.LCFI18:
+ 634              		.cfi_def_cfa_offset 8
+ 635              		.cfi_offset 3, -8
+ 636              		.cfi_offset 14, -4
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s 			page 14
+
+
+ 120:bsp/dwt/bsp_dwt.c ****     DWT_SysTimeUpdate();
+ 637              		.loc 1 120 5 view .LVU136
+ 638 0002 FFF7FEFF 		bl	DWT_SysTimeUpdate
+ 639              	.LVL26:
+ 121:bsp/dwt/bsp_dwt.c **** 
+ 122:bsp/dwt/bsp_dwt.c ****     uint64_t DWT_Timelinef32 = SysTime.s * 1000000 + SysTime.ms * 1000 + SysTime.us;
+ 640              		.loc 1 122 5 view .LVU137
+ 641              		.loc 1 122 39 is_stmt 0 view .LVU138
+ 642 0006 074A     		ldr	r2, .L36
+ 643 0008 1168     		ldr	r1, [r2]
+ 644              		.loc 1 122 61 view .LVU139
+ 645 000a 9388     		ldrh	r3, [r2, #4]
+ 646              		.loc 1 122 65 view .LVU140
+ 647 000c 4FF47A70 		mov	r0, #1000
+ 648 0010 00FB03F3 		mul	r3, r0, r3
+ 649              		.loc 1 122 52 view .LVU141
+ 650 0014 0448     		ldr	r0, .L36+4
+ 651 0016 00FB0133 		mla	r3, r0, r1, r3
+ 652              		.loc 1 122 81 view .LVU142
+ 653 001a D088     		ldrh	r0, [r2, #6]
+ 654              	.LVL27:
+ 123:bsp/dwt/bsp_dwt.c **** 
+ 124:bsp/dwt/bsp_dwt.c ****     return DWT_Timelinef32;
+ 655              		.loc 1 124 5 is_stmt 1 view .LVU143
+ 125:bsp/dwt/bsp_dwt.c **** }
+ 656              		.loc 1 125 1 is_stmt 0 view .LVU144
+ 657 001c 1844     		add	r0, r0, r3
+ 658              	.LVL28:
+ 659              		.loc 1 125 1 view .LVU145
+ 660 001e 0021     		movs	r1, #0
+ 661 0020 08BD     		pop	{r3, pc}
+ 662              	.L37:
+ 663 0022 00BF     		.align	2
+ 664              	.L36:
+ 665 0024 00000000 		.word	.LANCHOR9
+ 666 0028 40420F00 		.word	1000000
+ 667              		.cfi_endproc
+ 668              	.LFE142:
+ 670              		.section	.text.DWT_Delay,"ax",%progbits
+ 671              		.align	1
+ 672              		.global	DWT_Delay
+ 673              		.syntax unified
+ 674              		.thumb
+ 675              		.thumb_func
+ 677              	DWT_Delay:
+ 678              	.LVL29:
+ 679              	.LFB143:
+ 126:bsp/dwt/bsp_dwt.c **** 
+ 127:bsp/dwt/bsp_dwt.c **** void DWT_Delay(float Delay)
+ 128:bsp/dwt/bsp_dwt.c **** {
+ 680              		.loc 1 128 1 is_stmt 1 view -0
+ 681              		.cfi_startproc
+ 682              		@ args = 0, pretend = 0, frame = 0
+ 683              		@ frame_needed = 0, uses_anonymous_args = 0
+ 684              		@ link register save eliminated.
+ 129:bsp/dwt/bsp_dwt.c ****     uint32_t tickstart = DWT->CYCCNT;
+ 685              		.loc 1 129 5 view .LVU147
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s 			page 15
+
+
+ 686              		.loc 1 129 14 is_stmt 0 view .LVU148
+ 687 0000 0A4B     		ldr	r3, .L40
+ 688 0002 5968     		ldr	r1, [r3, #4]
+ 689              	.LVL30:
+ 130:bsp/dwt/bsp_dwt.c ****     float wait = Delay;
+ 690              		.loc 1 130 5 is_stmt 1 view .LVU149
+ 131:bsp/dwt/bsp_dwt.c **** 
+ 132:bsp/dwt/bsp_dwt.c ****     while ((DWT->CYCCNT - tickstart) < wait * (float)CPU_FREQ_Hz)
+ 691              		.loc 1 132 5 view .LVU150
+ 692              	.L39:
+ 693              		.loc 1 132 38 discriminator 1 view .LVU151
+ 694              		.loc 1 132 16 is_stmt 0 discriminator 1 view .LVU152
+ 695 0004 094B     		ldr	r3, .L40
+ 696 0006 5B68     		ldr	r3, [r3, #4]
+ 697              		.loc 1 132 25 discriminator 1 view .LVU153
+ 698 0008 5B1A     		subs	r3, r3, r1
+ 699              		.loc 1 132 47 discriminator 1 view .LVU154
+ 700 000a 094A     		ldr	r2, .L40+4
+ 701 000c D2ED007A 		vldr.32	s15, [r2]	@ int
+ 702 0010 F8EE677A 		vcvt.f32.u32	s15, s15
+ 703              		.loc 1 132 45 discriminator 1 view .LVU155
+ 704 0014 67EE807A 		vmul.f32	s15, s15, s0
+ 705              		.loc 1 132 38 discriminator 1 view .LVU156
+ 706 0018 07EE103A 		vmov	s14, r3	@ int
+ 707 001c B8EE477A 		vcvt.f32.u32	s14, s14
+ 708 0020 B4EEE77A 		vcmpe.f32	s14, s15
+ 709 0024 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 710 0028 ECD4     		bmi	.L39
+ 133:bsp/dwt/bsp_dwt.c ****         ;
+ 134:bsp/dwt/bsp_dwt.c **** }
+ 711              		.loc 1 134 1 view .LVU157
+ 712 002a 7047     		bx	lr
+ 713              	.L41:
+ 714              		.align	2
+ 715              	.L40:
+ 716 002c 001000E0 		.word	-536866816
+ 717 0030 00000000 		.word	.LANCHOR3
+ 718              		.cfi_endproc
+ 719              	.LFE143:
+ 721              		.section	.text.DWT_Delay_ms,"ax",%progbits
+ 722              		.align	1
+ 723              		.global	DWT_Delay_ms
+ 724              		.syntax unified
+ 725              		.thumb
+ 726              		.thumb_func
+ 728              	DWT_Delay_ms:
+ 729              	.LVL31:
+ 730              	.LFB144:
+ 135:bsp/dwt/bsp_dwt.c **** 
+ 136:bsp/dwt/bsp_dwt.c **** void DWT_Delay_ms(uint16_t Delay)
+ 137:bsp/dwt/bsp_dwt.c **** {
+ 731              		.loc 1 137 1 is_stmt 1 view -0
+ 732              		.cfi_startproc
+ 733              		@ args = 0, pretend = 0, frame = 0
+ 734              		@ frame_needed = 0, uses_anonymous_args = 0
+ 735              		.loc 1 137 1 is_stmt 0 view .LVU159
+ 736 0000 08B5     		push	{r3, lr}
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s 			page 16
+
+
+ 737              	.LCFI19:
+ 738              		.cfi_def_cfa_offset 8
+ 739              		.cfi_offset 3, -8
+ 740              		.cfi_offset 14, -4
+ 741 0002 07EE900A 		vmov	s15, r0	@ int
+ 138:bsp/dwt/bsp_dwt.c ****     DWT_Delay((float)Delay / 1000.0f);
+ 742              		.loc 1 138 5 is_stmt 1 view .LVU160
+ 743              		.loc 1 138 15 is_stmt 0 view .LVU161
+ 744 0006 F8EE677A 		vcvt.f32.u32	s15, s15
+ 745              		.loc 1 138 5 view .LVU162
+ 746 000a 9FED030A 		vldr.32	s0, .L44
+ 747 000e 87EE800A 		vdiv.f32	s0, s15, s0
+ 748 0012 FFF7FEFF 		bl	DWT_Delay
+ 749              	.LVL32:
+ 139:bsp/dwt/bsp_dwt.c **** }...
+ 750              		.loc 1 139 1 view .LVU163
+ 751 0016 08BD     		pop	{r3, pc}
+ 752              	.L45:
+ 753              		.align	2
+ 754              	.L44:
+ 755 0018 00007A44 		.word	1148846080
+ 756              		.cfi_endproc
+ 757              	.LFE144:
+ 759              		.section	.bss.CNT_TEMP1.2,"aw",%nobits
+ 760              		.align	3
+ 761              		.set	.LANCHOR7,. + 0
+ 764              	CNT_TEMP1.2:
+ 765 0000 00000000 		.space	8
+ 765      00000000 
+ 766              		.section	.bss.CNT_TEMP2.1,"aw",%nobits
+ 767              		.align	3
+ 768              		.set	.LANCHOR8,. + 0
+ 771              	CNT_TEMP2.1:
+ 772 0000 00000000 		.space	8
+ 772      00000000 
+ 773              		.section	.bss.CNT_TEMP3.0,"aw",%nobits
+ 774              		.align	3
+ 775              		.set	.LANCHOR10,. + 0
+ 778              	CNT_TEMP3.0:
+ 779 0000 00000000 		.space	8
+ 779      00000000 
+ 780              		.section	.bss.CPU_FREQ_Hz,"aw",%nobits
+ 781              		.align	2
+ 782              		.set	.LANCHOR3,. + 0
+ 785              	CPU_FREQ_Hz:
+ 786 0000 00000000 		.space	4
+ 787              		.section	.bss.CPU_FREQ_Hz_ms,"aw",%nobits
+ 788              		.align	2
+ 789              		.set	.LANCHOR4,. + 0
+ 792              	CPU_FREQ_Hz_ms:
+ 793 0000 00000000 		.space	4
+ 794              		.section	.bss.CPU_FREQ_Hz_us,"aw",%nobits
+ 795              		.align	2
+ 796              		.set	.LANCHOR5,. + 0
+ 799              	CPU_FREQ_Hz_us:
+ 800 0000 00000000 		.space	4
+ 801              		.section	.bss.CYCCNT64,"aw",%nobits
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s 			page 17
+
+
+ 802              		.align	3
+ 803              		.set	.LANCHOR6,. + 0
+ 806              	CYCCNT64:
+ 807 0000 00000000 		.space	8
+ 807      00000000 
+ 808              		.section	.bss.CYCCNT_LAST,"aw",%nobits
+ 809              		.align	2
+ 810              		.set	.LANCHOR1,. + 0
+ 813              	CYCCNT_LAST:
+ 814 0000 00000000 		.space	4
+ 815              		.section	.bss.CYCCNT_RountCount,"aw",%nobits
+ 816              		.align	2
+ 817              		.set	.LANCHOR2,. + 0
+ 820              	CYCCNT_RountCount:
+ 821 0000 00000000 		.space	4
+ 822              		.section	.bss.SysTime,"aw",%nobits
+ 823              		.align	2
+ 824              		.set	.LANCHOR9,. + 0
+ 827              	SysTime:
+ 828 0000 00000000 		.space	8
+ 828      00000000 
+ 829              		.section	.bss.bit_locker.3,"aw",%nobits
+ 830              		.set	.LANCHOR0,. + 0
+ 833              	bit_locker.3:
+ 834 0000 00       		.space	1
+ 835              		.text
+ 836              	.Letext0:
+ 837              		.file 2 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
+ 838              		.file 3 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
+ 839              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 840              		.file 5 "bsp/dwt/bsp_dwt.h"
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s 			page 18
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 bsp_dwt.c
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:20     .text.DWT_CNT_Update:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:25     .text.DWT_CNT_Update:0000000000000000 DWT_CNT_Update
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:95     .text.DWT_CNT_Update:000000000000003c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:103    .text.DWT_Init:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:109    .text.DWT_Init:0000000000000000 DWT_Init
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:174    .text.DWT_Init:000000000000004c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:187    .text.DWT_GetDeltaT:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:193    .text.DWT_GetDeltaT:0000000000000000 DWT_GetDeltaT
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:261    .text.DWT_GetDeltaT:0000000000000040 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:269    .text.DWT_GetDeltaT64:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:275    .text.DWT_GetDeltaT64:0000000000000000 DWT_GetDeltaT64
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:359    .text.DWT_GetDeltaT64:0000000000000050 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:366    .text.DWT_SysTimeUpdate:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:372    .text.DWT_SysTimeUpdate:0000000000000000 DWT_SysTimeUpdate
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:493    .text.DWT_SysTimeUpdate:00000000000000a4 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:507    .text.DWT_GetTimeline_s:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:513    .text.DWT_GetTimeline_s:0000000000000000 DWT_GetTimeline_s
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:558    .text.DWT_GetTimeline_s:0000000000000040 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:565    .text.DWT_GetTimeline_ms:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:571    .text.DWT_GetTimeline_ms:0000000000000000 DWT_GetTimeline_ms
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:614    .text.DWT_GetTimeline_ms:0000000000000034 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:620    .text.DWT_GetTimeline_us:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:626    .text.DWT_GetTimeline_us:0000000000000000 DWT_GetTimeline_us
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:665    .text.DWT_GetTimeline_us:0000000000000024 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:671    .text.DWT_Delay:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:677    .text.DWT_Delay:0000000000000000 DWT_Delay
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:716    .text.DWT_Delay:000000000000002c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:722    .text.DWT_Delay_ms:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:728    .text.DWT_Delay_ms:0000000000000000 DWT_Delay_ms
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:755    .text.DWT_Delay_ms:0000000000000018 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:760    .bss.CNT_TEMP1.2:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:764    .bss.CNT_TEMP1.2:0000000000000000 CNT_TEMP1.2
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:767    .bss.CNT_TEMP2.1:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:771    .bss.CNT_TEMP2.1:0000000000000000 CNT_TEMP2.1
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:774    .bss.CNT_TEMP3.0:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:778    .bss.CNT_TEMP3.0:0000000000000000 CNT_TEMP3.0
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:781    .bss.CPU_FREQ_Hz:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:785    .bss.CPU_FREQ_Hz:0000000000000000 CPU_FREQ_Hz
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:788    .bss.CPU_FREQ_Hz_ms:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:792    .bss.CPU_FREQ_Hz_ms:0000000000000000 CPU_FREQ_Hz_ms
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:795    .bss.CPU_FREQ_Hz_us:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:799    .bss.CPU_FREQ_Hz_us:0000000000000000 CPU_FREQ_Hz_us
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:802    .bss.CYCCNT64:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:806    .bss.CYCCNT64:0000000000000000 CYCCNT64
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:809    .bss.CYCCNT_LAST:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:813    .bss.CYCCNT_LAST:0000000000000000 CYCCNT_LAST
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:816    .bss.CYCCNT_RountCount:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:820    .bss.CYCCNT_RountCount:0000000000000000 CYCCNT_RountCount
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:823    .bss.SysTime:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:827    .bss.SysTime:0000000000000000 SysTime
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:833    .bss.bit_locker.3:0000000000000000 bit_locker.3
+C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s:834    .bss.bit_locker.3:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+__aeabi_ui2d
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccV1BXq4.s 			page 19
+
+
+__aeabi_ddiv
+__aeabi_uldivmod

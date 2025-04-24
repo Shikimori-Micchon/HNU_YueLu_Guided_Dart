@@ -63,7 +63,15 @@ void USARTServiceInit(USARTInstance *_instance);
  * @param send_buf 待发送数据的buffer
  * @param send_size how many bytes to send
  */
-void USARTSend(USARTInstance *_instance, uint8_t *send_buf, uint16_t send_size,USART_TRANSFER_MODE mode);
+void USARTSend(USARTInstance *_instance, uint8_t *send_buf, uint16_t send_size, USART_TRANSFER_MODE mode);
+
+/**
+ * @brief 该函数是传感器发送数据专用函数，串口句柄固定为USART3，由JY61P驱动调用，请勿使用该函数作为通用发送函数
+ * 
+ * @param send_buf 
+ * @param send_size 
+ */
+void USART_JY61P_SEND(uint8_t *send_buf, uint16_t send_size);
 
 /**
  * @brief 判断串口是否准备好,用于连续或异步的IT/DMA发送

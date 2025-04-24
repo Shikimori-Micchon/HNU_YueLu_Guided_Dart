@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
   28:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****       (#) FLASH Memory Erase functions: 
   29:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****            (++) Lock and Unlock the FLASH interface using HAL_FLASH_Unlock() and 
   30:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****                 HAL_FLASH_Lock() functions
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 2
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 2
 
 
   31:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****            (++) Erase function: Erase sector, erase all sectors
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
   85:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   */
   86:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****     
   87:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c **** /* Private macro -------------------------------------------------------------*/
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 3
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 3
 
 
   88:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c **** /* Private variables ---------------------------------------------------------*/
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  142:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****                 ##### Extended programming operation functions #####
  143:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****  ===============================================================================  
  144:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****     [..]
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 4
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 4
 
 
  145:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****     This subsection provides a set of functions allowing to manage the Extension FLASH 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  199:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****       {
  200:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****         FLASH_Erase_Sector(index, (uint8_t) pEraseInit->VoltageRange);
  201:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c **** 
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 5
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 5
 
 
  202:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****         /* Wait for last operation to be completed */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  256:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****     pFlash.ProcedureOnGoing = FLASH_PROC_MASSERASE;
  257:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****     pFlash.Bank = pEraseInit->Banks;
  258:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****     FLASH_MassErase((uint8_t) pEraseInit->VoltageRange, pEraseInit->Banks);
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 6
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 6
 
 
  259:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   }
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  313:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   if((pOBInit->OptionType & OPTIONBYTE_RDP) == OPTIONBYTE_RDP)
  314:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   {
  315:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****     status = FLASH_OB_RDP_LevelConfig(pOBInit->RDPLevel);
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 7
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 7
 
 
  316:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   }
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  370:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   *         contains the configuration information for the programming.
  371:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   * 
  372:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   * @retval HAL Status
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 8
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 8
 
 
  373:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   */
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  427:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   * 
  428:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   * @retval None
  429:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   */
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 9
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 9
 
 
  430:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c **** void HAL_FLASHEx_AdvOBGetConfig(FLASH_AdvOBProgramInitTypeDef *pAdvOBInit)
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  484:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   * 
  485:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   * @retval HAL Status
  486:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   */
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 10
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 10
 
 
  487:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c **** HAL_StatusTypeDef HAL_FLASHEx_OB_DeSelectPCROP(void)
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  541:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   */
  542:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c **** static void FLASH_MassErase(uint8_t VoltageRange, uint32_t Banks)
  543:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c **** {
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 11
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 11
 
 
  544:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   /* Check the parameters */
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  598:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   else if(VoltageRange == FLASH_VOLTAGE_RANGE_2)
  599:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   {
  600:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****     tmp_psize = FLASH_PSIZE_HALF_WORD;
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 12
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 12
 
 
  601:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   }
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  655:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   status = FLASH_WaitForLastOperation((uint32_t)FLASH_TIMEOUT_VALUE);
  656:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c **** 
  657:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   if(status == HAL_OK)
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 13
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 13
 
 
  658:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   {
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  712:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   *            @arg FLASH_BANK_2: Bank2 to be erased
  713:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   *            @arg FLASH_BANK_BOTH: Bank1 and Bank2 to be erased
  714:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   *
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 14
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 14
 
 
  715:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   * @retval HAL Status   
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  769:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   *   
  770:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   * @note   This function can be used only for STM32F42xxx/43xxx devices.
  771:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   *      
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 15
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 15
 
 
  772:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   * @param  BootConfig specifies the Dual Bank Boot Option byte.
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  826:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c **** 
  827:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   if(status == HAL_OK)
  828:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   {
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 16
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 16
 
 
  829:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****     if((Banks == FLASH_BANK_1) || (Banks == FLASH_BANK_BOTH))
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  883:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c **** {  
  884:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   HAL_StatusTypeDef status = HAL_OK;
  885:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 17
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 17
 
 
  886:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   /* Check the parameters */
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  940:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   *            @arg FLASH_VOLTAGE_RANGE_2: when the device voltage range is 2.1V to 2.7V,
  941:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   *                                  the operation will be done by half word (16-bit)
  942:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   *            @arg FLASH_VOLTAGE_RANGE_3: when the device voltage range is 2.7V to 3.6V,
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 18
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 18
 
 
  943:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   *                                  the operation will be done by word (32-bit)
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
   63              		.syntax unified
   64              		.thumb
   65              		.thumb_func
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 19
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 19
 
 
   67              	FLASH_OB_BOR_LevelConfig:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
 1015:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c **** /**
 1016:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   * @brief  Enable the write protection of the desired bank 1 sectors
 1017:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   *
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 20
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 20
 
 
 1018:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   * @note   When the memory read protection level is selected (RDP level = 1), 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
 1072:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   /* Check the parameters */
 1073:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   assert_param(IS_OB_WRP_SECTOR(WRPSector));
 1074:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   assert_param(IS_FLASH_BANK(Banks));
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 21
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 21
 
 
 1075:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****     
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
 1129:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c **** static HAL_StatusTypeDef FLASH_OB_DisablePCROP(uint32_t Sector)
 1130:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c **** {  
 1131:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   HAL_StatusTypeDef status = HAL_OK;
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 22
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 22
 
 
 1132:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
 1186:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   * @param  Stop Reset event when entering STOP mode.
 1187:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   *          This parameter  can be one of the following values:
 1188:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   *            @arg OB_STOP_NO_RST: No reset generated when entering in STOP
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 23
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 23
 
 
 1189:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   *            @arg OB_STOP_RST: Reset generated when entering in STOP
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
 1237:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   *(__IO uint8_t *)OPTCR_BYTE0_ADDRESS &= (~FLASH_OPTCR_BOR_LEV);
   76              		.loc 1 1237 3 view .LVU11
   77              		.loc 1 1237 40 is_stmt 0 view .LVU12
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 24
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 24
 
 
   78 0000 044B     		ldr	r3, .L5
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  118 0004 00F0E000 		and	r0, r0, #224
  119 0008 7047     		bx	lr
  120              	.L9:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 25
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 25
 
 
  121 000a 00BF     		.align	2
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
 1271:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   *            @arg OB_RDP_LEVEL_2: Full chip protection
 1272:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   */
 1273:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c **** static uint8_t FLASH_OB_GetRDP(void)
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 26
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 26
 
 
 1274:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c **** {
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  199              		.align	1
  200              		.syntax unified
  201              		.thumb
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 27
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 27
 
 
  202              		.thumb_func
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  243              		.cfi_offset 14, -4
  244 0002 0446     		mov	r4, r0
 1034:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 28
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 28
 
 
  245              		.loc 1 1034 3 is_stmt 1 view .LVU43
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  288              		.loc 1 1069 1 is_stmt 1 view -0
  289              		.cfi_startproc
  290              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 29
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 29
 
 
  291              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  330              	.L29:
  331 001c 003C0240 		.word	1073888256
  332              		.cfi_endproc
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 30
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 30
 
 
  333              	.LFE137:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  376              	.L35:
  377              		.align	2
  378              	.L34:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 31
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 31
 
 
  379 0014 003C0240 		.word	1073888256
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  423              		.loc 1 1209 5 is_stmt 0 view .LVU96
  424 0010 48B9     		cbnz	r0, .L37
 1212:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c **** 
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 32
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 32
 
 
  425              		.loc 1 1212 5 is_stmt 1 view .LVU97
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  469 0000 1F4B     		ldr	r3, .L58
  470 0002 1B7E     		ldrb	r3, [r3, #24]	@ zero_extendqisi2
  471 0004 012B     		cmp	r3, #1
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 33
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 33
 
 
  472 0006 38D0     		beq	.L48
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  303:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****     }
  511              		.loc 1 303 7 is_stmt 1 view .LVU125
  303:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****     }
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 34
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 34
 
 
  512              		.loc 1 303 16 is_stmt 0 view .LVU126
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  552 0052 1A76     		strb	r2, [r3, #24]
  333:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c **** 
  553              		.loc 1 333 3 view .LVU141
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 35
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 35
 
 
  335:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c **** }
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  594              		.cfi_def_cfa_offset 0
  595              		.cfi_restore 4
  596              		.cfi_restore 14
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 36
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 36
 
 
  291:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c **** 
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  642 000e FFF7FEFF 		bl	FLASH_OB_GetRDP
  643              	.LVL44:
  353:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c **** 
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 37
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 37
 
 
  644              		.loc 1 353 21 view .LVU167
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  687 0008 09B1     		cbz	r1, .L63
  983:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   uint32_t tmp_psize = 0U;
  688              		.loc 1 983 1 is_stmt 0 view .LVU181
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 38
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 38
 
 
  689 000a 4FF44071 		mov	r1, #768
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  730              		.loc 1 983 1 view .LVU194
  731 0042 4FF40071 		mov	r1, #512
  732              	.LVL53:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 39
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 39
 
 
  983:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   uint32_t tmp_psize = 0U;
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  779 0014 42F08072 		orr	r2, r2, #16777216
  780 0018 1A61     		str	r2, [r3, #16]
  247:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 40
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 40
 
 
  781              		.loc 1 247 3 discriminator 2 view .LVU205
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  273:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   }
  818              		.loc 1 273 5 is_stmt 0 view .LVU223
  819 0040 FFF7FEFF 		bl	FLASH_Erase_Sector
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 41
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 41
 
 
  820              	.LVL57:
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  863              		.section	.text.FLASH_FlushCaches,"ax",%progbits
  864              		.align	1
  865              		.global	FLASH_FlushCaches
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 42
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 42
 
 
  866              		.syntax unified
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
 1323:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   
 1324:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   /* Flush data cache */
 1325:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****   if(READ_BIT(FLASH->ACR, FLASH_ACR_DCEN) != RESET)
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 43
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 43
 
 
  904              		.loc 1 1325 3 view .LVU246
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  950              		.loc 1 163 1 is_stmt 1 view -0
  951              		.cfi_startproc
  952              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 44
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 44
 
 
  953              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  179:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****     
  993              		.loc 1 179 18 is_stmt 0 view .LVU271
  994 0020 4FF0FF33 		mov	r3, #-1
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 45
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 45
 
 
  995 0024 3360     		str	r3, [r6]
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  1033              		.loc 1 208 9 view .LVU287
  208:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c ****         {
  1034              		.loc 1 208 11 is_stmt 0 view .LVU288
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 46
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 46
 
 
  1035 0052 0746     		mov	r7, r0
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  221:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c **** 
  1077              		.loc 1 221 3 view .LVU301
  221:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c **** 
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 47
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 47
 
 
  1078              		.loc 1 221 3 view .LVU302
@@ -2797,58 +2797,58 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 1
  1108              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
  1109              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h"
  1110              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h"
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s 			page 48
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s 			page 48
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f4xx_hal_flash_ex.c
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:20     .text.FLASH_MassErase:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:25     .text.FLASH_MassErase:0000000000000000 FLASH_MassErase
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:57     .text.FLASH_MassErase:0000000000000020 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:62     .text.FLASH_OB_BOR_LevelConfig:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:67     .text.FLASH_OB_BOR_LevelConfig:0000000000000000 FLASH_OB_BOR_LevelConfig
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:96     .text.FLASH_OB_BOR_LevelConfig:0000000000000014 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:101    .text.FLASH_OB_GetUser:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:106    .text.FLASH_OB_GetUser:0000000000000000 FLASH_OB_GetUser
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:123    .text.FLASH_OB_GetUser:000000000000000c $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:128    .text.FLASH_OB_GetWRP:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:133    .text.FLASH_OB_GetWRP:0000000000000000 FLASH_OB_GetWRP
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:150    .text.FLASH_OB_GetWRP:0000000000000008 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:155    .text.FLASH_OB_GetRDP:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:160    .text.FLASH_OB_GetRDP:0000000000000000 FLASH_OB_GetRDP
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:194    .text.FLASH_OB_GetRDP:0000000000000018 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:199    .text.FLASH_OB_GetBOR:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:204    .text.FLASH_OB_GetBOR:0000000000000000 FLASH_OB_GetBOR
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:221    .text.FLASH_OB_GetBOR:000000000000000c $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:226    .text.FLASH_OB_EnableWRP:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:231    .text.FLASH_OB_EnableWRP:0000000000000000 FLASH_OB_EnableWRP
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:275    .text.FLASH_OB_EnableWRP:000000000000001c $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:280    .text.FLASH_OB_DisableWRP:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:285    .text.FLASH_OB_DisableWRP:0000000000000000 FLASH_OB_DisableWRP
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:331    .text.FLASH_OB_DisableWRP:000000000000001c $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:336    .text.FLASH_OB_RDP_LevelConfig:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:341    .text.FLASH_OB_RDP_LevelConfig:0000000000000000 FLASH_OB_RDP_LevelConfig
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:379    .text.FLASH_OB_RDP_LevelConfig:0000000000000014 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:384    .text.FLASH_OB_UserConfig:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:389    .text.FLASH_OB_UserConfig:0000000000000000 FLASH_OB_UserConfig
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:448    .text.FLASH_OB_UserConfig:0000000000000028 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:453    .text.HAL_FLASHEx_OBProgram:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:459    .text.HAL_FLASHEx_OBProgram:0000000000000000 HAL_FLASHEx_OBProgram
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:605    .text.HAL_FLASHEx_OBProgram:0000000000000080 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:610    .text.HAL_FLASHEx_OBGetConfig:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:616    .text.HAL_FLASHEx_OBGetConfig:0000000000000000 HAL_FLASHEx_OBGetConfig
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:665    .text.FLASH_Erase_Sector:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:671    .text.FLASH_Erase_Sector:0000000000000000 FLASH_Erase_Sector
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:738    .text.FLASH_Erase_Sector:0000000000000048 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:743    .text.HAL_FLASHEx_Erase_IT:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:749    .text.HAL_FLASHEx_Erase_IT:0000000000000000 HAL_FLASHEx_Erase_IT
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:858    .text.HAL_FLASHEx_Erase_IT:0000000000000064 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:864    .text.FLASH_FlushCaches:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:870    .text.FLASH_FlushCaches:0000000000000000 FLASH_FlushCaches
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:936    .text.FLASH_FlushCaches:000000000000005c $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:941    .text.HAL_FLASHEx_Erase:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:947    .text.HAL_FLASHEx_Erase:0000000000000000 HAL_FLASHEx_Erase
-C:\Users\HUAWEI\AppData\Local\Temp\ccBzebgk.s:1097   .text.HAL_FLASHEx_Erase:000000000000008c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:20     .text.FLASH_MassErase:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:25     .text.FLASH_MassErase:0000000000000000 FLASH_MassErase
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:57     .text.FLASH_MassErase:0000000000000020 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:62     .text.FLASH_OB_BOR_LevelConfig:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:67     .text.FLASH_OB_BOR_LevelConfig:0000000000000000 FLASH_OB_BOR_LevelConfig
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:96     .text.FLASH_OB_BOR_LevelConfig:0000000000000014 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:101    .text.FLASH_OB_GetUser:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:106    .text.FLASH_OB_GetUser:0000000000000000 FLASH_OB_GetUser
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:123    .text.FLASH_OB_GetUser:000000000000000c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:128    .text.FLASH_OB_GetWRP:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:133    .text.FLASH_OB_GetWRP:0000000000000000 FLASH_OB_GetWRP
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:150    .text.FLASH_OB_GetWRP:0000000000000008 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:155    .text.FLASH_OB_GetRDP:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:160    .text.FLASH_OB_GetRDP:0000000000000000 FLASH_OB_GetRDP
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:194    .text.FLASH_OB_GetRDP:0000000000000018 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:199    .text.FLASH_OB_GetBOR:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:204    .text.FLASH_OB_GetBOR:0000000000000000 FLASH_OB_GetBOR
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:221    .text.FLASH_OB_GetBOR:000000000000000c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:226    .text.FLASH_OB_EnableWRP:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:231    .text.FLASH_OB_EnableWRP:0000000000000000 FLASH_OB_EnableWRP
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:275    .text.FLASH_OB_EnableWRP:000000000000001c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:280    .text.FLASH_OB_DisableWRP:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:285    .text.FLASH_OB_DisableWRP:0000000000000000 FLASH_OB_DisableWRP
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:331    .text.FLASH_OB_DisableWRP:000000000000001c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:336    .text.FLASH_OB_RDP_LevelConfig:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:341    .text.FLASH_OB_RDP_LevelConfig:0000000000000000 FLASH_OB_RDP_LevelConfig
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:379    .text.FLASH_OB_RDP_LevelConfig:0000000000000014 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:384    .text.FLASH_OB_UserConfig:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:389    .text.FLASH_OB_UserConfig:0000000000000000 FLASH_OB_UserConfig
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:448    .text.FLASH_OB_UserConfig:0000000000000028 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:453    .text.HAL_FLASHEx_OBProgram:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:459    .text.HAL_FLASHEx_OBProgram:0000000000000000 HAL_FLASHEx_OBProgram
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:605    .text.HAL_FLASHEx_OBProgram:0000000000000080 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:610    .text.HAL_FLASHEx_OBGetConfig:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:616    .text.HAL_FLASHEx_OBGetConfig:0000000000000000 HAL_FLASHEx_OBGetConfig
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:665    .text.FLASH_Erase_Sector:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:671    .text.FLASH_Erase_Sector:0000000000000000 FLASH_Erase_Sector
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:738    .text.FLASH_Erase_Sector:0000000000000048 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:743    .text.HAL_FLASHEx_Erase_IT:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:749    .text.HAL_FLASHEx_Erase_IT:0000000000000000 HAL_FLASHEx_Erase_IT
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:858    .text.HAL_FLASHEx_Erase_IT:0000000000000064 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:864    .text.FLASH_FlushCaches:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:870    .text.FLASH_FlushCaches:0000000000000000 FLASH_FlushCaches
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:936    .text.FLASH_FlushCaches:000000000000005c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:941    .text.HAL_FLASHEx_Erase:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:947    .text.HAL_FLASHEx_Erase:0000000000000000 HAL_FLASHEx_Erase
+C:\Users\HUAWEI\AppData\Local\Temp\ccdR0GGf.s:1097   .text.HAL_FLASHEx_Erase:000000000000008c $d
 
 UNDEFINED SYMBOLS
 FLASH_WaitForLastOperation
