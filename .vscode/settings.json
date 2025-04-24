@@ -4,7 +4,10 @@
         "CYCCNT",
         "Ibsp",
         "Imodules",
-        "Rount"
+        "MOTORTASK",
+        "ROBOTTASK",
+        "Rount",
+        "UITASK"
     ],
     "makefile.launchConfigurations": [
         {
@@ -16,6 +19,9 @@
     "files.associations": {
         "bsp_dwt.h": "c",
         "jy61p.h": "c",
-        "stm32f405xx.h": "c"
+        "stm32f405xx.h": "c",
+        "bsp_usart.h": "c",
+        "main.h": "c",
+        "stm32f4xx_hal.h": "c"
     }
 }

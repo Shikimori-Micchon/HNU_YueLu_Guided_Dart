@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -26,7 +26,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 1
   23              		.thumb
   24              		.thumb_func
   26              	HAL_MspInit:
-  27              	.LFB132:
+  27              	.LFB136:
   28              		.file 1 "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c"
    1:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
    2:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   ******************************************************************************
@@ -35,33 +35,33 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 1
    5:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief   HAL module driver.
    6:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *          This is the common part of the HAL initialization
    7:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *
-   8:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   @verbatim
-   9:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   ==============================================================================
-  10:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****                      ##### How to use this driver #####
-  11:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   ==============================================================================
-  12:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     [..]
-  13:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     The common HAL driver contains a set of generic and common APIs that can be
-  14:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     used by the PPP peripheral drivers and the user to start using the HAL. 
-  15:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     [..]
-  16:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     The HAL contains two APIs' categories: 
-  17:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****          (+) Common HAL APIs
-  18:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****          (+) Services HAL APIs
-  19:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
-  20:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   @endverbatim
-  21:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   ******************************************************************************
-  22:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @attention
-  23:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *
-  24:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * <h2><center>&copy; Copyright (c) 2017 STMicroelectronics.
-  25:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * All rights reserved.</center></h2>
-  26:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *
-  27:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * This software component is licensed by ST under BSD 3-Clause license,
-  28:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * the "License"; You may not use this file except in compliance with the
-  29:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * License. You may obtain a copy of the License at:
-  30:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *                        opensource.org/licenses/BSD-3-Clause
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 2
+   8:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   ******************************************************************************
+   9:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @attention
+  10:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *
+  11:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * Copyright (c) 2017 STMicroelectronics.
+  12:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * All rights reserved.
+  13:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *
+  14:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  15:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * in the root directory of this software component.
+  16:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  17:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *
+  18:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   ******************************************************************************
+  19:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   @verbatim
+  20:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   ==============================================================================
+  21:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****                      ##### How to use this driver #####
+  22:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   ==============================================================================
+  23:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     [..]
+  24:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     The common HAL driver contains a set of generic and common APIs that can be
+  25:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     used by the PPP peripheral drivers and the user to start using the HAL. 
+  26:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     [..]
+  27:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     The HAL contains two APIs' categories: 
+  28:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****          (+) Common HAL APIs
+  29:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****          (+) Services HAL APIs
+  30:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 2
 
 
-  31:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *
+  31:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   @endverbatim
   32:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   ******************************************************************************
   33:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */ 
   34:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
@@ -83,11 +83,11 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 1
   50:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @{
   51:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
   52:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
-  53:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief STM32F4xx HAL Driver version number V1.7.10
+  53:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief STM32F4xx HAL Driver version number V1.8.3
   54:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
   55:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #define __STM32F4xx_HAL_VERSION_MAIN   (0x01U) /*!< [31:24] main version */
-  56:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #define __STM32F4xx_HAL_VERSION_SUB1   (0x07U) /*!< [23:16] sub1 version */
-  57:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #define __STM32F4xx_HAL_VERSION_SUB2   (0x0AU) /*!< [15:8]  sub2 version */
+  56:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #define __STM32F4xx_HAL_VERSION_SUB1   (0x08U) /*!< [23:16] sub1 version */
+  57:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #define __STM32F4xx_HAL_VERSION_SUB2   (0x03U) /*!< [15:8]  sub2 version */
   58:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #define __STM32F4xx_HAL_VERSION_RC     (0x00U) /*!< [7:0]  release candidate */ 
   59:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #define __STM32F4xx_HAL_VERSION         ((__STM32F4xx_HAL_VERSION_MAIN << 24U)\
   60:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****                                         |(__STM32F4xx_HAL_VERSION_SUB1 << 16U)\
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 1
   85:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
   86:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @}
   87:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 3
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 3
 
 
   88:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 1
  142:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *         instruction to be executed in the main program (before to call any other
  143:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *         HAL function), it performs the following:
  144:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *           Configure the Flash prefetch, instruction and Data caches.
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 4
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 4
 
 
  145:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *           Configures the SysTick to generate an interrupt each 1 millisecond,
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 1
  199:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_RCC_AHB1_FORCE_RESET();
  200:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_RCC_AHB1_RELEASE_RESET();
  201:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 5
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 5
 
 
  202:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_RCC_AHB2_FORCE_RESET();
@@ -272,7 +272,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 1
   34              		.loc 1 224 1 view .LVU1
   35 0000 7047     		bx	lr
   36              		.cfi_endproc
-  37              	.LFE132:
+  37              	.LFE136:
   39              		.section	.text.HAL_MspDeInit,"ax",%progbits
   40              		.align	1
   41              		.weak	HAL_MspDeInit
@@ -280,7 +280,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 1
   43              		.thumb
   44              		.thumb_func
   46              	HAL_MspDeInit:
-  47              	.LFB133:
+  47              	.LFB137:
  225:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
  226:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
  227:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  DeInitializes the MSP.
@@ -298,12 +298,12 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 1
  234:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****    */ 
  235:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
   53              		.loc 1 235 1 view .LVU3
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 6
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 6
 
 
   54 0000 7047     		bx	lr
   55              		.cfi_endproc
-  56              	.LFE133:
+  56              	.LFE137:
   58              		.section	.text.HAL_DeInit,"ax",%progbits
   59              		.align	1
   60              		.global	HAL_DeInit
@@ -311,7 +311,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 1
   62              		.thumb
   63              		.thumb_func
   65              	HAL_DeInit:
-  66              	.LFB131:
+  66              	.LFB135:
  191:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Reset of all peripherals */
   67              		.loc 1 191 1 view -0
   68              		.cfi_startproc
@@ -324,65 +324,72 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 1
   75              		.cfi_offset 14, -4
  193:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_RCC_APB1_RELEASE_RESET();
   76              		.loc 1 193 3 view .LVU5
-  77 0002 094B     		ldr	r3, .L5
-  78 0004 4FF0FF32 		mov	r2, #-1
-  79 0008 1A62     		str	r2, [r3, #32]
+  77 0002 0A4B     		ldr	r3, .L5
+  78 0004 0A4A     		ldr	r2, .L5+4
+  79 0006 1A62     		str	r2, [r3, #32]
  194:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
   80              		.loc 1 194 3 view .LVU6
-  81 000a 0024     		movs	r4, #0
-  82 000c 1C62     		str	r4, [r3, #32]
+  81 0008 0024     		movs	r4, #0
+  82 000a 1C62     		str	r4, [r3, #32]
  196:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_RCC_APB2_RELEASE_RESET();
   83              		.loc 1 196 3 view .LVU7
-  84 000e 5A62     		str	r2, [r3, #36]
+  84 000c 094A     		ldr	r2, .L5+8
+  85 000e 5A62     		str	r2, [r3, #36]
  197:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
-  85              		.loc 1 197 3 view .LVU8
-  86 0010 5C62     		str	r4, [r3, #36]
+  86              		.loc 1 197 3 view .LVU8
+  87 0010 5C62     		str	r4, [r3, #36]
  199:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_RCC_AHB1_RELEASE_RESET();
-  87              		.loc 1 199 3 view .LVU9
-  88 0012 1A61     		str	r2, [r3, #16]
+  88              		.loc 1 199 3 view .LVU9
+  89 0012 094A     		ldr	r2, .L5+12
+  90 0014 1A61     		str	r2, [r3, #16]
  200:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
-  89              		.loc 1 200 3 view .LVU10
-  90 0014 1C61     		str	r4, [r3, #16]
+  91              		.loc 1 200 3 view .LVU10
+  92 0016 1C61     		str	r4, [r3, #16]
  202:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_RCC_AHB2_RELEASE_RESET();
-  91              		.loc 1 202 3 view .LVU11
-  92 0016 5A61     		str	r2, [r3, #20]
+  93              		.loc 1 202 3 view .LVU11
+  94 0018 C122     		movs	r2, #193
+  95 001a 5A61     		str	r2, [r3, #20]
  203:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
-  93              		.loc 1 203 3 view .LVU12
-  94 0018 5C61     		str	r4, [r3, #20]
+  96              		.loc 1 203 3 view .LVU12
+  97 001c 5C61     		str	r4, [r3, #20]
  205:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_RCC_AHB3_RELEASE_RESET();
-  95              		.loc 1 205 3 view .LVU13
-  96 001a 9A61     		str	r2, [r3, #24]
+  98              		.loc 1 205 3 view .LVU13
+  99 001e 0122     		movs	r2, #1
+ 100 0020 9A61     		str	r2, [r3, #24]
  206:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
-  97              		.loc 1 206 3 view .LVU14
-  98 001c 9C61     		str	r4, [r3, #24]
+ 101              		.loc 1 206 3 view .LVU14
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 7
+
+
+ 102 0022 9C61     		str	r4, [r3, #24]
  209:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     
-  99              		.loc 1 209 3 view .LVU15
- 100 001e FFF7FEFF 		bl	HAL_MspDeInit
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 7
-
-
- 101              	.LVL0:
+ 103              		.loc 1 209 3 view .LVU15
+ 104 0024 FFF7FEFF 		bl	HAL_MspDeInit
+ 105              	.LVL0:
  212:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 102              		.loc 1 212 3 view .LVU16
+ 106              		.loc 1 212 3 view .LVU16
  213:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 103              		.loc 1 213 1 is_stmt 0 view .LVU17
- 104 0022 2046     		mov	r0, r4
- 105 0024 10BD     		pop	{r4, pc}
- 106              	.L6:
- 107 0026 00BF     		.align	2
- 108              	.L5:
- 109 0028 00380240 		.word	1073887232
- 110              		.cfi_endproc
- 111              	.LFE131:
- 113              		.section	.text.HAL_InitTick,"ax",%progbits
- 114              		.align	1
- 115              		.weak	HAL_InitTick
- 116              		.syntax unified
- 117              		.thumb
- 118              		.thumb_func
- 120              	HAL_InitTick:
- 121              	.LVL1:
- 122              	.LFB134:
+ 107              		.loc 1 213 1 is_stmt 0 view .LVU17
+ 108 0028 2046     		mov	r0, r4
+ 109 002a 10BD     		pop	{r4, pc}
+ 110              	.L6:
+ 111              		.align	2
+ 112              	.L5:
+ 113 002c 00380240 		.word	1073887232
+ 114 0030 FFC9FEF6 		.word	-151074305
+ 115 0034 33797704 		.word	74938675
+ 116 0038 FF116020 		.word	543166975
+ 117              		.cfi_endproc
+ 118              	.LFE135:
+ 120              		.section	.text.HAL_InitTick,"ax",%progbits
+ 121              		.align	1
+ 122              		.weak	HAL_InitTick
+ 123              		.syntax unified
+ 124              		.thumb
+ 125              		.thumb_func
+ 127              	HAL_InitTick:
+ 128              	.LVL1:
+ 129              	.LFB138:
  236:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
  237:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
  238:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief This function configures the source of the time base.
@@ -402,48 +409,48 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 1
  252:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
  253:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** __weak HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
  254:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
- 123              		.loc 1 254 1 is_stmt 1 view -0
- 124              		.cfi_startproc
- 125              		@ args = 0, pretend = 0, frame = 0
- 126              		@ frame_needed = 0, uses_anonymous_args = 0
- 127              		.loc 1 254 1 is_stmt 0 view .LVU19
- 128 0000 10B5     		push	{r4, lr}
- 129              	.LCFI1:
- 130              		.cfi_def_cfa_offset 8
- 131              		.cfi_offset 4, -8
- 132              		.cfi_offset 14, -4
- 133 0002 0446     		mov	r4, r0
+ 130              		.loc 1 254 1 is_stmt 1 view -0
+ 131              		.cfi_startproc
+ 132              		@ args = 0, pretend = 0, frame = 0
+ 133              		@ frame_needed = 0, uses_anonymous_args = 0
+ 134              		.loc 1 254 1 is_stmt 0 view .LVU19
+ 135 0000 10B5     		push	{r4, lr}
+ 136              	.LCFI1:
+ 137              		.cfi_def_cfa_offset 8
+ 138              		.cfi_offset 4, -8
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 8
+
+
+ 139              		.cfi_offset 14, -4
+ 140 0002 0446     		mov	r4, r0
  255:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Configure the SysTick to have interrupt in 1ms time basis*/
  256:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   if (HAL_SYSTICK_Config(SystemCoreClock / (1000U / uwTickFreq)) > 0U)
- 134              		.loc 1 256 3 is_stmt 1 view .LVU20
- 135              		.loc 1 256 51 is_stmt 0 view .LVU21
- 136 0004 0E4B     		ldr	r3, .L13
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 8
-
-
- 137 0006 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
- 138 0008 4FF47A73 		mov	r3, #1000
- 139 000c B3FBF2F3 		udiv	r3, r3, r2
- 140              		.loc 1 256 7 view .LVU22
- 141 0010 0C4A     		ldr	r2, .L13+4
- 142 0012 1068     		ldr	r0, [r2]
- 143              	.LVL2:
- 144              		.loc 1 256 7 view .LVU23
- 145 0014 B0FBF3F0 		udiv	r0, r0, r3
- 146 0018 FFF7FEFF 		bl	HAL_SYSTICK_Config
- 147              	.LVL3:
- 148              		.loc 1 256 6 view .LVU24
- 149 001c 68B9     		cbnz	r0, .L9
+ 141              		.loc 1 256 3 is_stmt 1 view .LVU20
+ 142              		.loc 1 256 51 is_stmt 0 view .LVU21
+ 143 0004 0E4B     		ldr	r3, .L13
+ 144 0006 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 145 0008 4FF47A73 		mov	r3, #1000
+ 146 000c B3FBF2F3 		udiv	r3, r3, r2
+ 147              		.loc 1 256 7 view .LVU22
+ 148 0010 0C4A     		ldr	r2, .L13+4
+ 149 0012 1068     		ldr	r0, [r2]
+ 150              	.LVL2:
+ 151              		.loc 1 256 7 view .LVU23
+ 152 0014 B0FBF3F0 		udiv	r0, r0, r3
+ 153 0018 FFF7FEFF 		bl	HAL_SYSTICK_Config
+ 154              	.LVL3:
+ 155              		.loc 1 256 6 view .LVU24
+ 156 001c 68B9     		cbnz	r0, .L9
  257:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
  258:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     return HAL_ERROR;
  259:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   }
  260:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
  261:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Configure the SysTick IRQ priority */
  262:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   if (TickPriority < (1UL << __NVIC_PRIO_BITS))
- 150              		.loc 1 262 3 is_stmt 1 view .LVU25
- 151              		.loc 1 262 6 is_stmt 0 view .LVU26
- 152 001e 0F2C     		cmp	r4, #15
- 153 0020 01D9     		bls	.L12
+ 157              		.loc 1 262 3 is_stmt 1 view .LVU25
+ 158              		.loc 1 262 6 is_stmt 0 view .LVU26
+ 159 001e 0F2C     		cmp	r4, #15
+ 160 0020 01D9     		bls	.L12
  263:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
  264:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     HAL_NVIC_SetPriority(SysTick_IRQn, TickPriority, 0U);
  265:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     uwTickPrio = TickPriority;
@@ -451,123 +458,123 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 1
  267:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   else
  268:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
  269:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     return HAL_ERROR;
- 154              		.loc 1 269 12 view .LVU27
- 155 0022 0120     		movs	r0, #1
- 156 0024 0AE0     		b	.L8
- 157              	.L12:
+ 161              		.loc 1 269 12 view .LVU27
+ 162 0022 0120     		movs	r0, #1
+ 163 0024 0AE0     		b	.L8
+ 164              	.L12:
  264:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     uwTickPrio = TickPriority;
- 158              		.loc 1 264 5 is_stmt 1 view .LVU28
- 159 0026 0022     		movs	r2, #0
- 160 0028 2146     		mov	r1, r4
- 161 002a 4FF0FF30 		mov	r0, #-1
- 162 002e FFF7FEFF 		bl	HAL_NVIC_SetPriority
- 163              	.LVL4:
+ 165              		.loc 1 264 5 is_stmt 1 view .LVU28
+ 166 0026 0022     		movs	r2, #0
+ 167 0028 2146     		mov	r1, r4
+ 168 002a 4FF0FF30 		mov	r0, #-1
+ 169 002e FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 170              	.LVL4:
  265:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   }
- 164              		.loc 1 265 5 view .LVU29
+ 171              		.loc 1 265 5 view .LVU29
  265:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   }
- 165              		.loc 1 265 16 is_stmt 0 view .LVU30
- 166 0032 054B     		ldr	r3, .L13+8
- 167 0034 1C60     		str	r4, [r3]
+ 172              		.loc 1 265 16 is_stmt 0 view .LVU30
+ 173 0032 054B     		ldr	r3, .L13+8
+ 174 0034 1C60     		str	r4, [r3]
  270:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   }
  271:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
  272:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Return function status */
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 9
+
+
  273:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return HAL_OK;
- 168              		.loc 1 273 3 is_stmt 1 view .LVU31
- 169              		.loc 1 273 10 is_stmt 0 view .LVU32
- 170 0036 0020     		movs	r0, #0
- 171 0038 00E0     		b	.L8
- 172              	.L9:
+ 175              		.loc 1 273 3 is_stmt 1 view .LVU31
+ 176              		.loc 1 273 10 is_stmt 0 view .LVU32
+ 177 0036 0020     		movs	r0, #0
+ 178 0038 00E0     		b	.L8
+ 179              	.L9:
  258:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   }
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 9
-
-
- 173              		.loc 1 258 12 view .LVU33
- 174 003a 0120     		movs	r0, #1
- 175              	.L8:
+ 180              		.loc 1 258 12 view .LVU33
+ 181 003a 0120     		movs	r0, #1
+ 182              	.L8:
  274:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 176              		.loc 1 274 1 view .LVU34
- 177 003c 10BD     		pop	{r4, pc}
- 178              	.LVL5:
- 179              	.L14:
- 180              		.loc 1 274 1 view .LVU35
- 181 003e 00BF     		.align	2
- 182              	.L13:
- 183 0040 00000000 		.word	.LANCHOR0
- 184 0044 00000000 		.word	SystemCoreClock
- 185 0048 00000000 		.word	.LANCHOR1
- 186              		.cfi_endproc
- 187              	.LFE134:
- 189              		.section	.text.HAL_Init,"ax",%progbits
- 190              		.align	1
- 191              		.global	HAL_Init
- 192              		.syntax unified
- 193              		.thumb
- 194              		.thumb_func
- 196              	HAL_Init:
- 197              	.LFB130:
+ 183              		.loc 1 274 1 view .LVU34
+ 184 003c 10BD     		pop	{r4, pc}
+ 185              	.LVL5:
+ 186              	.L14:
+ 187              		.loc 1 274 1 view .LVU35
+ 188 003e 00BF     		.align	2
+ 189              	.L13:
+ 190 0040 00000000 		.word	.LANCHOR0
+ 191 0044 00000000 		.word	SystemCoreClock
+ 192 0048 00000000 		.word	.LANCHOR1
+ 193              		.cfi_endproc
+ 194              	.LFE138:
+ 196              		.section	.text.HAL_Init,"ax",%progbits
+ 197              		.align	1
+ 198              		.global	HAL_Init
+ 199              		.syntax unified
+ 200              		.thumb
+ 201              		.thumb_func
+ 203              	HAL_Init:
+ 204              	.LFB134:
  158:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Configure Flash prefetch, Instruction cache, Data cache */ 
- 198              		.loc 1 158 1 is_stmt 1 view -0
- 199              		.cfi_startproc
- 200              		@ args = 0, pretend = 0, frame = 0
- 201              		@ frame_needed = 0, uses_anonymous_args = 0
- 202 0000 08B5     		push	{r3, lr}
- 203              	.LCFI2:
- 204              		.cfi_def_cfa_offset 8
- 205              		.cfi_offset 3, -8
- 206              		.cfi_offset 14, -4
+ 205              		.loc 1 158 1 is_stmt 1 view -0
+ 206              		.cfi_startproc
+ 207              		@ args = 0, pretend = 0, frame = 0
+ 208              		@ frame_needed = 0, uses_anonymous_args = 0
+ 209 0000 08B5     		push	{r3, lr}
+ 210              	.LCFI2:
+ 211              		.cfi_def_cfa_offset 8
+ 212              		.cfi_offset 3, -8
+ 213              		.cfi_offset 14, -4
  161:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #endif /* INSTRUCTION_CACHE_ENABLE */
- 207              		.loc 1 161 3 view .LVU37
- 208 0002 0B4B     		ldr	r3, .L17
- 209 0004 1A68     		ldr	r2, [r3]
- 210 0006 42F40072 		orr	r2, r2, #512
- 211 000a 1A60     		str	r2, [r3]
+ 214              		.loc 1 161 3 view .LVU37
+ 215 0002 0B4B     		ldr	r3, .L17
+ 216 0004 1A68     		ldr	r2, [r3]
+ 217 0006 42F40072 		orr	r2, r2, #512
+ 218 000a 1A60     		str	r2, [r3]
  165:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #endif /* DATA_CACHE_ENABLE */
- 212              		.loc 1 165 3 view .LVU38
- 213 000c 1A68     		ldr	r2, [r3]
- 214 000e 42F48062 		orr	r2, r2, #1024
- 215 0012 1A60     		str	r2, [r3]
+ 219              		.loc 1 165 3 view .LVU38
+ 220 000c 1A68     		ldr	r2, [r3]
+ 221 000e 42F48062 		orr	r2, r2, #1024
+ 222 0012 1A60     		str	r2, [r3]
  169:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #endif /* PREFETCH_ENABLE */
- 216              		.loc 1 169 3 view .LVU39
- 217 0014 1A68     		ldr	r2, [r3]
- 218 0016 42F48072 		orr	r2, r2, #256
- 219 001a 1A60     		str	r2, [r3]
+ 223              		.loc 1 169 3 view .LVU39
+ 224 0014 1A68     		ldr	r2, [r3]
+ 225 0016 42F48072 		orr	r2, r2, #256
+ 226 001a 1A60     		str	r2, [r3]
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 10
+
+
  173:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 220              		.loc 1 173 3 view .LVU40
- 221 001c 0320     		movs	r0, #3
- 222 001e FFF7FEFF 		bl	HAL_NVIC_SetPriorityGrouping
- 223              	.LVL6:
+ 227              		.loc 1 173 3 view .LVU40
+ 228 001c 0320     		movs	r0, #3
+ 229 001e FFF7FEFF 		bl	HAL_NVIC_SetPriorityGrouping
+ 230              	.LVL6:
  176:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 224              		.loc 1 176 3 view .LVU41
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 10
-
-
- 225 0022 0020     		movs	r0, #0
- 226 0024 FFF7FEFF 		bl	HAL_InitTick
- 227              	.LVL7:
+ 231              		.loc 1 176 3 view .LVU41
+ 232 0022 0020     		movs	r0, #0
+ 233 0024 FFF7FEFF 		bl	HAL_InitTick
+ 234              	.LVL7:
  179:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 228              		.loc 1 179 3 view .LVU42
- 229 0028 FFF7FEFF 		bl	HAL_MspInit
- 230              	.LVL8:
+ 235              		.loc 1 179 3 view .LVU42
+ 236 0028 FFF7FEFF 		bl	HAL_MspInit
+ 237              	.LVL8:
  182:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 231              		.loc 1 182 3 view .LVU43
+ 238              		.loc 1 182 3 view .LVU43
  183:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 232              		.loc 1 183 1 is_stmt 0 view .LVU44
- 233 002c 0020     		movs	r0, #0
- 234 002e 08BD     		pop	{r3, pc}
- 235              	.L18:
- 236              		.align	2
- 237              	.L17:
- 238 0030 003C0240 		.word	1073888256
- 239              		.cfi_endproc
- 240              	.LFE130:
- 242              		.section	.text.HAL_IncTick,"ax",%progbits
- 243              		.align	1
- 244              		.weak	HAL_IncTick
- 245              		.syntax unified
- 246              		.thumb
- 247              		.thumb_func
- 249              	HAL_IncTick:
- 250              	.LFB135:
+ 239              		.loc 1 183 1 is_stmt 0 view .LVU44
+ 240 002c 0020     		movs	r0, #0
+ 241 002e 08BD     		pop	{r3, pc}
+ 242              	.L18:
+ 243              		.align	2
+ 244              	.L17:
+ 245 0030 003C0240 		.word	1073888256
+ 246              		.cfi_endproc
+ 247              	.LFE134:
+ 249              		.section	.text.HAL_IncTick,"ax",%progbits
+ 250              		.align	1
+ 251              		.weak	HAL_IncTick
+ 252              		.syntax unified
+ 253              		.thumb
+ 254              		.thumb_func
+ 256              	HAL_IncTick:
+ 257              	.LFB139:
  275:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
  276:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
  277:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @}
@@ -591,6 +598,9 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 1
  295:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****       (+) Enable/Disable Debug module during SLEEP mode
  296:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****       (+) Enable/Disable Debug module during STOP mode
  297:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****       (+) Enable/Disable Debug module during STANDBY mode
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 11
+
+
  298:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
  299:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** @endverbatim
  300:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @{
@@ -598,9 +608,6 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 1
  302:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
  303:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
  304:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief This function is called to increment  a global variable "uwTick"
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 11
-
-
  305:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *        used as application time base.
  306:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note In the default implementation, this variable is incremented each 1ms
  307:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       in SysTick ISR.
@@ -610,38 +617,38 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 1
  311:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
  312:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** __weak void HAL_IncTick(void)
  313:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
- 251              		.loc 1 313 1 is_stmt 1 view -0
- 252              		.cfi_startproc
- 253              		@ args = 0, pretend = 0, frame = 0
- 254              		@ frame_needed = 0, uses_anonymous_args = 0
- 255              		@ link register save eliminated.
+ 258              		.loc 1 313 1 is_stmt 1 view -0
+ 259              		.cfi_startproc
+ 260              		@ args = 0, pretend = 0, frame = 0
+ 261              		@ frame_needed = 0, uses_anonymous_args = 0
+ 262              		@ link register save eliminated.
  314:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   uwTick += uwTickFreq;
- 256              		.loc 1 314 3 view .LVU46
- 257              		.loc 1 314 10 is_stmt 0 view .LVU47
- 258 0000 034A     		ldr	r2, .L20
- 259 0002 1168     		ldr	r1, [r2]
- 260 0004 034B     		ldr	r3, .L20+4
- 261 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 262 0008 0B44     		add	r3, r3, r1
- 263 000a 1360     		str	r3, [r2]
+ 263              		.loc 1 314 3 view .LVU46
+ 264              		.loc 1 314 10 is_stmt 0 view .LVU47
+ 265 0000 034A     		ldr	r2, .L20
+ 266 0002 1168     		ldr	r1, [r2]
+ 267 0004 034B     		ldr	r3, .L20+4
+ 268 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 269 0008 0B44     		add	r3, r3, r1
+ 270 000a 1360     		str	r3, [r2]
  315:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 264              		.loc 1 315 1 view .LVU48
- 265 000c 7047     		bx	lr
- 266              	.L21:
- 267 000e 00BF     		.align	2
- 268              	.L20:
- 269 0010 00000000 		.word	.LANCHOR2
- 270 0014 00000000 		.word	.LANCHOR0
- 271              		.cfi_endproc
- 272              	.LFE135:
- 274              		.section	.text.HAL_GetTick,"ax",%progbits
- 275              		.align	1
- 276              		.weak	HAL_GetTick
- 277              		.syntax unified
- 278              		.thumb
- 279              		.thumb_func
- 281              	HAL_GetTick:
- 282              	.LFB136:
+ 271              		.loc 1 315 1 view .LVU48
+ 272 000c 7047     		bx	lr
+ 273              	.L21:
+ 274 000e 00BF     		.align	2
+ 275              	.L20:
+ 276 0010 00000000 		.word	.LANCHOR2
+ 277 0014 00000000 		.word	.LANCHOR0
+ 278              		.cfi_endproc
+ 279              	.LFE139:
+ 281              		.section	.text.HAL_GetTick,"ax",%progbits
+ 282              		.align	1
+ 283              		.weak	HAL_GetTick
+ 284              		.syntax unified
+ 285              		.thumb
+ 286              		.thumb_func
+ 288              	HAL_GetTick:
+ 289              	.LFB140:
  316:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
  317:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
  318:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief Provides a tick value in millisecond.
@@ -651,36 +658,36 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 1
  322:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
  323:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** __weak uint32_t HAL_GetTick(void)
  324:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
- 283              		.loc 1 324 1 is_stmt 1 view -0
- 284              		.cfi_startproc
- 285              		@ args = 0, pretend = 0, frame = 0
- 286              		@ frame_needed = 0, uses_anonymous_args = 0
- 287              		@ link register save eliminated.
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 12
+
+
+ 290              		.loc 1 324 1 is_stmt 1 view -0
+ 291              		.cfi_startproc
+ 292              		@ args = 0, pretend = 0, frame = 0
+ 293              		@ frame_needed = 0, uses_anonymous_args = 0
+ 294              		@ link register save eliminated.
  325:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return uwTick;
- 288              		.loc 1 325 3 view .LVU50
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 12
-
-
- 289              		.loc 1 325 10 is_stmt 0 view .LVU51
- 290 0000 014B     		ldr	r3, .L23
- 291 0002 1868     		ldr	r0, [r3]
+ 295              		.loc 1 325 3 view .LVU50
+ 296              		.loc 1 325 10 is_stmt 0 view .LVU51
+ 297 0000 014B     		ldr	r3, .L23
+ 298 0002 1868     		ldr	r0, [r3]
  326:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 292              		.loc 1 326 1 view .LVU52
- 293 0004 7047     		bx	lr
- 294              	.L24:
- 295 0006 00BF     		.align	2
- 296              	.L23:
- 297 0008 00000000 		.word	.LANCHOR2
- 298              		.cfi_endproc
- 299              	.LFE136:
- 301              		.section	.text.HAL_GetTickPrio,"ax",%progbits
- 302              		.align	1
- 303              		.global	HAL_GetTickPrio
- 304              		.syntax unified
- 305              		.thumb
- 306              		.thumb_func
- 308              	HAL_GetTickPrio:
- 309              	.LFB137:
+ 299              		.loc 1 326 1 view .LVU52
+ 300 0004 7047     		bx	lr
+ 301              	.L24:
+ 302 0006 00BF     		.align	2
+ 303              	.L23:
+ 304 0008 00000000 		.word	.LANCHOR2
+ 305              		.cfi_endproc
+ 306              	.LFE140:
+ 308              		.section	.text.HAL_GetTickPrio,"ax",%progbits
+ 309              		.align	1
+ 310              		.global	HAL_GetTickPrio
+ 311              		.syntax unified
+ 312              		.thumb
+ 313              		.thumb_func
+ 315              	HAL_GetTickPrio:
+ 316              	.LFB141:
  327:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
  328:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
  329:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief This function returns a tick priority.
@@ -688,75 +695,75 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 1
  331:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
  332:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** uint32_t HAL_GetTickPrio(void)
  333:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
- 310              		.loc 1 333 1 is_stmt 1 view -0
- 311              		.cfi_startproc
- 312              		@ args = 0, pretend = 0, frame = 0
- 313              		@ frame_needed = 0, uses_anonymous_args = 0
- 314              		@ link register save eliminated.
+ 317              		.loc 1 333 1 is_stmt 1 view -0
+ 318              		.cfi_startproc
+ 319              		@ args = 0, pretend = 0, frame = 0
+ 320              		@ frame_needed = 0, uses_anonymous_args = 0
+ 321              		@ link register save eliminated.
  334:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return uwTickPrio;
- 315              		.loc 1 334 3 view .LVU54
+ 322              		.loc 1 334 3 view .LVU54
  335:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 316              		.loc 1 335 1 is_stmt 0 view .LVU55
- 317 0000 014B     		ldr	r3, .L26
- 318 0002 1868     		ldr	r0, [r3]
- 319 0004 7047     		bx	lr
- 320              	.L27:
- 321 0006 00BF     		.align	2
- 322              	.L26:
- 323 0008 00000000 		.word	.LANCHOR1
- 324              		.cfi_endproc
- 325              	.LFE137:
- 327              		.section	.text.HAL_SetTickFreq,"ax",%progbits
- 328              		.align	1
- 329              		.global	HAL_SetTickFreq
- 330              		.syntax unified
- 331              		.thumb
- 332              		.thumb_func
- 334              	HAL_SetTickFreq:
- 335              	.LVL9:
- 336              	.LFB138:
+ 323              		.loc 1 335 1 is_stmt 0 view .LVU55
+ 324 0000 014B     		ldr	r3, .L26
+ 325 0002 1868     		ldr	r0, [r3]
+ 326 0004 7047     		bx	lr
+ 327              	.L27:
+ 328 0006 00BF     		.align	2
+ 329              	.L26:
+ 330 0008 00000000 		.word	.LANCHOR1
+ 331              		.cfi_endproc
+ 332              	.LFE141:
+ 334              		.section	.text.HAL_SetTickFreq,"ax",%progbits
+ 335              		.align	1
+ 336              		.global	HAL_SetTickFreq
+ 337              		.syntax unified
+ 338              		.thumb
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 13
+
+
+ 339              		.thumb_func
+ 341              	HAL_SetTickFreq:
+ 342              	.LVL9:
+ 343              	.LFB142:
  336:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
  337:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
  338:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief Set new tick Freq.
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 13
-
-
  339:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval Status
  340:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
  341:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** HAL_StatusTypeDef HAL_SetTickFreq(HAL_TickFreqTypeDef Freq)
  342:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
- 337              		.loc 1 342 1 is_stmt 1 view -0
- 338              		.cfi_startproc
- 339              		@ args = 0, pretend = 0, frame = 0
- 340              		@ frame_needed = 0, uses_anonymous_args = 0
- 341              		.loc 1 342 1 is_stmt 0 view .LVU57
- 342 0000 10B5     		push	{r4, lr}
- 343              	.LCFI3:
- 344              		.cfi_def_cfa_offset 8
- 345              		.cfi_offset 4, -8
- 346              		.cfi_offset 14, -4
+ 344              		.loc 1 342 1 is_stmt 1 view -0
+ 345              		.cfi_startproc
+ 346              		@ args = 0, pretend = 0, frame = 0
+ 347              		@ frame_needed = 0, uses_anonymous_args = 0
+ 348              		.loc 1 342 1 is_stmt 0 view .LVU57
+ 349 0000 10B5     		push	{r4, lr}
+ 350              	.LCFI3:
+ 351              		.cfi_def_cfa_offset 8
+ 352              		.cfi_offset 4, -8
+ 353              		.cfi_offset 14, -4
  343:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   HAL_StatusTypeDef status  = HAL_OK;
- 347              		.loc 1 343 3 is_stmt 1 view .LVU58
- 348              	.LVL10:
+ 354              		.loc 1 343 3 is_stmt 1 view .LVU58
+ 355              	.LVL10:
  344:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   HAL_TickFreqTypeDef prevTickFreq;
- 349              		.loc 1 344 3 view .LVU59
+ 356              		.loc 1 344 3 view .LVU59
  345:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
  346:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   assert_param(IS_TICKFREQ(Freq));
- 350              		.loc 1 346 3 view .LVU60
+ 357              		.loc 1 346 3 view .LVU60
  347:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
  348:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   if (uwTickFreq != Freq)
- 351              		.loc 1 348 3 view .LVU61
- 352              		.loc 1 348 18 is_stmt 0 view .LVU62
- 353 0002 084B     		ldr	r3, .L33
- 354 0004 1C78     		ldrb	r4, [r3]	@ zero_extendqisi2
- 355              		.loc 1 348 6 view .LVU63
- 356 0006 8442     		cmp	r4, r0
- 357 0008 01D1     		bne	.L32
+ 358              		.loc 1 348 3 view .LVU61
+ 359              		.loc 1 348 18 is_stmt 0 view .LVU62
+ 360 0002 084B     		ldr	r3, .L33
+ 361 0004 1C78     		ldrb	r4, [r3]	@ zero_extendqisi2
+ 362              		.loc 1 348 6 view .LVU63
+ 363 0006 8442     		cmp	r4, r0
+ 364 0008 01D1     		bne	.L32
  343:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   HAL_TickFreqTypeDef prevTickFreq;
- 358              		.loc 1 343 21 view .LVU64
- 359 000a 0020     		movs	r0, #0
- 360              	.LVL11:
- 361              	.L29:
+ 365              		.loc 1 343 21 view .LVU64
+ 366 000a 0020     		movs	r0, #0
+ 367              	.LVL11:
+ 368              	.L29:
  349:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
  350:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     /* Back up uwTickFreq frequency */
  351:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     prevTickFreq = uwTickFreq;
@@ -771,903 +778,904 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 1
  360:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     {
  361:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****       /* Restore previous tick frequency */
  362:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****       uwTickFreq = prevTickFreq;
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 14
+
+
  363:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     }
  364:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   }
  365:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
  366:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return status;
- 362              		.loc 1 366 3 is_stmt 1 view .LVU65
+ 369              		.loc 1 366 3 is_stmt 1 view .LVU65
  367:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 363              		.loc 1 367 1 is_stmt 0 view .LVU66
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 14
-
-
- 364 000c 10BD     		pop	{r4, pc}
- 365              	.LVL12:
- 366              	.L32:
+ 370              		.loc 1 367 1 is_stmt 0 view .LVU66
+ 371 000c 10BD     		pop	{r4, pc}
+ 372              	.LVL12:
+ 373              	.L32:
  351:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 367              		.loc 1 351 5 is_stmt 1 view .LVU67
+ 374              		.loc 1 351 5 is_stmt 1 view .LVU67
  354:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 368              		.loc 1 354 5 view .LVU68
+ 375              		.loc 1 354 5 view .LVU68
  354:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 369              		.loc 1 354 16 is_stmt 0 view .LVU69
- 370 000e 1870     		strb	r0, [r3]
+ 376              		.loc 1 354 16 is_stmt 0 view .LVU69
+ 377 000e 1870     		strb	r0, [r3]
  357:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 371              		.loc 1 357 5 is_stmt 1 view .LVU70
+ 378              		.loc 1 357 5 is_stmt 1 view .LVU70
  357:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 372              		.loc 1 357 14 is_stmt 0 view .LVU71
- 373 0010 054B     		ldr	r3, .L33+4
- 374 0012 1868     		ldr	r0, [r3]
- 375              	.LVL13:
+ 379              		.loc 1 357 14 is_stmt 0 view .LVU71
+ 380 0010 054B     		ldr	r3, .L33+4
+ 381 0012 1868     		ldr	r0, [r3]
+ 382              	.LVL13:
  357:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 376              		.loc 1 357 14 view .LVU72
- 377 0014 FFF7FEFF 		bl	HAL_InitTick
- 378              	.LVL14:
+ 383              		.loc 1 357 14 view .LVU72
+ 384 0014 FFF7FEFF 		bl	HAL_InitTick
+ 385              	.LVL14:
  359:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     {
- 379              		.loc 1 359 5 is_stmt 1 view .LVU73
+ 386              		.loc 1 359 5 is_stmt 1 view .LVU73
  359:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     {
- 380              		.loc 1 359 8 is_stmt 0 view .LVU74
- 381 0018 0028     		cmp	r0, #0
- 382 001a F7D0     		beq	.L29
+ 387              		.loc 1 359 8 is_stmt 0 view .LVU74
+ 388 0018 0028     		cmp	r0, #0
+ 389 001a F7D0     		beq	.L29
  362:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     }
- 383              		.loc 1 362 7 is_stmt 1 view .LVU75
+ 390              		.loc 1 362 7 is_stmt 1 view .LVU75
  362:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     }
- 384              		.loc 1 362 18 is_stmt 0 view .LVU76
- 385 001c 014B     		ldr	r3, .L33
- 386 001e 1C70     		strb	r4, [r3]
- 387 0020 F4E7     		b	.L29
- 388              	.L34:
- 389 0022 00BF     		.align	2
- 390              	.L33:
- 391 0024 00000000 		.word	.LANCHOR0
- 392 0028 00000000 		.word	.LANCHOR1
- 393              		.cfi_endproc
- 394              	.LFE138:
- 396              		.section	.text.HAL_GetTickFreq,"ax",%progbits
- 397              		.align	1
- 398              		.global	HAL_GetTickFreq
- 399              		.syntax unified
- 400              		.thumb
- 401              		.thumb_func
- 403              	HAL_GetTickFreq:
- 404              	.LFB139:
+ 391              		.loc 1 362 18 is_stmt 0 view .LVU76
+ 392 001c 014B     		ldr	r3, .L33
+ 393 001e 1C70     		strb	r4, [r3]
+ 394 0020 F4E7     		b	.L29
+ 395              	.L34:
+ 396 0022 00BF     		.align	2
+ 397              	.L33:
+ 398 0024 00000000 		.word	.LANCHOR0
+ 399 0028 00000000 		.word	.LANCHOR1
+ 400              		.cfi_endproc
+ 401              	.LFE142:
+ 403              		.section	.text.HAL_GetTickFreq,"ax",%progbits
+ 404              		.align	1
+ 405              		.global	HAL_GetTickFreq
+ 406              		.syntax unified
+ 407              		.thumb
+ 408              		.thumb_func
+ 410              	HAL_GetTickFreq:
+ 411              	.LFB143:
  368:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 15
+
+
  369:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
  370:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief Return tick frequency.
- 371:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval tick period in Hz
- 372:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
- 373:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** HAL_TickFreqTypeDef HAL_GetTickFreq(void)
- 374:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
- 405              		.loc 1 374 1 is_stmt 1 view -0
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 15
+ 371:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval Tick frequency.
+ 372:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *         Value of @ref HAL_TickFreqTypeDef.
+ 373:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 374:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** HAL_TickFreqTypeDef HAL_GetTickFreq(void)
+ 375:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 412              		.loc 1 375 1 is_stmt 1 view -0
+ 413              		.cfi_startproc
+ 414              		@ args = 0, pretend = 0, frame = 0
+ 415              		@ frame_needed = 0, uses_anonymous_args = 0
+ 416              		@ link register save eliminated.
+ 376:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return uwTickFreq;
+ 417              		.loc 1 376 3 view .LVU78
+ 377:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 418              		.loc 1 377 1 is_stmt 0 view .LVU79
+ 419 0000 014B     		ldr	r3, .L36
+ 420 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 421 0004 7047     		bx	lr
+ 422              	.L37:
+ 423 0006 00BF     		.align	2
+ 424              	.L36:
+ 425 0008 00000000 		.word	.LANCHOR0
+ 426              		.cfi_endproc
+ 427              	.LFE143:
+ 429              		.section	.text.HAL_Delay,"ax",%progbits
+ 430              		.align	1
+ 431              		.weak	HAL_Delay
+ 432              		.syntax unified
+ 433              		.thumb
+ 434              		.thumb_func
+ 436              	HAL_Delay:
+ 437              	.LVL15:
+ 438              	.LFB144:
+ 378:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 379:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 380:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief This function provides minimum delay (in milliseconds) based 
+ 381:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *        on variable incremented.
+ 382:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note In the default implementation , SysTick timer is the source of time base.
+ 383:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       It is used to generate interrupts at regular time intervals where uwTick
+ 384:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       is incremented.
+ 385:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note This function is declared as __weak to be overwritten in case of other
+ 386:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       implementations in user file.
+ 387:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @param Delay specifies the delay time length, in milliseconds.
+ 388:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 389:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 390:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** __weak void HAL_Delay(uint32_t Delay)
+ 391:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 439              		.loc 1 391 1 is_stmt 1 view -0
+ 440              		.cfi_startproc
+ 441              		@ args = 0, pretend = 0, frame = 0
+ 442              		@ frame_needed = 0, uses_anonymous_args = 0
+ 443              		.loc 1 391 1 is_stmt 0 view .LVU81
+ 444 0000 38B5     		push	{r3, r4, r5, lr}
+ 445              	.LCFI4:
+ 446              		.cfi_def_cfa_offset 16
+ 447              		.cfi_offset 3, -16
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 16
 
 
- 406              		.cfi_startproc
- 407              		@ args = 0, pretend = 0, frame = 0
- 408              		@ frame_needed = 0, uses_anonymous_args = 0
- 409              		@ link register save eliminated.
- 375:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return uwTickFreq;
- 410              		.loc 1 375 3 view .LVU78
- 376:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 411              		.loc 1 376 1 is_stmt 0 view .LVU79
- 412 0000 014B     		ldr	r3, .L36
- 413 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
- 414 0004 7047     		bx	lr
- 415              	.L37:
- 416 0006 00BF     		.align	2
- 417              	.L36:
- 418 0008 00000000 		.word	.LANCHOR0
- 419              		.cfi_endproc
- 420              	.LFE139:
- 422              		.section	.text.HAL_Delay,"ax",%progbits
- 423              		.align	1
- 424              		.weak	HAL_Delay
- 425              		.syntax unified
- 426              		.thumb
- 427              		.thumb_func
- 429              	HAL_Delay:
- 430              	.LVL15:
- 431              	.LFB140:
- 377:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 378:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
- 379:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief This function provides minimum delay (in milliseconds) based 
- 380:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *        on variable incremented.
- 381:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note In the default implementation , SysTick timer is the source of time base.
- 382:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       It is used to generate interrupts at regular time intervals where uwTick
- 383:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       is incremented.
- 384:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note This function is declared as __weak to be overwritten in case of other
- 385:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       implementations in user file.
- 386:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @param Delay specifies the delay time length, in milliseconds.
- 387:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
- 388:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
- 389:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** __weak void HAL_Delay(uint32_t Delay)
- 390:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
- 432              		.loc 1 390 1 is_stmt 1 view -0
- 433              		.cfi_startproc
- 434              		@ args = 0, pretend = 0, frame = 0
- 435              		@ frame_needed = 0, uses_anonymous_args = 0
- 436              		.loc 1 390 1 is_stmt 0 view .LVU81
- 437 0000 38B5     		push	{r3, r4, r5, lr}
- 438              	.LCFI4:
- 439              		.cfi_def_cfa_offset 16
- 440              		.cfi_offset 3, -16
- 441              		.cfi_offset 4, -12
- 442              		.cfi_offset 5, -8
- 443              		.cfi_offset 14, -4
- 444 0002 0446     		mov	r4, r0
- 391:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   uint32_t tickstart = HAL_GetTick();
- 445              		.loc 1 391 3 is_stmt 1 view .LVU82
- 446              		.loc 1 391 24 is_stmt 0 view .LVU83
- 447 0004 FFF7FEFF 		bl	HAL_GetTick
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 16
-
-
- 448              	.LVL16:
- 449              		.loc 1 391 24 view .LVU84
- 450 0008 0546     		mov	r5, r0
- 451              	.LVL17:
- 392:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   uint32_t wait = Delay;
- 452              		.loc 1 392 3 is_stmt 1 view .LVU85
- 393:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 394:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Add a freq to guarantee minimum wait */
- 395:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   if (wait < HAL_MAX_DELAY)
- 453              		.loc 1 395 3 view .LVU86
- 454              		.loc 1 395 6 is_stmt 0 view .LVU87
- 455 000a B4F1FF3F 		cmp	r4, #-1
- 456 000e 02D0     		beq	.L40
- 396:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
- 397:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     wait += (uint32_t)(uwTickFreq);
- 457              		.loc 1 397 5 is_stmt 1 view .LVU88
- 458              		.loc 1 397 13 is_stmt 0 view .LVU89
- 459 0010 044B     		ldr	r3, .L42
- 460 0012 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 461              		.loc 1 397 10 view .LVU90
- 462 0014 1C44     		add	r4, r4, r3
- 463              	.LVL18:
- 464              	.L40:
- 398:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   }
- 399:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 400:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   while((HAL_GetTick() - tickstart) < wait)
+ 448              		.cfi_offset 4, -12
+ 449              		.cfi_offset 5, -8
+ 450              		.cfi_offset 14, -4
+ 451 0002 0446     		mov	r4, r0
+ 392:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   uint32_t tickstart = HAL_GetTick();
+ 452              		.loc 1 392 3 is_stmt 1 view .LVU82
+ 453              		.loc 1 392 24 is_stmt 0 view .LVU83
+ 454 0004 FFF7FEFF 		bl	HAL_GetTick
+ 455              	.LVL16:
+ 456              		.loc 1 392 24 view .LVU84
+ 457 0008 0546     		mov	r5, r0
+ 458              	.LVL17:
+ 393:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   uint32_t wait = Delay;
+ 459              		.loc 1 393 3 is_stmt 1 view .LVU85
+ 394:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 395:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Add a freq to guarantee minimum wait */
+ 396:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   if (wait < HAL_MAX_DELAY)
+ 460              		.loc 1 396 3 view .LVU86
+ 461              		.loc 1 396 6 is_stmt 0 view .LVU87
+ 462 000a B4F1FF3F 		cmp	r4, #-1
+ 463 000e 02D0     		beq	.L40
+ 397:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
+ 398:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     wait += (uint32_t)(uwTickFreq);
+ 464              		.loc 1 398 5 is_stmt 1 view .LVU88
+ 465              		.loc 1 398 13 is_stmt 0 view .LVU89
+ 466 0010 044B     		ldr	r3, .L42
+ 467 0012 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 468              		.loc 1 398 10 view .LVU90
+ 469 0014 1C44     		add	r4, r4, r3
+ 470              	.LVL18:
+ 471              	.L40:
+ 399:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   }
+ 400:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 401:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   while((HAL_GetTick() - tickstart) < wait)
+ 402:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
+ 403:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   }
+ 472              		.loc 1 403 3 is_stmt 1 discriminator 1 view .LVU91
  401:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
- 402:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   }
- 465              		.loc 1 402 3 is_stmt 1 discriminator 1 view .LVU91
- 400:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
- 466              		.loc 1 400 37 discriminator 1 view .LVU92
- 400:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
- 467              		.loc 1 400 10 is_stmt 0 discriminator 1 view .LVU93
- 468 0016 FFF7FEFF 		bl	HAL_GetTick
- 469              	.LVL19:
- 400:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
- 470              		.loc 1 400 24 discriminator 1 view .LVU94
- 471 001a 401B     		subs	r0, r0, r5
- 400:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
- 472              		.loc 1 400 37 discriminator 1 view .LVU95
- 473 001c A042     		cmp	r0, r4
- 474 001e FAD3     		bcc	.L40
- 403:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 475              		.loc 1 403 1 view .LVU96
- 476 0020 38BD     		pop	{r3, r4, r5, pc}
- 477              	.LVL20:
- 478              	.L43:
- 479              		.loc 1 403 1 view .LVU97
- 480 0022 00BF     		.align	2
- 481              	.L42:
- 482 0024 00000000 		.word	.LANCHOR0
- 483              		.cfi_endproc
- 484              	.LFE140:
- 486              		.section	.text.HAL_SuspendTick,"ax",%progbits
- 487              		.align	1
- 488              		.weak	HAL_SuspendTick
- 489              		.syntax unified
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 17
+ 473              		.loc 1 401 37 discriminator 1 view .LVU92
+ 401:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
+ 474              		.loc 1 401 10 is_stmt 0 discriminator 1 view .LVU93
+ 475 0016 FFF7FEFF 		bl	HAL_GetTick
+ 476              	.LVL19:
+ 401:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
+ 477              		.loc 1 401 24 discriminator 1 view .LVU94
+ 478 001a 401B     		subs	r0, r0, r5
+ 401:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
+ 479              		.loc 1 401 37 discriminator 1 view .LVU95
+ 480 001c A042     		cmp	r0, r4
+ 481 001e FAD3     		bcc	.L40
+ 404:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 482              		.loc 1 404 1 view .LVU96
+ 483 0020 38BD     		pop	{r3, r4, r5, pc}
+ 484              	.LVL20:
+ 485              	.L43:
+ 486              		.loc 1 404 1 view .LVU97
+ 487 0022 00BF     		.align	2
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 17
 
 
- 490              		.thumb
- 491              		.thumb_func
- 493              	HAL_SuspendTick:
- 494              	.LFB141:
- 404:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 405:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
- 406:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief Suspend Tick increment.
- 407:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note In the default implementation , SysTick timer is the source of time base. It is
- 408:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       used to generate interrupts at regular time intervals. Once HAL_SuspendTick()
- 409:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       is called, the SysTick interrupt will be disabled and so Tick increment 
- 410:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       is suspended.
- 411:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note This function is declared as __weak to be overwritten in case of other
- 412:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       implementations in user file.
- 413:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
- 414:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
- 415:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** __weak void HAL_SuspendTick(void)
- 416:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
- 495              		.loc 1 416 1 is_stmt 1 view -0
- 496              		.cfi_startproc
- 497              		@ args = 0, pretend = 0, frame = 0
- 498              		@ frame_needed = 0, uses_anonymous_args = 0
- 499              		@ link register save eliminated.
- 417:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Disable SysTick Interrupt */
- 418:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   SysTick->CTRL &= ~SysTick_CTRL_TICKINT_Msk;
- 500              		.loc 1 418 3 view .LVU99
- 501              		.loc 1 418 17 is_stmt 0 view .LVU100
- 502 0000 4FF0E022 		mov	r2, #-536813568
- 503 0004 1369     		ldr	r3, [r2, #16]
- 504 0006 23F00203 		bic	r3, r3, #2
- 505 000a 1361     		str	r3, [r2, #16]
- 419:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 506              		.loc 1 419 1 view .LVU101
- 507 000c 7047     		bx	lr
- 508              		.cfi_endproc
- 509              	.LFE141:
- 511              		.section	.text.HAL_ResumeTick,"ax",%progbits
- 512              		.align	1
- 513              		.weak	HAL_ResumeTick
- 514              		.syntax unified
- 515              		.thumb
- 516              		.thumb_func
- 518              	HAL_ResumeTick:
- 519              	.LFB142:
- 420:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 421:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
- 422:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief Resume Tick increment.
- 423:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note In the default implementation , SysTick timer is the source of time base. It is
- 424:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       used to generate interrupts at regular time intervals. Once HAL_ResumeTick()
- 425:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       is called, the SysTick interrupt will be enabled and so Tick increment 
- 426:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       is resumed.
- 427:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note This function is declared as __weak to be overwritten in case of other
- 428:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       implementations in user file.
- 429:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
- 430:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
- 431:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** __weak void HAL_ResumeTick(void)
- 432:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
- 520              		.loc 1 432 1 is_stmt 1 view -0
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 18
+ 488              	.L42:
+ 489 0024 00000000 		.word	.LANCHOR0
+ 490              		.cfi_endproc
+ 491              	.LFE144:
+ 493              		.section	.text.HAL_SuspendTick,"ax",%progbits
+ 494              		.align	1
+ 495              		.weak	HAL_SuspendTick
+ 496              		.syntax unified
+ 497              		.thumb
+ 498              		.thumb_func
+ 500              	HAL_SuspendTick:
+ 501              	.LFB145:
+ 405:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 406:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 407:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief Suspend Tick increment.
+ 408:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note In the default implementation , SysTick timer is the source of time base. It is
+ 409:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       used to generate interrupts at regular time intervals. Once HAL_SuspendTick()
+ 410:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       is called, the SysTick interrupt will be disabled and so Tick increment 
+ 411:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       is suspended.
+ 412:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note This function is declared as __weak to be overwritten in case of other
+ 413:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       implementations in user file.
+ 414:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 415:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 416:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** __weak void HAL_SuspendTick(void)
+ 417:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 502              		.loc 1 417 1 is_stmt 1 view -0
+ 503              		.cfi_startproc
+ 504              		@ args = 0, pretend = 0, frame = 0
+ 505              		@ frame_needed = 0, uses_anonymous_args = 0
+ 506              		@ link register save eliminated.
+ 418:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Disable SysTick Interrupt */
+ 419:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   SysTick->CTRL &= ~SysTick_CTRL_TICKINT_Msk;
+ 507              		.loc 1 419 3 view .LVU99
+ 508              		.loc 1 419 17 is_stmt 0 view .LVU100
+ 509 0000 4FF0E022 		mov	r2, #-536813568
+ 510 0004 1369     		ldr	r3, [r2, #16]
+ 511 0006 23F00203 		bic	r3, r3, #2
+ 512 000a 1361     		str	r3, [r2, #16]
+ 420:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 513              		.loc 1 420 1 view .LVU101
+ 514 000c 7047     		bx	lr
+ 515              		.cfi_endproc
+ 516              	.LFE145:
+ 518              		.section	.text.HAL_ResumeTick,"ax",%progbits
+ 519              		.align	1
+ 520              		.weak	HAL_ResumeTick
+ 521              		.syntax unified
+ 522              		.thumb
+ 523              		.thumb_func
+ 525              	HAL_ResumeTick:
+ 526              	.LFB146:
+ 421:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 422:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 423:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief Resume Tick increment.
+ 424:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note In the default implementation , SysTick timer is the source of time base. It is
+ 425:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       used to generate interrupts at regular time intervals. Once HAL_ResumeTick()
+ 426:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       is called, the SysTick interrupt will be enabled and so Tick increment 
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 18
 
 
- 521              		.cfi_startproc
- 522              		@ args = 0, pretend = 0, frame = 0
- 523              		@ frame_needed = 0, uses_anonymous_args = 0
- 524              		@ link register save eliminated.
- 433:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Enable SysTick Interrupt */
- 434:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   SysTick->CTRL  |= SysTick_CTRL_TICKINT_Msk;
- 525              		.loc 1 434 3 view .LVU103
- 526              		.loc 1 434 18 is_stmt 0 view .LVU104
- 527 0000 4FF0E022 		mov	r2, #-536813568
- 528 0004 1369     		ldr	r3, [r2, #16]
- 529 0006 43F00203 		orr	r3, r3, #2
- 530 000a 1361     		str	r3, [r2, #16]
- 435:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 531              		.loc 1 435 1 view .LVU105
- 532 000c 7047     		bx	lr
- 533              		.cfi_endproc
- 534              	.LFE142:
- 536              		.section	.text.HAL_GetHalVersion,"ax",%progbits
- 537              		.align	1
- 538              		.global	HAL_GetHalVersion
- 539              		.syntax unified
- 540              		.thumb
- 541              		.thumb_func
- 543              	HAL_GetHalVersion:
- 544              	.LFB143:
- 436:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 437:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
- 438:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Returns the HAL revision
- 439:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval version : 0xXYZR (8bits for each decimal, R for RC)
- 440:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
- 441:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** uint32_t HAL_GetHalVersion(void)
- 442:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
- 545              		.loc 1 442 1 is_stmt 1 view -0
- 546              		.cfi_startproc
- 547              		@ args = 0, pretend = 0, frame = 0
- 548              		@ frame_needed = 0, uses_anonymous_args = 0
- 549              		@ link register save eliminated.
- 443:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return __STM32F4xx_HAL_VERSION;
- 550              		.loc 1 443 3 view .LVU107
- 444:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 551              		.loc 1 444 1 is_stmt 0 view .LVU108
- 552 0000 0048     		ldr	r0, .L47
- 553 0002 7047     		bx	lr
- 554              	.L48:
- 555              		.align	2
- 556              	.L47:
- 557 0004 000A0701 		.word	17238528
- 558              		.cfi_endproc
- 559              	.LFE143:
- 561              		.section	.text.HAL_GetREVID,"ax",%progbits
- 562              		.align	1
- 563              		.global	HAL_GetREVID
- 564              		.syntax unified
- 565              		.thumb
- 566              		.thumb_func
- 568              	HAL_GetREVID:
- 569              	.LFB144:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 19
+ 427:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       is resumed.
+ 428:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note This function is declared as __weak to be overwritten in case of other
+ 429:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       implementations in user file.
+ 430:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 431:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 432:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** __weak void HAL_ResumeTick(void)
+ 433:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 527              		.loc 1 433 1 is_stmt 1 view -0
+ 528              		.cfi_startproc
+ 529              		@ args = 0, pretend = 0, frame = 0
+ 530              		@ frame_needed = 0, uses_anonymous_args = 0
+ 531              		@ link register save eliminated.
+ 434:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Enable SysTick Interrupt */
+ 435:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   SysTick->CTRL  |= SysTick_CTRL_TICKINT_Msk;
+ 532              		.loc 1 435 3 view .LVU103
+ 533              		.loc 1 435 18 is_stmt 0 view .LVU104
+ 534 0000 4FF0E022 		mov	r2, #-536813568
+ 535 0004 1369     		ldr	r3, [r2, #16]
+ 536 0006 43F00203 		orr	r3, r3, #2
+ 537 000a 1361     		str	r3, [r2, #16]
+ 436:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 538              		.loc 1 436 1 view .LVU105
+ 539 000c 7047     		bx	lr
+ 540              		.cfi_endproc
+ 541              	.LFE146:
+ 543              		.section	.text.HAL_GetHalVersion,"ax",%progbits
+ 544              		.align	1
+ 545              		.global	HAL_GetHalVersion
+ 546              		.syntax unified
+ 547              		.thumb
+ 548              		.thumb_func
+ 550              	HAL_GetHalVersion:
+ 551              	.LFB147:
+ 437:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 438:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 439:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Returns the HAL revision
+ 440:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval version : 0xXYZR (8bits for each decimal, R for RC)
+ 441:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 442:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** uint32_t HAL_GetHalVersion(void)
+ 443:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 552              		.loc 1 443 1 is_stmt 1 view -0
+ 553              		.cfi_startproc
+ 554              		@ args = 0, pretend = 0, frame = 0
+ 555              		@ frame_needed = 0, uses_anonymous_args = 0
+ 556              		@ link register save eliminated.
+ 444:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return __STM32F4xx_HAL_VERSION;
+ 557              		.loc 1 444 3 view .LVU107
+ 445:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 558              		.loc 1 445 1 is_stmt 0 view .LVU108
+ 559 0000 0048     		ldr	r0, .L47
+ 560 0002 7047     		bx	lr
+ 561              	.L48:
+ 562              		.align	2
+ 563              	.L47:
+ 564 0004 00030801 		.word	17302272
+ 565              		.cfi_endproc
+ 566              	.LFE147:
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 19
 
 
- 445:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 446:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
- 447:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Returns the device revision identifier.
- 448:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval Device revision identifier
- 449:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
- 450:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** uint32_t HAL_GetREVID(void)
- 451:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
- 570              		.loc 1 451 1 is_stmt 1 view -0
- 571              		.cfi_startproc
- 572              		@ args = 0, pretend = 0, frame = 0
- 573              		@ frame_needed = 0, uses_anonymous_args = 0
- 574              		@ link register save eliminated.
- 452:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return((DBGMCU->IDCODE) >> 16U);
- 575              		.loc 1 452 3 view .LVU110
- 576              		.loc 1 452 17 is_stmt 0 view .LVU111
- 577 0000 014B     		ldr	r3, .L50
- 578 0002 1868     		ldr	r0, [r3]
- 453:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 579              		.loc 1 453 1 view .LVU112
- 580 0004 000C     		lsrs	r0, r0, #16
- 581 0006 7047     		bx	lr
- 582              	.L51:
- 583              		.align	2
- 584              	.L50:
- 585 0008 002004E0 		.word	-536600576
- 586              		.cfi_endproc
- 587              	.LFE144:
- 589              		.section	.text.HAL_GetDEVID,"ax",%progbits
- 590              		.align	1
- 591              		.global	HAL_GetDEVID
- 592              		.syntax unified
- 593              		.thumb
- 594              		.thumb_func
- 596              	HAL_GetDEVID:
- 597              	.LFB145:
- 454:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 455:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
- 456:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Returns the device identifier.
- 457:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval Device identifier
- 458:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
- 459:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** uint32_t HAL_GetDEVID(void)
- 460:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
- 598              		.loc 1 460 1 is_stmt 1 view -0
- 599              		.cfi_startproc
- 600              		@ args = 0, pretend = 0, frame = 0
- 601              		@ frame_needed = 0, uses_anonymous_args = 0
- 602              		@ link register save eliminated.
- 461:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return((DBGMCU->IDCODE) & IDCODE_DEVID_MASK);
- 603              		.loc 1 461 3 view .LVU114
- 604              		.loc 1 461 17 is_stmt 0 view .LVU115
- 605 0000 024B     		ldr	r3, .L53
- 606 0002 1868     		ldr	r0, [r3]
- 462:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 607              		.loc 1 462 1 view .LVU116
- 608 0004 C0F30B00 		ubfx	r0, r0, #0, #12
- 609 0008 7047     		bx	lr
- 610              	.L54:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 20
+ 568              		.section	.text.HAL_GetREVID,"ax",%progbits
+ 569              		.align	1
+ 570              		.global	HAL_GetREVID
+ 571              		.syntax unified
+ 572              		.thumb
+ 573              		.thumb_func
+ 575              	HAL_GetREVID:
+ 576              	.LFB148:
+ 446:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 447:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 448:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Returns the device revision identifier.
+ 449:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval Device revision identifier
+ 450:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 451:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** uint32_t HAL_GetREVID(void)
+ 452:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 577              		.loc 1 452 1 is_stmt 1 view -0
+ 578              		.cfi_startproc
+ 579              		@ args = 0, pretend = 0, frame = 0
+ 580              		@ frame_needed = 0, uses_anonymous_args = 0
+ 581              		@ link register save eliminated.
+ 453:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return((DBGMCU->IDCODE) >> 16U);
+ 582              		.loc 1 453 3 view .LVU110
+ 583              		.loc 1 453 17 is_stmt 0 view .LVU111
+ 584 0000 014B     		ldr	r3, .L50
+ 585 0002 1868     		ldr	r0, [r3]
+ 454:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 586              		.loc 1 454 1 view .LVU112
+ 587 0004 000C     		lsrs	r0, r0, #16
+ 588 0006 7047     		bx	lr
+ 589              	.L51:
+ 590              		.align	2
+ 591              	.L50:
+ 592 0008 002004E0 		.word	-536600576
+ 593              		.cfi_endproc
+ 594              	.LFE148:
+ 596              		.section	.text.HAL_GetDEVID,"ax",%progbits
+ 597              		.align	1
+ 598              		.global	HAL_GetDEVID
+ 599              		.syntax unified
+ 600              		.thumb
+ 601              		.thumb_func
+ 603              	HAL_GetDEVID:
+ 604              	.LFB149:
+ 455:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 456:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 457:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Returns the device identifier.
+ 458:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval Device identifier
+ 459:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 460:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** uint32_t HAL_GetDEVID(void)
+ 461:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 605              		.loc 1 461 1 is_stmt 1 view -0
+ 606              		.cfi_startproc
+ 607              		@ args = 0, pretend = 0, frame = 0
+ 608              		@ frame_needed = 0, uses_anonymous_args = 0
+ 609              		@ link register save eliminated.
+ 462:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return((DBGMCU->IDCODE) & IDCODE_DEVID_MASK);
+ 610              		.loc 1 462 3 view .LVU114
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 20
 
 
- 611 000a 00BF     		.align	2
- 612              	.L53:
- 613 000c 002004E0 		.word	-536600576
- 614              		.cfi_endproc
- 615              	.LFE145:
- 617              		.section	.text.HAL_DBGMCU_EnableDBGSleepMode,"ax",%progbits
- 618              		.align	1
- 619              		.global	HAL_DBGMCU_EnableDBGSleepMode
- 620              		.syntax unified
- 621              		.thumb
- 622              		.thumb_func
- 624              	HAL_DBGMCU_EnableDBGSleepMode:
- 625              	.LFB146:
- 463:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 464:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
- 465:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Enable the Debug Module during SLEEP mode
- 466:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
- 467:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
- 468:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_DBGMCU_EnableDBGSleepMode(void)
- 469:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
- 626              		.loc 1 469 1 is_stmt 1 view -0
- 627              		.cfi_startproc
- 628              		@ args = 0, pretend = 0, frame = 0
- 629              		@ frame_needed = 0, uses_anonymous_args = 0
- 630              		@ link register save eliminated.
- 470:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   SET_BIT(DBGMCU->CR, DBGMCU_CR_DBG_SLEEP);
- 631              		.loc 1 470 3 view .LVU118
- 632 0000 024A     		ldr	r2, .L56
- 633 0002 5368     		ldr	r3, [r2, #4]
- 634 0004 43F00103 		orr	r3, r3, #1
- 635 0008 5360     		str	r3, [r2, #4]
- 471:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 636              		.loc 1 471 1 is_stmt 0 view .LVU119
- 637 000a 7047     		bx	lr
- 638              	.L57:
- 639              		.align	2
- 640              	.L56:
- 641 000c 002004E0 		.word	-536600576
- 642              		.cfi_endproc
- 643              	.LFE146:
- 645              		.section	.text.HAL_DBGMCU_DisableDBGSleepMode,"ax",%progbits
- 646              		.align	1
- 647              		.global	HAL_DBGMCU_DisableDBGSleepMode
- 648              		.syntax unified
- 649              		.thumb
- 650              		.thumb_func
- 652              	HAL_DBGMCU_DisableDBGSleepMode:
- 653              	.LFB147:
- 472:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 473:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
- 474:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Disable the Debug Module during SLEEP mode
- 475:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
- 476:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
- 477:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_DBGMCU_DisableDBGSleepMode(void)
- 478:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
- 654              		.loc 1 478 1 is_stmt 1 view -0
- 655              		.cfi_startproc
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 21
+ 611              		.loc 1 462 17 is_stmt 0 view .LVU115
+ 612 0000 024B     		ldr	r3, .L53
+ 613 0002 1868     		ldr	r0, [r3]
+ 463:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 614              		.loc 1 463 1 view .LVU116
+ 615 0004 C0F30B00 		ubfx	r0, r0, #0, #12
+ 616 0008 7047     		bx	lr
+ 617              	.L54:
+ 618 000a 00BF     		.align	2
+ 619              	.L53:
+ 620 000c 002004E0 		.word	-536600576
+ 621              		.cfi_endproc
+ 622              	.LFE149:
+ 624              		.section	.text.HAL_DBGMCU_EnableDBGSleepMode,"ax",%progbits
+ 625              		.align	1
+ 626              		.global	HAL_DBGMCU_EnableDBGSleepMode
+ 627              		.syntax unified
+ 628              		.thumb
+ 629              		.thumb_func
+ 631              	HAL_DBGMCU_EnableDBGSleepMode:
+ 632              	.LFB150:
+ 464:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 465:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 466:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Enable the Debug Module during SLEEP mode
+ 467:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 468:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 469:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_DBGMCU_EnableDBGSleepMode(void)
+ 470:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 633              		.loc 1 470 1 is_stmt 1 view -0
+ 634              		.cfi_startproc
+ 635              		@ args = 0, pretend = 0, frame = 0
+ 636              		@ frame_needed = 0, uses_anonymous_args = 0
+ 637              		@ link register save eliminated.
+ 471:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   SET_BIT(DBGMCU->CR, DBGMCU_CR_DBG_SLEEP);
+ 638              		.loc 1 471 3 view .LVU118
+ 639 0000 024A     		ldr	r2, .L56
+ 640 0002 5368     		ldr	r3, [r2, #4]
+ 641 0004 43F00103 		orr	r3, r3, #1
+ 642 0008 5360     		str	r3, [r2, #4]
+ 472:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 643              		.loc 1 472 1 is_stmt 0 view .LVU119
+ 644 000a 7047     		bx	lr
+ 645              	.L57:
+ 646              		.align	2
+ 647              	.L56:
+ 648 000c 002004E0 		.word	-536600576
+ 649              		.cfi_endproc
+ 650              	.LFE150:
+ 652              		.section	.text.HAL_DBGMCU_DisableDBGSleepMode,"ax",%progbits
+ 653              		.align	1
+ 654              		.global	HAL_DBGMCU_DisableDBGSleepMode
+ 655              		.syntax unified
+ 656              		.thumb
+ 657              		.thumb_func
+ 659              	HAL_DBGMCU_DisableDBGSleepMode:
+ 660              	.LFB151:
+ 473:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 21
 
 
- 656              		@ args = 0, pretend = 0, frame = 0
- 657              		@ frame_needed = 0, uses_anonymous_args = 0
- 658              		@ link register save eliminated.
- 479:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   CLEAR_BIT(DBGMCU->CR, DBGMCU_CR_DBG_SLEEP);
- 659              		.loc 1 479 3 view .LVU121
- 660 0000 024A     		ldr	r2, .L59
- 661 0002 5368     		ldr	r3, [r2, #4]
- 662 0004 23F00103 		bic	r3, r3, #1
- 663 0008 5360     		str	r3, [r2, #4]
- 480:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 664              		.loc 1 480 1 is_stmt 0 view .LVU122
- 665 000a 7047     		bx	lr
- 666              	.L60:
- 667              		.align	2
- 668              	.L59:
- 669 000c 002004E0 		.word	-536600576
- 670              		.cfi_endproc
- 671              	.LFE147:
- 673              		.section	.text.HAL_DBGMCU_EnableDBGStopMode,"ax",%progbits
- 674              		.align	1
- 675              		.global	HAL_DBGMCU_EnableDBGStopMode
- 676              		.syntax unified
- 677              		.thumb
- 678              		.thumb_func
- 680              	HAL_DBGMCU_EnableDBGStopMode:
- 681              	.LFB148:
- 481:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 482:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
- 483:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Enable the Debug Module during STOP mode
- 484:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
- 485:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
- 486:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_DBGMCU_EnableDBGStopMode(void)
- 487:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
- 682              		.loc 1 487 1 is_stmt 1 view -0
- 683              		.cfi_startproc
- 684              		@ args = 0, pretend = 0, frame = 0
- 685              		@ frame_needed = 0, uses_anonymous_args = 0
- 686              		@ link register save eliminated.
- 488:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   SET_BIT(DBGMCU->CR, DBGMCU_CR_DBG_STOP);
- 687              		.loc 1 488 3 view .LVU124
- 688 0000 024A     		ldr	r2, .L62
- 689 0002 5368     		ldr	r3, [r2, #4]
- 690 0004 43F00203 		orr	r3, r3, #2
- 691 0008 5360     		str	r3, [r2, #4]
- 489:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 692              		.loc 1 489 1 is_stmt 0 view .LVU125
- 693 000a 7047     		bx	lr
- 694              	.L63:
- 695              		.align	2
- 696              	.L62:
- 697 000c 002004E0 		.word	-536600576
- 698              		.cfi_endproc
- 699              	.LFE148:
- 701              		.section	.text.HAL_DBGMCU_DisableDBGStopMode,"ax",%progbits
- 702              		.align	1
- 703              		.global	HAL_DBGMCU_DisableDBGStopMode
- 704              		.syntax unified
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 22
+ 474:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 475:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Disable the Debug Module during SLEEP mode
+ 476:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 477:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 478:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_DBGMCU_DisableDBGSleepMode(void)
+ 479:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 661              		.loc 1 479 1 is_stmt 1 view -0
+ 662              		.cfi_startproc
+ 663              		@ args = 0, pretend = 0, frame = 0
+ 664              		@ frame_needed = 0, uses_anonymous_args = 0
+ 665              		@ link register save eliminated.
+ 480:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   CLEAR_BIT(DBGMCU->CR, DBGMCU_CR_DBG_SLEEP);
+ 666              		.loc 1 480 3 view .LVU121
+ 667 0000 024A     		ldr	r2, .L59
+ 668 0002 5368     		ldr	r3, [r2, #4]
+ 669 0004 23F00103 		bic	r3, r3, #1
+ 670 0008 5360     		str	r3, [r2, #4]
+ 481:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 671              		.loc 1 481 1 is_stmt 0 view .LVU122
+ 672 000a 7047     		bx	lr
+ 673              	.L60:
+ 674              		.align	2
+ 675              	.L59:
+ 676 000c 002004E0 		.word	-536600576
+ 677              		.cfi_endproc
+ 678              	.LFE151:
+ 680              		.section	.text.HAL_DBGMCU_EnableDBGStopMode,"ax",%progbits
+ 681              		.align	1
+ 682              		.global	HAL_DBGMCU_EnableDBGStopMode
+ 683              		.syntax unified
+ 684              		.thumb
+ 685              		.thumb_func
+ 687              	HAL_DBGMCU_EnableDBGStopMode:
+ 688              	.LFB152:
+ 482:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 483:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 484:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Enable the Debug Module during STOP mode
+ 485:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 486:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 487:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_DBGMCU_EnableDBGStopMode(void)
+ 488:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 689              		.loc 1 488 1 is_stmt 1 view -0
+ 690              		.cfi_startproc
+ 691              		@ args = 0, pretend = 0, frame = 0
+ 692              		@ frame_needed = 0, uses_anonymous_args = 0
+ 693              		@ link register save eliminated.
+ 489:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   SET_BIT(DBGMCU->CR, DBGMCU_CR_DBG_STOP);
+ 694              		.loc 1 489 3 view .LVU124
+ 695 0000 024A     		ldr	r2, .L62
+ 696 0002 5368     		ldr	r3, [r2, #4]
+ 697 0004 43F00203 		orr	r3, r3, #2
+ 698 0008 5360     		str	r3, [r2, #4]
+ 490:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 699              		.loc 1 490 1 is_stmt 0 view .LVU125
+ 700 000a 7047     		bx	lr
+ 701              	.L63:
+ 702              		.align	2
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 22
 
 
- 705              		.thumb
- 706              		.thumb_func
- 708              	HAL_DBGMCU_DisableDBGStopMode:
- 709              	.LFB149:
- 490:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 491:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
- 492:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Disable the Debug Module during STOP mode
- 493:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
- 494:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
- 495:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_DBGMCU_DisableDBGStopMode(void)
- 496:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
- 710              		.loc 1 496 1 is_stmt 1 view -0
- 711              		.cfi_startproc
- 712              		@ args = 0, pretend = 0, frame = 0
- 713              		@ frame_needed = 0, uses_anonymous_args = 0
- 714              		@ link register save eliminated.
- 497:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   CLEAR_BIT(DBGMCU->CR, DBGMCU_CR_DBG_STOP);
- 715              		.loc 1 497 3 view .LVU127
- 716 0000 024A     		ldr	r2, .L65
- 717 0002 5368     		ldr	r3, [r2, #4]
- 718 0004 23F00203 		bic	r3, r3, #2
- 719 0008 5360     		str	r3, [r2, #4]
- 498:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 720              		.loc 1 498 1 is_stmt 0 view .LVU128
- 721 000a 7047     		bx	lr
- 722              	.L66:
- 723              		.align	2
- 724              	.L65:
- 725 000c 002004E0 		.word	-536600576
- 726              		.cfi_endproc
- 727              	.LFE149:
- 729              		.section	.text.HAL_DBGMCU_EnableDBGStandbyMode,"ax",%progbits
- 730              		.align	1
- 731              		.global	HAL_DBGMCU_EnableDBGStandbyMode
- 732              		.syntax unified
- 733              		.thumb
- 734              		.thumb_func
- 736              	HAL_DBGMCU_EnableDBGStandbyMode:
- 737              	.LFB150:
- 499:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 500:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
- 501:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Enable the Debug Module during STANDBY mode
- 502:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
- 503:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
- 504:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_DBGMCU_EnableDBGStandbyMode(void)
- 505:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
- 738              		.loc 1 505 1 is_stmt 1 view -0
- 739              		.cfi_startproc
- 740              		@ args = 0, pretend = 0, frame = 0
- 741              		@ frame_needed = 0, uses_anonymous_args = 0
- 742              		@ link register save eliminated.
- 506:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   SET_BIT(DBGMCU->CR, DBGMCU_CR_DBG_STANDBY);
- 743              		.loc 1 506 3 view .LVU130
- 744 0000 024A     		ldr	r2, .L68
- 745 0002 5368     		ldr	r3, [r2, #4]
- 746 0004 43F00403 		orr	r3, r3, #4
- 747 0008 5360     		str	r3, [r2, #4]
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 23
+ 703              	.L62:
+ 704 000c 002004E0 		.word	-536600576
+ 705              		.cfi_endproc
+ 706              	.LFE152:
+ 708              		.section	.text.HAL_DBGMCU_DisableDBGStopMode,"ax",%progbits
+ 709              		.align	1
+ 710              		.global	HAL_DBGMCU_DisableDBGStopMode
+ 711              		.syntax unified
+ 712              		.thumb
+ 713              		.thumb_func
+ 715              	HAL_DBGMCU_DisableDBGStopMode:
+ 716              	.LFB153:
+ 491:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 492:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 493:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Disable the Debug Module during STOP mode
+ 494:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 495:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 496:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_DBGMCU_DisableDBGStopMode(void)
+ 497:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 717              		.loc 1 497 1 is_stmt 1 view -0
+ 718              		.cfi_startproc
+ 719              		@ args = 0, pretend = 0, frame = 0
+ 720              		@ frame_needed = 0, uses_anonymous_args = 0
+ 721              		@ link register save eliminated.
+ 498:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   CLEAR_BIT(DBGMCU->CR, DBGMCU_CR_DBG_STOP);
+ 722              		.loc 1 498 3 view .LVU127
+ 723 0000 024A     		ldr	r2, .L65
+ 724 0002 5368     		ldr	r3, [r2, #4]
+ 725 0004 23F00203 		bic	r3, r3, #2
+ 726 0008 5360     		str	r3, [r2, #4]
+ 499:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 727              		.loc 1 499 1 is_stmt 0 view .LVU128
+ 728 000a 7047     		bx	lr
+ 729              	.L66:
+ 730              		.align	2
+ 731              	.L65:
+ 732 000c 002004E0 		.word	-536600576
+ 733              		.cfi_endproc
+ 734              	.LFE153:
+ 736              		.section	.text.HAL_DBGMCU_EnableDBGStandbyMode,"ax",%progbits
+ 737              		.align	1
+ 738              		.global	HAL_DBGMCU_EnableDBGStandbyMode
+ 739              		.syntax unified
+ 740              		.thumb
+ 741              		.thumb_func
+ 743              	HAL_DBGMCU_EnableDBGStandbyMode:
+ 744              	.LFB154:
+ 500:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 501:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 502:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Enable the Debug Module during STANDBY mode
+ 503:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 504:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 505:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_DBGMCU_EnableDBGStandbyMode(void)
+ 506:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 745              		.loc 1 506 1 is_stmt 1 view -0
+ 746              		.cfi_startproc
+ 747              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 23
 
 
- 507:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 748              		.loc 1 507 1 is_stmt 0 view .LVU131
- 749 000a 7047     		bx	lr
- 750              	.L69:
- 751              		.align	2
- 752              	.L68:
- 753 000c 002004E0 		.word	-536600576
- 754              		.cfi_endproc
- 755              	.LFE150:
- 757              		.section	.text.HAL_DBGMCU_DisableDBGStandbyMode,"ax",%progbits
- 758              		.align	1
- 759              		.global	HAL_DBGMCU_DisableDBGStandbyMode
- 760              		.syntax unified
- 761              		.thumb
- 762              		.thumb_func
- 764              	HAL_DBGMCU_DisableDBGStandbyMode:
- 765              	.LFB151:
- 508:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 509:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
- 510:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Disable the Debug Module during STANDBY mode
- 511:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
- 512:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
- 513:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_DBGMCU_DisableDBGStandbyMode(void)
- 514:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
- 766              		.loc 1 514 1 is_stmt 1 view -0
- 767              		.cfi_startproc
- 768              		@ args = 0, pretend = 0, frame = 0
- 769              		@ frame_needed = 0, uses_anonymous_args = 0
- 770              		@ link register save eliminated.
- 515:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   CLEAR_BIT(DBGMCU->CR, DBGMCU_CR_DBG_STANDBY);
- 771              		.loc 1 515 3 view .LVU133
- 772 0000 024A     		ldr	r2, .L71
- 773 0002 5368     		ldr	r3, [r2, #4]
- 774 0004 23F00403 		bic	r3, r3, #4
- 775 0008 5360     		str	r3, [r2, #4]
- 516:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 776              		.loc 1 516 1 is_stmt 0 view .LVU134
- 777 000a 7047     		bx	lr
- 778              	.L72:
- 779              		.align	2
- 780              	.L71:
- 781 000c 002004E0 		.word	-536600576
- 782              		.cfi_endproc
- 783              	.LFE151:
- 785              		.section	.text.HAL_EnableCompensationCell,"ax",%progbits
- 786              		.align	1
- 787              		.global	HAL_EnableCompensationCell
- 788              		.syntax unified
- 789              		.thumb
- 790              		.thumb_func
- 792              	HAL_EnableCompensationCell:
- 793              	.LFB152:
- 517:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 518:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
- 519:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Enables the I/O Compensation Cell.
- 520:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note   The I/O compensation cell can be used only when the device supply
- 521:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *         voltage ranges from 2.4 to 3.6 V.  
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 24
+ 748              		@ frame_needed = 0, uses_anonymous_args = 0
+ 749              		@ link register save eliminated.
+ 507:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   SET_BIT(DBGMCU->CR, DBGMCU_CR_DBG_STANDBY);
+ 750              		.loc 1 507 3 view .LVU130
+ 751 0000 024A     		ldr	r2, .L68
+ 752 0002 5368     		ldr	r3, [r2, #4]
+ 753 0004 43F00403 		orr	r3, r3, #4
+ 754 0008 5360     		str	r3, [r2, #4]
+ 508:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 755              		.loc 1 508 1 is_stmt 0 view .LVU131
+ 756 000a 7047     		bx	lr
+ 757              	.L69:
+ 758              		.align	2
+ 759              	.L68:
+ 760 000c 002004E0 		.word	-536600576
+ 761              		.cfi_endproc
+ 762              	.LFE154:
+ 764              		.section	.text.HAL_DBGMCU_DisableDBGStandbyMode,"ax",%progbits
+ 765              		.align	1
+ 766              		.global	HAL_DBGMCU_DisableDBGStandbyMode
+ 767              		.syntax unified
+ 768              		.thumb
+ 769              		.thumb_func
+ 771              	HAL_DBGMCU_DisableDBGStandbyMode:
+ 772              	.LFB155:
+ 509:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 510:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 511:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Disable the Debug Module during STANDBY mode
+ 512:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 513:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 514:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_DBGMCU_DisableDBGStandbyMode(void)
+ 515:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 773              		.loc 1 515 1 is_stmt 1 view -0
+ 774              		.cfi_startproc
+ 775              		@ args = 0, pretend = 0, frame = 0
+ 776              		@ frame_needed = 0, uses_anonymous_args = 0
+ 777              		@ link register save eliminated.
+ 516:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   CLEAR_BIT(DBGMCU->CR, DBGMCU_CR_DBG_STANDBY);
+ 778              		.loc 1 516 3 view .LVU133
+ 779 0000 024A     		ldr	r2, .L71
+ 780 0002 5368     		ldr	r3, [r2, #4]
+ 781 0004 23F00403 		bic	r3, r3, #4
+ 782 0008 5360     		str	r3, [r2, #4]
+ 517:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 783              		.loc 1 517 1 is_stmt 0 view .LVU134
+ 784 000a 7047     		bx	lr
+ 785              	.L72:
+ 786              		.align	2
+ 787              	.L71:
+ 788 000c 002004E0 		.word	-536600576
+ 789              		.cfi_endproc
+ 790              	.LFE155:
+ 792              		.section	.text.HAL_EnableCompensationCell,"ax",%progbits
+ 793              		.align	1
+ 794              		.global	HAL_EnableCompensationCell
+ 795              		.syntax unified
+ 796              		.thumb
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 24
 
 
- 522:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
- 523:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
- 524:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_EnableCompensationCell(void)
- 525:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
- 794              		.loc 1 525 1 is_stmt 1 view -0
- 795              		.cfi_startproc
- 796              		@ args = 0, pretend = 0, frame = 0
- 797              		@ frame_needed = 0, uses_anonymous_args = 0
- 798              		@ link register save eliminated.
- 526:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *(__IO uint32_t *)CMPCR_CMP_PD_BB = (uint32_t)ENABLE;
- 799              		.loc 1 526 3 view .LVU136
- 800              		.loc 1 526 37 is_stmt 0 view .LVU137
- 801 0000 024B     		ldr	r3, .L74
- 802 0002 0122     		movs	r2, #1
- 803 0004 C3F80024 		str	r2, [r3, #1024]
- 527:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 804              		.loc 1 527 1 view .LVU138
- 805 0008 7047     		bx	lr
- 806              	.L75:
- 807 000a 00BF     		.align	2
- 808              	.L74:
- 809 000c 00002742 		.word	1109852160
- 810              		.cfi_endproc
- 811              	.LFE152:
- 813              		.section	.text.HAL_DisableCompensationCell,"ax",%progbits
- 814              		.align	1
- 815              		.global	HAL_DisableCompensationCell
- 816              		.syntax unified
- 817              		.thumb
- 818              		.thumb_func
- 820              	HAL_DisableCompensationCell:
- 821              	.LFB153:
- 528:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 529:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
- 530:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Power-down the I/O Compensation Cell.
- 531:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note   The I/O compensation cell can be used only when the device supply
- 532:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *         voltage ranges from 2.4 to 3.6 V.  
- 533:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
- 534:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
- 535:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_DisableCompensationCell(void)
- 536:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
- 822              		.loc 1 536 1 is_stmt 1 view -0
- 823              		.cfi_startproc
- 824              		@ args = 0, pretend = 0, frame = 0
- 825              		@ frame_needed = 0, uses_anonymous_args = 0
- 826              		@ link register save eliminated.
- 537:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *(__IO uint32_t *)CMPCR_CMP_PD_BB = (uint32_t)DISABLE;
- 827              		.loc 1 537 3 view .LVU140
- 828              		.loc 1 537 37 is_stmt 0 view .LVU141
- 829 0000 024B     		ldr	r3, .L77
- 830 0002 0022     		movs	r2, #0
- 831 0004 C3F80024 		str	r2, [r3, #1024]
- 538:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 832              		.loc 1 538 1 view .LVU142
- 833 0008 7047     		bx	lr
- 834              	.L78:
- 835 000a 00BF     		.align	2
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 25
+ 797              		.thumb_func
+ 799              	HAL_EnableCompensationCell:
+ 800              	.LFB156:
+ 518:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 519:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 520:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Enables the I/O Compensation Cell.
+ 521:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note   The I/O compensation cell can be used only when the device supply
+ 522:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *         voltage ranges from 2.4 to 3.6 V.  
+ 523:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 524:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 525:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_EnableCompensationCell(void)
+ 526:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 801              		.loc 1 526 1 is_stmt 1 view -0
+ 802              		.cfi_startproc
+ 803              		@ args = 0, pretend = 0, frame = 0
+ 804              		@ frame_needed = 0, uses_anonymous_args = 0
+ 805              		@ link register save eliminated.
+ 527:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *(__IO uint32_t *)CMPCR_CMP_PD_BB = (uint32_t)ENABLE;
+ 806              		.loc 1 527 3 view .LVU136
+ 807              		.loc 1 527 37 is_stmt 0 view .LVU137
+ 808 0000 024B     		ldr	r3, .L74
+ 809 0002 0122     		movs	r2, #1
+ 810 0004 C3F80024 		str	r2, [r3, #1024]
+ 528:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 811              		.loc 1 528 1 view .LVU138
+ 812 0008 7047     		bx	lr
+ 813              	.L75:
+ 814 000a 00BF     		.align	2
+ 815              	.L74:
+ 816 000c 00002742 		.word	1109852160
+ 817              		.cfi_endproc
+ 818              	.LFE156:
+ 820              		.section	.text.HAL_DisableCompensationCell,"ax",%progbits
+ 821              		.align	1
+ 822              		.global	HAL_DisableCompensationCell
+ 823              		.syntax unified
+ 824              		.thumb
+ 825              		.thumb_func
+ 827              	HAL_DisableCompensationCell:
+ 828              	.LFB157:
+ 529:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 530:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 531:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Power-down the I/O Compensation Cell.
+ 532:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note   The I/O compensation cell can be used only when the device supply
+ 533:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *         voltage ranges from 2.4 to 3.6 V.  
+ 534:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 535:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 536:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_DisableCompensationCell(void)
+ 537:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 829              		.loc 1 537 1 is_stmt 1 view -0
+ 830              		.cfi_startproc
+ 831              		@ args = 0, pretend = 0, frame = 0
+ 832              		@ frame_needed = 0, uses_anonymous_args = 0
+ 833              		@ link register save eliminated.
+ 538:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *(__IO uint32_t *)CMPCR_CMP_PD_BB = (uint32_t)DISABLE;
+ 834              		.loc 1 538 3 view .LVU140
+ 835              		.loc 1 538 37 is_stmt 0 view .LVU141
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 25
 
 
- 836              	.L77:
- 837 000c 00002742 		.word	1109852160
- 838              		.cfi_endproc
- 839              	.LFE153:
- 841              		.section	.text.HAL_GetUIDw0,"ax",%progbits
- 842              		.align	1
- 843              		.global	HAL_GetUIDw0
- 844              		.syntax unified
- 845              		.thumb
- 846              		.thumb_func
- 848              	HAL_GetUIDw0:
- 849              	.LFB154:
- 539:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 540:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
- 541:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Returns first word of the unique device identifier (UID based on 96 bits)
- 542:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval Device identifier
- 543:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
- 544:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** uint32_t HAL_GetUIDw0(void)
- 545:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
- 850              		.loc 1 545 1 is_stmt 1 view -0
- 851              		.cfi_startproc
- 852              		@ args = 0, pretend = 0, frame = 0
- 853              		@ frame_needed = 0, uses_anonymous_args = 0
- 854              		@ link register save eliminated.
- 546:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return (READ_REG(*((uint32_t *)UID_BASE)));
- 855              		.loc 1 546 3 view .LVU144
- 547:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 856              		.loc 1 547 1 is_stmt 0 view .LVU145
- 857 0000 014B     		ldr	r3, .L80
- 858 0002 D3F8100A 		ldr	r0, [r3, #2576]
- 859 0006 7047     		bx	lr
- 860              	.L81:
- 861              		.align	2
- 862              	.L80:
- 863 0008 0070FF1F 		.word	536834048
- 864              		.cfi_endproc
- 865              	.LFE154:
- 867              		.section	.text.HAL_GetUIDw1,"ax",%progbits
- 868              		.align	1
- 869              		.global	HAL_GetUIDw1
- 870              		.syntax unified
- 871              		.thumb
- 872              		.thumb_func
- 874              	HAL_GetUIDw1:
- 875              	.LFB155:
- 548:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 549:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
- 550:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Returns second word of the unique device identifier (UID based on 96 bits)
- 551:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval Device identifier
- 552:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
- 553:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** uint32_t HAL_GetUIDw1(void)
- 554:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
- 876              		.loc 1 554 1 is_stmt 1 view -0
- 877              		.cfi_startproc
- 878              		@ args = 0, pretend = 0, frame = 0
- 879              		@ frame_needed = 0, uses_anonymous_args = 0
- 880              		@ link register save eliminated.
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 26
+ 836 0000 024B     		ldr	r3, .L77
+ 837 0002 0022     		movs	r2, #0
+ 838 0004 C3F80024 		str	r2, [r3, #1024]
+ 539:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 839              		.loc 1 539 1 view .LVU142
+ 840 0008 7047     		bx	lr
+ 841              	.L78:
+ 842 000a 00BF     		.align	2
+ 843              	.L77:
+ 844 000c 00002742 		.word	1109852160
+ 845              		.cfi_endproc
+ 846              	.LFE157:
+ 848              		.section	.text.HAL_GetUIDw0,"ax",%progbits
+ 849              		.align	1
+ 850              		.global	HAL_GetUIDw0
+ 851              		.syntax unified
+ 852              		.thumb
+ 853              		.thumb_func
+ 855              	HAL_GetUIDw0:
+ 856              	.LFB158:
+ 540:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 541:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 542:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Returns first word of the unique device identifier (UID based on 96 bits)
+ 543:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval Device identifier
+ 544:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 545:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** uint32_t HAL_GetUIDw0(void)
+ 546:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 857              		.loc 1 546 1 is_stmt 1 view -0
+ 858              		.cfi_startproc
+ 859              		@ args = 0, pretend = 0, frame = 0
+ 860              		@ frame_needed = 0, uses_anonymous_args = 0
+ 861              		@ link register save eliminated.
+ 547:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return (READ_REG(*((uint32_t *)UID_BASE)));
+ 862              		.loc 1 547 3 view .LVU144
+ 548:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 863              		.loc 1 548 1 is_stmt 0 view .LVU145
+ 864 0000 014B     		ldr	r3, .L80
+ 865 0002 D3F8100A 		ldr	r0, [r3, #2576]
+ 866 0006 7047     		bx	lr
+ 867              	.L81:
+ 868              		.align	2
+ 869              	.L80:
+ 870 0008 0070FF1F 		.word	536834048
+ 871              		.cfi_endproc
+ 872              	.LFE158:
+ 874              		.section	.text.HAL_GetUIDw1,"ax",%progbits
+ 875              		.align	1
+ 876              		.global	HAL_GetUIDw1
+ 877              		.syntax unified
+ 878              		.thumb
+ 879              		.thumb_func
+ 881              	HAL_GetUIDw1:
+ 882              	.LFB159:
+ 549:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 550:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 551:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Returns second word of the unique device identifier (UID based on 96 bits)
+ 552:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval Device identifier
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 26
 
 
- 555:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return (READ_REG(*((uint32_t *)(UID_BASE + 4U))));
- 881              		.loc 1 555 3 view .LVU147
- 556:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 882              		.loc 1 556 1 is_stmt 0 view .LVU148
- 883 0000 014B     		ldr	r3, .L83
- 884 0002 D3F8140A 		ldr	r0, [r3, #2580]
- 885 0006 7047     		bx	lr
- 886              	.L84:
- 887              		.align	2
- 888              	.L83:
- 889 0008 0070FF1F 		.word	536834048
- 890              		.cfi_endproc
- 891              	.LFE155:
- 893              		.section	.text.HAL_GetUIDw2,"ax",%progbits
- 894              		.align	1
- 895              		.global	HAL_GetUIDw2
- 896              		.syntax unified
- 897              		.thumb
- 898              		.thumb_func
- 900              	HAL_GetUIDw2:
- 901              	.LFB156:
- 557:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
- 558:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
- 559:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Returns third word of the unique device identifier (UID based on 96 bits)
- 560:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval Device identifier
- 561:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
- 562:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** uint32_t HAL_GetUIDw2(void)
- 563:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
- 902              		.loc 1 563 1 is_stmt 1 view -0
- 903              		.cfi_startproc
- 904              		@ args = 0, pretend = 0, frame = 0
- 905              		@ frame_needed = 0, uses_anonymous_args = 0
- 906              		@ link register save eliminated.
- 564:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return (READ_REG(*((uint32_t *)(UID_BASE + 8U))));
- 907              		.loc 1 564 3 view .LVU150
- 565:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
- 908              		.loc 1 565 1 is_stmt 0 view .LVU151
- 909 0000 014B     		ldr	r3, .L86
- 910 0002 D3F8180A 		ldr	r0, [r3, #2584]
- 911 0006 7047     		bx	lr
- 912              	.L87:
- 913              		.align	2
- 914              	.L86:
- 915 0008 0070FF1F 		.word	536834048
- 916              		.cfi_endproc
- 917              	.LFE156:
- 919              		.global	uwTickFreq
- 920              		.global	uwTickPrio
- 921              		.global	uwTick
- 922              		.section	.bss.uwTick,"aw",%nobits
- 923              		.align	2
- 924              		.set	.LANCHOR2,. + 0
- 927              	uwTick:
- 928 0000 00000000 		.space	4
- 929              		.section	.data.uwTickFreq,"aw"
- 930              		.set	.LANCHOR0,. + 0
- 933              	uwTickFreq:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 27
+ 553:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 554:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** uint32_t HAL_GetUIDw1(void)
+ 555:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 883              		.loc 1 555 1 is_stmt 1 view -0
+ 884              		.cfi_startproc
+ 885              		@ args = 0, pretend = 0, frame = 0
+ 886              		@ frame_needed = 0, uses_anonymous_args = 0
+ 887              		@ link register save eliminated.
+ 556:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return (READ_REG(*((uint32_t *)(UID_BASE + 4U))));
+ 888              		.loc 1 556 3 view .LVU147
+ 557:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 889              		.loc 1 557 1 is_stmt 0 view .LVU148
+ 890 0000 014B     		ldr	r3, .L83
+ 891 0002 D3F8140A 		ldr	r0, [r3, #2580]
+ 892 0006 7047     		bx	lr
+ 893              	.L84:
+ 894              		.align	2
+ 895              	.L83:
+ 896 0008 0070FF1F 		.word	536834048
+ 897              		.cfi_endproc
+ 898              	.LFE159:
+ 900              		.section	.text.HAL_GetUIDw2,"ax",%progbits
+ 901              		.align	1
+ 902              		.global	HAL_GetUIDw2
+ 903              		.syntax unified
+ 904              		.thumb
+ 905              		.thumb_func
+ 907              	HAL_GetUIDw2:
+ 908              	.LFB160:
+ 558:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 559:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 560:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Returns third word of the unique device identifier (UID based on 96 bits)
+ 561:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval Device identifier
+ 562:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 563:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** uint32_t HAL_GetUIDw2(void)
+ 564:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 909              		.loc 1 564 1 is_stmt 1 view -0
+ 910              		.cfi_startproc
+ 911              		@ args = 0, pretend = 0, frame = 0
+ 912              		@ frame_needed = 0, uses_anonymous_args = 0
+ 913              		@ link register save eliminated.
+ 565:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return (READ_REG(*((uint32_t *)(UID_BASE + 8U))));
+ 914              		.loc 1 565 3 view .LVU150
+ 566:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 915              		.loc 1 566 1 is_stmt 0 view .LVU151
+ 916 0000 014B     		ldr	r3, .L86
+ 917 0002 D3F8180A 		ldr	r0, [r3, #2584]
+ 918 0006 7047     		bx	lr
+ 919              	.L87:
+ 920              		.align	2
+ 921              	.L86:
+ 922 0008 0070FF1F 		.word	536834048
+ 923              		.cfi_endproc
+ 924              	.LFE160:
+ 926              		.global	uwTickFreq
+ 927              		.global	uwTickPrio
+ 928              		.global	uwTick
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 27
 
 
- 934 0000 01       		.byte	1
- 935              		.section	.data.uwTickPrio,"aw"
- 936              		.align	2
- 937              		.set	.LANCHOR1,. + 0
- 940              	uwTickPrio:
- 941 0000 10000000 		.word	16
- 942              		.text
- 943              	.Letext0:
- 944              		.file 2 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
- 945              		.file 3 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
- 946              		.file 4 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
- 947              		.file 5 "Drivers/CMSIS/Include/core_cm4.h"
- 948              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
- 949              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 950              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 951              		.file 9 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 952              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 28
+ 929              		.section	.bss.uwTick,"aw",%nobits
+ 930              		.align	2
+ 931              		.set	.LANCHOR2,. + 0
+ 934              	uwTick:
+ 935 0000 00000000 		.space	4
+ 936              		.section	.data.uwTickFreq,"aw"
+ 937              		.set	.LANCHOR0,. + 0
+ 940              	uwTickFreq:
+ 941 0000 01       		.byte	1
+ 942              		.section	.data.uwTickPrio,"aw"
+ 943              		.align	2
+ 944              		.set	.LANCHOR1,. + 0
+ 947              	uwTickPrio:
+ 948 0000 10000000 		.word	16
+ 949              		.text
+ 950              	.Letext0:
+ 951              		.file 2 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ 952              		.file 3 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
+ 953              		.file 4 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
+ 954              		.file 5 "Drivers/CMSIS/Include/core_cm4.h"
+ 955              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
+ 956              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 957              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 958              		.file 9 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 959              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 28
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f4xx_hal.c
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:20     .text.HAL_MspInit:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:26     .text.HAL_MspInit:0000000000000000 HAL_MspInit
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:40     .text.HAL_MspDeInit:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:46     .text.HAL_MspDeInit:0000000000000000 HAL_MspDeInit
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:59     .text.HAL_DeInit:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:65     .text.HAL_DeInit:0000000000000000 HAL_DeInit
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:109    .text.HAL_DeInit:0000000000000028 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:114    .text.HAL_InitTick:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:120    .text.HAL_InitTick:0000000000000000 HAL_InitTick
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:183    .text.HAL_InitTick:0000000000000040 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:190    .text.HAL_Init:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:196    .text.HAL_Init:0000000000000000 HAL_Init
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:238    .text.HAL_Init:0000000000000030 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:243    .text.HAL_IncTick:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:249    .text.HAL_IncTick:0000000000000000 HAL_IncTick
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:269    .text.HAL_IncTick:0000000000000010 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:275    .text.HAL_GetTick:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:281    .text.HAL_GetTick:0000000000000000 HAL_GetTick
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:297    .text.HAL_GetTick:0000000000000008 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:302    .text.HAL_GetTickPrio:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:308    .text.HAL_GetTickPrio:0000000000000000 HAL_GetTickPrio
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:323    .text.HAL_GetTickPrio:0000000000000008 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:328    .text.HAL_SetTickFreq:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:334    .text.HAL_SetTickFreq:0000000000000000 HAL_SetTickFreq
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:391    .text.HAL_SetTickFreq:0000000000000024 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:397    .text.HAL_GetTickFreq:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:403    .text.HAL_GetTickFreq:0000000000000000 HAL_GetTickFreq
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:418    .text.HAL_GetTickFreq:0000000000000008 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:423    .text.HAL_Delay:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:429    .text.HAL_Delay:0000000000000000 HAL_Delay
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:482    .text.HAL_Delay:0000000000000024 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:487    .text.HAL_SuspendTick:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:493    .text.HAL_SuspendTick:0000000000000000 HAL_SuspendTick
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:512    .text.HAL_ResumeTick:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:518    .text.HAL_ResumeTick:0000000000000000 HAL_ResumeTick
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:537    .text.HAL_GetHalVersion:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:543    .text.HAL_GetHalVersion:0000000000000000 HAL_GetHalVersion
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:557    .text.HAL_GetHalVersion:0000000000000004 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:562    .text.HAL_GetREVID:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:568    .text.HAL_GetREVID:0000000000000000 HAL_GetREVID
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:585    .text.HAL_GetREVID:0000000000000008 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:590    .text.HAL_GetDEVID:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:596    .text.HAL_GetDEVID:0000000000000000 HAL_GetDEVID
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:613    .text.HAL_GetDEVID:000000000000000c $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:618    .text.HAL_DBGMCU_EnableDBGSleepMode:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:624    .text.HAL_DBGMCU_EnableDBGSleepMode:0000000000000000 HAL_DBGMCU_EnableDBGSleepMode
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:641    .text.HAL_DBGMCU_EnableDBGSleepMode:000000000000000c $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:646    .text.HAL_DBGMCU_DisableDBGSleepMode:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:652    .text.HAL_DBGMCU_DisableDBGSleepMode:0000000000000000 HAL_DBGMCU_DisableDBGSleepMode
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:669    .text.HAL_DBGMCU_DisableDBGSleepMode:000000000000000c $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:674    .text.HAL_DBGMCU_EnableDBGStopMode:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:680    .text.HAL_DBGMCU_EnableDBGStopMode:0000000000000000 HAL_DBGMCU_EnableDBGStopMode
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:697    .text.HAL_DBGMCU_EnableDBGStopMode:000000000000000c $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:702    .text.HAL_DBGMCU_DisableDBGStopMode:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:708    .text.HAL_DBGMCU_DisableDBGStopMode:0000000000000000 HAL_DBGMCU_DisableDBGStopMode
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s 			page 29
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:20     .text.HAL_MspInit:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:26     .text.HAL_MspInit:0000000000000000 HAL_MspInit
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:40     .text.HAL_MspDeInit:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:46     .text.HAL_MspDeInit:0000000000000000 HAL_MspDeInit
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:59     .text.HAL_DeInit:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:65     .text.HAL_DeInit:0000000000000000 HAL_DeInit
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:113    .text.HAL_DeInit:000000000000002c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:121    .text.HAL_InitTick:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:127    .text.HAL_InitTick:0000000000000000 HAL_InitTick
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:190    .text.HAL_InitTick:0000000000000040 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:197    .text.HAL_Init:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:203    .text.HAL_Init:0000000000000000 HAL_Init
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:245    .text.HAL_Init:0000000000000030 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:250    .text.HAL_IncTick:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:256    .text.HAL_IncTick:0000000000000000 HAL_IncTick
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:276    .text.HAL_IncTick:0000000000000010 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:282    .text.HAL_GetTick:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:288    .text.HAL_GetTick:0000000000000000 HAL_GetTick
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:304    .text.HAL_GetTick:0000000000000008 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:309    .text.HAL_GetTickPrio:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:315    .text.HAL_GetTickPrio:0000000000000000 HAL_GetTickPrio
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:330    .text.HAL_GetTickPrio:0000000000000008 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:335    .text.HAL_SetTickFreq:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:341    .text.HAL_SetTickFreq:0000000000000000 HAL_SetTickFreq
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:398    .text.HAL_SetTickFreq:0000000000000024 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:404    .text.HAL_GetTickFreq:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:410    .text.HAL_GetTickFreq:0000000000000000 HAL_GetTickFreq
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:425    .text.HAL_GetTickFreq:0000000000000008 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:430    .text.HAL_Delay:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:436    .text.HAL_Delay:0000000000000000 HAL_Delay
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:489    .text.HAL_Delay:0000000000000024 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:494    .text.HAL_SuspendTick:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:500    .text.HAL_SuspendTick:0000000000000000 HAL_SuspendTick
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:519    .text.HAL_ResumeTick:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:525    .text.HAL_ResumeTick:0000000000000000 HAL_ResumeTick
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:544    .text.HAL_GetHalVersion:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:550    .text.HAL_GetHalVersion:0000000000000000 HAL_GetHalVersion
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:564    .text.HAL_GetHalVersion:0000000000000004 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:569    .text.HAL_GetREVID:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:575    .text.HAL_GetREVID:0000000000000000 HAL_GetREVID
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:592    .text.HAL_GetREVID:0000000000000008 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:597    .text.HAL_GetDEVID:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:603    .text.HAL_GetDEVID:0000000000000000 HAL_GetDEVID
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:620    .text.HAL_GetDEVID:000000000000000c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:625    .text.HAL_DBGMCU_EnableDBGSleepMode:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:631    .text.HAL_DBGMCU_EnableDBGSleepMode:0000000000000000 HAL_DBGMCU_EnableDBGSleepMode
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:648    .text.HAL_DBGMCU_EnableDBGSleepMode:000000000000000c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:653    .text.HAL_DBGMCU_DisableDBGSleepMode:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:659    .text.HAL_DBGMCU_DisableDBGSleepMode:0000000000000000 HAL_DBGMCU_DisableDBGSleepMode
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:676    .text.HAL_DBGMCU_DisableDBGSleepMode:000000000000000c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:681    .text.HAL_DBGMCU_EnableDBGStopMode:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:687    .text.HAL_DBGMCU_EnableDBGStopMode:0000000000000000 HAL_DBGMCU_EnableDBGStopMode
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:704    .text.HAL_DBGMCU_EnableDBGStopMode:000000000000000c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:709    .text.HAL_DBGMCU_DisableDBGStopMode:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:715    .text.HAL_DBGMCU_DisableDBGStopMode:0000000000000000 HAL_DBGMCU_DisableDBGStopMode
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s 			page 29
 
 
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:725    .text.HAL_DBGMCU_DisableDBGStopMode:000000000000000c $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:730    .text.HAL_DBGMCU_EnableDBGStandbyMode:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:736    .text.HAL_DBGMCU_EnableDBGStandbyMode:0000000000000000 HAL_DBGMCU_EnableDBGStandbyMode
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:753    .text.HAL_DBGMCU_EnableDBGStandbyMode:000000000000000c $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:758    .text.HAL_DBGMCU_DisableDBGStandbyMode:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:764    .text.HAL_DBGMCU_DisableDBGStandbyMode:0000000000000000 HAL_DBGMCU_DisableDBGStandbyMode
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:781    .text.HAL_DBGMCU_DisableDBGStandbyMode:000000000000000c $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:786    .text.HAL_EnableCompensationCell:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:792    .text.HAL_EnableCompensationCell:0000000000000000 HAL_EnableCompensationCell
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:809    .text.HAL_EnableCompensationCell:000000000000000c $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:814    .text.HAL_DisableCompensationCell:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:820    .text.HAL_DisableCompensationCell:0000000000000000 HAL_DisableCompensationCell
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:837    .text.HAL_DisableCompensationCell:000000000000000c $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:842    .text.HAL_GetUIDw0:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:848    .text.HAL_GetUIDw0:0000000000000000 HAL_GetUIDw0
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:863    .text.HAL_GetUIDw0:0000000000000008 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:868    .text.HAL_GetUIDw1:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:874    .text.HAL_GetUIDw1:0000000000000000 HAL_GetUIDw1
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:889    .text.HAL_GetUIDw1:0000000000000008 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:894    .text.HAL_GetUIDw2:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:900    .text.HAL_GetUIDw2:0000000000000000 HAL_GetUIDw2
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:915    .text.HAL_GetUIDw2:0000000000000008 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:933    .data.uwTickFreq:0000000000000000 uwTickFreq
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:940    .data.uwTickPrio:0000000000000000 uwTickPrio
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:927    .bss.uwTick:0000000000000000 uwTick
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:923    .bss.uwTick:0000000000000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc2SlFOf.s:936    .data.uwTickPrio:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:732    .text.HAL_DBGMCU_DisableDBGStopMode:000000000000000c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:737    .text.HAL_DBGMCU_EnableDBGStandbyMode:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:743    .text.HAL_DBGMCU_EnableDBGStandbyMode:0000000000000000 HAL_DBGMCU_EnableDBGStandbyMode
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:760    .text.HAL_DBGMCU_EnableDBGStandbyMode:000000000000000c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:765    .text.HAL_DBGMCU_DisableDBGStandbyMode:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:771    .text.HAL_DBGMCU_DisableDBGStandbyMode:0000000000000000 HAL_DBGMCU_DisableDBGStandbyMode
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:788    .text.HAL_DBGMCU_DisableDBGStandbyMode:000000000000000c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:793    .text.HAL_EnableCompensationCell:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:799    .text.HAL_EnableCompensationCell:0000000000000000 HAL_EnableCompensationCell
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:816    .text.HAL_EnableCompensationCell:000000000000000c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:821    .text.HAL_DisableCompensationCell:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:827    .text.HAL_DisableCompensationCell:0000000000000000 HAL_DisableCompensationCell
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:844    .text.HAL_DisableCompensationCell:000000000000000c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:849    .text.HAL_GetUIDw0:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:855    .text.HAL_GetUIDw0:0000000000000000 HAL_GetUIDw0
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:870    .text.HAL_GetUIDw0:0000000000000008 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:875    .text.HAL_GetUIDw1:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:881    .text.HAL_GetUIDw1:0000000000000000 HAL_GetUIDw1
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:896    .text.HAL_GetUIDw1:0000000000000008 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:901    .text.HAL_GetUIDw2:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:907    .text.HAL_GetUIDw2:0000000000000000 HAL_GetUIDw2
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:922    .text.HAL_GetUIDw2:0000000000000008 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:940    .data.uwTickFreq:0000000000000000 uwTickFreq
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:947    .data.uwTickPrio:0000000000000000 uwTickPrio
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:934    .bss.uwTick:0000000000000000 uwTick
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:930    .bss.uwTick:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccDd2Gtr.s:943    .data.uwTickPrio:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 HAL_SYSTICK_Config

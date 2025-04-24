@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccjTLGW6.s 			page 1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccCHWf5I.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -26,127 +26,143 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccjTLGW6.s 			page 1
   23              		.thumb
   24              		.thumb_func
   26              	MX_DMA_Init:
-  27              	.LFB130:
+  27              	.LFB134:
   28              		.file 1 "Core/Src/dma.c"
-   1:Core/Src/dma.c **** /**
-   2:Core/Src/dma.c ****   ******************************************************************************
-   3:Core/Src/dma.c ****   * @file    dma.c
-   4:Core/Src/dma.c ****   * @brief   This file provides code for the configuration
-   5:Core/Src/dma.c ****   *          of all the requested memory to memory DMA transfers.
-   6:Core/Src/dma.c ****   ******************************************************************************
-   7:Core/Src/dma.c ****   * @attention
-   8:Core/Src/dma.c ****   *
-   9:Core/Src/dma.c ****   * <h2><center>&copy; Copyright (c) 2025 STMicroelectronics.
-  10:Core/Src/dma.c ****   * All rights reserved.</center></h2>
-  11:Core/Src/dma.c ****   *
-  12:Core/Src/dma.c ****   * This software component is licensed by ST under Ultimate Liberty license
-  13:Core/Src/dma.c ****   * SLA0044, the "License"; You may not use this file except in compliance with
-  14:Core/Src/dma.c ****   * the License. You may obtain a copy of the License at:
-  15:Core/Src/dma.c ****   *                             www.st.com/SLA0044
+   1:Core/Src/dma.c **** /* USER CODE BEGIN Header */
+   2:Core/Src/dma.c **** /**
+   3:Core/Src/dma.c ****   ******************************************************************************
+   4:Core/Src/dma.c ****   * @file    dma.c
+   5:Core/Src/dma.c ****   * @brief   This file provides code for the configuration
+   6:Core/Src/dma.c ****   *          of all the requested memory to memory DMA transfers.
+   7:Core/Src/dma.c ****   ******************************************************************************
+   8:Core/Src/dma.c ****   * @attention
+   9:Core/Src/dma.c ****   *
+  10:Core/Src/dma.c ****   * Copyright (c) 2025 STMicroelectronics.
+  11:Core/Src/dma.c ****   * All rights reserved.
+  12:Core/Src/dma.c ****   *
+  13:Core/Src/dma.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  14:Core/Src/dma.c ****   * in the root directory of this software component.
+  15:Core/Src/dma.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
   16:Core/Src/dma.c ****   *
   17:Core/Src/dma.c ****   ******************************************************************************
   18:Core/Src/dma.c ****   */
-  19:Core/Src/dma.c **** 
-  20:Core/Src/dma.c **** /* Includes ------------------------------------------------------------------*/
-  21:Core/Src/dma.c **** #include "dma.h"
-  22:Core/Src/dma.c **** 
-  23:Core/Src/dma.c **** /* USER CODE BEGIN 0 */
-  24:Core/Src/dma.c **** 
-  25:Core/Src/dma.c **** /* USER CODE END 0 */
-  26:Core/Src/dma.c **** 
-  27:Core/Src/dma.c **** /*----------------------------------------------------------------------------*/
-  28:Core/Src/dma.c **** /* Configure DMA                                                              */
-  29:Core/Src/dma.c **** /*----------------------------------------------------------------------------*/
-  30:Core/Src/dma.c **** 
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccjTLGW6.s 			page 2
+  19:Core/Src/dma.c **** /* USER CODE END Header */
+  20:Core/Src/dma.c **** 
+  21:Core/Src/dma.c **** /* Includes ------------------------------------------------------------------*/
+  22:Core/Src/dma.c **** #include "dma.h"
+  23:Core/Src/dma.c **** 
+  24:Core/Src/dma.c **** /* USER CODE BEGIN 0 */
+  25:Core/Src/dma.c **** 
+  26:Core/Src/dma.c **** /* USER CODE END 0 */
+  27:Core/Src/dma.c **** 
+  28:Core/Src/dma.c **** /*----------------------------------------------------------------------------*/
+  29:Core/Src/dma.c **** /* Configure DMA                                                              */
+  30:Core/Src/dma.c **** /*----------------------------------------------------------------------------*/
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccCHWf5I.s 			page 2
 
 
-  31:Core/Src/dma.c **** /* USER CODE BEGIN 1 */
-  32:Core/Src/dma.c **** 
-  33:Core/Src/dma.c **** /* USER CODE END 1 */
-  34:Core/Src/dma.c **** 
-  35:Core/Src/dma.c **** /**
-  36:Core/Src/dma.c ****   * Enable DMA controller clock
-  37:Core/Src/dma.c ****   */
-  38:Core/Src/dma.c **** void MX_DMA_Init(void)
-  39:Core/Src/dma.c **** {
-  29              		.loc 1 39 1 view -0
+  31:Core/Src/dma.c **** 
+  32:Core/Src/dma.c **** /* USER CODE BEGIN 1 */
+  33:Core/Src/dma.c **** 
+  34:Core/Src/dma.c **** /* USER CODE END 1 */
+  35:Core/Src/dma.c **** 
+  36:Core/Src/dma.c **** /**
+  37:Core/Src/dma.c ****   * Enable DMA controller clock
+  38:Core/Src/dma.c ****   */
+  39:Core/Src/dma.c **** void MX_DMA_Init(void)
+  40:Core/Src/dma.c **** {
+  29              		.loc 1 40 1 view -0
   30              		.cfi_startproc
   31              		@ args = 0, pretend = 0, frame = 8
   32              		@ frame_needed = 0, uses_anonymous_args = 0
-  33 0000 00B5     		push	{lr}
+  33 0000 10B5     		push	{r4, lr}
   34              	.LCFI0:
-  35              		.cfi_def_cfa_offset 4
-  36              		.cfi_offset 14, -4
-  37 0002 83B0     		sub	sp, sp, #12
-  38              	.LCFI1:
-  39              		.cfi_def_cfa_offset 16
-  40:Core/Src/dma.c **** 
-  41:Core/Src/dma.c ****   /* DMA controller clock enable */
-  42:Core/Src/dma.c ****   __HAL_RCC_DMA1_CLK_ENABLE();
-  40              		.loc 1 42 3 view .LVU1
-  41              	.LBB2:
-  42              		.loc 1 42 3 view .LVU2
-  43 0004 0022     		movs	r2, #0
-  44 0006 0192     		str	r2, [sp, #4]
-  45              		.loc 1 42 3 view .LVU3
-  46 0008 094B     		ldr	r3, .L3
-  47 000a 196B     		ldr	r1, [r3, #48]
-  48 000c 41F40011 		orr	r1, r1, #2097152
-  49 0010 1963     		str	r1, [r3, #48]
-  50              		.loc 1 42 3 view .LVU4
-  51 0012 1B6B     		ldr	r3, [r3, #48]
-  52 0014 03F40013 		and	r3, r3, #2097152
-  53 0018 0193     		str	r3, [sp, #4]
-  54              		.loc 1 42 3 view .LVU5
-  55 001a 019B     		ldr	r3, [sp, #4]
-  56              	.LBE2:
-  57              		.loc 1 42 3 view .LVU6
-  43:Core/Src/dma.c **** 
-  44:Core/Src/dma.c ****   /* DMA interrupt init */
-  45:Core/Src/dma.c ****   /* DMA1_Stream1_IRQn interrupt configuration */
-  46:Core/Src/dma.c ****   HAL_NVIC_SetPriority(DMA1_Stream1_IRQn, 5, 0);
-  58              		.loc 1 46 3 view .LVU7
-  59 001c 0521     		movs	r1, #5
-  60 001e 0C20     		movs	r0, #12
-  61 0020 FFF7FEFF 		bl	HAL_NVIC_SetPriority
-  62              	.LVL0:
-  47:Core/Src/dma.c ****   HAL_NVIC_EnableIRQ(DMA1_Stream1_IRQn);
-  63              		.loc 1 47 3 view .LVU8
-  64 0024 0C20     		movs	r0, #12
-  65 0026 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
-  66              	.LVL1:
-  48:Core/Src/dma.c **** 
-  49:Core/Src/dma.c **** }
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccjTLGW6.s 			page 3
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 4, -8
+  37              		.cfi_offset 14, -4
+  38 0002 82B0     		sub	sp, sp, #8
+  39              	.LCFI1:
+  40              		.cfi_def_cfa_offset 16
+  41:Core/Src/dma.c **** 
+  42:Core/Src/dma.c ****   /* DMA controller clock enable */
+  43:Core/Src/dma.c ****   __HAL_RCC_DMA1_CLK_ENABLE();
+  41              		.loc 1 43 3 view .LVU1
+  42              	.LBB2:
+  43              		.loc 1 43 3 view .LVU2
+  44 0004 0024     		movs	r4, #0
+  45 0006 0194     		str	r4, [sp, #4]
+  46              		.loc 1 43 3 view .LVU3
+  47 0008 0D4B     		ldr	r3, .L3
+  48 000a 1A6B     		ldr	r2, [r3, #48]
+  49 000c 42F40012 		orr	r2, r2, #2097152
+  50 0010 1A63     		str	r2, [r3, #48]
+  51              		.loc 1 43 3 view .LVU4
+  52 0012 1B6B     		ldr	r3, [r3, #48]
+  53 0014 03F40013 		and	r3, r3, #2097152
+  54 0018 0193     		str	r3, [sp, #4]
+  55              		.loc 1 43 3 view .LVU5
+  56 001a 019B     		ldr	r3, [sp, #4]
+  57              	.LBE2:
+  58              		.loc 1 43 3 view .LVU6
+  44:Core/Src/dma.c **** 
+  45:Core/Src/dma.c ****   /* DMA interrupt init */
+  46:Core/Src/dma.c ****   /* DMA1_Stream1_IRQn interrupt configuration */
+  47:Core/Src/dma.c ****   HAL_NVIC_SetPriority(DMA1_Stream1_IRQn, 5, 0);
+  59              		.loc 1 47 3 view .LVU7
+  60 001c 2246     		mov	r2, r4
+  61 001e 0521     		movs	r1, #5
+  62 0020 0C20     		movs	r0, #12
+  63 0022 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+  64              	.LVL0:
+  48:Core/Src/dma.c ****   HAL_NVIC_EnableIRQ(DMA1_Stream1_IRQn);
+  65              		.loc 1 48 3 view .LVU8
+  66 0026 0C20     		movs	r0, #12
+  67 0028 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccCHWf5I.s 			page 3
 
 
-  67              		.loc 1 49 1 is_stmt 0 view .LVU9
-  68 002a 03B0     		add	sp, sp, #12
-  69              	.LCFI2:
-  70              		.cfi_def_cfa_offset 4
-  71              		@ sp needed
-  72 002c 5DF804FB 		ldr	pc, [sp], #4
-  73              	.L4:
-  74              		.align	2
-  75              	.L3:
-  76 0030 00380240 		.word	1073887232
-  77              		.cfi_endproc
-  78              	.LFE130:
-  80              		.text
-  81              	.Letext0:
-  82              		.file 2 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
-  83              		.file 3 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
-  84              		.file 4 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
-  85              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccjTLGW6.s 			page 4
+  68              	.LVL1:
+  49:Core/Src/dma.c ****   /* DMA1_Stream3_IRQn interrupt configuration */
+  50:Core/Src/dma.c ****   HAL_NVIC_SetPriority(DMA1_Stream3_IRQn, 5, 0);
+  69              		.loc 1 50 3 view .LVU9
+  70 002c 2246     		mov	r2, r4
+  71 002e 0521     		movs	r1, #5
+  72 0030 0E20     		movs	r0, #14
+  73 0032 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+  74              	.LVL2:
+  51:Core/Src/dma.c ****   HAL_NVIC_EnableIRQ(DMA1_Stream3_IRQn);
+  75              		.loc 1 51 3 view .LVU10
+  76 0036 0E20     		movs	r0, #14
+  77 0038 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+  78              	.LVL3:
+  52:Core/Src/dma.c **** 
+  53:Core/Src/dma.c **** }
+  79              		.loc 1 53 1 is_stmt 0 view .LVU11
+  80 003c 02B0     		add	sp, sp, #8
+  81              	.LCFI2:
+  82              		.cfi_def_cfa_offset 8
+  83              		@ sp needed
+  84 003e 10BD     		pop	{r4, pc}
+  85              	.L4:
+  86              		.align	2
+  87              	.L3:
+  88 0040 00380240 		.word	1073887232
+  89              		.cfi_endproc
+  90              	.LFE134:
+  92              		.text
+  93              	.Letext0:
+  94              		.file 2 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+  95              		.file 3 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
+  96              		.file 4 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
+  97              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccCHWf5I.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 dma.c
-C:\Users\HUAWEI\AppData\Local\Temp\ccjTLGW6.s:20     .text.MX_DMA_Init:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccjTLGW6.s:26     .text.MX_DMA_Init:0000000000000000 MX_DMA_Init
-C:\Users\HUAWEI\AppData\Local\Temp\ccjTLGW6.s:76     .text.MX_DMA_Init:0000000000000030 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccCHWf5I.s:20     .text.MX_DMA_Init:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccCHWf5I.s:26     .text.MX_DMA_Init:0000000000000000 MX_DMA_Init
+C:\Users\HUAWEI\AppData\Local\Temp\ccCHWf5I.s:88     .text.MX_DMA_Init:0000000000000040 $d
 
 UNDEFINED SYMBOLS
 HAL_NVIC_SetPriority

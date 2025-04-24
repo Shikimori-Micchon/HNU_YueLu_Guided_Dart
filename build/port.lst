@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -28,8 +28,8 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
   26              	.LFB6:
   27              		.file 1 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c"
    1:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** /*
-   2:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c ****  * FreeRTOS Kernel V10.2.1
-   3:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c ****  * Copyright (C) 2019 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
+   2:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c ****  * FreeRTOS Kernel V10.3.1
+   3:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c ****  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
    4:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c ****  *
    5:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c ****  * Permission is hereby granted, free of charge, to any person obtaining a copy of
    6:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c ****  * this software and associated documentation files (the "Software"), to deal in
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
   29:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c ****  * Implementation of functions defined in portable.h for the ARM CM4F port.
   30:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c ****  *----------------------------------------------------------*/
   31:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 2
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 2
 
 
   32:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** /* Scheduler includes. */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
   86:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** #define portASPEN_AND_LSPEN_BITS			( 0x3UL << 30UL )
   87:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 
   88:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** /* Constants required to set up the initial stack. */
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 3
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 3
 
 
   89:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** #define portINITIAL_XPSR					( 0x01000000 )
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  143:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 
  144:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** /* Each task maintains its own interrupt status in the critical nesting
  145:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** variable. */
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 4
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 4
 
 
  146:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** static UBaseType_t uxCriticalNesting = 0xaaaaaaaa;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  200:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 	*pxTopOfStack = ( StackType_t ) portTASK_RETURN_ADDRESS;	/* LR */
  201:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 
  202:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 	/* Save code space by skipping register initialisation. */
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 5
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 5
 
 
  203:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 	pxTopOfStack -= 5;	/* R12, R3, R2 and R1. */
@@ -288,8 +288,8 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
   47              	.LBI31:
   48              		.file 2 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
    1:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** /*
-   2:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h ****  * FreeRTOS Kernel V10.2.1
-   3:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h ****  * Copyright (C) 2019 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
+   2:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h ****  * FreeRTOS Kernel V10.3.1
+   3:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h ****  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
    4:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h ****  *
    5:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h ****  * Permission is hereby granted, free of charge, to any person obtaining a copy of
    6:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h ****  * this software and associated documentation files (the "Software"), to deal in
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
    9:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h ****  * the Software, and to permit persons to whom the Software is furnished to do so,
   10:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h ****  * subject to the following conditions:
   11:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h ****  *
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 6
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 6
 
 
   12:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h ****  * The above copyright notice and this permission notice shall be included in all
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
   66:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 	/* 32-bit tick type on a 32-bit architecture, so reads of the tick count do
   67:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 	not need to be guarded with a critical section. */
   68:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 	#define portTICK_TYPE_IS_ATOMIC 1
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 7
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 7
 
 
   69:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** #endif
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  123:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** #ifndef configUSE_PORT_OPTIMISED_TASK_SELECTION
  124:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 	#define configUSE_PORT_OPTIMISED_TASK_SELECTION 1
  125:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** #endif
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 8
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 8
 
 
  126:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  180:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 	}
  181:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 	else
  182:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 	{
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 9
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 9
 
 
  183:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 		xReturn = pdTRUE;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
   87              	@ 0 "" 2
   88              	.LVL1:
   89              		.thumb
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 10
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 10
 
 
   90              		.syntax unified
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  253:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 					"	bx r14							\n"
  254:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 					"									\n"
  255:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 					"	.align 4						\n"
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 11
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 11
 
 
  256:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 					"pxCurrentTCBConst2: .word pxCurrentTCB				\n"
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  150              		.align	1
  151              		.syntax unified
  152              		.thumb
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 12
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 12
 
 
  153              		.thumb_func
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  333:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 		{
  334:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			/* Check the CMSIS configuration that defines the number of
  335:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			priority bits matches the number of priority bits actually queried
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 13
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 13
 
 
  336:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			from the hardware. */
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  390:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 	/* Should not get here! */
  391:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 	return 0;
  392:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** }
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 14
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 14
 
 
  393:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** /*-----------------------------------------------------------*/
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  447:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 	"	stmdb r0!, {r4-r11, r14}			\n" /* Save the core registers. */
  448:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 	"	str r0, [r2]						\n" /* Save the new top of stack into the first member of the TCB. */
  449:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 	"										\n"
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 15
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 15
 
 
  450:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 	"	stmdb sp!, {r0, r3}					\n"
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  504:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 	portENABLE_INTERRUPTS();
  505:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** }
  506:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** /*-----------------------------------------------------------*/
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 16
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 16
 
 
  507:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  561:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 		else
  562:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 		{
  563:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			/* Set the new reload value. */
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 17
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 17
 
 
  564:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			portNVIC_SYSTICK_LOAD_REG = ulReloadValue;
@@ -976,14 +976,14 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  576:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			should not be executed again.  However, the original expected idle
  577:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			time variable must remain unmodified, so a copy is taken. */
  578:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			xModifiableIdleTime = xExpectedIdleTime;
- 579:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			configPRE_SLEEP_PROCESSING( &xModifiableIdleTime );
+ 579:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			configPRE_SLEEP_PROCESSING( xModifiableIdleTime );
  580:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			if( xModifiableIdleTime > 0 )
  581:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			{
  582:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 				__asm volatile( "dsb" ::: "memory" );
  583:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 				__asm volatile( "wfi" );
  584:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 				__asm volatile( "isb" );
  585:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			}
- 586:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			configPOST_SLEEP_PROCESSING( &xExpectedIdleTime );
+ 586:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			configPOST_SLEEP_PROCESSING( xExpectedIdleTime );
  587:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 
  588:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			/* Re-enable interrupts to allow the interrupt that brought the MCU
  589:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			out of sleep mode to execute immediately.  see comments above
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  618:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			{
  619:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 				uint32_t ulCalculatedLoadValue;
  620:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 18
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 18
 
 
  621:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 				/* The tick interrupt is already pending, and the SysTick count
@@ -1067,7 +1067,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  664:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			vTaskStepTick( ulCompleteTickPeriods );
  665:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			portNVIC_SYSTICK_LOAD_REG = ulTimerCountsForOneTick - 1UL;
  666:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 
- 667:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			/* Exit with interrpts enabled. */
+ 667:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			/* Exit with interrupts enabled. */
  668:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			__asm volatile( "cpsie i" ::: "memory" );
  669:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 		}
  670:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 	}
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  675:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** /*
  676:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c ****  * Setup the systick timer to generate the tick interrupts at the required
  677:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c ****  * frequency.
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 19
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 19
 
 
  678:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c ****  */
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  176              	.LFE16:
  178 000e 0000     		.section	.text.pxPortInitialiseStack,"ax",%progbits
  179              		.align	1
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 20
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 20
 
 
  180              		.global	pxPortInitialiseStack
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  219              	.LVL7:
  209:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 
  220              		.loc 1 209 2 view .LVU42
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 21
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 21
 
 
  209:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  258:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** /*-----------------------------------------------------------*/
  270              		.loc 1 258 1 is_stmt 0 view .LVU50
  271              		.thumb
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 22
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 22
 
 
  272              		.syntax unified
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  400:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** /*-----------------------------------------------------------*/
  321              		.loc 1 400 1 is_stmt 0 view .LVU60
  322 001c 7047     		bx	lr
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 23
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 23
 
 
  323              	.L18:
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  371 0018 012B     		cmp	r3, #1
  372 001a 00D0     		beq	.L22
  373              	.L19:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 24
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 24
 
 
  417:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** /*-----------------------------------------------------------*/
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  421:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 	configASSERT( uxCriticalNesting );
  423              		.loc 1 421 1 view -0
  424              		.cfi_startproc
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 25
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 25
 
 
  425              		@ args = 0, pretend = 0, frame = 0
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  467              		.loc 1 426 3 is_stmt 1 view .LVU93
  468              	.LVL13:
  469              	.LBB43:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 26
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 26
 
 
  470              	.LBI43:
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  489              	.L29:
  490 0028 00000000 		.word	.LANCHOR0
  491              		.cfi_endproc
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 27
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 27
 
 
  492              	.LFE12:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  546              											
  547 0058 7047     		bx r14								
  548              											
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 28
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 28
 
 
  549 005a 00BFAFF3 		.align 4							
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  497:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 		{
  597              		.loc 1 497 7 is_stmt 0 view .LVU107
  598 0012 FFF7FEFF 		bl	xTaskIncrementTick
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 29
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 29
 
 
  599              	.LVL15:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  646              		.loc 1 691 28 is_stmt 0 view .LVU118
  647 0000 4FF0E022 		mov	r2, #-536813568
  648 0004 0023     		movs	r3, #0
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 30
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 30
 
 
  649 0006 1361     		str	r3, [r2, #16]
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  296:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 	configASSERT( portCPUID != portCORTEX_M7_r0p0_ID );
  693              		.loc 1 296 2 view .LVU131
  694 0000 4FF0E023 		mov	r3, #-536813568
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 31
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 31
 
 
  695 0004 D3F8002D 		ldr	r2, [r3, #3328]
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  735 002c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  736 002e DBB2     		uxtb	r3, r3
  318:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 32
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 32
 
 
  737              		.loc 1 318 22 discriminator 2 view .LVU146
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  779              		.thumb
  780              		.syntax unified
  781              	.L40:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 33
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 33
 
 
  195:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 	(
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  824 006c 284A     		ldr	r2, .L51+16
  825 006e 1368     		ldr	r3, [r2]
  826 0070 013B     		subs	r3, r3, #1
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 34
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 34
 
 
  827 0072 1360     		str	r3, [r2]
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  346:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 		}
  869              		.loc 1 346 4 discriminator 4 view .LVU183
  870 00a2 FEE7     		b	.L46
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 35
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 35
 
 
  871              	.L45:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  910              	.LVL25:
  376:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 
  911              		.loc 1 376 2 discriminator 2 view .LVU199
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 36
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 36
 
 
  376:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  956              		@ args = 0, pretend = 0, frame = 0
  957              		@ frame_needed = 0, uses_anonymous_args = 0
  958              		@ link register save eliminated.
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 37
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 37
 
 
  719:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 	uint32_t ulCurrentInterrupt;
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  750:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 
  751:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			The following links provide detailed information:
  752:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			http://www.freertos.org/RTOS-Cortex-M3-M4.html
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 38
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 38
 
 
  753:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c **** 			http://www.freertos.org/FAQHelp.html */
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  1014              		.loc 1 770 3 discriminator 2 view .LVU225
  1015 0028 4FF0E023 		mov	r3, #-536813568
  1016 002c D3F80C3D 		ldr	r3, [r3, #3340]
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 39
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 39
 
 
  1017 0030 03F4E063 		and	r3, r3, #1792
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  1071 0000 00000000 		.space	4
  1072              		.section	.data.uxCriticalNesting,"aw"
  1073              		.align	2
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 40
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 40
 
 
  1074              		.set	.LANCHOR0,. + 0
@@ -2351,59 +2351,59 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 1
  1083              		.file 5 "Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h"
  1084              		.file 6 "Core/Inc/FreeRTOSConfig.h"
  1085              		.file 7 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s 			page 41
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s 			page 41
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 port.c
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:20     .text.prvTaskExitError:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:25     .text.prvTaskExitError:0000000000000000 prvTaskExitError
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:109    .text.prvTaskExitError:000000000000003c $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:114    .text.prvPortStartFirstTask:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:119    .text.prvPortStartFirstTask:0000000000000000 prvPortStartFirstTask
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:150    .text.vPortEnableVFP:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:155    .text.vPortEnableVFP:0000000000000000 vPortEnableVFP
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:179    .text.pxPortInitialiseStack:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:185    .text.pxPortInitialiseStack:0000000000000000 pxPortInitialiseStack
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:235    .text.pxPortInitialiseStack:0000000000000028 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:240    .text.SVC_Handler:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:246    .text.SVC_Handler:0000000000000000 SVC_Handler
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:267    .text.SVC_Handler:0000000000000020 pxCurrentTCBConst2
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:267    .text.SVC_Handler:0000000000000020 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:277    .text.vPortEndScheduler:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:283    .text.vPortEndScheduler:0000000000000000 vPortEndScheduler
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:326    .text.vPortEndScheduler:0000000000000020 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:331    .text.vPortEnterCritical:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:337    .text.vPortEnterCritical:0000000000000000 vPortEnterCritical
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:410    .text.vPortEnterCritical:0000000000000040 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:415    .text.vPortExitCritical:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:421    .text.vPortExitCritical:0000000000000000 vPortExitCritical
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:490    .text.vPortExitCritical:0000000000000028 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:495    .text.PendSV_Handler:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:501    .text.PendSV_Handler:0000000000000000 PendSV_Handler
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:550    .text.PendSV_Handler:0000000000000060 pxCurrentTCBConst
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:550    .text.PendSV_Handler:0000000000000060 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:560    .text.SysTick_Handler:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:566    .text.SysTick_Handler:0000000000000000 SysTick_Handler
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:632    .text.vPortSetupTimerInterrupt:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:638    .text.vPortSetupTimerInterrupt:0000000000000000 vPortSetupTimerInterrupt
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:673    .text.vPortSetupTimerInterrupt:0000000000000020 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:679    .text.xPortStartScheduler:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:685    .text.xPortStartScheduler:0000000000000000 xPortStartScheduler
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:936    .text.xPortStartScheduler:0000000000000100 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:946    .text.vPortValidateInterruptPriority:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:952    .text.vPortValidateInterruptPriority:0000000000000000 vPortValidateInterruptPriority
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:1053   .text.vPortValidateInterruptPriority:0000000000000050 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:1063   .bss.ucMaxSysCallPriority:0000000000000000 ucMaxSysCallPriority
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:1064   .bss.ucMaxSysCallPriority:0000000000000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:1066   .bss.ulMaxPRIGROUPValue:0000000000000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:1070   .bss.ulMaxPRIGROUPValue:0000000000000000 ulMaxPRIGROUPValue
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:1073   .data.uxCriticalNesting:0000000000000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:1077   .data.uxCriticalNesting:0000000000000000 uxCriticalNesting
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:178    .text.vPortEnableVFP:000000000000000e $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:2853   .text.vPortEnableVFP:0000000000000010 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:149    .text.prvPortStartFirstTask:0000000000000022 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccdbBnkj.s:2853   .text.prvPortStartFirstTask:0000000000000024 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:20     .text.prvTaskExitError:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:25     .text.prvTaskExitError:0000000000000000 prvTaskExitError
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:109    .text.prvTaskExitError:000000000000003c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:114    .text.prvPortStartFirstTask:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:119    .text.prvPortStartFirstTask:0000000000000000 prvPortStartFirstTask
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:150    .text.vPortEnableVFP:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:155    .text.vPortEnableVFP:0000000000000000 vPortEnableVFP
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:179    .text.pxPortInitialiseStack:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:185    .text.pxPortInitialiseStack:0000000000000000 pxPortInitialiseStack
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:235    .text.pxPortInitialiseStack:0000000000000028 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:240    .text.SVC_Handler:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:246    .text.SVC_Handler:0000000000000000 SVC_Handler
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:267    .text.SVC_Handler:0000000000000020 pxCurrentTCBConst2
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:267    .text.SVC_Handler:0000000000000020 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:277    .text.vPortEndScheduler:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:283    .text.vPortEndScheduler:0000000000000000 vPortEndScheduler
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:326    .text.vPortEndScheduler:0000000000000020 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:331    .text.vPortEnterCritical:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:337    .text.vPortEnterCritical:0000000000000000 vPortEnterCritical
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:410    .text.vPortEnterCritical:0000000000000040 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:415    .text.vPortExitCritical:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:421    .text.vPortExitCritical:0000000000000000 vPortExitCritical
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:490    .text.vPortExitCritical:0000000000000028 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:495    .text.PendSV_Handler:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:501    .text.PendSV_Handler:0000000000000000 PendSV_Handler
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:550    .text.PendSV_Handler:0000000000000060 pxCurrentTCBConst
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:550    .text.PendSV_Handler:0000000000000060 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:560    .text.SysTick_Handler:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:566    .text.SysTick_Handler:0000000000000000 SysTick_Handler
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:632    .text.vPortSetupTimerInterrupt:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:638    .text.vPortSetupTimerInterrupt:0000000000000000 vPortSetupTimerInterrupt
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:673    .text.vPortSetupTimerInterrupt:0000000000000020 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:679    .text.xPortStartScheduler:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:685    .text.xPortStartScheduler:0000000000000000 xPortStartScheduler
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:936    .text.xPortStartScheduler:0000000000000100 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:946    .text.vPortValidateInterruptPriority:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:952    .text.vPortValidateInterruptPriority:0000000000000000 vPortValidateInterruptPriority
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:1053   .text.vPortValidateInterruptPriority:0000000000000050 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:1063   .bss.ucMaxSysCallPriority:0000000000000000 ucMaxSysCallPriority
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:1064   .bss.ucMaxSysCallPriority:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:1066   .bss.ulMaxPRIGROUPValue:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:1070   .bss.ulMaxPRIGROUPValue:0000000000000000 ulMaxPRIGROUPValue
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:1073   .data.uxCriticalNesting:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:1077   .data.uxCriticalNesting:0000000000000000 uxCriticalNesting
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:178    .text.vPortEnableVFP:000000000000000e $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:2853   .text.vPortEnableVFP:0000000000000010 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:149    .text.prvPortStartFirstTask:0000000000000022 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccUEVJoR.s:2853   .text.prvPortStartFirstTask:0000000000000024 $d
 
 UNDEFINED SYMBOLS
 pxCurrentTCB

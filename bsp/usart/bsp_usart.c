@@ -78,7 +78,6 @@ void USARTSend(USARTInstance *_instance, uint8_t *send_buf, uint16_t send_size, 
     }
 }
 
-
 /* 该函数是传感器发送数据专用函数 */
 void USART_JY61P_SEND(uint8_t *send_buf, uint16_t send_size)
 {

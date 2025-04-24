@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
   28:modules/JY61P/wit_c_sdk.c ****     0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81,
   29:modules/JY61P/wit_c_sdk.c ****     0x40, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0,
   30:modules/JY61P/wit_c_sdk.c ****     0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01,
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 2
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 2
 
 
   31:modules/JY61P/wit_c_sdk.c ****     0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41,
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
   45              		.loc 1 68 5 view .LVU7
   69:modules/JY61P/wit_c_sdk.c ****     for (; i<usDataLen; i++)
   46              		.loc 1 69 5 view .LVU8
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 3
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 3
 
 
   66:modules/JY61P/wit_c_sdk.c ****     uchCRCHi = 0xFF;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
   89 002e 10BD     		pop	{r4, pc}
   90              	.L6:
   91              		.align	2
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 4
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 4
 
 
   92              	.L5:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  142 0014 F8D3     		bcc	.L9
   82:modules/JY61P/wit_c_sdk.c ****     return ucCheck;
  143              		.loc 1 82 5 view .LVU41
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 5
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 5
 
 
   83:modules/JY61P/wit_c_sdk.c **** }
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  185 000a 22D8     		bhi	.L10
  186 000c DFE800F0 		tbb	[pc, r0]
  187              	.L13:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 6
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 6
 
 
  188 0010 0E       		.byte	(.L24-.L13)/2
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  112:modules/JY61P/wit_c_sdk.c **** 			return ;
  113:modules/JY61P/wit_c_sdk.c **** 
  114:modules/JY61P/wit_c_sdk.c ****     }
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 7
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 7
 
 
  115:modules/JY61P/wit_c_sdk.c ****     if(uiLen == 3)
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  102:modules/JY61P/wit_c_sdk.c ****         case WIT_MAGNETIC: uiReg1 = HX;  uiLen = 3;break;
  261              		.loc 1 102 49 view .LVU70
   92:modules/JY61P/wit_c_sdk.c ****     uint16_t *p_usReg1Val = p_data;
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 8
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 8
 
 
  262              		.loc 1 92 53 is_stmt 0 view .LVU71
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  298 0070 0425     		movs	r5, #4
   92:modules/JY61P/wit_c_sdk.c ****     uint16_t *p_usReg1Val = p_data;
  299              		.loc 1 92 26 view .LVU90
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 9
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 9
 
 
  300 0072 A046     		mov	r8, r4
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  336              		.loc 1 107 49 view .LVU108
   92:modules/JY61P/wit_c_sdk.c ****     uint16_t *p_usReg1Val = p_data;
  337              		.loc 1 92 53 is_stmt 0 view .LVU109
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 10
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 10
 
 
  338 008c 0024     		movs	r4, #0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  374 00a8 C4E7     		b	.L21
  375              	.LVL35:
  376              	.L12:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 11
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 11
 
 
  110:modules/JY61P/wit_c_sdk.c **** 		default:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  416 00ca 3946     		mov	r1, r7
  417 00cc 0548     		ldr	r0, .L32
  418 00ce 00EB4800 		add	r0, r0, r8, lsl #1
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 12
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 12
 
 
  419 00d2 FFF7FEFF 		bl	memcpy
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  466              	.LVL46:
  467              	.L36:
   86:modules/JY61P/wit_c_sdk.c ****     p_WitSerialWriteFunc = Write_func;
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 13
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 13
 
 
  468              		.loc 1 86 27 view .LVU152
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  515              		.loc 1 138 35 is_stmt 0 view .LVU162
  516 000a 514B     		ldr	r3, .L61+4
  517 000c 1D68     		ldr	r5, [r3]
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 14
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 14
 
 
  518 000e 691C     		adds	r1, r5, #1
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  557              		.loc 1 153 35 is_stmt 0 view .LVU177
  558 003e 444B     		ldr	r3, .L61+4
  559 0040 1D60     		str	r5, [r3]
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 15
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 15
 
 
  154:modules/JY61P/wit_c_sdk.c ****                     memcpy(s_ucWitDataBuff, &s_ucWitDataBuff[1], s_uiWitDataCnt);
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  191:modules/JY61P/wit_c_sdk.c ****         break;
  192:modules/JY61P/wit_c_sdk.c ****         case WIT_PROTOCOL_CAN:
  193:modules/JY61P/wit_c_sdk.c ****         case WIT_PROTOCOL_I2C:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 16
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 16
 
 
  194:modules/JY61P/wit_c_sdk.c ****         s_uiWitDataCnt = 0;
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  619              		.loc 1 157 17 view .LVU194
  157:modules/JY61P/wit_c_sdk.c ****                 usData[1] = ((uint16_t)s_ucWitDataBuff[5] << 8) | (uint16_t)s_ucWitDataBuff[4];
  620              		.loc 1 157 55 is_stmt 0 view .LVU195
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 17
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 17
 
 
  621 0078 364B     		ldr	r3, .L61+8
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  656              		.loc 1 161 17 is_stmt 1 view .LVU214
  657 00aa 0422     		movs	r2, #4
  658 00ac 6946     		mov	r1, sp
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 18
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 18
 
 
  659 00ae 5878     		ldrb	r0, [r3, #1]	@ zero_extendqisi2
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  175:modules/JY61P/wit_c_sdk.c ****                 usCRC16 = __CRC16(s_ucWitDataBuff, s_uiWitDataCnt-2);
  698              		.loc 1 175 24 view .LVU230
  699 00d8 40EA0224 		orr	r4, r0, r2, lsl #8
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 19
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 19
 
 
  700              	.LVL62:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  738 00fe 805C     		ldrb	r0, [r0, r2]	@ zero_extendqisi2
  186:modules/JY61P/wit_c_sdk.c ****                 }
  739              		.loc 1 186 27 discriminator 3 view .LVU247
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 20
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 20
 
 
  740 0100 164A     		ldr	r2, .L61+16
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  180:modules/JY61P/wit_c_sdk.c ****                     return ;
  781              		.loc 1 180 21 is_stmt 0 view .LVU261
  782 012c 2A46     		mov	r2, r5
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 21
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 21
 
 
  783 012e 411C     		adds	r1, r0, #1
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  832              	.LFB8:
  199:modules/JY61P/wit_c_sdk.c **** int32_t WitI2cFuncRegister(WitI2cWrite write_func, WitI2cRead read_func)
  200:modules/JY61P/wit_c_sdk.c **** {
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 22
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 22
 
 
  833              		.loc 1 200 1 is_stmt 1 view -0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  878              	.LFE8:
  880              		.section	.text.WitCanWriteRegister,"ax",%progbits
  881              		.align	1
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 23
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 23
 
 
  882              		.global	WitCanWriteRegister
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  213:modules/JY61P/wit_c_sdk.c **** void WitCanDataIn(uint8_t ucData[8], uint8_t ucLen)
  214:modules/JY61P/wit_c_sdk.c **** {
  932              		.loc 1 214 1 is_stmt 1 view -0
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 24
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 24
 
 
  933              		.cfi_startproc
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  223:modules/JY61P/wit_c_sdk.c ****             usData[1] = ((uint16_t)ucData[5] << 8) | ucData[4];
  978              		.loc 1 223 13 is_stmt 1 view .LVU312
  979              		.loc 1 223 42 is_stmt 0 view .LVU313
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 25
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 25
 
 
  980 002a 4279     		ldrb	r2, [r0, #5]	@ zero_extendqisi2
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  1026              		.thumb_func
  1028              	WitRegisterCallBack:
  1029              	.LVL93:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 26
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 26
 
 
  1030              	.LFB11:
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  241:modules/JY61P/wit_c_sdk.c ****     uint16_t usCRC;
  1077              		.loc 1 241 5 view .LVU338
  242:modules/JY61P/wit_c_sdk.c ****     uint8_t ucBuff[8];
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 27
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 27
 
 
  1078              		.loc 1 242 5 view .LVU339
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  1123              		.loc 1 250 23 is_stmt 0 view .LVU352
  1124 002e 8DF80200 		strb	r0, [sp, #2]
  251:modules/JY61P/wit_c_sdk.c ****             ucBuff[3] = usData & 0xff;
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 28
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 28
 
 
  1125              		.loc 1 251 13 is_stmt 1 view .LVU353
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  1141 0042 0020     		movs	r0, #0
  1142              	.L90:
  290:modules/JY61P/wit_c_sdk.c **** }
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 29
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 29
 
 
  1143              		.loc 1 290 1 view .LVU361
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  1182              		.loc 1 262 13 is_stmt 1 view .LVU376
  262:modules/JY61P/wit_c_sdk.c ****             usCRC = __CRC16(ucBuff, 6);
  1183              		.loc 1 262 23 is_stmt 0 view .LVU377
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 30
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 30
 
 
  1184 006e 8DF80530 		strb	r3, [sp, #5]
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  1221 0092 FF22     		movs	r2, #255
  1222 0094 8DF80020 		strb	r2, [sp]
  271:modules/JY61P/wit_c_sdk.c ****             ucBuff[2] = uiReg & 0xFF;
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 31
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 31
 
 
  1223              		.loc 1 271 13 is_stmt 1 view .LVU395
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  1260              		.loc 1 279 23 is_stmt 0 view .LVU412
  1261 00c0 8DF80030 		strb	r3, [sp]
  280:modules/JY61P/wit_c_sdk.c **** 			if(p_WitI2cWriteFunc(s_ucAddr << 1, uiReg, ucBuff, 2) != 1)
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 32
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 32
 
 
  1262              		.loc 1 280 13 is_stmt 1 view .LVU413
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  1305              		.loc 1 244 5 view .LVU425
  1306 00ee A9E7     		b	.L90
  1307              	.LVL116:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 33
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 33
 
 
  1308              	.L99:
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  291:modules/JY61P/wit_c_sdk.c **** int32_t WitReadReg(uint32_t uiReg, uint32_t uiReadNum)
  292:modules/JY61P/wit_c_sdk.c **** {
  1356              		.loc 1 292 1 is_stmt 1 view -0
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 34
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 34
 
 
  1357              		.cfi_startproc
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  1402              		.loc 1 300 15 view .LVU446
  1403 002c 002B     		cmp	r3, #0
  1404 002e 00F08E80 		beq	.L122
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 35
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 35
 
 
  301:modules/JY61P/wit_c_sdk.c ****             ucBuff[0] = 0xFF;
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  324:modules/JY61P/wit_c_sdk.c ****             if(uiReadNum > 3)return WIT_HAL_INVAL;
  325:modules/JY61P/wit_c_sdk.c ****             if(p_WitCanWriteFunc == NULL)return WIT_HAL_EMPTY;
  326:modules/JY61P/wit_c_sdk.c ****             ucBuff[0] = 0xFF;
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 36
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 36
 
 
  327:modules/JY61P/wit_c_sdk.c ****             ucBuff[1] = 0xAA;
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  1459              		.loc 1 309 15 view .LVU469
  1460 0062 002E     		cmp	r6, #0
  1461 0064 76D0     		beq	.L123
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 37
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 37
 
 
  310:modules/JY61P/wit_c_sdk.c ****             if((usTemp + 5) > WIT_DATA_BUFF_SIZE)return WIT_HAL_NOMEM;
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  1497              		.loc 1 317 13 is_stmt 1 view .LVU488
  317:modules/JY61P/wit_c_sdk.c ****             usTemp = __CRC16(ucBuff, 6);
  1498              		.loc 1 317 23 is_stmt 0 view .LVU489
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 38
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 38
 
 
  1499 008e 8DF80510 		strb	r1, [sp, #5]
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  1537 00b4 002B     		cmp	r3, #0
  1538 00b6 56D0     		beq	.L126
  326:modules/JY61P/wit_c_sdk.c ****             ucBuff[1] = 0xAA;
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 39
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 39
 
 
  1539              		.loc 1 326 13 is_stmt 1 view .LVU506
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  1577 00e2 1E68     		ldr	r6, [r3]
  334:modules/JY61P/wit_c_sdk.c ****             usTemp = uiReadNum << 1;
  1578              		.loc 1 334 15 view .LVU523
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 40
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 40
 
 
  1579 00e4 002E     		cmp	r6, #0
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  1619              	.L118:
  342:modules/JY61P/wit_c_sdk.c ****                 }
  1620              		.loc 1 342 21 is_stmt 1 discriminator 3 view .LVU538
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 41
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 41
 
 
  342:modules/JY61P/wit_c_sdk.c ****                 }
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  1662              		.loc 1 295 46 view .LVU551
  1663 013c 6FF00500 		mvn	r0, #5
  1664              	.LVL150:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 42
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 42
 
 
  1665              		.loc 1 354 1 view .LVU552
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  1709              	.L125:
  324:modules/JY61P/wit_c_sdk.c ****             if(p_WitCanWriteFunc == NULL)return WIT_HAL_EMPTY;
  1710              		.loc 1 324 37 view .LVU563
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 43
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 43
 
 
  1711 0160 6FF00500 		mvn	r0, #5
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  1758              		.global	WitInit
  1759              		.syntax unified
  1760              		.thumb
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 44
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 44
 
 
  1761              		.thumb_func
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  1807              	.LFE14:
  1809              		.section	.text.WitDeInit,"ax",%progbits
  1810              		.align	1
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 45
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 45
 
 
  1811              		.global	WitDeInit
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  1856 0022 1360     		str	r3, [r2]
  373:modules/JY61P/wit_c_sdk.c **** }
  1857              		.loc 1 373 1 view .LVU603
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 46
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 46
 
 
  1858 0024 7047     		bx	lr
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  1906              		.loc 1 380 1 view .LVU613
  1907 000e 7047     		bx	lr
  1908              	.L148:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 47
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 47
 
 
  1909              		.align	2
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  1959              		.section	.text.WitStartAccCali,"ax",%progbits
  1960              		.align	1
  1961              		.global	WitStartAccCali
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 48
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 48
 
 
  1962              		.syntax unified
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  2007 0028 9847     		blx	r3
  2008              	.LVL186:
  2009              	.L156:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 49
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 49
 
 
  396:modules/JY61P/wit_c_sdk.c **** 	else ;
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  2057 0002 0021     		movs	r1, #0
  2058 0004 0120     		movs	r0, #1
  2059 0006 FFF7FEFF 		bl	WitWriteReg
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 50
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 50
 
 
  2060              	.LVL188:
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  2105 003a 6FF00200 		mvn	r0, #2
  2106 003e F8E7     		b	.L164
  2107              	.L174:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 51
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 51
 
 
  2108              		.align	2
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  2158              	.L182:
  413:modules/JY61P/wit_c_sdk.c **** 	if(s_uiProtoclo == WIT_PROTOCOL_MODBUS)	p_WitDelaymsFunc(20);
  2159              		.loc 1 413 42 discriminator 1 view .LVU668
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 52
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 52
 
 
  2160 0022 094B     		ldr	r3, .L184+4
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  2208              		.cfi_def_cfa_offset 8
  2209              		.cfi_offset 3, -8
  2210              		.cfi_offset 14, -4
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 53
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 53
 
 
  421:modules/JY61P/wit_c_sdk.c **** 	if(WitWriteReg(KEY, KEY_UNLOCK) != WIT_HAL_OK)	return  WIT_HAL_ERROR;
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  2256              		.loc 1 421 57 view .LVU690
  2257 0036 6FF00200 		mvn	r0, #2
  2258 003a FBE7     		b	.L186
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 54
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 54
 
 
  2259              	.L194:
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  2309 001a 1B68     		ldr	r3, [r3]
  2310 001c 0120     		movs	r0, #1
  2311 001e 9847     		blx	r3
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 55
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 55
 
 
  2312              	.LVL201:
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  2361              		.cfi_offset 4, -8
  2362              		.cfi_offset 14, -4
  2363 0002 0446     		mov	r4, r0
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 56
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 56
 
 
  439:modules/JY61P/wit_c_sdk.c **** 	if(!CheckRange(uiBaudIndex,WIT_BAUD_4800,WIT_BAUD_230400))
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  2408              		.loc 1 447 2 view .LVU723
  2409              		.loc 1 447 5 is_stmt 0 view .LVU724
  2410 0038 A1B2     		uxth	r1, r4
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 57
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 57
 
 
  2411 003a 0420     		movs	r0, #4
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  2459              		.cfi_offset 14, -4
  2460 0002 0446     		mov	r4, r0
  453:modules/JY61P/wit_c_sdk.c **** 	if(!CheckRange(uiBaudIndex,CAN_BAUD_1000000,CAN_BAUD_3000))
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 58
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 58
 
 
  2461              		.loc 1 453 2 is_stmt 1 view .LVU732
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  2506              		.loc 1 461 5 is_stmt 0 view .LVU747
  2507 0038 A1B2     		uxth	r1, r4
  2508 003a 0420     		movs	r0, #4
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 59
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 59
 
 
  2509 003c FFF7FEFF 		bl	WitWriteReg
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  2557 0002 0446     		mov	r4, r0
  467:modules/JY61P/wit_c_sdk.c **** 	if(!CheckRange(uiBaudWidth,BANDWIDTH_256HZ,BANDWIDTH_5HZ))
  2558              		.loc 1 467 2 is_stmt 1 view .LVU755
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 60
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 60
 
 
  2559              		.loc 1 467 6 is_stmt 0 view .LVU756
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  2604 0038 A1B2     		uxth	r1, r4
  2605 003a 1F20     		movs	r0, #31
  2606 003c FFF7FEFF 		bl	WitWriteReg
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 61
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 61
 
 
  2607              	.LVL226:
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  2654 0002 0446     		mov	r4, r0
  482:modules/JY61P/wit_c_sdk.c **** 	if(!CheckRange(uiRate,RRATE_02HZ,RRATE_NONE))
  2655              		.loc 1 482 2 is_stmt 1 view .LVU778
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 62
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 62
 
 
  2656              		.loc 1 482 6 is_stmt 0 view .LVU779
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  2701 0038 A1B2     		uxth	r1, r4
  2702 003a 0320     		movs	r0, #3
  2703 003c FFF7FEFF 		bl	WitWriteReg
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 63
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 63
 
 
  2704              	.LVL234:
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  2751 0002 0446     		mov	r4, r0
  497:modules/JY61P/wit_c_sdk.c **** 	if(!CheckRange(uiRsw,RSW_TIME,RSW_MASK))
  2752              		.loc 1 497 2 is_stmt 1 view .LVU801
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 64
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 64
 
 
  2753              		.loc 1 497 6 is_stmt 0 view .LVU802
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  2798 003a A1B2     		uxth	r1, r4
  2799 003c 0220     		movs	r0, #2
  2800 003e FFF7FEFF 		bl	WitWriteReg
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 65
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 65
 
 
  2801              	.LVL242:
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  2859              		.set	.LANCHOR4,. + 0
  2862              	p_WitRegUpdateCbFunc:
  2863 0000 00000000 		.space	4
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 66
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 66
 
 
  2864              		.section	.bss.p_WitSerialWriteFunc,"aw",%nobits
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  2920 001f 4101C080 		.ascii	"A\001\300\200A\000\301\201@\000\301\201@\001\300\200"
  2920      4100C181 
  2920      4000C181 
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 67
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 67
 
 
  2920      4001C080 
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  2935              		.section	.rodata.__auchCRCLo,"a"
  2936              		.align	2
  2937              		.set	.LANCHOR1,. + 0
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 68
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 68
 
 
  2940              	__auchCRCLo:
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  2952      92965657 
  2952      97559594 
  2953 00d0 9C5C5D9D 		.ascii	"\234\\]\235_\237\236^Z\232\233[\231YX\230\210HI\211"
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 69
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 69
 
 
  2953      5F9F9E5E 
@@ -4100,120 +4100,120 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 1
  2961              		.file 5 "modules/JY61P/wit_c_sdk.h"
  2962              		.file 6 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
  2963              		.file 7 "<built-in>"
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 70
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 70
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 wit_c_sdk.c
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:20     .text.__CRC16:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:25     .text.__CRC16:0000000000000000 __CRC16
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:93     .text.__CRC16:0000000000000030 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:99     .text.__CaliSum:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:104    .text.__CaliSum:0000000000000000 __CaliSum
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:150    .text.CopeWitData:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:155    .text.CopeWitData:0000000000000000 CopeWitData
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:188    .text.CopeWitData:0000000000000010 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:204    .text.CopeWitData:0000000000000020 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:432    .text.CopeWitData:00000000000000e4 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:439    .text.WitSerialWriteRegister:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:445    .text.WitSerialWriteRegister:0000000000000000 WitSerialWriteRegister
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:476    .text.WitSerialWriteRegister:0000000000000010 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:481    .text.WitSerialDataIn:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:487    .text.WitSerialDataIn:0000000000000000 WitSerialDataIn
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:814    .text.WitSerialDataIn:000000000000014c $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:824    .text.WitI2cFuncRegister:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:830    .text.WitI2cFuncRegister:0000000000000000 WitI2cFuncRegister
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:875    .text.WitI2cFuncRegister:000000000000001c $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:881    .text.WitCanWriteRegister:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:887    .text.WitCanWriteRegister:0000000000000000 WitCanWriteRegister
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:918    .text.WitCanWriteRegister:0000000000000010 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:923    .text.WitCanDataIn:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:929    .text.WitCanDataIn:0000000000000000 WitCanDataIn
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1016   .text.WitCanDataIn:0000000000000054 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1022   .text.WitRegisterCallBack:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1028   .text.WitRegisterCallBack:0000000000000000 WitRegisterCallBack
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1059   .text.WitRegisterCallBack:0000000000000010 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1064   .text.WitWriteReg:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1070   .text.WitWriteReg:0000000000000000 WitWriteReg
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1101   .text.WitWriteReg:0000000000000016 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1105   .text.WitWriteReg:000000000000001a $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1338   .text.WitWriteReg:0000000000000108 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1347   .text.WitReadReg:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1353   .text.WitReadReg:0000000000000000 WitReadReg
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1388   .text.WitReadReg:000000000000001e $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1392   .text.WitReadReg:0000000000000022 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1744   .text.WitReadReg:0000000000000180 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1757   .text.WitInit:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1763   .text.WitInit:0000000000000000 WitInit
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1803   .text.WitInit:000000000000001c $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1810   .text.WitDeInit:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1816   .text.WitDeInit:0000000000000000 WitDeInit
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1862   .text.WitDeInit:0000000000000028 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1874   .text.WitDelayMsRegister:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1880   .text.WitDelayMsRegister:0000000000000000 WitDelayMsRegister
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1911   .text.WitDelayMsRegister:0000000000000010 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1916   .text.CheckRange:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1922   .text.CheckRange:0000000000000000 CheckRange
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1960   .text.WitStartAccCali:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:1966   .text.WitStartAccCali:0000000000000000 WitStartAccCali
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2032   .text.WitStartAccCali:0000000000000044 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2038   .text.WitStopAccCali:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2044   .text.WitStopAccCali:0000000000000000 WitStopAccCali
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2110   .text.WitStopAccCali:0000000000000040 $d
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s 			page 71
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:20     .text.__CRC16:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:25     .text.__CRC16:0000000000000000 __CRC16
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:93     .text.__CRC16:0000000000000030 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:99     .text.__CaliSum:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:104    .text.__CaliSum:0000000000000000 __CaliSum
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:150    .text.CopeWitData:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:155    .text.CopeWitData:0000000000000000 CopeWitData
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:188    .text.CopeWitData:0000000000000010 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:204    .text.CopeWitData:0000000000000020 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:432    .text.CopeWitData:00000000000000e4 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:439    .text.WitSerialWriteRegister:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:445    .text.WitSerialWriteRegister:0000000000000000 WitSerialWriteRegister
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:476    .text.WitSerialWriteRegister:0000000000000010 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:481    .text.WitSerialDataIn:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:487    .text.WitSerialDataIn:0000000000000000 WitSerialDataIn
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:814    .text.WitSerialDataIn:000000000000014c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:824    .text.WitI2cFuncRegister:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:830    .text.WitI2cFuncRegister:0000000000000000 WitI2cFuncRegister
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:875    .text.WitI2cFuncRegister:000000000000001c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:881    .text.WitCanWriteRegister:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:887    .text.WitCanWriteRegister:0000000000000000 WitCanWriteRegister
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:918    .text.WitCanWriteRegister:0000000000000010 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:923    .text.WitCanDataIn:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:929    .text.WitCanDataIn:0000000000000000 WitCanDataIn
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1016   .text.WitCanDataIn:0000000000000054 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1022   .text.WitRegisterCallBack:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1028   .text.WitRegisterCallBack:0000000000000000 WitRegisterCallBack
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1059   .text.WitRegisterCallBack:0000000000000010 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1064   .text.WitWriteReg:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1070   .text.WitWriteReg:0000000000000000 WitWriteReg
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1101   .text.WitWriteReg:0000000000000016 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1105   .text.WitWriteReg:000000000000001a $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1338   .text.WitWriteReg:0000000000000108 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1347   .text.WitReadReg:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1353   .text.WitReadReg:0000000000000000 WitReadReg
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1388   .text.WitReadReg:000000000000001e $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1392   .text.WitReadReg:0000000000000022 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1744   .text.WitReadReg:0000000000000180 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1757   .text.WitInit:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1763   .text.WitInit:0000000000000000 WitInit
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1803   .text.WitInit:000000000000001c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1810   .text.WitDeInit:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1816   .text.WitDeInit:0000000000000000 WitDeInit
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1862   .text.WitDeInit:0000000000000028 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1874   .text.WitDelayMsRegister:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1880   .text.WitDelayMsRegister:0000000000000000 WitDelayMsRegister
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1911   .text.WitDelayMsRegister:0000000000000010 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1916   .text.CheckRange:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1922   .text.CheckRange:0000000000000000 CheckRange
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1960   .text.WitStartAccCali:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:1966   .text.WitStartAccCali:0000000000000000 WitStartAccCali
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2032   .text.WitStartAccCali:0000000000000044 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2038   .text.WitStopAccCali:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2044   .text.WitStopAccCali:0000000000000000 WitStopAccCali
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2110   .text.WitStopAccCali:0000000000000040 $d
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s 			page 71
 
 
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2116   .text.WitStartMagCali:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2122   .text.WitStartMagCali:0000000000000000 WitStartMagCali
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2188   .text.WitStartMagCali:0000000000000044 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2194   .text.WitStopMagCali:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2200   .text.WitStopMagCali:0000000000000000 WitStopMagCali
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2266   .text.WitStopMagCali:0000000000000044 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2272   .text.WitRestartSensor:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2278   .text.WitRestartSensor:0000000000000000 WitRestartSensor
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2338   .text.WitRestartSensor:000000000000003c $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2344   .text.WitSetUartBaud:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2350   .text.WitSetUartBaud:0000000000000000 WitSetUartBaud
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2435   .text.WitSetUartBaud:0000000000000058 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2441   .text.WitSetCanBaud:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2447   .text.WitSetCanBaud:0000000000000000 WitSetCanBaud
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2532   .text.WitSetCanBaud:0000000000000058 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2538   .text.WitSetBandwidth:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2544   .text.WitSetBandwidth:0000000000000000 WitSetBandwidth
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2629   .text.WitSetBandwidth:0000000000000058 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2635   .text.WitSetOutputRate:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2641   .text.WitSetOutputRate:0000000000000000 WitSetOutputRate
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2726   .text.WitSetOutputRate:0000000000000058 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2732   .text.WitSetContent:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2738   .text.WitSetContent:0000000000000000 WitSetContent
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2823   .text.WitSetContent:0000000000000058 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2876   .bss.sReg:0000000000000000 sReg
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2830   .bss.p_WitCanWriteFunc:0000000000000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2834   .bss.p_WitCanWriteFunc:0000000000000000 p_WitCanWriteFunc
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2837   .bss.p_WitDelaymsFunc:0000000000000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2841   .bss.p_WitDelaymsFunc:0000000000000000 p_WitDelaymsFunc
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2844   .bss.p_WitI2cReadFunc:0000000000000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2848   .bss.p_WitI2cReadFunc:0000000000000000 p_WitI2cReadFunc
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2851   .bss.p_WitI2cWriteFunc:0000000000000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2855   .bss.p_WitI2cWriteFunc:0000000000000000 p_WitI2cWriteFunc
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2858   .bss.p_WitRegUpdateCbFunc:0000000000000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2862   .bss.p_WitRegUpdateCbFunc:0000000000000000 p_WitRegUpdateCbFunc
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2865   .bss.p_WitSerialWriteFunc:0000000000000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2869   .bss.p_WitSerialWriteFunc:0000000000000000 p_WitSerialWriteFunc
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2872   .bss.sReg:0000000000000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2879   .bss.s_ucWitDataBuff:0000000000000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2883   .bss.s_ucWitDataBuff:0000000000000000 s_ucWitDataBuff
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2886   .bss.s_uiProtoclo:0000000000000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2890   .bss.s_uiProtoclo:0000000000000000 s_uiProtoclo
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2893   .bss.s_uiReadRegIndex:0000000000000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2897   .bss.s_uiReadRegIndex:0000000000000000 s_uiReadRegIndex
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2900   .bss.s_uiWitDataCnt:0000000000000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2904   .bss.s_uiWitDataCnt:0000000000000000 s_uiWitDataCnt
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2910   .data.s_ucAddr:0000000000000000 s_ucAddr
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2913   .rodata.__auchCRCHi:0000000000000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2917   .rodata.__auchCRCHi:0000000000000000 __auchCRCHi
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2936   .rodata.__auchCRCLo:0000000000000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccpDSKD4.s:2940   .rodata.__auchCRCLo:0000000000000000 __auchCRCLo
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2116   .text.WitStartMagCali:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2122   .text.WitStartMagCali:0000000000000000 WitStartMagCali
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2188   .text.WitStartMagCali:0000000000000044 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2194   .text.WitStopMagCali:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2200   .text.WitStopMagCali:0000000000000000 WitStopMagCali
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2266   .text.WitStopMagCali:0000000000000044 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2272   .text.WitRestartSensor:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2278   .text.WitRestartSensor:0000000000000000 WitRestartSensor
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2338   .text.WitRestartSensor:000000000000003c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2344   .text.WitSetUartBaud:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2350   .text.WitSetUartBaud:0000000000000000 WitSetUartBaud
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2435   .text.WitSetUartBaud:0000000000000058 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2441   .text.WitSetCanBaud:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2447   .text.WitSetCanBaud:0000000000000000 WitSetCanBaud
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2532   .text.WitSetCanBaud:0000000000000058 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2538   .text.WitSetBandwidth:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2544   .text.WitSetBandwidth:0000000000000000 WitSetBandwidth
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2629   .text.WitSetBandwidth:0000000000000058 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2635   .text.WitSetOutputRate:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2641   .text.WitSetOutputRate:0000000000000000 WitSetOutputRate
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2726   .text.WitSetOutputRate:0000000000000058 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2732   .text.WitSetContent:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2738   .text.WitSetContent:0000000000000000 WitSetContent
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2823   .text.WitSetContent:0000000000000058 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2876   .bss.sReg:0000000000000000 sReg
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2830   .bss.p_WitCanWriteFunc:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2834   .bss.p_WitCanWriteFunc:0000000000000000 p_WitCanWriteFunc
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2837   .bss.p_WitDelaymsFunc:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2841   .bss.p_WitDelaymsFunc:0000000000000000 p_WitDelaymsFunc
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2844   .bss.p_WitI2cReadFunc:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2848   .bss.p_WitI2cReadFunc:0000000000000000 p_WitI2cReadFunc
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2851   .bss.p_WitI2cWriteFunc:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2855   .bss.p_WitI2cWriteFunc:0000000000000000 p_WitI2cWriteFunc
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2858   .bss.p_WitRegUpdateCbFunc:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2862   .bss.p_WitRegUpdateCbFunc:0000000000000000 p_WitRegUpdateCbFunc
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2865   .bss.p_WitSerialWriteFunc:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2869   .bss.p_WitSerialWriteFunc:0000000000000000 p_WitSerialWriteFunc
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2872   .bss.sReg:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2879   .bss.s_ucWitDataBuff:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2883   .bss.s_ucWitDataBuff:0000000000000000 s_ucWitDataBuff
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2886   .bss.s_uiProtoclo:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2890   .bss.s_uiProtoclo:0000000000000000 s_uiProtoclo
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2893   .bss.s_uiReadRegIndex:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2897   .bss.s_uiReadRegIndex:0000000000000000 s_uiReadRegIndex
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2900   .bss.s_uiWitDataCnt:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2904   .bss.s_uiWitDataCnt:0000000000000000 s_uiWitDataCnt
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2910   .data.s_ucAddr:0000000000000000 s_ucAddr
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2913   .rodata.__auchCRCHi:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2917   .rodata.__auchCRCHi:0000000000000000 __auchCRCHi
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2936   .rodata.__auchCRCLo:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccE8PyX1.s:2940   .rodata.__auchCRCLo:0000000000000000 __auchCRCLo
 
 UNDEFINED SYMBOLS
 memcpy

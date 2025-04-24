@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccJNABra.s 			page 1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2k6vF7.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -27,7 +27,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccJNABra.s 			page 1
   24              		.thumb_func
   26              	HAL_InitTick:
   27              	.LVL0:
-  28              	.LFB130:
+  28              	.LFB134:
   29              		.file 1 "Core/Src/stm32f4xx_hal_timebase_tim.c"
    1:Core/Src/stm32f4xx_hal_timebase_tim.c **** /* USER CODE BEGIN Header */
    2:Core/Src/stm32f4xx_hal_timebase_tim.c **** /**
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccJNABra.s 			page 1
   27:Core/Src/stm32f4xx_hal_timebase_tim.c **** /* Private macro -------------------------------------------------------------*/
   28:Core/Src/stm32f4xx_hal_timebase_tim.c **** /* Private variables ---------------------------------------------------------*/
   29:Core/Src/stm32f4xx_hal_timebase_tim.c **** TIM_HandleTypeDef        htim14;
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccJNABra.s 			page 2
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2k6vF7.s 			page 2
 
 
   30:Core/Src/stm32f4xx_hal_timebase_tim.c **** /* Private function prototypes -----------------------------------------------*/
@@ -80,300 +80,401 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccJNABra.s 			page 1
   32              		@ args = 0, pretend = 0, frame = 32
   33              		@ frame_needed = 0, uses_anonymous_args = 0
   34              		.loc 1 43 1 is_stmt 0 view .LVU1
-  35 0000 10B5     		push	{r4, lr}
+  35 0000 30B5     		push	{r4, r5, lr}
   36              	.LCFI0:
-  37              		.cfi_def_cfa_offset 8
-  38              		.cfi_offset 4, -8
-  39              		.cfi_offset 14, -4
-  40 0002 88B0     		sub	sp, sp, #32
-  41              	.LCFI1:
-  42              		.cfi_def_cfa_offset 40
-  43 0004 0146     		mov	r1, r0
+  37              		.cfi_def_cfa_offset 12
+  38              		.cfi_offset 4, -12
+  39              		.cfi_offset 5, -8
+  40              		.cfi_offset 14, -4
+  41 0002 89B0     		sub	sp, sp, #36
+  42              	.LCFI1:
+  43              		.cfi_def_cfa_offset 48
+  44 0004 0446     		mov	r4, r0
   44:Core/Src/stm32f4xx_hal_timebase_tim.c ****   RCC_ClkInitTypeDef    clkconfig;
-  44              		.loc 1 44 3 is_stmt 1 view .LVU2
-  45:Core/Src/stm32f4xx_hal_timebase_tim.c ****   uint32_t              uwTimclock = 0;
-  45              		.loc 1 45 3 view .LVU3
-  46              	.LVL1:
-  46:Core/Src/stm32f4xx_hal_timebase_tim.c ****   uint32_t              uwPrescalerValue = 0;
-  47              		.loc 1 46 3 view .LVU4
-  47:Core/Src/stm32f4xx_hal_timebase_tim.c ****   uint32_t              pFLatency;
-  48              		.loc 1 47 3 view .LVU5
-  48:Core/Src/stm32f4xx_hal_timebase_tim.c ****   /*Configure the TIM14 IRQ priority */
-  49:Core/Src/stm32f4xx_hal_timebase_tim.c ****   HAL_NVIC_SetPriority(TIM8_TRG_COM_TIM14_IRQn, TickPriority ,0);
-  49              		.loc 1 49 3 view .LVU6
-  50 0006 0022     		movs	r2, #0
-  51 0008 2D20     		movs	r0, #45
-  52              	.LVL2:
-  53              		.loc 1 49 3 is_stmt 0 view .LVU7
-  54 000a FFF7FEFF 		bl	HAL_NVIC_SetPriority
-  55              	.LVL3:
+  45              		.loc 1 44 3 is_stmt 1 view .LVU2
+  45:Core/Src/stm32f4xx_hal_timebase_tim.c ****   uint32_t              uwTimclock, uwAPB1Prescaler = 0U;
+  46              		.loc 1 45 3 view .LVU3
+  47              	.LVL1:
+  46:Core/Src/stm32f4xx_hal_timebase_tim.c **** 
+  47:Core/Src/stm32f4xx_hal_timebase_tim.c ****   uint32_t              uwPrescalerValue = 0U;
+  48              		.loc 1 47 3 view .LVU4
+  48:Core/Src/stm32f4xx_hal_timebase_tim.c ****   uint32_t              pFLatency;
+  49              		.loc 1 48 3 view .LVU5
+  49:Core/Src/stm32f4xx_hal_timebase_tim.c ****   HAL_StatusTypeDef     status;
+  50              		.loc 1 49 3 view .LVU6
   50:Core/Src/stm32f4xx_hal_timebase_tim.c **** 
-  51:Core/Src/stm32f4xx_hal_timebase_tim.c ****   /* Enable the TIM14 global Interrupt */
-  52:Core/Src/stm32f4xx_hal_timebase_tim.c ****   HAL_NVIC_EnableIRQ(TIM8_TRG_COM_TIM14_IRQn);
-  56              		.loc 1 52 3 is_stmt 1 view .LVU8
-  57 000e 2D20     		movs	r0, #45
-  58 0010 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
-  59              	.LVL4:
-  53:Core/Src/stm32f4xx_hal_timebase_tim.c ****   /* Enable TIM14 clock */
-  54:Core/Src/stm32f4xx_hal_timebase_tim.c ****   __HAL_RCC_TIM14_CLK_ENABLE();
-  60              		.loc 1 54 3 view .LVU9
-  61              	.LBB2:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccJNABra.s 			page 3
+  51:Core/Src/stm32f4xx_hal_timebase_tim.c ****   /* Enable TIM14 clock */
+  52:Core/Src/stm32f4xx_hal_timebase_tim.c ****   __HAL_RCC_TIM14_CLK_ENABLE();
+  51              		.loc 1 52 3 view .LVU7
+  52              	.LBB2:
+  53              		.loc 1 52 3 view .LVU8
+  54 0006 0023     		movs	r3, #0
+  55 0008 0193     		str	r3, [sp, #4]
+  56              		.loc 1 52 3 view .LVU9
+  57 000a 214B     		ldr	r3, .L9
+  58 000c 1A6C     		ldr	r2, [r3, #64]
+  59 000e 42F48072 		orr	r2, r2, #256
+  60 0012 1A64     		str	r2, [r3, #64]
+  61              		.loc 1 52 3 view .LVU10
+  62 0014 1B6C     		ldr	r3, [r3, #64]
+  63 0016 03F48073 		and	r3, r3, #256
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2k6vF7.s 			page 3
 
 
-  62              		.loc 1 54 3 view .LVU10
-  63 0014 0024     		movs	r4, #0
-  64 0016 0194     		str	r4, [sp, #4]
-  65              		.loc 1 54 3 view .LVU11
-  66 0018 144B     		ldr	r3, .L6
-  67 001a 1A6C     		ldr	r2, [r3, #64]
-  68 001c 42F48072 		orr	r2, r2, #256
-  69 0020 1A64     		str	r2, [r3, #64]
-  70              		.loc 1 54 3 view .LVU12
-  71 0022 1B6C     		ldr	r3, [r3, #64]
-  72 0024 03F48073 		and	r3, r3, #256
-  73 0028 0193     		str	r3, [sp, #4]
-  74              		.loc 1 54 3 view .LVU13
-  75 002a 019B     		ldr	r3, [sp, #4]
-  76              	.LBE2:
-  77              		.loc 1 54 3 view .LVU14
-  55:Core/Src/stm32f4xx_hal_timebase_tim.c **** 
-  56:Core/Src/stm32f4xx_hal_timebase_tim.c ****   /* Get clock configuration */
-  57:Core/Src/stm32f4xx_hal_timebase_tim.c ****   HAL_RCC_GetClockConfig(&clkconfig, &pFLatency);
-  78              		.loc 1 57 3 view .LVU15
-  79 002c 02A9     		add	r1, sp, #8
-  80 002e 03A8     		add	r0, sp, #12
-  81 0030 FFF7FEFF 		bl	HAL_RCC_GetClockConfig
-  82              	.LVL5:
-  58:Core/Src/stm32f4xx_hal_timebase_tim.c **** 
-  59:Core/Src/stm32f4xx_hal_timebase_tim.c ****   /* Compute TIM14 clock */
-  60:Core/Src/stm32f4xx_hal_timebase_tim.c ****   uwTimclock = 2*HAL_RCC_GetPCLK1Freq();
-  83              		.loc 1 60 3 view .LVU16
-  84              		.loc 1 60 18 is_stmt 0 view .LVU17
-  85 0034 FFF7FEFF 		bl	HAL_RCC_GetPCLK1Freq
-  86              	.LVL6:
-  87              		.loc 1 60 14 view .LVU18
-  88 0038 4300     		lsls	r3, r0, #1
-  89              	.LVL7:
-  61:Core/Src/stm32f4xx_hal_timebase_tim.c ****   /* Compute the prescaler value to have TIM14 counter clock equal to 1MHz */
-  62:Core/Src/stm32f4xx_hal_timebase_tim.c ****   uwPrescalerValue = (uint32_t) ((uwTimclock / 1000000U) - 1U);
-  90              		.loc 1 62 3 is_stmt 1 view .LVU19
-  91              		.loc 1 62 46 is_stmt 0 view .LVU20
-  92 003a 0D4A     		ldr	r2, .L6+4
-  93 003c A2FB0323 		umull	r2, r3, r2, r3
-  94              	.LVL8:
-  95              		.loc 1 62 46 view .LVU21
-  96 0040 9B0C     		lsrs	r3, r3, #18
-  97              		.loc 1 62 20 view .LVU22
-  98 0042 013B     		subs	r3, r3, #1
-  99              	.LVL9:
-  63:Core/Src/stm32f4xx_hal_timebase_tim.c **** 
-  64:Core/Src/stm32f4xx_hal_timebase_tim.c ****   /* Initialize TIM14 */
-  65:Core/Src/stm32f4xx_hal_timebase_tim.c ****   htim14.Instance = TIM14;
- 100              		.loc 1 65 3 is_stmt 1 view .LVU23
- 101              		.loc 1 65 19 is_stmt 0 view .LVU24
- 102 0044 0B48     		ldr	r0, .L6+8
- 103              	.LVL10:
- 104              		.loc 1 65 19 view .LVU25
- 105 0046 0C4A     		ldr	r2, .L6+12
- 106 0048 0260     		str	r2, [r0]
+  64 001a 0193     		str	r3, [sp, #4]
+  65              		.loc 1 52 3 view .LVU11
+  66 001c 019B     		ldr	r3, [sp, #4]
+  67              	.LBE2:
+  68              		.loc 1 52 3 view .LVU12
+  53:Core/Src/stm32f4xx_hal_timebase_tim.c ****   /* Get clock configuration */
+  54:Core/Src/stm32f4xx_hal_timebase_tim.c ****   HAL_RCC_GetClockConfig(&clkconfig, &pFLatency);
+  69              		.loc 1 54 3 view .LVU13
+  70 001e 02A9     		add	r1, sp, #8
+  71 0020 03A8     		add	r0, sp, #12
+  72              	.LVL2:
+  73              		.loc 1 54 3 is_stmt 0 view .LVU14
+  74 0022 FFF7FEFF 		bl	HAL_RCC_GetClockConfig
+  75              	.LVL3:
+  55:Core/Src/stm32f4xx_hal_timebase_tim.c ****   /* Get APB1 prescaler */
+  56:Core/Src/stm32f4xx_hal_timebase_tim.c ****   uwAPB1Prescaler = clkconfig.APB1CLKDivider;
+  76              		.loc 1 56 3 is_stmt 1 view .LVU15
+  77              		.loc 1 56 19 is_stmt 0 view .LVU16
+  78 0026 069B     		ldr	r3, [sp, #24]
+  79              	.LVL4:
+  57:Core/Src/stm32f4xx_hal_timebase_tim.c ****   /* Compute TIM14 clock */
+  58:Core/Src/stm32f4xx_hal_timebase_tim.c ****   if (uwAPB1Prescaler == RCC_HCLK_DIV1)
+  80              		.loc 1 58 3 is_stmt 1 view .LVU17
+  81              		.loc 1 58 6 is_stmt 0 view .LVU18
+  82 0028 CBB9     		cbnz	r3, .L2
+  59:Core/Src/stm32f4xx_hal_timebase_tim.c ****   {
+  60:Core/Src/stm32f4xx_hal_timebase_tim.c ****     uwTimclock = HAL_RCC_GetPCLK1Freq();
+  83              		.loc 1 60 5 is_stmt 1 view .LVU19
+  84              		.loc 1 60 18 is_stmt 0 view .LVU20
+  85 002a FFF7FEFF 		bl	HAL_RCC_GetPCLK1Freq
+  86              	.LVL5:
+  87              		.loc 1 60 18 view .LVU21
+  88 002e 0346     		mov	r3, r0
+  89              	.LVL6:
+  90              	.L3:
+  61:Core/Src/stm32f4xx_hal_timebase_tim.c ****   }
+  62:Core/Src/stm32f4xx_hal_timebase_tim.c ****   else
+  63:Core/Src/stm32f4xx_hal_timebase_tim.c ****   {
+  64:Core/Src/stm32f4xx_hal_timebase_tim.c ****     uwTimclock = 2UL * HAL_RCC_GetPCLK1Freq();
+  65:Core/Src/stm32f4xx_hal_timebase_tim.c ****   }
   66:Core/Src/stm32f4xx_hal_timebase_tim.c **** 
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccJNABra.s 			page 4
+  67:Core/Src/stm32f4xx_hal_timebase_tim.c ****   /* Compute the prescaler value to have TIM14 counter clock equal to 1MHz */
+  68:Core/Src/stm32f4xx_hal_timebase_tim.c ****   uwPrescalerValue = (uint32_t) ((uwTimclock / 1000000U) - 1U);
+  91              		.loc 1 68 3 is_stmt 1 view .LVU22
+  92              		.loc 1 68 46 is_stmt 0 view .LVU23
+  93 0030 184A     		ldr	r2, .L9+4
+  94 0032 A2FB0323 		umull	r2, r3, r2, r3
+  95              	.LVL7:
+  96              		.loc 1 68 46 view .LVU24
+  97 0036 9B0C     		lsrs	r3, r3, #18
+  98              		.loc 1 68 20 view .LVU25
+  99 0038 013B     		subs	r3, r3, #1
+ 100              	.LVL8:
+  69:Core/Src/stm32f4xx_hal_timebase_tim.c **** 
+  70:Core/Src/stm32f4xx_hal_timebase_tim.c ****   /* Initialize TIM14 */
+  71:Core/Src/stm32f4xx_hal_timebase_tim.c ****   htim14.Instance = TIM14;
+ 101              		.loc 1 71 3 is_stmt 1 view .LVU26
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2k6vF7.s 			page 4
 
 
-  67:Core/Src/stm32f4xx_hal_timebase_tim.c ****   /* Initialize TIMx peripheral as follow:
-  68:Core/Src/stm32f4xx_hal_timebase_tim.c ****   + Period = [(TIM14CLK/1000) - 1]. to have a (1/1000) s time base.
-  69:Core/Src/stm32f4xx_hal_timebase_tim.c ****   + Prescaler = (uwTimclock/1000000 - 1) to have a 1MHz counter clock.
-  70:Core/Src/stm32f4xx_hal_timebase_tim.c ****   + ClockDivision = 0
-  71:Core/Src/stm32f4xx_hal_timebase_tim.c ****   + Counter direction = Up
-  72:Core/Src/stm32f4xx_hal_timebase_tim.c ****   */
-  73:Core/Src/stm32f4xx_hal_timebase_tim.c ****   htim14.Init.Period = (1000000U / 1000U) - 1U;
- 107              		.loc 1 73 3 is_stmt 1 view .LVU26
- 108              		.loc 1 73 22 is_stmt 0 view .LVU27
- 109 004a 40F2E732 		movw	r2, #999
- 110 004e C260     		str	r2, [r0, #12]
-  74:Core/Src/stm32f4xx_hal_timebase_tim.c ****   htim14.Init.Prescaler = uwPrescalerValue;
- 111              		.loc 1 74 3 is_stmt 1 view .LVU28
- 112              		.loc 1 74 25 is_stmt 0 view .LVU29
- 113 0050 4360     		str	r3, [r0, #4]
-  75:Core/Src/stm32f4xx_hal_timebase_tim.c ****   htim14.Init.ClockDivision = 0;
- 114              		.loc 1 75 3 is_stmt 1 view .LVU30
- 115              		.loc 1 75 29 is_stmt 0 view .LVU31
- 116 0052 0461     		str	r4, [r0, #16]
-  76:Core/Src/stm32f4xx_hal_timebase_tim.c ****   htim14.Init.CounterMode = TIM_COUNTERMODE_UP;
- 117              		.loc 1 76 3 is_stmt 1 view .LVU32
- 118              		.loc 1 76 27 is_stmt 0 view .LVU33
- 119 0054 8460     		str	r4, [r0, #8]
-  77:Core/Src/stm32f4xx_hal_timebase_tim.c ****   if(HAL_TIM_Base_Init(&htim14) == HAL_OK)
- 120              		.loc 1 77 3 is_stmt 1 view .LVU34
- 121              		.loc 1 77 6 is_stmt 0 view .LVU35
- 122 0056 FFF7FEFF 		bl	HAL_TIM_Base_Init
- 123              	.LVL11:
- 124              		.loc 1 77 5 view .LVU36
- 125 005a 10B1     		cbz	r0, .L5
-  78:Core/Src/stm32f4xx_hal_timebase_tim.c ****   {
-  79:Core/Src/stm32f4xx_hal_timebase_tim.c ****     /* Start the TIM time Base generation in interrupt mode */
-  80:Core/Src/stm32f4xx_hal_timebase_tim.c ****     return HAL_TIM_Base_Start_IT(&htim14);
-  81:Core/Src/stm32f4xx_hal_timebase_tim.c ****   }
-  82:Core/Src/stm32f4xx_hal_timebase_tim.c **** 
-  83:Core/Src/stm32f4xx_hal_timebase_tim.c ****   /* Return function status */
-  84:Core/Src/stm32f4xx_hal_timebase_tim.c ****   return HAL_ERROR;
- 126              		.loc 1 84 10 view .LVU37
- 127 005c 0120     		movs	r0, #1
- 128              	.L2:
-  85:Core/Src/stm32f4xx_hal_timebase_tim.c **** }
- 129              		.loc 1 85 1 view .LVU38
- 130 005e 08B0     		add	sp, sp, #32
- 131              	.LCFI2:
- 132              		.cfi_remember_state
- 133              		.cfi_def_cfa_offset 8
- 134              		@ sp needed
- 135 0060 10BD     		pop	{r4, pc}
- 136              	.L5:
- 137              	.LCFI3:
- 138              		.cfi_restore_state
-  80:Core/Src/stm32f4xx_hal_timebase_tim.c ****   }
- 139              		.loc 1 80 5 is_stmt 1 view .LVU39
-  80:Core/Src/stm32f4xx_hal_timebase_tim.c ****   }
- 140              		.loc 1 80 12 is_stmt 0 view .LVU40
- 141 0062 0448     		ldr	r0, .L6+8
- 142 0064 FFF7FEFF 		bl	HAL_TIM_Base_Start_IT
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccJNABra.s 			page 5
+ 102              		.loc 1 71 19 is_stmt 0 view .LVU27
+ 103 003a 1748     		ldr	r0, .L9+8
+ 104 003c 174A     		ldr	r2, .L9+12
+ 105 003e 0260     		str	r2, [r0]
+  72:Core/Src/stm32f4xx_hal_timebase_tim.c **** 
+  73:Core/Src/stm32f4xx_hal_timebase_tim.c ****   /* Initialize TIMx peripheral as follow:
+  74:Core/Src/stm32f4xx_hal_timebase_tim.c **** 
+  75:Core/Src/stm32f4xx_hal_timebase_tim.c ****   + Period = [(TIM14CLK/1000) - 1]. to have a (1/1000) s time base.
+  76:Core/Src/stm32f4xx_hal_timebase_tim.c ****   + Prescaler = (uwTimclock/1000000 - 1) to have a 1MHz counter clock.
+  77:Core/Src/stm32f4xx_hal_timebase_tim.c ****   + ClockDivision = 0
+  78:Core/Src/stm32f4xx_hal_timebase_tim.c ****   + Counter direction = Up
+  79:Core/Src/stm32f4xx_hal_timebase_tim.c ****   */
+  80:Core/Src/stm32f4xx_hal_timebase_tim.c ****   htim14.Init.Period = (1000000U / 1000U) - 1U;
+ 106              		.loc 1 80 3 is_stmt 1 view .LVU28
+ 107              		.loc 1 80 22 is_stmt 0 view .LVU29
+ 108 0040 40F2E732 		movw	r2, #999
+ 109 0044 C260     		str	r2, [r0, #12]
+  81:Core/Src/stm32f4xx_hal_timebase_tim.c ****   htim14.Init.Prescaler = uwPrescalerValue;
+ 110              		.loc 1 81 3 is_stmt 1 view .LVU30
+ 111              		.loc 1 81 25 is_stmt 0 view .LVU31
+ 112 0046 4360     		str	r3, [r0, #4]
+  82:Core/Src/stm32f4xx_hal_timebase_tim.c ****   htim14.Init.ClockDivision = 0;
+ 113              		.loc 1 82 3 is_stmt 1 view .LVU32
+ 114              		.loc 1 82 29 is_stmt 0 view .LVU33
+ 115 0048 0023     		movs	r3, #0
+ 116              	.LVL9:
+ 117              		.loc 1 82 29 view .LVU34
+ 118 004a 0361     		str	r3, [r0, #16]
+  83:Core/Src/stm32f4xx_hal_timebase_tim.c ****   htim14.Init.CounterMode = TIM_COUNTERMODE_UP;
+ 119              		.loc 1 83 3 is_stmt 1 view .LVU35
+ 120              		.loc 1 83 27 is_stmt 0 view .LVU36
+ 121 004c 8360     		str	r3, [r0, #8]
+  84:Core/Src/stm32f4xx_hal_timebase_tim.c ****   htim14.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+ 122              		.loc 1 84 3 is_stmt 1 view .LVU37
+ 123              		.loc 1 84 33 is_stmt 0 view .LVU38
+ 124 004e 8361     		str	r3, [r0, #24]
+  85:Core/Src/stm32f4xx_hal_timebase_tim.c **** 
+  86:Core/Src/stm32f4xx_hal_timebase_tim.c ****   status = HAL_TIM_Base_Init(&htim14);
+ 125              		.loc 1 86 3 is_stmt 1 view .LVU39
+ 126              		.loc 1 86 12 is_stmt 0 view .LVU40
+ 127 0050 FFF7FEFF 		bl	HAL_TIM_Base_Init
+ 128              	.LVL10:
+  87:Core/Src/stm32f4xx_hal_timebase_tim.c ****   if (status == HAL_OK)
+ 129              		.loc 1 87 3 is_stmt 1 view .LVU41
+ 130              		.loc 1 87 6 is_stmt 0 view .LVU42
+ 131 0054 0546     		mov	r5, r0
+ 132 0056 30B1     		cbz	r0, .L7
+ 133              	.LVL11:
+ 134              	.L4:
+  88:Core/Src/stm32f4xx_hal_timebase_tim.c ****   {
+  89:Core/Src/stm32f4xx_hal_timebase_tim.c ****     /* Start the TIM time Base generation in interrupt mode */
+  90:Core/Src/stm32f4xx_hal_timebase_tim.c ****     status = HAL_TIM_Base_Start_IT(&htim14);
+  91:Core/Src/stm32f4xx_hal_timebase_tim.c ****     if (status == HAL_OK)
+  92:Core/Src/stm32f4xx_hal_timebase_tim.c ****     {
+  93:Core/Src/stm32f4xx_hal_timebase_tim.c ****     /* Enable the TIM14 global Interrupt */
+  94:Core/Src/stm32f4xx_hal_timebase_tim.c ****         HAL_NVIC_EnableIRQ(TIM8_TRG_COM_TIM14_IRQn);
+  95:Core/Src/stm32f4xx_hal_timebase_tim.c ****       /* Configure the SysTick IRQ priority */
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2k6vF7.s 			page 5
 
 
- 143              	.LVL12:
- 144 0068 F9E7     		b	.L2
- 145              	.L7:
- 146 006a 00BF     		.align	2
- 147              	.L6:
- 148 006c 00380240 		.word	1073887232
- 149 0070 83DE1B43 		.word	1125899907
- 150 0074 00000000 		.word	.LANCHOR0
- 151 0078 00200040 		.word	1073750016
- 152              		.cfi_endproc
- 153              	.LFE130:
- 155              		.section	.text.HAL_SuspendTick,"ax",%progbits
- 156              		.align	1
- 157              		.global	HAL_SuspendTick
- 158              		.syntax unified
- 159              		.thumb
- 160              		.thumb_func
- 162              	HAL_SuspendTick:
- 163              	.LFB131:
-  86:Core/Src/stm32f4xx_hal_timebase_tim.c **** 
-  87:Core/Src/stm32f4xx_hal_timebase_tim.c **** /**
-  88:Core/Src/stm32f4xx_hal_timebase_tim.c ****   * @brief  Suspend Tick increment.
-  89:Core/Src/stm32f4xx_hal_timebase_tim.c ****   * @note   Disable the tick increment by disabling TIM14 update interrupt.
-  90:Core/Src/stm32f4xx_hal_timebase_tim.c ****   * @param  None
-  91:Core/Src/stm32f4xx_hal_timebase_tim.c ****   * @retval None
-  92:Core/Src/stm32f4xx_hal_timebase_tim.c ****   */
-  93:Core/Src/stm32f4xx_hal_timebase_tim.c **** void HAL_SuspendTick(void)
-  94:Core/Src/stm32f4xx_hal_timebase_tim.c **** {
- 164              		.loc 1 94 1 is_stmt 1 view -0
- 165              		.cfi_startproc
- 166              		@ args = 0, pretend = 0, frame = 0
- 167              		@ frame_needed = 0, uses_anonymous_args = 0
- 168              		@ link register save eliminated.
-  95:Core/Src/stm32f4xx_hal_timebase_tim.c ****   /* Disable TIM14 update Interrupt */
-  96:Core/Src/stm32f4xx_hal_timebase_tim.c ****   __HAL_TIM_DISABLE_IT(&htim14, TIM_IT_UPDATE);
- 169              		.loc 1 96 3 view .LVU42
- 170 0000 034B     		ldr	r3, .L9
- 171 0002 1A68     		ldr	r2, [r3]
- 172 0004 D368     		ldr	r3, [r2, #12]
- 173 0006 23F00103 		bic	r3, r3, #1
- 174 000a D360     		str	r3, [r2, #12]
-  97:Core/Src/stm32f4xx_hal_timebase_tim.c **** }
- 175              		.loc 1 97 1 is_stmt 0 view .LVU43
- 176 000c 7047     		bx	lr
- 177              	.L10:
- 178 000e 00BF     		.align	2
- 179              	.L9:
- 180 0010 00000000 		.word	.LANCHOR0
- 181              		.cfi_endproc
- 182              	.LFE131:
- 184              		.section	.text.HAL_ResumeTick,"ax",%progbits
- 185              		.align	1
- 186              		.global	HAL_ResumeTick
- 187              		.syntax unified
- 188              		.thumb
- 189              		.thumb_func
- 191              	HAL_ResumeTick:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccJNABra.s 			page 6
+  96:Core/Src/stm32f4xx_hal_timebase_tim.c ****       if (TickPriority < (1UL << __NVIC_PRIO_BITS))
+  97:Core/Src/stm32f4xx_hal_timebase_tim.c ****       {
+  98:Core/Src/stm32f4xx_hal_timebase_tim.c ****         /* Configure the TIM IRQ priority */
+  99:Core/Src/stm32f4xx_hal_timebase_tim.c ****         HAL_NVIC_SetPriority(TIM8_TRG_COM_TIM14_IRQn, TickPriority, 0U);
+ 100:Core/Src/stm32f4xx_hal_timebase_tim.c ****         uwTickPrio = TickPriority;
+ 101:Core/Src/stm32f4xx_hal_timebase_tim.c ****       }
+ 102:Core/Src/stm32f4xx_hal_timebase_tim.c ****       else
+ 103:Core/Src/stm32f4xx_hal_timebase_tim.c ****       {
+ 104:Core/Src/stm32f4xx_hal_timebase_tim.c ****         status = HAL_ERROR;
+ 105:Core/Src/stm32f4xx_hal_timebase_tim.c ****       }
+ 106:Core/Src/stm32f4xx_hal_timebase_tim.c ****     }
+ 107:Core/Src/stm32f4xx_hal_timebase_tim.c ****   }
+ 108:Core/Src/stm32f4xx_hal_timebase_tim.c **** 
+ 109:Core/Src/stm32f4xx_hal_timebase_tim.c ****  /* Return function status */
+ 110:Core/Src/stm32f4xx_hal_timebase_tim.c ****   return status;
+ 135              		.loc 1 110 3 is_stmt 1 view .LVU43
+ 111:Core/Src/stm32f4xx_hal_timebase_tim.c **** }
+ 136              		.loc 1 111 1 is_stmt 0 view .LVU44
+ 137 0058 2846     		mov	r0, r5
+ 138 005a 09B0     		add	sp, sp, #36
+ 139              	.LCFI2:
+ 140              		.cfi_remember_state
+ 141              		.cfi_def_cfa_offset 12
+ 142              		@ sp needed
+ 143 005c 30BD     		pop	{r4, r5, pc}
+ 144              	.LVL12:
+ 145              	.L2:
+ 146              	.LCFI3:
+ 147              		.cfi_restore_state
+  64:Core/Src/stm32f4xx_hal_timebase_tim.c ****   }
+ 148              		.loc 1 64 5 is_stmt 1 view .LVU45
+  64:Core/Src/stm32f4xx_hal_timebase_tim.c ****   }
+ 149              		.loc 1 64 24 is_stmt 0 view .LVU46
+ 150 005e FFF7FEFF 		bl	HAL_RCC_GetPCLK1Freq
+ 151              	.LVL13:
+  64:Core/Src/stm32f4xx_hal_timebase_tim.c ****   }
+ 152              		.loc 1 64 16 view .LVU47
+ 153 0062 4300     		lsls	r3, r0, #1
+ 154              	.LVL14:
+  64:Core/Src/stm32f4xx_hal_timebase_tim.c ****   }
+ 155              		.loc 1 64 16 view .LVU48
+ 156 0064 E4E7     		b	.L3
+ 157              	.LVL15:
+ 158              	.L7:
+  90:Core/Src/stm32f4xx_hal_timebase_tim.c ****     if (status == HAL_OK)
+ 159              		.loc 1 90 5 is_stmt 1 view .LVU49
+  90:Core/Src/stm32f4xx_hal_timebase_tim.c ****     if (status == HAL_OK)
+ 160              		.loc 1 90 14 is_stmt 0 view .LVU50
+ 161 0066 0C48     		ldr	r0, .L9+8
+ 162              	.LVL16:
+  90:Core/Src/stm32f4xx_hal_timebase_tim.c ****     if (status == HAL_OK)
+ 163              		.loc 1 90 14 view .LVU51
+ 164 0068 FFF7FEFF 		bl	HAL_TIM_Base_Start_IT
+ 165              	.LVL17:
+  91:Core/Src/stm32f4xx_hal_timebase_tim.c ****     {
+ 166              		.loc 1 91 5 is_stmt 1 view .LVU52
+  91:Core/Src/stm32f4xx_hal_timebase_tim.c ****     {
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2k6vF7.s 			page 6
 
 
- 192              	.LFB132:
-  98:Core/Src/stm32f4xx_hal_timebase_tim.c **** 
-  99:Core/Src/stm32f4xx_hal_timebase_tim.c **** /**
- 100:Core/Src/stm32f4xx_hal_timebase_tim.c ****   * @brief  Resume Tick increment.
- 101:Core/Src/stm32f4xx_hal_timebase_tim.c ****   * @note   Enable the tick increment by Enabling TIM14 update interrupt.
- 102:Core/Src/stm32f4xx_hal_timebase_tim.c ****   * @param  None
- 103:Core/Src/stm32f4xx_hal_timebase_tim.c ****   * @retval None
- 104:Core/Src/stm32f4xx_hal_timebase_tim.c ****   */
- 105:Core/Src/stm32f4xx_hal_timebase_tim.c **** void HAL_ResumeTick(void)
- 106:Core/Src/stm32f4xx_hal_timebase_tim.c **** {
- 193              		.loc 1 106 1 is_stmt 1 view -0
- 194              		.cfi_startproc
- 195              		@ args = 0, pretend = 0, frame = 0
- 196              		@ frame_needed = 0, uses_anonymous_args = 0
- 197              		@ link register save eliminated.
- 107:Core/Src/stm32f4xx_hal_timebase_tim.c ****   /* Enable TIM14 Update interrupt */
- 108:Core/Src/stm32f4xx_hal_timebase_tim.c ****   __HAL_TIM_ENABLE_IT(&htim14, TIM_IT_UPDATE);
- 198              		.loc 1 108 3 view .LVU45
- 199 0000 034B     		ldr	r3, .L12
- 200 0002 1A68     		ldr	r2, [r3]
- 201 0004 D368     		ldr	r3, [r2, #12]
- 202 0006 43F00103 		orr	r3, r3, #1
- 203 000a D360     		str	r3, [r2, #12]
- 109:Core/Src/stm32f4xx_hal_timebase_tim.c **** }
- 204              		.loc 1 109 1 is_stmt 0 view .LVU46
- 205 000c 7047     		bx	lr
- 206              	.L13:
- 207 000e 00BF     		.align	2
- 208              	.L12:
- 209 0010 00000000 		.word	.LANCHOR0
- 210              		.cfi_endproc
- 211              	.LFE132:
- 213              		.global	htim14
- 214              		.section	.bss.htim14,"aw",%nobits
- 215              		.align	2
- 216              		.set	.LANCHOR0,. + 0
- 219              	htim14:
- 220 0000 00000000 		.space	64
- 220      00000000 
- 220      00000000 
- 220      00000000 
- 220      00000000 
- 221              		.text
- 222              	.Letext0:
- 223              		.file 2 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
- 224              		.file 3 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
- 225              		.file 4 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
- 226              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 227              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
- 228              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 229              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
- 230              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccJNABra.s 			page 7
+ 167              		.loc 1 91 8 is_stmt 0 view .LVU53
+ 168 006c 0546     		mov	r5, r0
+ 169 006e 0028     		cmp	r0, #0
+ 170 0070 F2D1     		bne	.L4
+  94:Core/Src/stm32f4xx_hal_timebase_tim.c ****       /* Configure the SysTick IRQ priority */
+ 171              		.loc 1 94 9 is_stmt 1 view .LVU54
+ 172 0072 2D20     		movs	r0, #45
+ 173              	.LVL18:
+  94:Core/Src/stm32f4xx_hal_timebase_tim.c ****       /* Configure the SysTick IRQ priority */
+ 174              		.loc 1 94 9 is_stmt 0 view .LVU55
+ 175 0074 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 176              	.LVL19:
+  96:Core/Src/stm32f4xx_hal_timebase_tim.c ****       {
+ 177              		.loc 1 96 7 is_stmt 1 view .LVU56
+  96:Core/Src/stm32f4xx_hal_timebase_tim.c ****       {
+ 178              		.loc 1 96 10 is_stmt 0 view .LVU57
+ 179 0078 0F2C     		cmp	r4, #15
+ 180 007a 01D9     		bls	.L8
+ 104:Core/Src/stm32f4xx_hal_timebase_tim.c ****       }
+ 181              		.loc 1 104 16 view .LVU58
+ 182 007c 0125     		movs	r5, #1
+ 183 007e EBE7     		b	.L4
+ 184              	.L8:
+  99:Core/Src/stm32f4xx_hal_timebase_tim.c ****         uwTickPrio = TickPriority;
+ 185              		.loc 1 99 9 is_stmt 1 view .LVU59
+ 186 0080 0022     		movs	r2, #0
+ 187 0082 2146     		mov	r1, r4
+ 188 0084 2D20     		movs	r0, #45
+ 189 0086 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 190              	.LVL20:
+ 100:Core/Src/stm32f4xx_hal_timebase_tim.c ****       }
+ 191              		.loc 1 100 9 view .LVU60
+ 100:Core/Src/stm32f4xx_hal_timebase_tim.c ****       }
+ 192              		.loc 1 100 20 is_stmt 0 view .LVU61
+ 193 008a 054B     		ldr	r3, .L9+16
+ 194 008c 1C60     		str	r4, [r3]
+ 195 008e E3E7     		b	.L4
+ 196              	.L10:
+ 197              		.align	2
+ 198              	.L9:
+ 199 0090 00380240 		.word	1073887232
+ 200 0094 83DE1B43 		.word	1125899907
+ 201 0098 00000000 		.word	.LANCHOR0
+ 202 009c 00200040 		.word	1073750016
+ 203 00a0 00000000 		.word	uwTickPrio
+ 204              		.cfi_endproc
+ 205              	.LFE134:
+ 207              		.section	.text.HAL_SuspendTick,"ax",%progbits
+ 208              		.align	1
+ 209              		.global	HAL_SuspendTick
+ 210              		.syntax unified
+ 211              		.thumb
+ 212              		.thumb_func
+ 214              	HAL_SuspendTick:
+ 215              	.LFB135:
+ 112:Core/Src/stm32f4xx_hal_timebase_tim.c **** 
+ 113:Core/Src/stm32f4xx_hal_timebase_tim.c **** /**
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2k6vF7.s 			page 7
+
+
+ 114:Core/Src/stm32f4xx_hal_timebase_tim.c ****   * @brief  Suspend Tick increment.
+ 115:Core/Src/stm32f4xx_hal_timebase_tim.c ****   * @note   Disable the tick increment by disabling TIM14 update interrupt.
+ 116:Core/Src/stm32f4xx_hal_timebase_tim.c ****   * @param  None
+ 117:Core/Src/stm32f4xx_hal_timebase_tim.c ****   * @retval None
+ 118:Core/Src/stm32f4xx_hal_timebase_tim.c ****   */
+ 119:Core/Src/stm32f4xx_hal_timebase_tim.c **** void HAL_SuspendTick(void)
+ 120:Core/Src/stm32f4xx_hal_timebase_tim.c **** {
+ 216              		.loc 1 120 1 is_stmt 1 view -0
+ 217              		.cfi_startproc
+ 218              		@ args = 0, pretend = 0, frame = 0
+ 219              		@ frame_needed = 0, uses_anonymous_args = 0
+ 220              		@ link register save eliminated.
+ 121:Core/Src/stm32f4xx_hal_timebase_tim.c ****   /* Disable TIM14 update Interrupt */
+ 122:Core/Src/stm32f4xx_hal_timebase_tim.c ****   __HAL_TIM_DISABLE_IT(&htim14, TIM_IT_UPDATE);
+ 221              		.loc 1 122 3 view .LVU63
+ 222 0000 034B     		ldr	r3, .L12
+ 223 0002 1A68     		ldr	r2, [r3]
+ 224 0004 D368     		ldr	r3, [r2, #12]
+ 225 0006 23F00103 		bic	r3, r3, #1
+ 226 000a D360     		str	r3, [r2, #12]
+ 123:Core/Src/stm32f4xx_hal_timebase_tim.c **** }
+ 227              		.loc 1 123 1 is_stmt 0 view .LVU64
+ 228 000c 7047     		bx	lr
+ 229              	.L13:
+ 230 000e 00BF     		.align	2
+ 231              	.L12:
+ 232 0010 00000000 		.word	.LANCHOR0
+ 233              		.cfi_endproc
+ 234              	.LFE135:
+ 236              		.section	.text.HAL_ResumeTick,"ax",%progbits
+ 237              		.align	1
+ 238              		.global	HAL_ResumeTick
+ 239              		.syntax unified
+ 240              		.thumb
+ 241              		.thumb_func
+ 243              	HAL_ResumeTick:
+ 244              	.LFB136:
+ 124:Core/Src/stm32f4xx_hal_timebase_tim.c **** 
+ 125:Core/Src/stm32f4xx_hal_timebase_tim.c **** /**
+ 126:Core/Src/stm32f4xx_hal_timebase_tim.c ****   * @brief  Resume Tick increment.
+ 127:Core/Src/stm32f4xx_hal_timebase_tim.c ****   * @note   Enable the tick increment by Enabling TIM14 update interrupt.
+ 128:Core/Src/stm32f4xx_hal_timebase_tim.c ****   * @param  None
+ 129:Core/Src/stm32f4xx_hal_timebase_tim.c ****   * @retval None
+ 130:Core/Src/stm32f4xx_hal_timebase_tim.c ****   */
+ 131:Core/Src/stm32f4xx_hal_timebase_tim.c **** void HAL_ResumeTick(void)
+ 132:Core/Src/stm32f4xx_hal_timebase_tim.c **** {
+ 245              		.loc 1 132 1 is_stmt 1 view -0
+ 246              		.cfi_startproc
+ 247              		@ args = 0, pretend = 0, frame = 0
+ 248              		@ frame_needed = 0, uses_anonymous_args = 0
+ 249              		@ link register save eliminated.
+ 133:Core/Src/stm32f4xx_hal_timebase_tim.c ****   /* Enable TIM14 Update interrupt */
+ 134:Core/Src/stm32f4xx_hal_timebase_tim.c ****   __HAL_TIM_ENABLE_IT(&htim14, TIM_IT_UPDATE);
+ 250              		.loc 1 134 3 view .LVU66
+ 251 0000 034B     		ldr	r3, .L15
+ 252 0002 1A68     		ldr	r2, [r3]
+ 253 0004 D368     		ldr	r3, [r2, #12]
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2k6vF7.s 			page 8
+
+
+ 254 0006 43F00103 		orr	r3, r3, #1
+ 255 000a D360     		str	r3, [r2, #12]
+ 135:Core/Src/stm32f4xx_hal_timebase_tim.c **** }
+ 256              		.loc 1 135 1 is_stmt 0 view .LVU67
+ 257 000c 7047     		bx	lr
+ 258              	.L16:
+ 259 000e 00BF     		.align	2
+ 260              	.L15:
+ 261 0010 00000000 		.word	.LANCHOR0
+ 262              		.cfi_endproc
+ 263              	.LFE136:
+ 265              		.global	htim14
+ 266              		.section	.bss.htim14,"aw",%nobits
+ 267              		.align	2
+ 268              		.set	.LANCHOR0,. + 0
+ 271              	htim14:
+ 272 0000 00000000 		.space	72
+ 272      00000000 
+ 272      00000000 
+ 272      00000000 
+ 272      00000000 
+ 273              		.text
+ 274              	.Letext0:
+ 275              		.file 2 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ 276              		.file 3 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
+ 277              		.file 4 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
+ 278              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 279              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
+ 280              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 281              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 282              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 283              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc2k6vF7.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f4xx_hal_timebase_tim.c
-C:\Users\HUAWEI\AppData\Local\Temp\ccJNABra.s:20     .text.HAL_InitTick:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccJNABra.s:26     .text.HAL_InitTick:0000000000000000 HAL_InitTick
-C:\Users\HUAWEI\AppData\Local\Temp\ccJNABra.s:148    .text.HAL_InitTick:000000000000006c $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccJNABra.s:156    .text.HAL_SuspendTick:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccJNABra.s:162    .text.HAL_SuspendTick:0000000000000000 HAL_SuspendTick
-C:\Users\HUAWEI\AppData\Local\Temp\ccJNABra.s:180    .text.HAL_SuspendTick:0000000000000010 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccJNABra.s:185    .text.HAL_ResumeTick:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccJNABra.s:191    .text.HAL_ResumeTick:0000000000000000 HAL_ResumeTick
-C:\Users\HUAWEI\AppData\Local\Temp\ccJNABra.s:209    .text.HAL_ResumeTick:0000000000000010 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccJNABra.s:219    .bss.htim14:0000000000000000 htim14
-C:\Users\HUAWEI\AppData\Local\Temp\ccJNABra.s:215    .bss.htim14:0000000000000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\cc2k6vF7.s:20     .text.HAL_InitTick:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\cc2k6vF7.s:26     .text.HAL_InitTick:0000000000000000 HAL_InitTick
+C:\Users\HUAWEI\AppData\Local\Temp\cc2k6vF7.s:199    .text.HAL_InitTick:0000000000000090 $d
+C:\Users\HUAWEI\AppData\Local\Temp\cc2k6vF7.s:208    .text.HAL_SuspendTick:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\cc2k6vF7.s:214    .text.HAL_SuspendTick:0000000000000000 HAL_SuspendTick
+C:\Users\HUAWEI\AppData\Local\Temp\cc2k6vF7.s:232    .text.HAL_SuspendTick:0000000000000010 $d
+C:\Users\HUAWEI\AppData\Local\Temp\cc2k6vF7.s:237    .text.HAL_ResumeTick:0000000000000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\cc2k6vF7.s:243    .text.HAL_ResumeTick:0000000000000000 HAL_ResumeTick
+C:\Users\HUAWEI\AppData\Local\Temp\cc2k6vF7.s:261    .text.HAL_ResumeTick:0000000000000010 $d
+C:\Users\HUAWEI\AppData\Local\Temp\cc2k6vF7.s:271    .bss.htim14:0000000000000000 htim14
+C:\Users\HUAWEI\AppData\Local\Temp\cc2k6vF7.s:267    .bss.htim14:0000000000000000 $d
 
 UNDEFINED SYMBOLS
-HAL_NVIC_SetPriority
-HAL_NVIC_EnableIRQ
 HAL_RCC_GetClockConfig
 HAL_RCC_GetPCLK1Freq
 HAL_TIM_Base_Init
 HAL_TIM_Base_Start_IT
+HAL_NVIC_EnableIRQ
+HAL_NVIC_SetPriority
+uwTickPrio
