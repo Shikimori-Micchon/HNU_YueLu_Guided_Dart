@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
   28:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       (+) Prefetch on I-Code
   29:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       (+) 64 cache lines of 128 bits on I-Code
   30:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       (+) 8 cache lines of 128 bits on D-Code
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 2
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 2
 
 
   31:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
   85:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   */
   86:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
   87:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** #ifdef HAL_FLASH_MODULE_ENABLED
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 3
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 3
 
 
   88:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  142:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   * @{
  143:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   */
  144:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 4
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 4
 
 
  145:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** /**
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  199:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
  200:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   return status;
  201:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** }
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 5
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 5
 
 
  202:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  256:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** void HAL_FLASH_IRQHandler(void)
  257:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** {
  258:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   uint32_t addresstmp = 0U;
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 6
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 6
 
 
  259:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  313:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
  314:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****         /*Increment sector number*/
  315:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****         pFlash.Sector++;
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 7
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 7
 
 
  316:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****         addresstmp = pFlash.Sector;
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  370:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   *                  Mass Erase: Bank number which has been requested to erase
  371:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   *                  Sectors Erase: Sector which has been erased
  372:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   *                    (if 0xFFFFFFFFU, it means that all the selected sectors have been erased)
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 8
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 8
 
 
  373:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   *                  Program: Address which was selected for data program
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  427:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   HAL_StatusTypeDef status = HAL_OK;
  428:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
  429:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   if (READ_BIT(FLASH->CR, FLASH_CR_LOCK) != RESET)
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 9
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 9
 
 
  430:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   {
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  484:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   FLASH->OPTCR |= FLASH_OPTCR_OPTLOCK;
  485:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
  486:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   return HAL_OK;
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 10
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 10
 
 
  487:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** }
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  541:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   * @param  Timeout maximum flash operationtimeout
  542:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   * @retval HAL Status
  543:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   */
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 11
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 11
 
 
  544:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** HAL_StatusTypeDef FLASH_WaitForLastOperation(uint32_t Timeout)
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  598:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   *         the erase operation is performed before the program one.
  599:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   *
  600:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   * @param  Address specifies the address to be programmed.
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 12
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 12
 
 
  601:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   * @param  Data specifies the data to be programmed.
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
    3:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @brief    CMSIS compiler GCC header file
    4:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @version  V5.4.1
    5:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @date     27. May 2021
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 13
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 13
 
 
    6:Drivers/CMSIS/Include/cmsis_gcc.h ****  ******************************************************************************/
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
   60:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   61:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED
   62:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED                               __attribute__((packed, aligned(1)))
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 14
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 14
 
 
   63:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  117:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __COMPILER_BARRIER()                   __ASM volatile("":::"memory")
  118:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  119:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 15
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 15
 
 
  120:Drivers/CMSIS/Include/cmsis_gcc.h **** /* #########################  Startup and Lowlevel Init  ######################## */
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  174:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __STACK_LIMIT             __StackLimit
  175:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  176:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 16
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 16
 
 
  177:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __VECTOR_TABLE
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  231:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Wait For Interrupt
  232:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Wait For Interrupt is a hint instruction that suspends execution until one of a number o
  233:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 17
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 17
 
 
  234:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __WFI()                             __ASM volatile ("wfi":::"memory")
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
   85 002c 003C0240 		.word	1073888256
   86              		.cfi_endproc
   87              	.LFE146:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 18
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 18
 
 
   89              		.section	.text.FLASH_Program_Word,"ax",%progbits
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  119              		.loc 1 648 3 is_stmt 1 view .LVU23
  120              		.loc 1 648 29 is_stmt 0 view .LVU24
  121 001a 0160     		str	r1, [r0]
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 19
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 19
 
 
  649:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** }
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  671:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   FLASH->CR |= FLASH_CR_PG;
  156              		.loc 1 671 3 is_stmt 1 view .LVU31
  157              		.loc 1 671 13 is_stmt 0 view .LVU32
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 20
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 20
 
 
  158 0012 1A69     		ldr	r2, [r3, #16]
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  191 0004 22F44072 		bic	r2, r2, #768
  192 0008 1A61     		str	r2, [r3, #16]
  695:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   FLASH->CR |= FLASH_PSIZE_BYTE;
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 21
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 21
 
 
  193              		.loc 1 695 3 view .LVU39
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  235              		.loc 1 709 22 is_stmt 0 view .LVU51
  236 000a 1F4A     		ldr	r2, .L20+4
  237 000c D369     		ldr	r3, [r2, #28]
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 22
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 22
 
 
  238 000e 43F01003 		orr	r3, r3, #16
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  726:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
  727:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     /* Clear FLASH Programming parallelism error pending bit */
  728:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     __HAL_FLASH_CLEAR_FLAG(FLASH_FLAG_PGPERR);
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 23
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 23
 
 
  276              		.loc 1 728 5 is_stmt 1 view .LVU64
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  309 0074 D369     		ldr	r3, [r2, #28]
  310 0076 43F02003 		orr	r3, r3, #32
  311 007a D361     		str	r3, [r2, #28]
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 24
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 24
 
 
  750:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  358 000e 2561     		str	r5, [r4, #16]
  223:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
  359              		.loc 1 223 3 view .LVU83
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 25
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 25
 
 
  360 0010 2569     		ldr	r5, [r4, #16]
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  398              		.loc 1 231 5 is_stmt 0 view .LVU99
  399 0038 F9E7     		b	.L24
  400              	.LVL10:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 26
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 26
 
 
  401              	.L29:
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  452              	HAL_FLASH_OperationErrorCallback:
  453              	.LVL15:
  454              	.LFB138:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 27
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 27
 
 
  394:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   /* Prevent unused argument(s) compilation warning */
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  500 0014 38D0     		beq	.L47
  275:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     {
  501              		.loc 1 275 10 is_stmt 1 view .LVU118
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 28
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 28
 
 
  275:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     {
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  542 0044 284B     		ldr	r3, .L51+4
  543 0046 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  544 0048 DBB2     		uxtb	r3, r3
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 29
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 29
 
 
  302:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     {
@@ -1698,895 +1698,880 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 1
  555 0056 3ED0     		beq	.L50
  348:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       }
  556              		.loc 1 348 9 is_stmt 1 view .LVU137
- 348:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       }
- 557              		.loc 1 348 48 is_stmt 0 view .LVU138
- 558 0058 234B     		ldr	r3, .L51+4
- 559 005a 5869     		ldr	r0, [r3, #20]
- 348:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       }
- 560              		.loc 1 348 9 view .LVU139
- 561 005c FFF7FEFF 		bl	HAL_FLASH_EndOfOperationCallback
- 562              	.LVL21:
- 563              	.L44:
+ 557 0058 234B     		ldr	r3, .L51+4
+ 558 005a 5869     		ldr	r0, [r3, #20]
+ 559 005c FFF7FEFF 		bl	HAL_FLASH_EndOfOperationCallback
+ 560              	.LVL21:
+ 561              	.L44:
  350:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
- 564              		.loc 1 350 7 is_stmt 1 view .LVU140
+ 562              		.loc 1 350 7 view .LVU138
  350:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
- 565              		.loc 1 350 31 is_stmt 0 view .LVU141
- 566 0060 214B     		ldr	r3, .L51+4
- 567 0062 0022     		movs	r2, #0
- 568 0064 1A70     		strb	r2, [r3]
- 569              	.L40:
+ 563              		.loc 1 350 31 is_stmt 0 view .LVU139
+ 564 0060 214B     		ldr	r3, .L51+4
+ 565 0062 0022     		movs	r2, #0
+ 566 0064 1A70     		strb	r2, [r3]
+ 567              	.L40:
  354:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   {
- 570              		.loc 1 354 3 is_stmt 1 view .LVU142
+ 568              		.loc 1 354 3 is_stmt 1 view .LVU140
  354:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   {
- 571              		.loc 1 354 13 is_stmt 0 view .LVU143
- 572 0066 204B     		ldr	r3, .L51+4
- 573 0068 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 569              		.loc 1 354 13 is_stmt 0 view .LVU141
+ 570 0066 204B     		ldr	r3, .L51+4
+ 571 0068 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  354:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   {
- 574              		.loc 1 354 6 view .LVU144
- 575 006a 63B9     		cbnz	r3, .L35
+ 572              		.loc 1 354 6 view .LVU142
+ 573 006a 63B9     		cbnz	r3, .L35
  357:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 576              		.loc 1 357 5 is_stmt 1 view .LVU145
- 577 006c 1D4B     		ldr	r3, .L51
- 578 006e 1A69     		ldr	r2, [r3, #16]
- 579 0070 22F0FF02 		bic	r2, r2, #255
- 580 0074 1A61     		str	r2, [r3, #16]
+ 574              		.loc 1 357 5 is_stmt 1 view .LVU143
+ 575 006c 1D4B     		ldr	r3, .L51
+ 576 006e 1A69     		ldr	r2, [r3, #16]
+ 577 0070 22F0FF02 		bic	r2, r2, #255
+ 578 0074 1A61     		str	r2, [r3, #16]
  360:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 581              		.loc 1 360 5 view .LVU146
- 582 0076 1A69     		ldr	r2, [r3, #16]
- 583 0078 22F08072 		bic	r2, r2, #16777216
- 584 007c 1A61     		str	r2, [r3, #16]
+ 579              		.loc 1 360 5 view .LVU144
+ 580 0076 1A69     		ldr	r2, [r3, #16]
+ 581 0078 22F08072 		bic	r2, r2, #16777216
+ 582 007c 1A61     		str	r2, [r3, #16]
  363:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   }
- 585              		.loc 1 363 5 view .LVU147
- 586 007e 1A69     		ldr	r2, [r3, #16]
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 30
-
-
- 587 0080 22F00072 		bic	r2, r2, #33554432
- 588 0084 1A61     		str	r2, [r3, #16]
- 589              	.L35:
+ 583              		.loc 1 363 5 view .LVU145
+ 584 007e 1A69     		ldr	r2, [r3, #16]
+ 585 0080 22F00072 		bic	r2, r2, #33554432
+ 586 0084 1A61     		str	r2, [r3, #16]
+ 587              	.L35:
  365:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 590              		.loc 1 365 1 is_stmt 0 view .LVU148
- 591 0086 10BD     		pop	{r4, pc}
- 592              	.LVL22:
- 593              	.L47:
- 272:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       pFlash.Sector = 0xFFFFFFFFU;
- 594              		.loc 1 272 7 is_stmt 1 view .LVU149
- 272:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       pFlash.Sector = 0xFFFFFFFFU;
- 595              		.loc 1 272 18 is_stmt 0 view .LVU150
- 596 0088 174B     		ldr	r3, .L51+4
- 597 008a DC68     		ldr	r4, [r3, #12]
- 598              	.LVL23:
- 273:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
- 599              		.loc 1 273 7 is_stmt 1 view .LVU151
- 273:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
- 600              		.loc 1 273 21 is_stmt 0 view .LVU152
- 601 008c 4FF0FF32 		mov	r2, #-1
- 602 0090 DA60     		str	r2, [r3, #12]
- 603 0092 C7E7     		b	.L38
- 604              	.LVL24:
- 605              	.L48:
- 278:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
- 606              		.loc 1 278 7 is_stmt 1 view .LVU153
- 278:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
- 607              		.loc 1 278 18 is_stmt 0 view .LVU154
- 608 0094 144B     		ldr	r3, .L51+4
- 609 0096 1C69     		ldr	r4, [r3, #16]
- 610              	.LVL25:
- 278:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
- 611              		.loc 1 278 18 view .LVU155
- 612 0098 C4E7     		b	.L38
- 613              	.LVL26:
- 614              	.L49:
- 305:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 615              		.loc 1 305 7 is_stmt 1 view .LVU156
- 305:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 616              		.loc 1 305 13 is_stmt 0 view .LVU157
- 617 009a 134B     		ldr	r3, .L51+4
- 618 009c 5A68     		ldr	r2, [r3, #4]
- 305:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 619              		.loc 1 305 30 view .LVU158
- 620 009e 013A     		subs	r2, r2, #1
- 621 00a0 5A60     		str	r2, [r3, #4]
- 308:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       {
- 622              		.loc 1 308 7 is_stmt 1 view .LVU159
- 308:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       {
- 623              		.loc 1 308 17 is_stmt 0 view .LVU160
- 624 00a2 5B68     		ldr	r3, [r3, #4]
- 308:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       {
- 625              		.loc 1 308 10 view .LVU161
- 626 00a4 5BB1     		cbz	r3, .L42
- 310:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****         /*Indicate user which sector has been erased*/
- 627              		.loc 1 310 9 is_stmt 1 view .LVU162
- 310:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****         /*Indicate user which sector has been erased*/
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 31
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 30
 
 
- 628              		.loc 1 310 20 is_stmt 0 view .LVU163
- 629 00a6 104C     		ldr	r4, .L51+4
- 630 00a8 E068     		ldr	r0, [r4, #12]
- 631              	.LVL27:
+ 588              		.loc 1 365 1 is_stmt 0 view .LVU146
+ 589 0086 10BD     		pop	{r4, pc}
+ 590              	.LVL22:
+ 591              	.L47:
+ 272:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       pFlash.Sector = 0xFFFFFFFFU;
+ 592              		.loc 1 272 7 is_stmt 1 view .LVU147
+ 272:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       pFlash.Sector = 0xFFFFFFFFU;
+ 593              		.loc 1 272 18 is_stmt 0 view .LVU148
+ 594 0088 174B     		ldr	r3, .L51+4
+ 595 008a DC68     		ldr	r4, [r3, #12]
+ 596              	.LVL23:
+ 273:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
+ 597              		.loc 1 273 7 is_stmt 1 view .LVU149
+ 273:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
+ 598              		.loc 1 273 21 is_stmt 0 view .LVU150
+ 599 008c 4FF0FF32 		mov	r2, #-1
+ 600 0090 DA60     		str	r2, [r3, #12]
+ 601 0092 C7E7     		b	.L38
+ 602              	.LVL24:
+ 603              	.L48:
+ 278:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
+ 604              		.loc 1 278 7 is_stmt 1 view .LVU151
+ 278:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
+ 605              		.loc 1 278 18 is_stmt 0 view .LVU152
+ 606 0094 144B     		ldr	r3, .L51+4
+ 607 0096 1C69     		ldr	r4, [r3, #16]
+ 608              	.LVL25:
+ 278:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
+ 609              		.loc 1 278 18 view .LVU153
+ 610 0098 C4E7     		b	.L38
+ 611              	.LVL26:
+ 612              	.L49:
+ 305:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
+ 613              		.loc 1 305 7 is_stmt 1 view .LVU154
+ 305:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
+ 614              		.loc 1 305 13 is_stmt 0 view .LVU155
+ 615 009a 134B     		ldr	r3, .L51+4
+ 616 009c 5A68     		ldr	r2, [r3, #4]
+ 305:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
+ 617              		.loc 1 305 30 view .LVU156
+ 618 009e 013A     		subs	r2, r2, #1
+ 619 00a0 5A60     		str	r2, [r3, #4]
+ 308:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       {
+ 620              		.loc 1 308 7 is_stmt 1 view .LVU157
+ 308:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       {
+ 621              		.loc 1 308 17 is_stmt 0 view .LVU158
+ 622 00a2 5B68     		ldr	r3, [r3, #4]
+ 308:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       {
+ 623              		.loc 1 308 10 view .LVU159
+ 624 00a4 5BB1     		cbz	r3, .L42
+ 310:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****         /*Indicate user which sector has been erased*/
+ 625              		.loc 1 310 9 is_stmt 1 view .LVU160
+ 310:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****         /*Indicate user which sector has been erased*/
+ 626              		.loc 1 310 20 is_stmt 0 view .LVU161
+ 627 00a6 104C     		ldr	r4, .L51+4
+ 628 00a8 E068     		ldr	r0, [r4, #12]
+ 629              	.LVL27:
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 31
+
+
  312:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 632              		.loc 1 312 9 is_stmt 1 view .LVU164
- 633 00aa FFF7FEFF 		bl	HAL_FLASH_EndOfOperationCallback
- 634              	.LVL28:
+ 630              		.loc 1 312 9 is_stmt 1 view .LVU162
+ 631 00aa FFF7FEFF 		bl	HAL_FLASH_EndOfOperationCallback
+ 632              	.LVL28:
  315:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****         addresstmp = pFlash.Sector;
- 635              		.loc 1 315 9 view .LVU165
+ 633              		.loc 1 315 9 view .LVU163
  315:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****         addresstmp = pFlash.Sector;
- 636              		.loc 1 315 15 is_stmt 0 view .LVU166
- 637 00ae E368     		ldr	r3, [r4, #12]
+ 634              		.loc 1 315 15 is_stmt 0 view .LVU164
+ 635 00ae E368     		ldr	r3, [r4, #12]
  315:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****         addresstmp = pFlash.Sector;
- 638              		.loc 1 315 22 view .LVU167
- 639 00b0 0133     		adds	r3, r3, #1
- 640 00b2 E360     		str	r3, [r4, #12]
+ 636              		.loc 1 315 22 view .LVU165
+ 637 00b0 0133     		adds	r3, r3, #1
+ 638 00b2 E360     		str	r3, [r4, #12]
  316:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****         FLASH_Erase_Sector(addresstmp, pFlash.VoltageForErase);
- 641              		.loc 1 316 9 is_stmt 1 view .LVU168
+ 639              		.loc 1 316 9 is_stmt 1 view .LVU166
  316:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****         FLASH_Erase_Sector(addresstmp, pFlash.VoltageForErase);
- 642              		.loc 1 316 20 is_stmt 0 view .LVU169
- 643 00b4 E068     		ldr	r0, [r4, #12]
- 644              	.LVL29:
+ 640              		.loc 1 316 20 is_stmt 0 view .LVU167
+ 641 00b4 E068     		ldr	r0, [r4, #12]
+ 642              	.LVL29:
  317:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       }
- 645              		.loc 1 317 9 is_stmt 1 view .LVU170
+ 643              		.loc 1 317 9 is_stmt 1 view .LVU168
+ 644 00b6 217A     		ldrb	r1, [r4, #8]	@ zero_extendqisi2
+ 645 00b8 FFF7FEFF 		bl	FLASH_Erase_Sector
+ 646              	.LVL30:
  317:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       }
- 646              		.loc 1 317 46 is_stmt 0 view .LVU171
- 647 00b6 217A     		ldrb	r1, [r4, #8]	@ zero_extendqisi2
- 317:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       }
- 648              		.loc 1 317 9 view .LVU172
- 649 00b8 FFF7FEFF 		bl	FLASH_Erase_Sector
- 650              	.LVL30:
- 317:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       }
- 651              		.loc 1 317 9 view .LVU173
- 652 00bc D3E7     		b	.L40
- 653              	.L42:
+ 647              		.loc 1 317 9 is_stmt 0 view .LVU169
+ 648 00bc D3E7     		b	.L40
+ 649              	.L42:
  323:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****         pFlash.ProcedureOnGoing = FLASH_PROC_NONE;
- 654              		.loc 1 323 9 is_stmt 1 view .LVU174
- 655              	.LVL31:
+ 650              		.loc 1 323 9 is_stmt 1 view .LVU170
+ 651              	.LVL31:
  323:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****         pFlash.ProcedureOnGoing = FLASH_PROC_NONE;
- 656              		.loc 1 323 23 is_stmt 0 view .LVU175
- 657 00be 0A4B     		ldr	r3, .L51+4
- 658 00c0 4FF0FF34 		mov	r4, #-1
- 659 00c4 DC60     		str	r4, [r3, #12]
+ 652              		.loc 1 323 23 is_stmt 0 view .LVU171
+ 653 00be 0A4B     		ldr	r3, .L51+4
+ 654 00c0 4FF0FF34 		mov	r4, #-1
+ 655 00c4 DC60     		str	r4, [r3, #12]
  324:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 660              		.loc 1 324 9 is_stmt 1 view .LVU176
+ 656              		.loc 1 324 9 is_stmt 1 view .LVU172
  324:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 661              		.loc 1 324 33 is_stmt 0 view .LVU177
- 662 00c6 0022     		movs	r2, #0
- 663 00c8 1A70     		strb	r2, [r3]
+ 657              		.loc 1 324 33 is_stmt 0 view .LVU173
+ 658 00c6 0022     		movs	r2, #0
+ 659 00c8 1A70     		strb	r2, [r3]
  327:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 664              		.loc 1 327 9 is_stmt 1 view .LVU178
- 665 00ca FFF7FEFF 		bl	FLASH_FlushCaches
- 666              	.LVL32:
+ 660              		.loc 1 327 9 is_stmt 1 view .LVU174
+ 661 00ca FFF7FEFF 		bl	FLASH_FlushCaches
+ 662              	.LVL32:
  330:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       }
- 667              		.loc 1 330 9 view .LVU179
- 668 00ce 2046     		mov	r0, r4
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 32
-
-
- 669 00d0 FFF7FEFF 		bl	HAL_FLASH_EndOfOperationCallback
- 670              	.LVL33:
- 671 00d4 C7E7     		b	.L40
- 672              	.LVL34:
- 673              	.L50:
+ 663              		.loc 1 330 9 view .LVU175
+ 664 00ce 2046     		mov	r0, r4
+ 665 00d0 FFF7FEFF 		bl	HAL_FLASH_EndOfOperationCallback
+ 666              	.LVL33:
+ 667 00d4 C7E7     		b	.L40
+ 668              	.LVL34:
+ 669              	.L50:
  339:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 674              		.loc 1 339 9 view .LVU180
- 675 00d6 FFF7FEFF 		bl	FLASH_FlushCaches
- 676              	.LVL35:
+ 670              		.loc 1 339 9 view .LVU176
+ 671 00d6 FFF7FEFF 		bl	FLASH_FlushCaches
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 32
+
+
+ 672              	.LVL35:
  342:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       }
- 677              		.loc 1 342 9 view .LVU181
- 342:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       }
- 678              		.loc 1 342 48 is_stmt 0 view .LVU182
- 679 00da 034B     		ldr	r3, .L51+4
- 680 00dc 1869     		ldr	r0, [r3, #16]
- 342:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       }
- 681              		.loc 1 342 9 view .LVU183
- 682 00de FFF7FEFF 		bl	HAL_FLASH_EndOfOperationCallback
- 683              	.LVL36:
- 684 00e2 BDE7     		b	.L44
- 685              	.L52:
- 686              		.align	2
- 687              	.L51:
- 688 00e4 003C0240 		.word	1073888256
- 689 00e8 00000000 		.word	.LANCHOR0
- 690              		.cfi_endproc
- 691              	.LFE136:
- 693              		.section	.text.HAL_FLASH_Unlock,"ax",%progbits
- 694              		.align	1
- 695              		.global	HAL_FLASH_Unlock
- 696              		.syntax unified
- 697              		.thumb
- 698              		.thumb_func
- 700              	HAL_FLASH_Unlock:
- 701              	.LFB139:
+ 673              		.loc 1 342 9 view .LVU177
+ 674 00da 034B     		ldr	r3, .L51+4
+ 675 00dc 1869     		ldr	r0, [r3, #16]
+ 676 00de FFF7FEFF 		bl	HAL_FLASH_EndOfOperationCallback
+ 677              	.LVL36:
+ 678 00e2 BDE7     		b	.L44
+ 679              	.L52:
+ 680              		.align	2
+ 681              	.L51:
+ 682 00e4 003C0240 		.word	1073888256
+ 683 00e8 00000000 		.word	.LANCHOR0
+ 684              		.cfi_endproc
+ 685              	.LFE136:
+ 687              		.section	.text.HAL_FLASH_Unlock,"ax",%progbits
+ 688              		.align	1
+ 689              		.global	HAL_FLASH_Unlock
+ 690              		.syntax unified
+ 691              		.thumb
+ 692              		.thumb_func
+ 694              	HAL_FLASH_Unlock:
+ 695              	.LFB139:
  426:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   HAL_StatusTypeDef status = HAL_OK;
- 702              		.loc 1 426 1 is_stmt 1 view -0
- 703              		.cfi_startproc
- 704              		@ args = 0, pretend = 0, frame = 0
- 705              		@ frame_needed = 0, uses_anonymous_args = 0
- 706              		@ link register save eliminated.
+ 696              		.loc 1 426 1 view -0
+ 697              		.cfi_startproc
+ 698              		@ args = 0, pretend = 0, frame = 0
+ 699              		@ frame_needed = 0, uses_anonymous_args = 0
+ 700              		@ link register save eliminated.
  427:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 707              		.loc 1 427 3 view .LVU185
- 708              	.LVL37:
+ 701              		.loc 1 427 3 view .LVU179
+ 702              	.LVL37:
  429:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   {
- 709              		.loc 1 429 3 view .LVU186
+ 703              		.loc 1 429 3 view .LVU180
  429:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   {
- 710              		.loc 1 429 7 is_stmt 0 view .LVU187
- 711 0000 094B     		ldr	r3, .L58
- 712 0002 1B69     		ldr	r3, [r3, #16]
+ 704              		.loc 1 429 7 is_stmt 0 view .LVU181
+ 705 0000 094B     		ldr	r3, .L58
+ 706 0002 1B69     		ldr	r3, [r3, #16]
  429:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   {
- 713              		.loc 1 429 6 view .LVU188
- 714 0004 002B     		cmp	r3, #0
- 715 0006 01DB     		blt	.L57
+ 707              		.loc 1 429 6 view .LVU182
+ 708 0004 002B     		cmp	r3, #0
+ 709 0006 01DB     		blt	.L57
  427:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 716              		.loc 1 427 21 view .LVU189
- 717 0008 0020     		movs	r0, #0
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 33
-
-
- 718 000a 7047     		bx	lr
- 719              	.L57:
+ 710              		.loc 1 427 21 view .LVU183
+ 711 0008 0020     		movs	r0, #0
+ 712 000a 7047     		bx	lr
+ 713              	.L57:
  432:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     WRITE_REG(FLASH->KEYR, FLASH_KEY2);
- 720              		.loc 1 432 5 is_stmt 1 view .LVU190
- 721 000c 064B     		ldr	r3, .L58
- 722 000e 074A     		ldr	r2, .L58+4
- 723 0010 5A60     		str	r2, [r3, #4]
+ 714              		.loc 1 432 5 is_stmt 1 view .LVU184
+ 715 000c 064B     		ldr	r3, .L58
+ 716 000e 074A     		ldr	r2, .L58+4
+ 717 0010 5A60     		str	r2, [r3, #4]
  433:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 724              		.loc 1 433 5 view .LVU191
- 725 0012 02F18832 		add	r2, r2, #-2004318072
- 726 0016 5A60     		str	r2, [r3, #4]
+ 718              		.loc 1 433 5 view .LVU185
+ 719 0012 02F18832 		add	r2, r2, #-2004318072
+ 720 0016 5A60     		str	r2, [r3, #4]
  436:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     {
- 727              		.loc 1 436 5 view .LVU192
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 33
+
+
+ 721              		.loc 1 436 5 view .LVU186
  436:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     {
- 728              		.loc 1 436 9 is_stmt 0 view .LVU193
- 729 0018 1B69     		ldr	r3, [r3, #16]
+ 722              		.loc 1 436 9 is_stmt 0 view .LVU187
+ 723 0018 1B69     		ldr	r3, [r3, #16]
  436:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     {
- 730              		.loc 1 436 8 view .LVU194
- 731 001a 002B     		cmp	r3, #0
- 732 001c 01DB     		blt	.L56
+ 724              		.loc 1 436 8 view .LVU188
+ 725 001a 002B     		cmp	r3, #0
+ 726 001c 01DB     		blt	.L56
  427:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 733              		.loc 1 427 21 view .LVU195
- 734 001e 0020     		movs	r0, #0
- 735 0020 7047     		bx	lr
- 736              	.L56:
+ 727              		.loc 1 427 21 view .LVU189
+ 728 001e 0020     		movs	r0, #0
+ 729 0020 7047     		bx	lr
+ 730              	.L56:
  438:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
- 737              		.loc 1 438 14 view .LVU196
- 738 0022 0120     		movs	r0, #1
- 739              	.LVL38:
+ 731              		.loc 1 438 14 view .LVU190
+ 732 0022 0120     		movs	r0, #1
+ 733              	.LVL38:
  442:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** }
- 740              		.loc 1 442 3 is_stmt 1 view .LVU197
+ 734              		.loc 1 442 3 is_stmt 1 view .LVU191
  443:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 741              		.loc 1 443 1 is_stmt 0 view .LVU198
- 742 0024 7047     		bx	lr
- 743              	.L59:
- 744 0026 00BF     		.align	2
- 745              	.L58:
- 746 0028 003C0240 		.word	1073888256
- 747 002c 23016745 		.word	1164378403
- 748              		.cfi_endproc
- 749              	.LFE139:
- 751              		.section	.text.HAL_FLASH_Lock,"ax",%progbits
- 752              		.align	1
- 753              		.global	HAL_FLASH_Lock
- 754              		.syntax unified
- 755              		.thumb
- 756              		.thumb_func
- 758              	HAL_FLASH_Lock:
- 759              	.LFB140:
+ 735              		.loc 1 443 1 is_stmt 0 view .LVU192
+ 736 0024 7047     		bx	lr
+ 737              	.L59:
+ 738 0026 00BF     		.align	2
+ 739              	.L58:
+ 740 0028 003C0240 		.word	1073888256
+ 741 002c 23016745 		.word	1164378403
+ 742              		.cfi_endproc
+ 743              	.LFE139:
+ 745              		.section	.text.HAL_FLASH_Lock,"ax",%progbits
+ 746              		.align	1
+ 747              		.global	HAL_FLASH_Lock
+ 748              		.syntax unified
+ 749              		.thumb
+ 750              		.thumb_func
+ 752              	HAL_FLASH_Lock:
+ 753              	.LFB140:
  450:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   /* Set the LOCK Bit to lock the FLASH Registers access */
- 760              		.loc 1 450 1 is_stmt 1 view -0
- 761              		.cfi_startproc
- 762              		@ args = 0, pretend = 0, frame = 0
- 763              		@ frame_needed = 0, uses_anonymous_args = 0
- 764              		@ link register save eliminated.
+ 754              		.loc 1 450 1 is_stmt 1 view -0
+ 755              		.cfi_startproc
+ 756              		@ args = 0, pretend = 0, frame = 0
+ 757              		@ frame_needed = 0, uses_anonymous_args = 0
+ 758              		@ link register save eliminated.
  452:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 765              		.loc 1 452 3 view .LVU200
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 34
-
-
+ 759              		.loc 1 452 3 view .LVU194
  452:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 766              		.loc 1 452 13 is_stmt 0 view .LVU201
- 767 0000 034A     		ldr	r2, .L61
- 768 0002 1369     		ldr	r3, [r2, #16]
- 769 0004 43F00043 		orr	r3, r3, #-2147483648
- 770 0008 1361     		str	r3, [r2, #16]
+ 760              		.loc 1 452 13 is_stmt 0 view .LVU195
+ 761 0000 034A     		ldr	r2, .L61
+ 762 0002 1369     		ldr	r3, [r2, #16]
+ 763 0004 43F00043 		orr	r3, r3, #-2147483648
+ 764 0008 1361     		str	r3, [r2, #16]
  454:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** }
- 771              		.loc 1 454 3 is_stmt 1 view .LVU202
+ 765              		.loc 1 454 3 is_stmt 1 view .LVU196
  455:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 772              		.loc 1 455 1 is_stmt 0 view .LVU203
- 773 000a 0020     		movs	r0, #0
- 774 000c 7047     		bx	lr
- 775              	.L62:
- 776 000e 00BF     		.align	2
- 777              	.L61:
- 778 0010 003C0240 		.word	1073888256
- 779              		.cfi_endproc
- 780              	.LFE140:
- 782              		.section	.text.HAL_FLASH_OB_Unlock,"ax",%progbits
- 783              		.align	1
- 784              		.global	HAL_FLASH_OB_Unlock
- 785              		.syntax unified
- 786              		.thumb
- 787              		.thumb_func
- 789              	HAL_FLASH_OB_Unlock:
- 790              	.LFB141:
+ 766              		.loc 1 455 1 is_stmt 0 view .LVU197
+ 767 000a 0020     		movs	r0, #0
+ 768 000c 7047     		bx	lr
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 34
+
+
+ 769              	.L62:
+ 770 000e 00BF     		.align	2
+ 771              	.L61:
+ 772 0010 003C0240 		.word	1073888256
+ 773              		.cfi_endproc
+ 774              	.LFE140:
+ 776              		.section	.text.HAL_FLASH_OB_Unlock,"ax",%progbits
+ 777              		.align	1
+ 778              		.global	HAL_FLASH_OB_Unlock
+ 779              		.syntax unified
+ 780              		.thumb
+ 781              		.thumb_func
+ 783              	HAL_FLASH_OB_Unlock:
+ 784              	.LFB141:
  462:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   if ((FLASH->OPTCR & FLASH_OPTCR_OPTLOCK) != RESET)
- 791              		.loc 1 462 1 is_stmt 1 view -0
- 792              		.cfi_startproc
- 793              		@ args = 0, pretend = 0, frame = 0
- 794              		@ frame_needed = 0, uses_anonymous_args = 0
- 795              		@ link register save eliminated.
+ 785              		.loc 1 462 1 is_stmt 1 view -0
+ 786              		.cfi_startproc
+ 787              		@ args = 0, pretend = 0, frame = 0
+ 788              		@ frame_needed = 0, uses_anonymous_args = 0
+ 789              		@ link register save eliminated.
  463:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   {
- 796              		.loc 1 463 3 view .LVU205
+ 790              		.loc 1 463 3 view .LVU199
  463:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   {
- 797              		.loc 1 463 13 is_stmt 0 view .LVU206
- 798 0000 074B     		ldr	r3, .L66
- 799 0002 5B69     		ldr	r3, [r3, #20]
+ 791              		.loc 1 463 13 is_stmt 0 view .LVU200
+ 792 0000 074B     		ldr	r3, .L66
+ 793 0002 5B69     		ldr	r3, [r3, #20]
  463:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   {
- 800              		.loc 1 463 6 view .LVU207
- 801 0004 13F0010F 		tst	r3, #1
- 802 0008 07D0     		beq	.L65
+ 794              		.loc 1 463 6 view .LVU201
+ 795 0004 13F0010F 		tst	r3, #1
+ 796 0008 07D0     		beq	.L65
  466:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     FLASH->OPTKEYR = FLASH_OPT_KEY2;
- 803              		.loc 1 466 5 is_stmt 1 view .LVU208
+ 797              		.loc 1 466 5 is_stmt 1 view .LVU202
  466:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     FLASH->OPTKEYR = FLASH_OPT_KEY2;
- 804              		.loc 1 466 20 is_stmt 0 view .LVU209
- 805 000a 054B     		ldr	r3, .L66
- 806 000c 054A     		ldr	r2, .L66+4
- 807 000e 9A60     		str	r2, [r3, #8]
+ 798              		.loc 1 466 20 is_stmt 0 view .LVU203
+ 799 000a 054B     		ldr	r3, .L66
+ 800 000c 054A     		ldr	r2, .L66+4
+ 801 000e 9A60     		str	r2, [r3, #8]
  467:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   }
- 808              		.loc 1 467 5 is_stmt 1 view .LVU210
+ 802              		.loc 1 467 5 is_stmt 1 view .LVU204
  467:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   }
- 809              		.loc 1 467 20 is_stmt 0 view .LVU211
- 810 0010 02F14432 		add	r2, r2, #1145324612
- 811 0014 9A60     		str	r2, [r3, #8]
+ 803              		.loc 1 467 20 is_stmt 0 view .LVU205
+ 804 0010 02F14432 		add	r2, r2, #1145324612
+ 805 0014 9A60     		str	r2, [r3, #8]
  474:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** }
- 812              		.loc 1 474 3 is_stmt 1 view .LVU212
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 35
-
-
+ 806              		.loc 1 474 3 is_stmt 1 view .LVU206
  474:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** }
- 813              		.loc 1 474 10 is_stmt 0 view .LVU213
- 814 0016 0020     		movs	r0, #0
- 815 0018 7047     		bx	lr
- 816              	.L65:
+ 807              		.loc 1 474 10 is_stmt 0 view .LVU207
+ 808 0016 0020     		movs	r0, #0
+ 809 0018 7047     		bx	lr
+ 810              	.L65:
  471:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   }
- 817              		.loc 1 471 12 view .LVU214
- 818 001a 0120     		movs	r0, #1
+ 811              		.loc 1 471 12 view .LVU208
+ 812 001a 0120     		movs	r0, #1
  475:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 819              		.loc 1 475 1 view .LVU215
- 820 001c 7047     		bx	lr
- 821              	.L67:
- 822 001e 00BF     		.align	2
- 823              	.L66:
- 824 0020 003C0240 		.word	1073888256
- 825 0024 3B2A1908 		.word	135866939
- 826              		.cfi_endproc
- 827              	.LFE141:
- 829              		.section	.text.HAL_FLASH_OB_Lock,"ax",%progbits
- 830              		.align	1
- 831              		.global	HAL_FLASH_OB_Lock
- 832              		.syntax unified
- 833              		.thumb
- 834              		.thumb_func
- 836              	HAL_FLASH_OB_Lock:
- 837              	.LFB142:
+ 813              		.loc 1 475 1 view .LVU209
+ 814 001c 7047     		bx	lr
+ 815              	.L67:
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 35
+
+
+ 816 001e 00BF     		.align	2
+ 817              	.L66:
+ 818 0020 003C0240 		.word	1073888256
+ 819 0024 3B2A1908 		.word	135866939
+ 820              		.cfi_endproc
+ 821              	.LFE141:
+ 823              		.section	.text.HAL_FLASH_OB_Lock,"ax",%progbits
+ 824              		.align	1
+ 825              		.global	HAL_FLASH_OB_Lock
+ 826              		.syntax unified
+ 827              		.thumb
+ 828              		.thumb_func
+ 830              	HAL_FLASH_OB_Lock:
+ 831              	.LFB142:
  482:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   /* Set the OPTLOCK Bit to lock the FLASH Option Byte Registers access */
- 838              		.loc 1 482 1 is_stmt 1 view -0
- 839              		.cfi_startproc
- 840              		@ args = 0, pretend = 0, frame = 0
- 841              		@ frame_needed = 0, uses_anonymous_args = 0
- 842              		@ link register save eliminated.
+ 832              		.loc 1 482 1 is_stmt 1 view -0
+ 833              		.cfi_startproc
+ 834              		@ args = 0, pretend = 0, frame = 0
+ 835              		@ frame_needed = 0, uses_anonymous_args = 0
+ 836              		@ link register save eliminated.
  484:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 843              		.loc 1 484 3 view .LVU217
+ 837              		.loc 1 484 3 view .LVU211
  484:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 844              		.loc 1 484 16 is_stmt 0 view .LVU218
- 845 0000 034A     		ldr	r2, .L69
- 846 0002 5369     		ldr	r3, [r2, #20]
- 847 0004 43F00103 		orr	r3, r3, #1
- 848 0008 5361     		str	r3, [r2, #20]
+ 838              		.loc 1 484 16 is_stmt 0 view .LVU212
+ 839 0000 034A     		ldr	r2, .L69
+ 840 0002 5369     		ldr	r3, [r2, #20]
+ 841 0004 43F00103 		orr	r3, r3, #1
+ 842 0008 5361     		str	r3, [r2, #20]
  486:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** }
- 849              		.loc 1 486 3 is_stmt 1 view .LVU219
+ 843              		.loc 1 486 3 is_stmt 1 view .LVU213
  487:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 850              		.loc 1 487 1 is_stmt 0 view .LVU220
- 851 000a 0020     		movs	r0, #0
- 852 000c 7047     		bx	lr
- 853              	.L70:
- 854 000e 00BF     		.align	2
- 855              	.L69:
- 856 0010 003C0240 		.word	1073888256
- 857              		.cfi_endproc
- 858              	.LFE142:
- 860              		.section	.text.HAL_FLASH_GetError,"ax",%progbits
- 861              		.align	1
- 862              		.global	HAL_FLASH_GetError
- 863              		.syntax unified
- 864              		.thumb
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 36
-
-
- 865              		.thumb_func
- 867              	HAL_FLASH_GetError:
- 868              	.LFB144:
+ 844              		.loc 1 487 1 is_stmt 0 view .LVU214
+ 845 000a 0020     		movs	r0, #0
+ 846 000c 7047     		bx	lr
+ 847              	.L70:
+ 848 000e 00BF     		.align	2
+ 849              	.L69:
+ 850 0010 003C0240 		.word	1073888256
+ 851              		.cfi_endproc
+ 852              	.LFE142:
+ 854              		.section	.text.HAL_FLASH_GetError,"ax",%progbits
+ 855              		.align	1
+ 856              		.global	HAL_FLASH_GetError
+ 857              		.syntax unified
+ 858              		.thumb
+ 859              		.thumb_func
+ 861              	HAL_FLASH_GetError:
+ 862              	.LFB144:
  531:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   return pFlash.ErrorCode;
- 869              		.loc 1 531 1 is_stmt 1 view -0
- 870              		.cfi_startproc
- 871              		@ args = 0, pretend = 0, frame = 0
- 872              		@ frame_needed = 0, uses_anonymous_args = 0
- 873              		@ link register save eliminated.
+ 863              		.loc 1 531 1 is_stmt 1 view -0
+ 864              		.cfi_startproc
+ 865              		@ args = 0, pretend = 0, frame = 0
+ 866              		@ frame_needed = 0, uses_anonymous_args = 0
+ 867              		@ link register save eliminated.
  532:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** }
- 874              		.loc 1 532 3 view .LVU222
+ 868              		.loc 1 532 3 view .LVU216
  532:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** }
- 875              		.loc 1 532 16 is_stmt 0 view .LVU223
- 876 0000 014B     		ldr	r3, .L72
- 877 0002 D869     		ldr	r0, [r3, #28]
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 36
+
+
+ 869              		.loc 1 532 16 is_stmt 0 view .LVU217
+ 870 0000 014B     		ldr	r3, .L72
+ 871 0002 D869     		ldr	r0, [r3, #28]
  533:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 878              		.loc 1 533 1 view .LVU224
- 879 0004 7047     		bx	lr
- 880              	.L73:
- 881 0006 00BF     		.align	2
- 882              	.L72:
- 883 0008 00000000 		.word	.LANCHOR0
- 884              		.cfi_endproc
- 885              	.LFE144:
- 887              		.section	.text.FLASH_WaitForLastOperation,"ax",%progbits
- 888              		.align	1
- 889              		.global	FLASH_WaitForLastOperation
- 890              		.syntax unified
- 891              		.thumb
- 892              		.thumb_func
- 894              	FLASH_WaitForLastOperation:
- 895              	.LVL39:
- 896              	.LFB145:
+ 872              		.loc 1 533 1 view .LVU218
+ 873 0004 7047     		bx	lr
+ 874              	.L73:
+ 875 0006 00BF     		.align	2
+ 876              	.L72:
+ 877 0008 00000000 		.word	.LANCHOR0
+ 878              		.cfi_endproc
+ 879              	.LFE144:
+ 881              		.section	.text.FLASH_WaitForLastOperation,"ax",%progbits
+ 882              		.align	1
+ 883              		.global	FLASH_WaitForLastOperation
+ 884              		.syntax unified
+ 885              		.thumb
+ 886              		.thumb_func
+ 888              	FLASH_WaitForLastOperation:
+ 889              	.LVL39:
+ 890              	.LFB145:
  545:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   uint32_t tickstart = 0U;
- 897              		.loc 1 545 1 is_stmt 1 view -0
- 898              		.cfi_startproc
- 899              		@ args = 0, pretend = 0, frame = 0
- 900              		@ frame_needed = 0, uses_anonymous_args = 0
+ 891              		.loc 1 545 1 is_stmt 1 view -0
+ 892              		.cfi_startproc
+ 893              		@ args = 0, pretend = 0, frame = 0
+ 894              		@ frame_needed = 0, uses_anonymous_args = 0
  545:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   uint32_t tickstart = 0U;
- 901              		.loc 1 545 1 is_stmt 0 view .LVU226
- 902 0000 38B5     		push	{r3, r4, r5, lr}
- 903              	.LCFI4:
- 904              		.cfi_def_cfa_offset 16
- 905              		.cfi_offset 3, -16
- 906              		.cfi_offset 4, -12
- 907              		.cfi_offset 5, -8
- 908              		.cfi_offset 14, -4
- 909 0002 0446     		mov	r4, r0
+ 895              		.loc 1 545 1 is_stmt 0 view .LVU220
+ 896 0000 38B5     		push	{r3, r4, r5, lr}
+ 897              	.LCFI4:
+ 898              		.cfi_def_cfa_offset 16
+ 899              		.cfi_offset 3, -16
+ 900              		.cfi_offset 4, -12
+ 901              		.cfi_offset 5, -8
+ 902              		.cfi_offset 14, -4
+ 903 0002 0446     		mov	r4, r0
  546:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 910              		.loc 1 546 3 is_stmt 1 view .LVU227
- 911              	.LVL40:
+ 904              		.loc 1 546 3 is_stmt 1 view .LVU221
+ 905              	.LVL40:
  549:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 912              		.loc 1 549 3 view .LVU228
+ 906              		.loc 1 549 3 view .LVU222
  549:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 913              		.loc 1 549 20 is_stmt 0 view .LVU229
- 914 0004 144B     		ldr	r3, .L85
- 915 0006 0022     		movs	r2, #0
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 37
+ 907              		.loc 1 549 20 is_stmt 0 view .LVU223
+ 908 0004 144B     		ldr	r3, .L85
+ 909 0006 0022     		movs	r2, #0
+ 910 0008 DA61     		str	r2, [r3, #28]
+ 555:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
+ 911              		.loc 1 555 3 is_stmt 1 view .LVU224
+ 555:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
+ 912              		.loc 1 555 15 is_stmt 0 view .LVU225
+ 913 000a FFF7FEFF 		bl	HAL_GetTick
+ 914              	.LVL41:
+ 555:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
+ 915              		.loc 1 555 15 view .LVU226
+ 916 000e 0546     		mov	r5, r0
+ 917              	.LVL42:
+ 557:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   {
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 37
 
 
- 916 0008 DA61     		str	r2, [r3, #28]
- 555:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 917              		.loc 1 555 3 is_stmt 1 view .LVU230
- 555:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 918              		.loc 1 555 15 is_stmt 0 view .LVU231
- 919 000a FFF7FEFF 		bl	HAL_GetTick
- 920              	.LVL41:
- 555:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 921              		.loc 1 555 15 view .LVU232
- 922 000e 0546     		mov	r5, r0
- 923              	.LVL42:
+ 918              		.loc 1 557 3 is_stmt 1 view .LVU227
+ 919              	.L76:
  557:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   {
- 924              		.loc 1 557 3 is_stmt 1 view .LVU233
- 925              	.L76:
+ 920              		.loc 1 557 9 view .LVU228
  557:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   {
- 926              		.loc 1 557 47 view .LVU234
+ 921              		.loc 1 557 10 is_stmt 0 view .LVU229
+ 922 0010 124B     		ldr	r3, .L85+4
+ 923 0012 DB68     		ldr	r3, [r3, #12]
  557:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   {
- 927              		.loc 1 557 10 is_stmt 0 view .LVU235
- 928 0010 124B     		ldr	r3, .L85+4
- 929 0012 DB68     		ldr	r3, [r3, #12]
- 557:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   {
- 930              		.loc 1 557 47 view .LVU236
- 931 0014 13F4803F 		tst	r3, #65536
- 932 0018 0AD0     		beq	.L83
+ 924              		.loc 1 557 9 view .LVU230
+ 925 0014 13F4803F 		tst	r3, #65536
+ 926 0018 0AD0     		beq	.L83
  559:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     {
- 933              		.loc 1 559 5 is_stmt 1 view .LVU237
+ 927              		.loc 1 559 5 is_stmt 1 view .LVU231
  559:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     {
- 934              		.loc 1 559 8 is_stmt 0 view .LVU238
- 935 001a B4F1FF3F 		cmp	r4, #-1
- 936 001e F7D0     		beq	.L76
+ 928              		.loc 1 559 8 is_stmt 0 view .LVU232
+ 929 001a B4F1FF3F 		cmp	r4, #-1
+ 930 001e F7D0     		beq	.L76
  561:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       {
- 937              		.loc 1 561 7 is_stmt 1 view .LVU239
+ 931              		.loc 1 561 7 is_stmt 1 view .LVU233
  561:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       {
- 938              		.loc 1 561 10 is_stmt 0 view .LVU240
- 939 0020 24B1     		cbz	r4, .L77
+ 932              		.loc 1 561 10 is_stmt 0 view .LVU234
+ 933 0020 24B1     		cbz	r4, .L77
  561:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       {
- 940              		.loc 1 561 32 discriminator 1 view .LVU241
- 941 0022 FFF7FEFF 		bl	HAL_GetTick
- 942              	.LVL43:
+ 934              		.loc 1 561 32 discriminator 1 view .LVU235
+ 935 0022 FFF7FEFF 		bl	HAL_GetTick
+ 936              	.LVL43:
  561:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       {
- 943              		.loc 1 561 46 discriminator 1 view .LVU242
- 944 0026 401B     		subs	r0, r0, r5
+ 937              		.loc 1 561 46 discriminator 1 view .LVU236
+ 938 0026 401B     		subs	r0, r0, r5
  561:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       {
- 945              		.loc 1 561 27 discriminator 1 view .LVU243
- 946 0028 A042     		cmp	r0, r4
- 947 002a F1D9     		bls	.L76
- 948              	.L77:
+ 939              		.loc 1 561 27 discriminator 1 view .LVU237
+ 940 0028 A042     		cmp	r0, r4
+ 941 002a F1D9     		bls	.L76
+ 942              	.L77:
  563:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       }
- 949              		.loc 1 563 9 is_stmt 1 view .LVU244
+ 943              		.loc 1 563 9 is_stmt 1 view .LVU238
  563:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****       }
- 950              		.loc 1 563 16 is_stmt 0 view .LVU245
- 951 002c 0320     		movs	r0, #3
- 952 002e 0DE0     		b	.L78
- 953              	.L83:
+ 944              		.loc 1 563 16 is_stmt 0 view .LVU239
+ 945 002c 0320     		movs	r0, #3
+ 946 002e 0DE0     		b	.L78
+ 947              	.L83:
  569:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   {
- 954              		.loc 1 569 3 is_stmt 1 view .LVU246
+ 948              		.loc 1 569 3 is_stmt 1 view .LVU240
  569:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   {
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 38
-
-
- 955              		.loc 1 569 7 is_stmt 0 view .LVU247
- 956 0030 0A4B     		ldr	r3, .L85+4
- 957 0032 DB68     		ldr	r3, [r3, #12]
+ 949              		.loc 1 569 7 is_stmt 0 view .LVU241
+ 950 0030 0A4B     		ldr	r3, .L85+4
+ 951 0032 DB68     		ldr	r3, [r3, #12]
  569:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   {
- 958              		.loc 1 569 6 view .LVU248
- 959 0034 13F0010F 		tst	r3, #1
- 960 0038 02D0     		beq	.L80
+ 952              		.loc 1 569 6 view .LVU242
+ 953 0034 13F0010F 		tst	r3, #1
+ 954 0038 02D0     		beq	.L80
  572:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   }
- 961              		.loc 1 572 5 is_stmt 1 view .LVU249
- 962 003a 084B     		ldr	r3, .L85+4
- 963 003c 0122     		movs	r2, #1
- 964 003e DA60     		str	r2, [r3, #12]
- 965              	.L80:
+ 955              		.loc 1 572 5 is_stmt 1 view .LVU243
+ 956 003a 084B     		ldr	r3, .L85+4
+ 957 003c 0122     		movs	r2, #1
+ 958 003e DA60     		str	r2, [r3, #12]
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 38
+
+
+ 959              	.L80:
  578:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****                             FLASH_FLAG_PGPERR | FLASH_FLAG_PGSERR)) != RESET)
- 966              		.loc 1 578 3 view .LVU250
+ 960              		.loc 1 578 3 view .LVU244
  578:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****                             FLASH_FLAG_PGPERR | FLASH_FLAG_PGSERR)) != RESET)
- 967              		.loc 1 578 7 is_stmt 0 view .LVU251
- 968 0040 064B     		ldr	r3, .L85+4
- 969 0042 DB68     		ldr	r3, [r3, #12]
+ 961              		.loc 1 578 7 is_stmt 0 view .LVU245
+ 962 0040 064B     		ldr	r3, .L85+4
+ 963 0042 DB68     		ldr	r3, [r3, #12]
  578:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****                             FLASH_FLAG_PGPERR | FLASH_FLAG_PGSERR)) != RESET)
- 970              		.loc 1 578 6 view .LVU252
- 971 0044 13F0F20F 		tst	r3, #242
- 972 0048 01D1     		bne	.L84
+ 964              		.loc 1 578 6 view .LVU246
+ 965 0044 13F0F20F 		tst	r3, #242
+ 966 0048 01D1     		bne	.L84
  588:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 973              		.loc 1 588 10 view .LVU253
- 974 004a 0020     		movs	r0, #0
- 975              	.L78:
+ 967              		.loc 1 588 10 view .LVU247
+ 968 004a 0020     		movs	r0, #0
+ 969              	.L78:
  590:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 976              		.loc 1 590 1 view .LVU254
- 977 004c 38BD     		pop	{r3, r4, r5, pc}
- 978              	.LVL44:
- 979              	.L84:
+ 970              		.loc 1 590 1 view .LVU248
+ 971 004c 38BD     		pop	{r3, r4, r5, pc}
+ 972              	.LVL44:
+ 973              	.L84:
  583:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     return HAL_ERROR;
- 980              		.loc 1 583 5 is_stmt 1 view .LVU255
- 981 004e FFF7FEFF 		bl	FLASH_SetErrorCode
- 982              	.LVL45:
+ 974              		.loc 1 583 5 is_stmt 1 view .LVU249
+ 975 004e FFF7FEFF 		bl	FLASH_SetErrorCode
+ 976              	.LVL45:
  584:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   }
- 983              		.loc 1 584 5 view .LVU256
+ 977              		.loc 1 584 5 view .LVU250
  584:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   }
- 984              		.loc 1 584 12 is_stmt 0 view .LVU257
- 985 0052 0120     		movs	r0, #1
- 986 0054 FAE7     		b	.L78
- 987              	.L86:
- 988 0056 00BF     		.align	2
- 989              	.L85:
- 990 0058 00000000 		.word	.LANCHOR0
- 991 005c 003C0240 		.word	1073888256
- 992              		.cfi_endproc
- 993              	.LFE145:
- 995              		.section	.text.HAL_FLASH_Program,"ax",%progbits
- 996              		.align	1
- 997              		.global	HAL_FLASH_Program
- 998              		.syntax unified
- 999              		.thumb
- 1000              		.thumb_func
- 1002              	HAL_FLASH_Program:
- 1003              	.LVL46:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 39
+ 978              		.loc 1 584 12 is_stmt 0 view .LVU251
+ 979 0052 0120     		movs	r0, #1
+ 980 0054 FAE7     		b	.L78
+ 981              	.L86:
+ 982 0056 00BF     		.align	2
+ 983              	.L85:
+ 984 0058 00000000 		.word	.LANCHOR0
+ 985 005c 003C0240 		.word	1073888256
+ 986              		.cfi_endproc
+ 987              	.LFE145:
+ 989              		.section	.text.HAL_FLASH_Program,"ax",%progbits
+ 990              		.align	1
+ 991              		.global	HAL_FLASH_Program
+ 992              		.syntax unified
+ 993              		.thumb
+ 994              		.thumb_func
+ 996              	HAL_FLASH_Program:
+ 997              	.LVL46:
+ 998              	.LFB134:
+ 155:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   HAL_StatusTypeDef status = HAL_ERROR;
+ 999              		.loc 1 155 1 is_stmt 1 view -0
+ 1000              		.cfi_startproc
+ 1001              		@ args = 0, pretend = 0, frame = 0
+ 1002              		@ frame_needed = 0, uses_anonymous_args = 0
+ 155:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   HAL_StatusTypeDef status = HAL_ERROR;
+ 1003              		.loc 1 155 1 is_stmt 0 view .LVU253
+ 1004 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 1005              	.LCFI5:
+ 1006              		.cfi_def_cfa_offset 24
+ 1007              		.cfi_offset 3, -24
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 39
 
 
- 1004              	.LFB134:
- 155:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   HAL_StatusTypeDef status = HAL_ERROR;
- 1005              		.loc 1 155 1 is_stmt 1 view -0
- 1006              		.cfi_startproc
- 1007              		@ args = 0, pretend = 0, frame = 0
- 1008              		@ frame_needed = 0, uses_anonymous_args = 0
- 155:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   HAL_StatusTypeDef status = HAL_ERROR;
- 1009              		.loc 1 155 1 is_stmt 0 view .LVU259
- 1010 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
- 1011              	.LCFI5:
- 1012              		.cfi_def_cfa_offset 24
- 1013              		.cfi_offset 3, -24
- 1014              		.cfi_offset 4, -20
- 1015              		.cfi_offset 5, -16
- 1016              		.cfi_offset 6, -12
- 1017              		.cfi_offset 7, -8
- 1018              		.cfi_offset 14, -4
- 1019 0002 1646     		mov	r6, r2
+ 1008              		.cfi_offset 4, -20
+ 1009              		.cfi_offset 5, -16
+ 1010              		.cfi_offset 6, -12
+ 1011              		.cfi_offset 7, -8
+ 1012              		.cfi_offset 14, -4
+ 1013 0002 1646     		mov	r6, r2
  156:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 1020              		.loc 1 156 3 is_stmt 1 view .LVU260
- 1021              	.LVL47:
+ 1014              		.loc 1 156 3 is_stmt 1 view .LVU254
+ 1015              	.LVL47:
  159:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 1022              		.loc 1 159 3 view .LVU261
+ 1016              		.loc 1 159 3 view .LVU255
  159:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 1023              		.loc 1 159 3 view .LVU262
- 1024 0004 1B4A     		ldr	r2, .L99
- 1025              	.LVL48:
+ 1017              		.loc 1 159 3 view .LVU256
+ 1018 0004 1B4A     		ldr	r2, .L99
+ 1019              	.LVL48:
  159:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 1026              		.loc 1 159 3 is_stmt 0 view .LVU263
- 1027 0006 127E     		ldrb	r2, [r2, #24]	@ zero_extendqisi2
- 1028 0008 012A     		cmp	r2, #1
- 1029 000a 30D0     		beq	.L94
- 1030 000c 0446     		mov	r4, r0
- 1031 000e 0D46     		mov	r5, r1
- 1032 0010 1F46     		mov	r7, r3
+ 1020              		.loc 1 159 3 is_stmt 0 view .LVU257
+ 1021 0006 127E     		ldrb	r2, [r2, #24]	@ zero_extendqisi2
+ 1022 0008 012A     		cmp	r2, #1
+ 1023 000a 30D0     		beq	.L94
+ 1024 000c 0446     		mov	r4, r0
+ 1025 000e 0D46     		mov	r5, r1
+ 1026 0010 1F46     		mov	r7, r3
  159:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 1033              		.loc 1 159 3 is_stmt 1 discriminator 2 view .LVU264
- 1034 0012 184B     		ldr	r3, .L99
- 1035 0014 0122     		movs	r2, #1
- 1036 0016 1A76     		strb	r2, [r3, #24]
+ 1027              		.loc 1 159 3 is_stmt 1 discriminator 2 view .LVU258
+ 1028 0012 184B     		ldr	r3, .L99
+ 1029 0014 0122     		movs	r2, #1
+ 1030 0016 1A76     		strb	r2, [r3, #24]
  159:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 1037              		.loc 1 159 3 discriminator 2 view .LVU265
+ 1031              		.loc 1 159 3 discriminator 2 view .LVU259
  162:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 1038              		.loc 1 162 3 discriminator 2 view .LVU266
+ 1032              		.loc 1 162 3 discriminator 2 view .LVU260
  165:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 1039              		.loc 1 165 3 discriminator 2 view .LVU267
+ 1033              		.loc 1 165 3 discriminator 2 view .LVU261
  165:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 1040              		.loc 1 165 12 is_stmt 0 discriminator 2 view .LVU268
- 1041 0018 4CF25030 		movw	r0, #50000
- 1042              	.LVL49:
+ 1034              		.loc 1 165 12 is_stmt 0 discriminator 2 view .LVU262
+ 1035 0018 4CF25030 		movw	r0, #50000
+ 1036              	.LVL49:
  165:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 1043              		.loc 1 165 12 discriminator 2 view .LVU269
- 1044 001c FFF7FEFF 		bl	FLASH_WaitForLastOperation
- 1045              	.LVL50:
+ 1037              		.loc 1 165 12 discriminator 2 view .LVU263
+ 1038 001c FFF7FEFF 		bl	FLASH_WaitForLastOperation
+ 1039              	.LVL50:
  167:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   {
- 1046              		.loc 1 167 3 is_stmt 1 discriminator 2 view .LVU270
+ 1040              		.loc 1 167 3 is_stmt 1 discriminator 2 view .LVU264
  167:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   {
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 40
+ 1041              		.loc 1 167 6 is_stmt 0 discriminator 2 view .LVU265
+ 1042 0020 90B9     		cbnz	r0, .L89
+ 169:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     {
+ 1043              		.loc 1 169 5 is_stmt 1 view .LVU266
+ 169:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     {
+ 1044              		.loc 1 169 8 is_stmt 0 view .LVU267
+ 1045 0022 ACB1     		cbz	r4, .L96
+ 174:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     {
+ 1046              		.loc 1 174 10 is_stmt 1 view .LVU268
+ 174:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     {
+ 1047              		.loc 1 174 13 is_stmt 0 view .LVU269
+ 1048 0024 012C     		cmp	r4, #1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 40
 
 
- 1047              		.loc 1 167 6 is_stmt 0 discriminator 2 view .LVU271
- 1048 0020 90B9     		cbnz	r0, .L89
- 169:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     {
- 1049              		.loc 1 169 5 is_stmt 1 view .LVU272
- 169:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     {
- 1050              		.loc 1 169 8 is_stmt 0 view .LVU273
- 1051 0022 ACB1     		cbz	r4, .L96
- 174:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     {
- 1052              		.loc 1 174 10 is_stmt 1 view .LVU274
- 174:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     {
- 1053              		.loc 1 174 13 is_stmt 0 view .LVU275
- 1054 0024 012C     		cmp	r4, #1
- 1055 0026 18D0     		beq	.L97
+ 1049 0026 18D0     		beq	.L97
  179:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     {
- 1056              		.loc 1 179 10 is_stmt 1 view .LVU276
+ 1050              		.loc 1 179 10 is_stmt 1 view .LVU270
  179:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     {
- 1057              		.loc 1 179 13 is_stmt 0 view .LVU277
- 1058 0028 022C     		cmp	r4, #2
- 1059 002a 1BD0     		beq	.L98
+ 1051              		.loc 1 179 13 is_stmt 0 view .LVU271
+ 1052 0028 022C     		cmp	r4, #2
+ 1053 002a 1BD0     		beq	.L98
  187:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
- 1060              		.loc 1 187 7 is_stmt 1 view .LVU278
- 1061 002c 3246     		mov	r2, r6
- 1062 002e 3B46     		mov	r3, r7
- 1063 0030 2846     		mov	r0, r5
- 1064              	.LVL51:
+ 1054              		.loc 1 187 7 is_stmt 1 view .LVU272
+ 1055 002c 3246     		mov	r2, r6
+ 1056 002e 3B46     		mov	r3, r7
+ 1057 0030 2846     		mov	r0, r5
+ 1058              	.LVL51:
  187:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
- 1065              		.loc 1 187 7 is_stmt 0 view .LVU279
- 1066 0032 FFF7FEFF 		bl	FLASH_Program_DoubleWord
- 1067              	.LVL52:
- 1068              	.L91:
+ 1059              		.loc 1 187 7 is_stmt 0 view .LVU273
+ 1060 0032 FFF7FEFF 		bl	FLASH_Program_DoubleWord
+ 1061              	.LVL52:
+ 1062              	.L91:
  191:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 1069              		.loc 1 191 5 is_stmt 1 view .LVU280
+ 1063              		.loc 1 191 5 is_stmt 1 view .LVU274
  191:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 1070              		.loc 1 191 14 is_stmt 0 view .LVU281
- 1071 0036 4CF25030 		movw	r0, #50000
- 1072 003a FFF7FEFF 		bl	FLASH_WaitForLastOperation
- 1073              	.LVL53:
+ 1064              		.loc 1 191 14 is_stmt 0 view .LVU275
+ 1065 0036 4CF25030 		movw	r0, #50000
+ 1066 003a FFF7FEFF 		bl	FLASH_WaitForLastOperation
+ 1067              	.LVL53:
  194:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   }
- 1074              		.loc 1 194 5 is_stmt 1 view .LVU282
+ 1068              		.loc 1 194 5 is_stmt 1 view .LVU276
  194:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   }
- 1075              		.loc 1 194 15 is_stmt 0 view .LVU283
- 1076 003e 0E4A     		ldr	r2, .L99+4
- 1077 0040 1369     		ldr	r3, [r2, #16]
- 1078 0042 23F00103 		bic	r3, r3, #1
- 1079 0046 1361     		str	r3, [r2, #16]
- 1080              	.L89:
+ 1069              		.loc 1 194 15 is_stmt 0 view .LVU277
+ 1070 003e 0E4A     		ldr	r2, .L99+4
+ 1071 0040 1369     		ldr	r3, [r2, #16]
+ 1072 0042 23F00103 		bic	r3, r3, #1
+ 1073 0046 1361     		str	r3, [r2, #16]
+ 1074              	.L89:
  198:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 1081              		.loc 1 198 3 is_stmt 1 view .LVU284
+ 1075              		.loc 1 198 3 is_stmt 1 view .LVU278
  198:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 1082              		.loc 1 198 3 view .LVU285
- 1083 0048 0A4B     		ldr	r3, .L99
- 1084 004a 0022     		movs	r2, #0
- 1085 004c 1A76     		strb	r2, [r3, #24]
+ 1076              		.loc 1 198 3 view .LVU279
+ 1077 0048 0A4B     		ldr	r3, .L99
+ 1078 004a 0022     		movs	r2, #0
+ 1079 004c 1A76     		strb	r2, [r3, #24]
  198:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 1086              		.loc 1 198 3 view .LVU286
+ 1080              		.loc 1 198 3 view .LVU280
  200:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** }
- 1087              		.loc 1 200 3 view .LVU287
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 41
-
-
- 1088              	.LVL54:
- 1089              	.L88:
+ 1081              		.loc 1 200 3 view .LVU281
+ 1082              	.LVL54:
+ 1083              	.L88:
  201:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 1090              		.loc 1 201 1 is_stmt 0 view .LVU288
- 1091 004e F8BD     		pop	{r3, r4, r5, r6, r7, pc}
- 1092              	.LVL55:
- 1093              	.L96:
+ 1084              		.loc 1 201 1 is_stmt 0 view .LVU282
+ 1085 004e F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 1086              	.LVL55:
+ 1087              	.L96:
  172:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
- 1094              		.loc 1 172 7 is_stmt 1 view .LVU289
- 1095 0050 F1B2     		uxtb	r1, r6
- 1096 0052 2846     		mov	r0, r5
- 1097              	.LVL56:
- 172:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
- 1098              		.loc 1 172 7 is_stmt 0 view .LVU290
- 1099 0054 FFF7FEFF 		bl	FLASH_Program_Byte
- 1100              	.LVL57:
- 1101 0058 EDE7     		b	.L91
- 1102              	.LVL58:
- 1103              	.L97:
- 177:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
- 1104              		.loc 1 177 7 is_stmt 1 view .LVU291
- 1105 005a B1B2     		uxth	r1, r6
- 1106 005c 2846     		mov	r0, r5
- 1107              	.LVL59:
- 177:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
- 1108              		.loc 1 177 7 is_stmt 0 view .LVU292
- 1109 005e FFF7FEFF 		bl	FLASH_Program_HalfWord
- 1110              	.LVL60:
- 1111 0062 E8E7     		b	.L91
- 1112              	.LVL61:
- 1113              	.L98:
- 182:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
- 1114              		.loc 1 182 7 is_stmt 1 view .LVU293
- 1115 0064 3146     		mov	r1, r6
- 1116 0066 2846     		mov	r0, r5
- 1117              	.LVL62:
- 182:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
- 1118              		.loc 1 182 7 is_stmt 0 view .LVU294
- 1119 0068 FFF7FEFF 		bl	FLASH_Program_Word
- 1120              	.LVL63:
- 1121 006c E3E7     		b	.L91
- 1122              	.LVL64:
- 1123              	.L94:
- 159:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 1124              		.loc 1 159 3 view .LVU295
- 1125 006e 0220     		movs	r0, #2
- 1126              	.LVL65:
- 159:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 1127              		.loc 1 159 3 view .LVU296
- 1128 0070 EDE7     		b	.L88
- 1129              	.L100:
- 1130 0072 00BF     		.align	2
- 1131              	.L99:
- 1132 0074 00000000 		.word	.LANCHOR0
- 1133 0078 003C0240 		.word	1073888256
- 1134              		.cfi_endproc
- 1135              	.LFE134:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 42
+ 1088              		.loc 1 172 7 is_stmt 1 view .LVU283
+ 1089 0050 F1B2     		uxtb	r1, r6
+ 1090 0052 2846     		mov	r0, r5
+ 1091              	.LVL56:
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 41
 
 
- 1137              		.section	.text.HAL_FLASH_OB_Launch,"ax",%progbits
- 1138              		.align	1
- 1139              		.global	HAL_FLASH_OB_Launch
- 1140              		.syntax unified
- 1141              		.thumb
- 1142              		.thumb_func
- 1144              	HAL_FLASH_OB_Launch:
- 1145              	.LFB143:
+ 172:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
+ 1092              		.loc 1 172 7 is_stmt 0 view .LVU284
+ 1093 0054 FFF7FEFF 		bl	FLASH_Program_Byte
+ 1094              	.LVL57:
+ 1095 0058 EDE7     		b	.L91
+ 1096              	.LVL58:
+ 1097              	.L97:
+ 177:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
+ 1098              		.loc 1 177 7 is_stmt 1 view .LVU285
+ 1099 005a B1B2     		uxth	r1, r6
+ 1100 005c 2846     		mov	r0, r5
+ 1101              	.LVL59:
+ 177:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
+ 1102              		.loc 1 177 7 is_stmt 0 view .LVU286
+ 1103 005e FFF7FEFF 		bl	FLASH_Program_HalfWord
+ 1104              	.LVL60:
+ 1105 0062 E8E7     		b	.L91
+ 1106              	.LVL61:
+ 1107              	.L98:
+ 182:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
+ 1108              		.loc 1 182 7 is_stmt 1 view .LVU287
+ 1109 0064 3146     		mov	r1, r6
+ 1110 0066 2846     		mov	r0, r5
+ 1111              	.LVL62:
+ 182:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****     }
+ 1112              		.loc 1 182 7 is_stmt 0 view .LVU288
+ 1113 0068 FFF7FEFF 		bl	FLASH_Program_Word
+ 1114              	.LVL63:
+ 1115 006c E3E7     		b	.L91
+ 1116              	.LVL64:
+ 1117              	.L94:
+ 159:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
+ 1118              		.loc 1 159 3 view .LVU289
+ 1119 006e 0220     		movs	r0, #2
+ 1120              	.LVL65:
+ 159:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
+ 1121              		.loc 1 159 3 view .LVU290
+ 1122 0070 EDE7     		b	.L88
+ 1123              	.L100:
+ 1124 0072 00BF     		.align	2
+ 1125              	.L99:
+ 1126 0074 00000000 		.word	.LANCHOR0
+ 1127 0078 003C0240 		.word	1073888256
+ 1128              		.cfi_endproc
+ 1129              	.LFE134:
+ 1131              		.section	.text.HAL_FLASH_OB_Launch,"ax",%progbits
+ 1132              		.align	1
+ 1133              		.global	HAL_FLASH_OB_Launch
+ 1134              		.syntax unified
+ 1135              		.thumb
+ 1136              		.thumb_func
+ 1138              	HAL_FLASH_OB_Launch:
+ 1139              	.LFB143:
  494:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c ****   /* Set the OPTSTRT bit in OPTCR register */
- 1146              		.loc 1 494 1 is_stmt 1 view -0
- 1147              		.cfi_startproc
- 1148              		@ args = 0, pretend = 0, frame = 0
- 1149              		@ frame_needed = 0, uses_anonymous_args = 0
- 1150 0000 08B5     		push	{r3, lr}
- 1151              	.LCFI6:
- 1152              		.cfi_def_cfa_offset 8
- 1153              		.cfi_offset 3, -8
- 1154              		.cfi_offset 14, -4
+ 1140              		.loc 1 494 1 is_stmt 1 view -0
+ 1141              		.cfi_startproc
+ 1142              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 42
+
+
+ 1143              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1144 0000 08B5     		push	{r3, lr}
+ 1145              	.LCFI6:
+ 1146              		.cfi_def_cfa_offset 8
+ 1147              		.cfi_offset 3, -8
+ 1148              		.cfi_offset 14, -4
  496:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 1155              		.loc 1 496 3 view .LVU298
+ 1149              		.loc 1 496 3 view .LVU292
  496:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 1156              		.loc 1 496 40 is_stmt 0 view .LVU299
- 1157 0002 054A     		ldr	r2, .L103
- 1158 0004 137D     		ldrb	r3, [r2, #20]	@ zero_extendqisi2
- 1159 0006 43F00203 		orr	r3, r3, #2
- 1160 000a 1375     		strb	r3, [r2, #20]
+ 1150              		.loc 1 496 40 is_stmt 0 view .LVU293
+ 1151 0002 054A     		ldr	r2, .L103
+ 1152 0004 137D     		ldrb	r3, [r2, #20]	@ zero_extendqisi2
+ 1153 0006 43F00203 		orr	r3, r3, #2
+ 1154 000a 1375     		strb	r3, [r2, #20]
  499:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** }
- 1161              		.loc 1 499 3 is_stmt 1 view .LVU300
+ 1155              		.loc 1 499 3 is_stmt 1 view .LVU294
  499:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** }
- 1162              		.loc 1 499 11 is_stmt 0 view .LVU301
- 1163 000c 4CF25030 		movw	r0, #50000
- 1164 0010 FFF7FEFF 		bl	FLASH_WaitForLastOperation
- 1165              	.LVL66:
+ 1156              		.loc 1 499 11 is_stmt 0 view .LVU295
+ 1157 000c 4CF25030 		movw	r0, #50000
+ 1158 0010 FFF7FEFF 		bl	FLASH_WaitForLastOperation
+ 1159              	.LVL66:
  500:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c **** 
- 1166              		.loc 1 500 1 view .LVU302
- 1167 0014 08BD     		pop	{r3, pc}
- 1168              	.L104:
- 1169 0016 00BF     		.align	2
- 1170              	.L103:
- 1171 0018 003C0240 		.word	1073888256
- 1172              		.cfi_endproc
- 1173              	.LFE143:
- 1175              		.global	pFlash
- 1176              		.section	.bss.pFlash,"aw",%nobits
- 1177              		.align	2
- 1178              		.set	.LANCHOR0,. + 0
- 1181              	pFlash:
- 1182 0000 00000000 		.space	32
- 1182      00000000 
- 1182      00000000 
- 1182      00000000 
- 1182      00000000 
- 1183              		.text
- 1184              	.Letext0:
- 1185              		.file 3 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
- 1186              		.file 4 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
- 1187              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 43
-
-
- 1188              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
- 1189              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 1190              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h"
- 1191              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 1192              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h"
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 44
+ 1160              		.loc 1 500 1 view .LVU296
+ 1161 0014 08BD     		pop	{r3, pc}
+ 1162              	.L104:
+ 1163 0016 00BF     		.align	2
+ 1164              	.L103:
+ 1165 0018 003C0240 		.word	1073888256
+ 1166              		.cfi_endproc
+ 1167              	.LFE143:
+ 1169              		.global	pFlash
+ 1170              		.section	.bss.pFlash,"aw",%nobits
+ 1171              		.align	2
+ 1172              		.set	.LANCHOR0,. + 0
+ 1175              	pFlash:
+ 1176 0000 00000000 		.space	32
+ 1176      00000000 
+ 1176      00000000 
+ 1176      00000000 
+ 1176      00000000 
+ 1177              		.text
+ 1178              	.Letext0:
+ 1179              		.file 3 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 1180              		.file 4 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 1181              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ 1182              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
+ 1183              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 1184              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h"
+ 1185              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 1186              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h"
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 43
 
 
 DEFINED SYMBOLS
-                            *ABS*:0000000000000000 stm32f4xx_hal_flash.c
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:20     .text.FLASH_Program_DoubleWord:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:25     .text.FLASH_Program_DoubleWord:0000000000000000 FLASH_Program_DoubleWord
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:85     .text.FLASH_Program_DoubleWord:000000000000002c $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:90     .text.FLASH_Program_Word:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:95     .text.FLASH_Program_Word:0000000000000000 FLASH_Program_Word
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:127    .text.FLASH_Program_Word:0000000000000020 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:132    .text.FLASH_Program_HalfWord:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:137    .text.FLASH_Program_HalfWord:0000000000000000 FLASH_Program_HalfWord
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:169    .text.FLASH_Program_HalfWord:0000000000000020 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:174    .text.FLASH_Program_Byte:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:179    .text.FLASH_Program_Byte:0000000000000000 FLASH_Program_Byte
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:210    .text.FLASH_Program_Byte:000000000000001c $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:215    .text.FLASH_SetErrorCode:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:220    .text.FLASH_SetErrorCode:0000000000000000 FLASH_SetErrorCode
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:322    .text.FLASH_SetErrorCode:0000000000000084 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:328    .text.HAL_FLASH_Program_IT:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:334    .text.HAL_FLASH_Program_IT:0000000000000000 HAL_FLASH_Program_IT
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:419    .text.HAL_FLASH_Program_IT:000000000000004c $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:425    .text.HAL_FLASH_EndOfOperationCallback:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:431    .text.HAL_FLASH_EndOfOperationCallback:0000000000000000 HAL_FLASH_EndOfOperationCallback
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:446    .text.HAL_FLASH_OperationErrorCallback:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:452    .text.HAL_FLASH_OperationErrorCallback:0000000000000000 HAL_FLASH_OperationErrorCallback
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:467    .text.HAL_FLASH_IRQHandler:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:473    .text.HAL_FLASH_IRQHandler:0000000000000000 HAL_FLASH_IRQHandler
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:688    .text.HAL_FLASH_IRQHandler:00000000000000e4 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:694    .text.HAL_FLASH_Unlock:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:700    .text.HAL_FLASH_Unlock:0000000000000000 HAL_FLASH_Unlock
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:746    .text.HAL_FLASH_Unlock:0000000000000028 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:752    .text.HAL_FLASH_Lock:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:758    .text.HAL_FLASH_Lock:0000000000000000 HAL_FLASH_Lock
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:778    .text.HAL_FLASH_Lock:0000000000000010 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:783    .text.HAL_FLASH_OB_Unlock:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:789    .text.HAL_FLASH_OB_Unlock:0000000000000000 HAL_FLASH_OB_Unlock
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:824    .text.HAL_FLASH_OB_Unlock:0000000000000020 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:830    .text.HAL_FLASH_OB_Lock:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:836    .text.HAL_FLASH_OB_Lock:0000000000000000 HAL_FLASH_OB_Lock
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:856    .text.HAL_FLASH_OB_Lock:0000000000000010 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:861    .text.HAL_FLASH_GetError:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:867    .text.HAL_FLASH_GetError:0000000000000000 HAL_FLASH_GetError
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:883    .text.HAL_FLASH_GetError:0000000000000008 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:888    .text.FLASH_WaitForLastOperation:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:894    .text.FLASH_WaitForLastOperation:0000000000000000 FLASH_WaitForLastOperation
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:990    .text.FLASH_WaitForLastOperation:0000000000000058 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:996    .text.HAL_FLASH_Program:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:1002   .text.HAL_FLASH_Program:0000000000000000 HAL_FLASH_Program
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:1132   .text.HAL_FLASH_Program:0000000000000074 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:1138   .text.HAL_FLASH_OB_Launch:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:1144   .text.HAL_FLASH_OB_Launch:0000000000000000 HAL_FLASH_OB_Launch
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:1171   .text.HAL_FLASH_OB_Launch:0000000000000018 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:1181   .bss.pFlash:0000000000000000 pFlash
-C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s:1177   .bss.pFlash:0000000000000000 $d
+                            *ABS*:00000000 stm32f4xx_hal_flash.c
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:20     .text.FLASH_Program_DoubleWord:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:25     .text.FLASH_Program_DoubleWord:00000000 FLASH_Program_DoubleWord
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:85     .text.FLASH_Program_DoubleWord:0000002c $d
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:90     .text.FLASH_Program_Word:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:95     .text.FLASH_Program_Word:00000000 FLASH_Program_Word
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:127    .text.FLASH_Program_Word:00000020 $d
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:132    .text.FLASH_Program_HalfWord:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:137    .text.FLASH_Program_HalfWord:00000000 FLASH_Program_HalfWord
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:169    .text.FLASH_Program_HalfWord:00000020 $d
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:174    .text.FLASH_Program_Byte:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:179    .text.FLASH_Program_Byte:00000000 FLASH_Program_Byte
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:210    .text.FLASH_Program_Byte:0000001c $d
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:215    .text.FLASH_SetErrorCode:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:220    .text.FLASH_SetErrorCode:00000000 FLASH_SetErrorCode
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:322    .text.FLASH_SetErrorCode:00000084 $d
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:328    .text.HAL_FLASH_Program_IT:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:334    .text.HAL_FLASH_Program_IT:00000000 HAL_FLASH_Program_IT
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:419    .text.HAL_FLASH_Program_IT:0000004c $d
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:425    .text.HAL_FLASH_EndOfOperationCallback:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:431    .text.HAL_FLASH_EndOfOperationCallback:00000000 HAL_FLASH_EndOfOperationCallback
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:446    .text.HAL_FLASH_OperationErrorCallback:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:452    .text.HAL_FLASH_OperationErrorCallback:00000000 HAL_FLASH_OperationErrorCallback
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:467    .text.HAL_FLASH_IRQHandler:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:473    .text.HAL_FLASH_IRQHandler:00000000 HAL_FLASH_IRQHandler
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:682    .text.HAL_FLASH_IRQHandler:000000e4 $d
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:688    .text.HAL_FLASH_Unlock:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:694    .text.HAL_FLASH_Unlock:00000000 HAL_FLASH_Unlock
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:740    .text.HAL_FLASH_Unlock:00000028 $d
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:746    .text.HAL_FLASH_Lock:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:752    .text.HAL_FLASH_Lock:00000000 HAL_FLASH_Lock
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:772    .text.HAL_FLASH_Lock:00000010 $d
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:777    .text.HAL_FLASH_OB_Unlock:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:783    .text.HAL_FLASH_OB_Unlock:00000000 HAL_FLASH_OB_Unlock
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:818    .text.HAL_FLASH_OB_Unlock:00000020 $d
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:824    .text.HAL_FLASH_OB_Lock:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:830    .text.HAL_FLASH_OB_Lock:00000000 HAL_FLASH_OB_Lock
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:850    .text.HAL_FLASH_OB_Lock:00000010 $d
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:855    .text.HAL_FLASH_GetError:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:861    .text.HAL_FLASH_GetError:00000000 HAL_FLASH_GetError
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:877    .text.HAL_FLASH_GetError:00000008 $d
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:882    .text.FLASH_WaitForLastOperation:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:888    .text.FLASH_WaitForLastOperation:00000000 FLASH_WaitForLastOperation
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:984    .text.FLASH_WaitForLastOperation:00000058 $d
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:990    .text.HAL_FLASH_Program:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:996    .text.HAL_FLASH_Program:00000000 HAL_FLASH_Program
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:1126   .text.HAL_FLASH_Program:00000074 $d
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:1132   .text.HAL_FLASH_OB_Launch:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:1138   .text.HAL_FLASH_OB_Launch:00000000 HAL_FLASH_OB_Launch
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:1165   .text.HAL_FLASH_OB_Launch:00000018 $d
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:1175   .bss.pFlash:00000000 pFlash
+C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s:1171   .bss.pFlash:00000000 $d
 
 UNDEFINED SYMBOLS
 FLASH_Erase_Sector
 FLASH_FlushCaches
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccMKkcDb.s 			page 45
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc1kO08G.s 			page 44
 
 
 HAL_GetTick

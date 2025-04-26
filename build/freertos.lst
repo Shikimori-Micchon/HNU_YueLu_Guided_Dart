@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s 			page 1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccx0FUw8.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -16,18 +16,24 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s 			page 1
   13              		.eabi_attribute 34, 1
   14              		.eabi_attribute 18, 4
   15              		.file	"freertos.c"
-  16              		.text
-  17              	.Ltext0:
-  18              		.cfi_sections	.debug_frame
-  19              		.section	.text.StartDefaultTask,"ax",%progbits
-  20              		.align	1
-  21              		.global	StartDefaultTask
-  22              		.syntax unified
-  23              		.thumb
-  24              		.thumb_func
-  26              	StartDefaultTask:
-  27              	.LFB141:
-  28              		.file 1 "Core/Src/freertos.c"
+  16              		.section	.rodata.str1.4,"aMS",%progbits,1
+  17              		.align	2
+  18              	.LC0:
+  19 0000 64656661 		.ascii	"defaultTask\000"
+  19      756C7454 
+  19      61736B00 
+  20              		.text
+  21              	.Ltext0:
+  22              		.cfi_sections	.debug_frame
+  23              		.section	.text.StartDefaultTask,"ax",%progbits
+  24              		.align	1
+  25              		.global	StartDefaultTask
+  26              		.syntax unified
+  27              		.thumb
+  28              		.thumb_func
+  30              	StartDefaultTask:
+  31              	.LFB141:
+  32              		.file 1 "Core/Src/freertos.c"
    1:Core/Src/freertos.c **** /* USER CODE BEGIN Header */
    2:Core/Src/freertos.c **** /**
    3:Core/Src/freertos.c ****   ******************************************************************************
@@ -52,15 +58,15 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s 			page 1
   22:Core/Src/freertos.c **** #include "FreeRTOS.h"
   23:Core/Src/freertos.c **** #include "task.h"
   24:Core/Src/freertos.c **** #include "main.h"
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccx0FUw8.s 			page 2
+
+
   25:Core/Src/freertos.c **** #include "cmsis_os.h"
   26:Core/Src/freertos.c **** 
   27:Core/Src/freertos.c **** /* Private includes ----------------------------------------------------------*/
   28:Core/Src/freertos.c **** /* USER CODE BEGIN Includes */
   29:Core/Src/freertos.c **** 
   30:Core/Src/freertos.c **** /* USER CODE END Includes */
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s 			page 2
-
-
   31:Core/Src/freertos.c **** 
   32:Core/Src/freertos.c **** /* Private typedef -----------------------------------------------------------*/
   33:Core/Src/freertos.c **** /* USER CODE BEGIN PTD */
@@ -112,15 +118,15 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s 			page 1
   79:Core/Src/freertos.c ****   * @brief  FreeRTOS initialization
   80:Core/Src/freertos.c ****   * @param  None
   81:Core/Src/freertos.c ****   * @retval None
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccx0FUw8.s 			page 3
+
+
   82:Core/Src/freertos.c ****   */
   83:Core/Src/freertos.c **** void MX_FREERTOS_Init(void) {
   84:Core/Src/freertos.c ****   /* USER CODE BEGIN Init */
   85:Core/Src/freertos.c **** 
   86:Core/Src/freertos.c ****   /* USER CODE END Init */
   87:Core/Src/freertos.c **** 
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s 			page 3
-
-
   88:Core/Src/freertos.c ****   /* USER CODE BEGIN RTOS_MUTEX */
   89:Core/Src/freertos.c ****   /* add mutexes, ... */
   90:Core/Src/freertos.c ****   /* USER CODE END RTOS_MUTEX */
@@ -157,148 +163,142 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s 			page 1
  121:Core/Src/freertos.c **** /* USER CODE END Header_StartDefaultTask */
  122:Core/Src/freertos.c **** void StartDefaultTask(void const * argument)
  123:Core/Src/freertos.c **** {
-  29              		.loc 1 123 1 view -0
-  30              		.cfi_startproc
-  31              		@ Volatile: function does not return.
-  32              		@ args = 0, pretend = 0, frame = 0
-  33              		@ frame_needed = 0, uses_anonymous_args = 0
-  34              	.LVL0:
-  35              		.loc 1 123 1 is_stmt 0 view .LVU1
-  36 0000 08B5     		push	{r3, lr}
-  37              	.LCFI0:
-  38              		.cfi_def_cfa_offset 8
-  39              		.cfi_offset 3, -8
-  40              		.cfi_offset 14, -4
-  41              	.LVL1:
-  42              	.L2:
+  33              		.loc 1 123 1 view -0
+  34              		.cfi_startproc
+  35              		@ Volatile: function does not return.
+  36              		@ args = 0, pretend = 0, frame = 0
+  37              		@ frame_needed = 0, uses_anonymous_args = 0
+  38              	.LVL0:
+  39              		.loc 1 123 1 is_stmt 0 view .LVU1
+  40 0000 08B5     		push	{r3, lr}
+  41              	.LCFI0:
+  42              		.cfi_def_cfa_offset 8
+  43              		.cfi_offset 3, -8
+  44              		.cfi_offset 14, -4
+  45              	.LVL1:
+  46              	.L2:
  124:Core/Src/freertos.c ****   /* USER CODE BEGIN StartDefaultTask */
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccx0FUw8.s 			page 4
+
+
  125:Core/Src/freertos.c ****   /* Infinite loop */
  126:Core/Src/freertos.c ****   for(;;)
-  43              		.loc 1 126 3 is_stmt 1 discriminator 1 view .LVU2
+  47              		.loc 1 126 3 is_stmt 1 discriminator 1 view .LVU2
  127:Core/Src/freertos.c ****   {
  128:Core/Src/freertos.c ****     osDelay(1);
-  44              		.loc 1 128 5 discriminator 1 view .LVU3
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s 			page 4
-
-
-  45 0002 0120     		movs	r0, #1
-  46 0004 FFF7FEFF 		bl	osDelay
-  47              	.LVL2:
+  48              		.loc 1 128 5 discriminator 1 view .LVU3
+  49 0002 0120     		movs	r0, #1
+  50 0004 FFF7FEFF 		bl	osDelay
+  51              	.LVL2:
  126:Core/Src/freertos.c ****   {
-  48              		.loc 1 126 3 discriminator 1 view .LVU4
-  49 0008 FBE7     		b	.L2
-  50              		.cfi_endproc
-  51              	.LFE141:
-  53              		.section	.text.vApplicationGetIdleTaskMemory,"ax",%progbits
-  54              		.align	1
-  55              		.global	vApplicationGetIdleTaskMemory
-  56              		.syntax unified
-  57              		.thumb
-  58              		.thumb_func
-  60              	vApplicationGetIdleTaskMemory:
-  61              	.LVL3:
-  62              	.LFB139:
+  52              		.loc 1 126 8 discriminator 1 view .LVU4
+  53 0008 FBE7     		b	.L2
+  54              		.cfi_endproc
+  55              	.LFE141:
+  57              		.section	.text.vApplicationGetIdleTaskMemory,"ax",%progbits
+  58              		.align	1
+  59              		.global	vApplicationGetIdleTaskMemory
+  60              		.syntax unified
+  61              		.thumb
+  62              		.thumb_func
+  64              	vApplicationGetIdleTaskMemory:
+  65              	.LVL3:
+  66              	.LFB139:
   70:Core/Src/freertos.c ****   *ppxIdleTaskTCBBuffer = &xIdleTaskTCBBuffer;
-  63              		.loc 1 70 1 view -0
-  64              		.cfi_startproc
-  65              		@ args = 0, pretend = 0, frame = 0
-  66              		@ frame_needed = 0, uses_anonymous_args = 0
-  67              		@ link register save eliminated.
+  67              		.loc 1 70 1 view -0
+  68              		.cfi_startproc
+  69              		@ args = 0, pretend = 0, frame = 0
+  70              		@ frame_needed = 0, uses_anonymous_args = 0
+  71              		@ link register save eliminated.
   71:Core/Src/freertos.c ****   *ppxIdleTaskStackBuffer = &xIdleStack[0];
-  68              		.loc 1 71 3 view .LVU6
+  72              		.loc 1 71 3 view .LVU6
   71:Core/Src/freertos.c ****   *ppxIdleTaskStackBuffer = &xIdleStack[0];
-  69              		.loc 1 71 25 is_stmt 0 view .LVU7
-  70 0000 034B     		ldr	r3, .L5
-  71 0002 0360     		str	r3, [r0]
+  73              		.loc 1 71 25 is_stmt 0 view .LVU7
+  74 0000 034B     		ldr	r3, .L5
+  75 0002 0360     		str	r3, [r0]
   72:Core/Src/freertos.c ****   *pulIdleTaskStackSize = configMINIMAL_STACK_SIZE;
-  72              		.loc 1 72 3 is_stmt 1 view .LVU8
+  76              		.loc 1 72 3 is_stmt 1 view .LVU8
   72:Core/Src/freertos.c ****   *pulIdleTaskStackSize = configMINIMAL_STACK_SIZE;
-  73              		.loc 1 72 27 is_stmt 0 view .LVU9
-  74 0004 034B     		ldr	r3, .L5+4
-  75 0006 0B60     		str	r3, [r1]
+  77              		.loc 1 72 27 is_stmt 0 view .LVU9
+  78 0004 034B     		ldr	r3, .L5+4
+  79 0006 0B60     		str	r3, [r1]
   73:Core/Src/freertos.c ****   /* place for user code */
-  76              		.loc 1 73 3 is_stmt 1 view .LVU10
+  80              		.loc 1 73 3 is_stmt 1 view .LVU10
   73:Core/Src/freertos.c ****   /* place for user code */
-  77              		.loc 1 73 25 is_stmt 0 view .LVU11
-  78 0008 8023     		movs	r3, #128
-  79 000a 1360     		str	r3, [r2]
+  81              		.loc 1 73 25 is_stmt 0 view .LVU11
+  82 0008 8023     		movs	r3, #128
+  83 000a 1360     		str	r3, [r2]
   75:Core/Src/freertos.c **** /* USER CODE END GET_IDLE_TASK_MEMORY */
-  80              		.loc 1 75 1 view .LVU12
-  81 000c 7047     		bx	lr
-  82              	.L6:
-  83 000e 00BF     		.align	2
-  84              	.L5:
-  85 0010 00000000 		.word	.LANCHOR0
-  86 0014 00000000 		.word	.LANCHOR1
-  87              		.cfi_endproc
-  88              	.LFE139:
-  90              		.section	.text.MX_FREERTOS_Init,"ax",%progbits
-  91              		.align	1
-  92              		.global	MX_FREERTOS_Init
-  93              		.syntax unified
-  94              		.thumb
-  95              		.thumb_func
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s 			page 5
+  84              		.loc 1 75 1 view .LVU12
+  85 000c 7047     		bx	lr
+  86              	.L6:
+  87 000e 00BF     		.align	2
+  88              	.L5:
+  89 0010 00000000 		.word	.LANCHOR0
+  90 0014 00000000 		.word	.LANCHOR1
+  91              		.cfi_endproc
+  92              	.LFE139:
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccx0FUw8.s 			page 5
 
 
-  97              	MX_FREERTOS_Init:
-  98              	.LFB140:
+  94              		.section	.text.MX_FREERTOS_Init,"ax",%progbits
+  95              		.align	1
+  96              		.global	MX_FREERTOS_Init
+  97              		.syntax unified
+  98              		.thumb
+  99              		.thumb_func
+ 101              	MX_FREERTOS_Init:
+ 102              	.LFB140:
   83:Core/Src/freertos.c ****   /* USER CODE BEGIN Init */
-  99              		.loc 1 83 29 is_stmt 1 view -0
- 100              		.cfi_startproc
- 101              		@ args = 0, pretend = 0, frame = 32
- 102              		@ frame_needed = 0, uses_anonymous_args = 0
- 103 0000 10B5     		push	{r4, lr}
- 104              	.LCFI1:
- 105              		.cfi_def_cfa_offset 8
- 106              		.cfi_offset 4, -8
- 107              		.cfi_offset 14, -4
- 108 0002 88B0     		sub	sp, sp, #32
- 109              	.LCFI2:
- 110              		.cfi_def_cfa_offset 40
+ 103              		.loc 1 83 29 is_stmt 1 view -0
+ 104              		.cfi_startproc
+ 105              		@ args = 0, pretend = 0, frame = 32
+ 106              		@ frame_needed = 0, uses_anonymous_args = 0
+ 107 0000 10B5     		push	{r4, lr}
+ 108              	.LCFI1:
+ 109              		.cfi_def_cfa_offset 8
+ 110              		.cfi_offset 4, -8
+ 111              		.cfi_offset 14, -4
+ 112 0002 88B0     		sub	sp, sp, #32
+ 113              	.LCFI2:
+ 114              		.cfi_def_cfa_offset 40
  106:Core/Src/freertos.c ****   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
- 111              		.loc 1 106 3 view .LVU14
- 112 0004 0DF1040C 		add	ip, sp, #4
- 113 0008 074C     		ldr	r4, .L9
- 114 000a 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
- 115 000c ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
- 116 0010 94E80700 		ldm	r4, {r0, r1, r2}
- 117 0014 8CE80700 		stm	ip, {r0, r1, r2}
+ 115              		.loc 1 106 3 view .LVU14
+ 116 0004 0DF1040C 		add	ip, sp, #4
+ 117 0008 074C     		ldr	r4, .L9
+ 118 000a 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
+ 119 000c ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
+ 120 0010 94E80700 		ldm	r4, {r0, r1, r2}
+ 121 0014 8CE80700 		stm	ip, {r0, r1, r2}
  107:Core/Src/freertos.c **** 
- 118              		.loc 1 107 3 view .LVU15
+ 122              		.loc 1 107 3 view .LVU15
  107:Core/Src/freertos.c **** 
- 119              		.loc 1 107 23 is_stmt 0 view .LVU16
- 120 0018 0021     		movs	r1, #0
- 121 001a 01A8     		add	r0, sp, #4
- 122 001c FFF7FEFF 		bl	osThreadCreate
- 123              	.LVL4:
+ 123              		.loc 1 107 23 is_stmt 0 view .LVU16
+ 124 0018 0021     		movs	r1, #0
+ 125 001a 01A8     		add	r0, sp, #4
+ 126 001c FFF7FEFF 		bl	osThreadCreate
+ 127              	.LVL4:
  107:Core/Src/freertos.c **** 
- 124              		.loc 1 107 21 view .LVU17
- 125 0020 024B     		ldr	r3, .L9+4
- 126 0022 1860     		str	r0, [r3]
+ 128              		.loc 1 107 21 view .LVU17
+ 129 0020 024B     		ldr	r3, .L9+4
+ 130 0022 1860     		str	r0, [r3]
  113:Core/Src/freertos.c **** 
- 127              		.loc 1 113 1 view .LVU18
- 128 0024 08B0     		add	sp, sp, #32
- 129              	.LCFI3:
- 130              		.cfi_def_cfa_offset 8
- 131              		@ sp needed
- 132 0026 10BD     		pop	{r4, pc}
- 133              	.L10:
- 134              		.align	2
- 135              	.L9:
- 136 0028 00000000 		.word	.LANCHOR2
- 137 002c 00000000 		.word	.LANCHOR3
- 138              		.cfi_endproc
- 139              	.LFE140:
- 141              		.section	.rodata.str1.4,"aMS",%progbits,1
- 142              		.align	2
- 143              	.LC0:
- 144 0000 64656661 		.ascii	"defaultTask\000"
- 144      756C7454 
- 144      61736B00 
+ 131              		.loc 1 113 1 view .LVU18
+ 132 0024 08B0     		add	sp, sp, #32
+ 133              	.LCFI3:
+ 134              		.cfi_def_cfa_offset 8
+ 135              		@ sp needed
+ 136 0026 10BD     		pop	{r4, pc}
+ 137              	.L10:
+ 138              		.align	2
+ 139              	.L9:
+ 140 0028 00000000 		.word	.LANCHOR2
+ 141 002c 00000000 		.word	.LANCHOR3
+ 142              		.cfi_endproc
+ 143              	.LFE140:
  145              		.global	defaultTaskHandle
  146              		.section	.rodata
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s 			page 6
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccx0FUw8.s 			page 6
 
 
  147              		.align	2
@@ -337,33 +337,33 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s 			page 1
  178      00000000 
  179              		.text
  180              	.Letext0:
- 181              		.file 2 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
- 182              		.file 3 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
+ 181              		.file 2 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 182              		.file 3 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
  183              		.file 4 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
  184              		.file 5 "Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
  185              		.file 6 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
  186              		.file 7 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s 			page 7
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccx0FUw8.s 			page 7
 
 
 DEFINED SYMBOLS
-                            *ABS*:0000000000000000 freertos.c
-C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s:20     .text.StartDefaultTask:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s:26     .text.StartDefaultTask:0000000000000000 StartDefaultTask
-C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s:54     .text.vApplicationGetIdleTaskMemory:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s:60     .text.vApplicationGetIdleTaskMemory:0000000000000000 vApplicationGetIdleTaskMemory
-C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s:85     .text.vApplicationGetIdleTaskMemory:0000000000000010 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s:91     .text.MX_FREERTOS_Init:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s:97     .text.MX_FREERTOS_Init:0000000000000000 MX_FREERTOS_Init
-C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s:136    .text.MX_FREERTOS_Init:0000000000000028 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s:142    .rodata.str1.4:0000000000000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s:163    .bss.defaultTaskHandle:0000000000000000 defaultTaskHandle
-C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s:147    .rodata:0000000000000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s:159    .bss.defaultTaskHandle:0000000000000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s:166    .bss.xIdleStack:0000000000000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s:170    .bss.xIdleStack:0000000000000000 xIdleStack
-C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s:173    .bss.xIdleTaskTCBBuffer:0000000000000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccen3AUI.s:177    .bss.xIdleTaskTCBBuffer:0000000000000000 xIdleTaskTCBBuffer
+                            *ABS*:00000000 freertos.c
+C:\Users\HUAWEI\AppData\Local\Temp\ccx0FUw8.s:17     .rodata.str1.4:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccx0FUw8.s:24     .text.StartDefaultTask:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccx0FUw8.s:30     .text.StartDefaultTask:00000000 StartDefaultTask
+C:\Users\HUAWEI\AppData\Local\Temp\ccx0FUw8.s:58     .text.vApplicationGetIdleTaskMemory:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccx0FUw8.s:64     .text.vApplicationGetIdleTaskMemory:00000000 vApplicationGetIdleTaskMemory
+C:\Users\HUAWEI\AppData\Local\Temp\ccx0FUw8.s:89     .text.vApplicationGetIdleTaskMemory:00000010 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccx0FUw8.s:95     .text.MX_FREERTOS_Init:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccx0FUw8.s:101    .text.MX_FREERTOS_Init:00000000 MX_FREERTOS_Init
+C:\Users\HUAWEI\AppData\Local\Temp\ccx0FUw8.s:140    .text.MX_FREERTOS_Init:00000028 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccx0FUw8.s:163    .bss.defaultTaskHandle:00000000 defaultTaskHandle
+C:\Users\HUAWEI\AppData\Local\Temp\ccx0FUw8.s:147    .rodata:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccx0FUw8.s:159    .bss.defaultTaskHandle:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccx0FUw8.s:166    .bss.xIdleStack:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccx0FUw8.s:170    .bss.xIdleStack:00000000 xIdleStack
+C:\Users\HUAWEI\AppData\Local\Temp\ccx0FUw8.s:173    .bss.xIdleTaskTCBBuffer:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccx0FUw8.s:177    .bss.xIdleTaskTCBBuffer:00000000 xIdleTaskTCBBuffer
 
 UNDEFINED SYMBOLS
 osDelay

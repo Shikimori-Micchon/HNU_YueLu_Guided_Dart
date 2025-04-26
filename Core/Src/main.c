@@ -54,7 +54,7 @@
 void SystemClock_Config(void);
 void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN PFP */
-void WITSerialDecode(void);
+// void WITSerialDecode(void);
 // JY61PData *INS_Init(void)
 // {
 //   DWT_Init(168);
@@ -105,6 +105,7 @@ int main(void)
   MX_DMA_Init();
   MX_USART3_UART_Init();
   MX_TIM1_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   pJY61PData = INS_Init(); // 初始化传感器
   /* USER CODE END 2 */

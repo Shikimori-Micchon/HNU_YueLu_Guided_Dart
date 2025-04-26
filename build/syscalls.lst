@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s 			page 1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s 			page 1
   28:Core/Src/syscalls.c **** #include <signal.h>
   29:Core/Src/syscalls.c **** #include <time.h>
   30:Core/Src/syscalls.c **** #include <sys/time.h>
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s 			page 2
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s 			page 2
 
 
   31:Core/Src/syscalls.c **** #include <sys/times.h>
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s 			page 1
   65              		.thumb_func
   67              	_kill:
   68              	.LVL0:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s 			page 3
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s 			page 3
 
 
   69              	.LFB27:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s 			page 1
  114              		.cfi_offset 3, -8
  115              		.cfi_offset 14, -4
   63:Core/Src/syscalls.c ****   _kill(status, -1);
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s 			page 4
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s 			page 4
 
 
  116              		.loc 1 63 3 is_stmt 1 view .LVU15
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s 			page 1
   74:Core/Src/syscalls.c ****     *ptr++ = __io_getchar();
  162              		.loc 1 74 5 is_stmt 1 discriminator 3 view .LVU26
  163              		.loc 1 74 14 is_stmt 0 discriminator 3 view .LVU27
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s 			page 5
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s 			page 5
 
 
  164 000a FFF7FEFF 		bl	__io_getchar
@@ -250,621 +250,629 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s 			page 1
  170 0010 01F8010B 		strb	r0, [r1], #1
  171              	.LVL9:
   72:Core/Src/syscalls.c ****   {
- 172              		.loc 1 72 43 is_stmt 1 discriminator 3 view .LVU30
- 173 0014 0135     		adds	r5, r5, #1
- 174              	.LVL10:
- 175              		.loc 1 74 9 is_stmt 0 discriminator 3 view .LVU31
- 176 0016 0C46     		mov	r4, r1
- 177              	.LVL11:
- 178              	.L9:
+ 172              		.loc 1 72 36 is_stmt 1 discriminator 3 view .LVU30
   72:Core/Src/syscalls.c ****   {
- 179              		.loc 1 72 29 is_stmt 1 discriminator 1 view .LVU32
- 180 0018 B542     		cmp	r5, r6
- 181 001a F6DB     		blt	.L10
+ 173              		.loc 1 72 43 is_stmt 0 discriminator 3 view .LVU31
+ 174 0014 0135     		adds	r5, r5, #1
+ 175              	.LVL10:
+ 176              		.loc 1 74 9 discriminator 3 view .LVU32
+ 177 0016 0C46     		mov	r4, r1
+ 178              	.LVL11:
+ 179              	.L9:
+  72:Core/Src/syscalls.c ****   {
+ 180              		.loc 1 72 21 is_stmt 1 discriminator 1 view .LVU33
+  72:Core/Src/syscalls.c ****   {
+ 181              		.loc 1 72 3 is_stmt 0 discriminator 1 view .LVU34
+ 182 0018 B542     		cmp	r5, r6
+ 183 001a F6DB     		blt	.L10
   75:Core/Src/syscalls.c ****   }
   76:Core/Src/syscalls.c **** 
   77:Core/Src/syscalls.c ****   return len;
- 182              		.loc 1 77 3 view .LVU33
+ 184              		.loc 1 77 3 is_stmt 1 view .LVU35
   78:Core/Src/syscalls.c **** }
- 183              		.loc 1 78 1 is_stmt 0 view .LVU34
- 184 001c 3046     		mov	r0, r6
- 185 001e 70BD     		pop	{r4, r5, r6, pc}
- 186              		.loc 1 78 1 view .LVU35
- 187              		.cfi_endproc
- 188              	.LFE29:
- 190              		.section	.text._write,"ax",%progbits
- 191              		.align	1
- 192              		.weak	_write
- 193              		.syntax unified
- 194              		.thumb
- 195              		.thumb_func
- 197              	_write:
- 198              	.LVL12:
- 199              	.LFB30:
+ 185              		.loc 1 78 1 is_stmt 0 view .LVU36
+ 186 001c 3046     		mov	r0, r6
+ 187 001e 70BD     		pop	{r4, r5, r6, pc}
+ 188              		.loc 1 78 1 view .LVU37
+ 189              		.cfi_endproc
+ 190              	.LFE29:
+ 192              		.section	.text._write,"ax",%progbits
+ 193              		.align	1
+ 194              		.weak	_write
+ 195              		.syntax unified
+ 196              		.thumb
+ 197              		.thumb_func
+ 199              	_write:
+ 200              	.LVL12:
+ 201              	.LFB30:
   79:Core/Src/syscalls.c **** 
   80:Core/Src/syscalls.c **** __attribute__((weak)) int _write(int file, char *ptr, int len)
   81:Core/Src/syscalls.c **** {
- 200              		.loc 1 81 1 is_stmt 1 view -0
- 201              		.cfi_startproc
- 202              		@ args = 0, pretend = 0, frame = 0
- 203              		@ frame_needed = 0, uses_anonymous_args = 0
- 204              		.loc 1 81 1 is_stmt 0 view .LVU37
- 205 0000 70B5     		push	{r4, r5, r6, lr}
- 206              	.LCFI3:
- 207              		.cfi_def_cfa_offset 16
- 208              		.cfi_offset 4, -16
- 209              		.cfi_offset 5, -12
- 210              		.cfi_offset 6, -8
- 211              		.cfi_offset 14, -4
- 212 0002 0C46     		mov	r4, r1
- 213 0004 1646     		mov	r6, r2
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s 			page 6
+ 202              		.loc 1 81 1 is_stmt 1 view -0
+ 203              		.cfi_startproc
+ 204              		@ args = 0, pretend = 0, frame = 0
+ 205              		@ frame_needed = 0, uses_anonymous_args = 0
+ 206              		.loc 1 81 1 is_stmt 0 view .LVU39
+ 207 0000 70B5     		push	{r4, r5, r6, lr}
+ 208              	.LCFI3:
+ 209              		.cfi_def_cfa_offset 16
+ 210              		.cfi_offset 4, -16
+ 211              		.cfi_offset 5, -12
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s 			page 6
 
 
+ 212              		.cfi_offset 6, -8
+ 213              		.cfi_offset 14, -4
+ 214 0002 0C46     		mov	r4, r1
+ 215 0004 1646     		mov	r6, r2
   82:Core/Src/syscalls.c ****   (void)file;
- 214              		.loc 1 82 3 is_stmt 1 view .LVU38
+ 216              		.loc 1 82 3 is_stmt 1 view .LVU40
   83:Core/Src/syscalls.c ****   int DataIdx;
- 215              		.loc 1 83 3 view .LVU39
+ 217              		.loc 1 83 3 view .LVU41
   84:Core/Src/syscalls.c **** 
   85:Core/Src/syscalls.c ****   for (DataIdx = 0; DataIdx < len; DataIdx++)
- 216              		.loc 1 85 3 view .LVU40
- 217              	.LVL13:
- 218              		.loc 1 85 16 is_stmt 0 view .LVU41
- 219 0006 0025     		movs	r5, #0
- 220              		.loc 1 85 3 view .LVU42
- 221 0008 04E0     		b	.L13
- 222              	.LVL14:
- 223              	.L14:
+ 218              		.loc 1 85 3 view .LVU42
+ 219              	.LVL13:
+ 220              		.loc 1 85 16 is_stmt 0 view .LVU43
+ 221 0006 0025     		movs	r5, #0
+ 222              		.loc 1 85 3 view .LVU44
+ 223 0008 04E0     		b	.L13
+ 224              	.LVL14:
+ 225              	.L14:
   86:Core/Src/syscalls.c ****   {
   87:Core/Src/syscalls.c ****     __io_putchar(*ptr++);
- 224              		.loc 1 87 5 is_stmt 1 discriminator 3 view .LVU43
- 225              		.loc 1 87 5 is_stmt 0 discriminator 3 view .LVU44
- 226 000a 14F8010B 		ldrb	r0, [r4], #1	@ zero_extendqisi2
- 227              	.LVL15:
- 228              		.loc 1 87 5 discriminator 3 view .LVU45
- 229 000e FFF7FEFF 		bl	__io_putchar
- 230              	.LVL16:
+ 226              		.loc 1 87 5 is_stmt 1 discriminator 3 view .LVU45
+ 227              		.loc 1 87 5 is_stmt 0 discriminator 3 view .LVU46
+ 228 000a 14F8010B 		ldrb	r0, [r4], #1	@ zero_extendqisi2
+ 229              	.LVL15:
+ 230              		.loc 1 87 5 discriminator 3 view .LVU47
+ 231 000e FFF7FEFF 		bl	__io_putchar
+ 232              	.LVL16:
   85:Core/Src/syscalls.c ****   {
- 231              		.loc 1 85 43 is_stmt 1 discriminator 3 view .LVU46
- 232 0012 0135     		adds	r5, r5, #1
- 233              	.LVL17:
- 234              	.L13:
+ 233              		.loc 1 85 36 is_stmt 1 discriminator 3 view .LVU48
   85:Core/Src/syscalls.c ****   {
- 235              		.loc 1 85 29 discriminator 1 view .LVU47
- 236 0014 B542     		cmp	r5, r6
- 237 0016 F8DB     		blt	.L14
+ 234              		.loc 1 85 43 is_stmt 0 discriminator 3 view .LVU49
+ 235 0012 0135     		adds	r5, r5, #1
+ 236              	.LVL17:
+ 237              	.L13:
+  85:Core/Src/syscalls.c ****   {
+ 238              		.loc 1 85 21 is_stmt 1 discriminator 1 view .LVU50
+  85:Core/Src/syscalls.c ****   {
+ 239              		.loc 1 85 3 is_stmt 0 discriminator 1 view .LVU51
+ 240 0014 B542     		cmp	r5, r6
+ 241 0016 F8DB     		blt	.L14
   88:Core/Src/syscalls.c ****   }
   89:Core/Src/syscalls.c ****   return len;
- 238              		.loc 1 89 3 view .LVU48
+ 242              		.loc 1 89 3 is_stmt 1 view .LVU52
   90:Core/Src/syscalls.c **** }
- 239              		.loc 1 90 1 is_stmt 0 view .LVU49
- 240 0018 3046     		mov	r0, r6
- 241 001a 70BD     		pop	{r4, r5, r6, pc}
- 242              		.loc 1 90 1 view .LVU50
- 243              		.cfi_endproc
- 244              	.LFE30:
- 246              		.section	.text._close,"ax",%progbits
- 247              		.align	1
- 248              		.global	_close
- 249              		.syntax unified
- 250              		.thumb
- 251              		.thumb_func
- 253              	_close:
- 254              	.LVL18:
- 255              	.LFB31:
+ 243              		.loc 1 90 1 is_stmt 0 view .LVU53
+ 244 0018 3046     		mov	r0, r6
+ 245 001a 70BD     		pop	{r4, r5, r6, pc}
+ 246              		.loc 1 90 1 view .LVU54
+ 247              		.cfi_endproc
+ 248              	.LFE30:
+ 250              		.section	.text._close,"ax",%progbits
+ 251              		.align	1
+ 252              		.global	_close
+ 253              		.syntax unified
+ 254              		.thumb
+ 255              		.thumb_func
+ 257              	_close:
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s 			page 7
+
+
+ 258              	.LVL18:
+ 259              	.LFB31:
   91:Core/Src/syscalls.c **** 
   92:Core/Src/syscalls.c **** int _close(int file)
   93:Core/Src/syscalls.c **** {
- 256              		.loc 1 93 1 is_stmt 1 view -0
- 257              		.cfi_startproc
- 258              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s 			page 7
-
-
- 259              		@ frame_needed = 0, uses_anonymous_args = 0
- 260              		@ link register save eliminated.
+ 260              		.loc 1 93 1 is_stmt 1 view -0
+ 261              		.cfi_startproc
+ 262              		@ args = 0, pretend = 0, frame = 0
+ 263              		@ frame_needed = 0, uses_anonymous_args = 0
+ 264              		@ link register save eliminated.
   94:Core/Src/syscalls.c ****   (void)file;
- 261              		.loc 1 94 3 view .LVU52
+ 265              		.loc 1 94 3 view .LVU56
   95:Core/Src/syscalls.c ****   return -1;
- 262              		.loc 1 95 3 view .LVU53
+ 266              		.loc 1 95 3 view .LVU57
   96:Core/Src/syscalls.c **** }
- 263              		.loc 1 96 1 is_stmt 0 view .LVU54
- 264 0000 4FF0FF30 		mov	r0, #-1
- 265              	.LVL19:
- 266              		.loc 1 96 1 view .LVU55
- 267 0004 7047     		bx	lr
- 268              		.cfi_endproc
- 269              	.LFE31:
- 271              		.section	.text._fstat,"ax",%progbits
- 272              		.align	1
- 273              		.global	_fstat
- 274              		.syntax unified
- 275              		.thumb
- 276              		.thumb_func
- 278              	_fstat:
- 279              	.LVL20:
- 280              	.LFB32:
+ 267              		.loc 1 96 1 is_stmt 0 view .LVU58
+ 268 0000 4FF0FF30 		mov	r0, #-1
+ 269              	.LVL19:
+ 270              		.loc 1 96 1 view .LVU59
+ 271 0004 7047     		bx	lr
+ 272              		.cfi_endproc
+ 273              	.LFE31:
+ 275              		.section	.text._fstat,"ax",%progbits
+ 276              		.align	1
+ 277              		.global	_fstat
+ 278              		.syntax unified
+ 279              		.thumb
+ 280              		.thumb_func
+ 282              	_fstat:
+ 283              	.LVL20:
+ 284              	.LFB32:
   97:Core/Src/syscalls.c **** 
   98:Core/Src/syscalls.c **** 
   99:Core/Src/syscalls.c **** int _fstat(int file, struct stat *st)
  100:Core/Src/syscalls.c **** {
- 281              		.loc 1 100 1 is_stmt 1 view -0
- 282              		.cfi_startproc
- 283              		@ args = 0, pretend = 0, frame = 0
- 284              		@ frame_needed = 0, uses_anonymous_args = 0
- 285              		@ link register save eliminated.
+ 285              		.loc 1 100 1 is_stmt 1 view -0
+ 286              		.cfi_startproc
+ 287              		@ args = 0, pretend = 0, frame = 0
+ 288              		@ frame_needed = 0, uses_anonymous_args = 0
+ 289              		@ link register save eliminated.
  101:Core/Src/syscalls.c ****   (void)file;
- 286              		.loc 1 101 3 view .LVU57
+ 290              		.loc 1 101 3 view .LVU61
  102:Core/Src/syscalls.c ****   st->st_mode = S_IFCHR;
- 287              		.loc 1 102 3 view .LVU58
- 288              		.loc 1 102 15 is_stmt 0 view .LVU59
- 289 0000 4FF40053 		mov	r3, #8192
- 290 0004 4B60     		str	r3, [r1, #4]
+ 291              		.loc 1 102 3 view .LVU62
+ 292              		.loc 1 102 15 is_stmt 0 view .LVU63
+ 293 0000 4FF40053 		mov	r3, #8192
+ 294 0004 4B60     		str	r3, [r1, #4]
  103:Core/Src/syscalls.c ****   return 0;
- 291              		.loc 1 103 3 is_stmt 1 view .LVU60
+ 295              		.loc 1 103 3 is_stmt 1 view .LVU64
  104:Core/Src/syscalls.c **** }
- 292              		.loc 1 104 1 is_stmt 0 view .LVU61
- 293 0006 0020     		movs	r0, #0
- 294              	.LVL21:
- 295              		.loc 1 104 1 view .LVU62
- 296 0008 7047     		bx	lr
- 297              		.cfi_endproc
- 298              	.LFE32:
- 300              		.section	.text._isatty,"ax",%progbits
- 301              		.align	1
- 302              		.global	_isatty
- 303              		.syntax unified
- 304              		.thumb
- 305              		.thumb_func
- 307              	_isatty:
- 308              	.LVL22:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s 			page 8
+ 296              		.loc 1 104 1 is_stmt 0 view .LVU65
+ 297 0006 0020     		movs	r0, #0
+ 298              	.LVL21:
+ 299              		.loc 1 104 1 view .LVU66
+ 300 0008 7047     		bx	lr
+ 301              		.cfi_endproc
+ 302              	.LFE32:
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s 			page 8
 
 
- 309              	.LFB33:
+ 304              		.section	.text._isatty,"ax",%progbits
+ 305              		.align	1
+ 306              		.global	_isatty
+ 307              		.syntax unified
+ 308              		.thumb
+ 309              		.thumb_func
+ 311              	_isatty:
+ 312              	.LVL22:
+ 313              	.LFB33:
  105:Core/Src/syscalls.c **** 
  106:Core/Src/syscalls.c **** int _isatty(int file)
  107:Core/Src/syscalls.c **** {
- 310              		.loc 1 107 1 is_stmt 1 view -0
- 311              		.cfi_startproc
- 312              		@ args = 0, pretend = 0, frame = 0
- 313              		@ frame_needed = 0, uses_anonymous_args = 0
- 314              		@ link register save eliminated.
+ 314              		.loc 1 107 1 is_stmt 1 view -0
+ 315              		.cfi_startproc
+ 316              		@ args = 0, pretend = 0, frame = 0
+ 317              		@ frame_needed = 0, uses_anonymous_args = 0
+ 318              		@ link register save eliminated.
  108:Core/Src/syscalls.c ****   (void)file;
- 315              		.loc 1 108 3 view .LVU64
+ 319              		.loc 1 108 3 view .LVU68
  109:Core/Src/syscalls.c ****   return 1;
- 316              		.loc 1 109 3 view .LVU65
+ 320              		.loc 1 109 3 view .LVU69
  110:Core/Src/syscalls.c **** }
- 317              		.loc 1 110 1 is_stmt 0 view .LVU66
- 318 0000 0120     		movs	r0, #1
- 319              	.LVL23:
- 320              		.loc 1 110 1 view .LVU67
- 321 0002 7047     		bx	lr
- 322              		.cfi_endproc
- 323              	.LFE33:
- 325              		.section	.text._lseek,"ax",%progbits
- 326              		.align	1
- 327              		.global	_lseek
- 328              		.syntax unified
- 329              		.thumb
- 330              		.thumb_func
- 332              	_lseek:
- 333              	.LVL24:
- 334              	.LFB34:
+ 321              		.loc 1 110 1 is_stmt 0 view .LVU70
+ 322 0000 0120     		movs	r0, #1
+ 323              	.LVL23:
+ 324              		.loc 1 110 1 view .LVU71
+ 325 0002 7047     		bx	lr
+ 326              		.cfi_endproc
+ 327              	.LFE33:
+ 329              		.section	.text._lseek,"ax",%progbits
+ 330              		.align	1
+ 331              		.global	_lseek
+ 332              		.syntax unified
+ 333              		.thumb
+ 334              		.thumb_func
+ 336              	_lseek:
+ 337              	.LVL24:
+ 338              	.LFB34:
  111:Core/Src/syscalls.c **** 
  112:Core/Src/syscalls.c **** int _lseek(int file, int ptr, int dir)
  113:Core/Src/syscalls.c **** {
- 335              		.loc 1 113 1 is_stmt 1 view -0
- 336              		.cfi_startproc
- 337              		@ args = 0, pretend = 0, frame = 0
- 338              		@ frame_needed = 0, uses_anonymous_args = 0
- 339              		@ link register save eliminated.
+ 339              		.loc 1 113 1 is_stmt 1 view -0
+ 340              		.cfi_startproc
+ 341              		@ args = 0, pretend = 0, frame = 0
+ 342              		@ frame_needed = 0, uses_anonymous_args = 0
+ 343              		@ link register save eliminated.
  114:Core/Src/syscalls.c ****   (void)file;
- 340              		.loc 1 114 3 view .LVU69
+ 344              		.loc 1 114 3 view .LVU73
  115:Core/Src/syscalls.c ****   (void)ptr;
- 341              		.loc 1 115 3 view .LVU70
+ 345              		.loc 1 115 3 view .LVU74
  116:Core/Src/syscalls.c ****   (void)dir;
- 342              		.loc 1 116 3 view .LVU71
+ 346              		.loc 1 116 3 view .LVU75
  117:Core/Src/syscalls.c ****   return 0;
- 343              		.loc 1 117 3 view .LVU72
+ 347              		.loc 1 117 3 view .LVU76
  118:Core/Src/syscalls.c **** }
- 344              		.loc 1 118 1 is_stmt 0 view .LVU73
- 345 0000 0020     		movs	r0, #0
- 346              	.LVL25:
- 347              		.loc 1 118 1 view .LVU74
- 348 0002 7047     		bx	lr
- 349              		.cfi_endproc
- 350              	.LFE34:
- 352              		.section	.text._open,"ax",%progbits
- 353              		.align	1
- 354              		.global	_open
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s 			page 9
+ 348              		.loc 1 118 1 is_stmt 0 view .LVU77
+ 349 0000 0020     		movs	r0, #0
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s 			page 9
 
 
- 355              		.syntax unified
- 356              		.thumb
- 357              		.thumb_func
- 359              	_open:
- 360              	.LVL26:
- 361              	.LFB35:
+ 350              	.LVL25:
+ 351              		.loc 1 118 1 view .LVU78
+ 352 0002 7047     		bx	lr
+ 353              		.cfi_endproc
+ 354              	.LFE34:
+ 356              		.section	.text._open,"ax",%progbits
+ 357              		.align	1
+ 358              		.global	_open
+ 359              		.syntax unified
+ 360              		.thumb
+ 361              		.thumb_func
+ 363              	_open:
+ 364              	.LVL26:
+ 365              	.LFB35:
  119:Core/Src/syscalls.c **** 
  120:Core/Src/syscalls.c **** int _open(char *path, int flags, ...)
  121:Core/Src/syscalls.c **** {
- 362              		.loc 1 121 1 is_stmt 1 view -0
- 363              		.cfi_startproc
- 364              		@ args = 4, pretend = 12, frame = 0
- 365              		@ frame_needed = 0, uses_anonymous_args = 1
- 366              		@ link register save eliminated.
- 367              		.loc 1 121 1 is_stmt 0 view .LVU76
- 368 0000 0EB4     		push	{r1, r2, r3}
- 369              	.LCFI4:
- 370              		.cfi_def_cfa_offset 12
- 371              		.cfi_offset 1, -12
- 372              		.cfi_offset 2, -8
- 373              		.cfi_offset 3, -4
+ 366              		.loc 1 121 1 is_stmt 1 view -0
+ 367              		.cfi_startproc
+ 368              		@ args = 4, pretend = 12, frame = 0
+ 369              		@ frame_needed = 0, uses_anonymous_args = 1
+ 370              		@ link register save eliminated.
+ 371              		.loc 1 121 1 is_stmt 0 view .LVU80
+ 372 0000 0EB4     		push	{r1, r2, r3}
+ 373              	.LCFI4:
+ 374              		.cfi_def_cfa_offset 12
+ 375              		.cfi_offset 1, -12
+ 376              		.cfi_offset 2, -8
+ 377              		.cfi_offset 3, -4
  122:Core/Src/syscalls.c ****   (void)path;
- 374              		.loc 1 122 3 is_stmt 1 view .LVU77
+ 378              		.loc 1 122 3 is_stmt 1 view .LVU81
  123:Core/Src/syscalls.c ****   (void)flags;
- 375              		.loc 1 123 3 view .LVU78
+ 379              		.loc 1 123 3 view .LVU82
  124:Core/Src/syscalls.c ****   /* Pretend like we always fail */
  125:Core/Src/syscalls.c ****   return -1;
- 376              		.loc 1 125 3 view .LVU79
+ 380              		.loc 1 125 3 view .LVU83
  126:Core/Src/syscalls.c **** }
- 377              		.loc 1 126 1 is_stmt 0 view .LVU80
- 378 0002 4FF0FF30 		mov	r0, #-1
- 379              	.LVL27:
- 380              		.loc 1 126 1 view .LVU81
- 381 0006 03B0     		add	sp, sp, #12
- 382              	.LCFI5:
- 383              		.cfi_restore 3
- 384              		.cfi_restore 2
- 385              		.cfi_restore 1
- 386              		.cfi_def_cfa_offset 0
- 387 0008 7047     		bx	lr
- 388              		.cfi_endproc
- 389              	.LFE35:
- 391              		.section	.text._wait,"ax",%progbits
- 392              		.align	1
- 393              		.global	_wait
- 394              		.syntax unified
- 395              		.thumb
- 396              		.thumb_func
- 398              	_wait:
- 399              	.LVL28:
- 400              	.LFB36:
+ 381              		.loc 1 126 1 is_stmt 0 view .LVU84
+ 382 0002 4FF0FF30 		mov	r0, #-1
+ 383              	.LVL27:
+ 384              		.loc 1 126 1 view .LVU85
+ 385 0006 03B0     		add	sp, sp, #12
+ 386              	.LCFI5:
+ 387              		.cfi_restore 3
+ 388              		.cfi_restore 2
+ 389              		.cfi_restore 1
+ 390              		.cfi_def_cfa_offset 0
+ 391 0008 7047     		bx	lr
+ 392              		.cfi_endproc
+ 393              	.LFE35:
+ 395              		.section	.text._wait,"ax",%progbits
+ 396              		.align	1
+ 397              		.global	_wait
+ 398              		.syntax unified
+ 399              		.thumb
+ 400              		.thumb_func
+ 402              	_wait:
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s 			page 10
+
+
+ 403              	.LVL28:
+ 404              	.LFB36:
  127:Core/Src/syscalls.c **** 
  128:Core/Src/syscalls.c **** int _wait(int *status)
  129:Core/Src/syscalls.c **** {
- 401              		.loc 1 129 1 is_stmt 1 view -0
- 402              		.cfi_startproc
- 403              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s 			page 10
-
-
- 404              		@ frame_needed = 0, uses_anonymous_args = 0
- 405              		.loc 1 129 1 is_stmt 0 view .LVU83
- 406 0000 08B5     		push	{r3, lr}
- 407              	.LCFI6:
- 408              		.cfi_def_cfa_offset 8
- 409              		.cfi_offset 3, -8
- 410              		.cfi_offset 14, -4
+ 405              		.loc 1 129 1 is_stmt 1 view -0
+ 406              		.cfi_startproc
+ 407              		@ args = 0, pretend = 0, frame = 0
+ 408              		@ frame_needed = 0, uses_anonymous_args = 0
+ 409              		.loc 1 129 1 is_stmt 0 view .LVU87
+ 410 0000 08B5     		push	{r3, lr}
+ 411              	.LCFI6:
+ 412              		.cfi_def_cfa_offset 8
+ 413              		.cfi_offset 3, -8
+ 414              		.cfi_offset 14, -4
  130:Core/Src/syscalls.c ****   (void)status;
- 411              		.loc 1 130 3 is_stmt 1 view .LVU84
+ 415              		.loc 1 130 3 is_stmt 1 view .LVU88
  131:Core/Src/syscalls.c ****   errno = ECHILD;
- 412              		.loc 1 131 3 view .LVU85
- 413 0002 FFF7FEFF 		bl	__errno
- 414              	.LVL29:
- 415              		.loc 1 131 9 is_stmt 0 view .LVU86
- 416 0006 0A23     		movs	r3, #10
- 417 0008 0360     		str	r3, [r0]
+ 416              		.loc 1 131 3 view .LVU89
+ 417 0002 FFF7FEFF 		bl	__errno
+ 418              	.LVL29:
+ 419              		.loc 1 131 9 is_stmt 0 view .LVU90
+ 420 0006 0A23     		movs	r3, #10
+ 421 0008 0360     		str	r3, [r0]
  132:Core/Src/syscalls.c ****   return -1;
- 418              		.loc 1 132 3 is_stmt 1 view .LVU87
+ 422              		.loc 1 132 3 is_stmt 1 view .LVU91
  133:Core/Src/syscalls.c **** }
- 419              		.loc 1 133 1 is_stmt 0 view .LVU88
- 420 000a 4FF0FF30 		mov	r0, #-1
- 421 000e 08BD     		pop	{r3, pc}
- 422              		.cfi_endproc
- 423              	.LFE36:
- 425              		.section	.text._unlink,"ax",%progbits
- 426              		.align	1
- 427              		.global	_unlink
- 428              		.syntax unified
- 429              		.thumb
- 430              		.thumb_func
- 432              	_unlink:
- 433              	.LVL30:
- 434              	.LFB37:
+ 423              		.loc 1 133 1 is_stmt 0 view .LVU92
+ 424 000a 4FF0FF30 		mov	r0, #-1
+ 425 000e 08BD     		pop	{r3, pc}
+ 426              		.cfi_endproc
+ 427              	.LFE36:
+ 429              		.section	.text._unlink,"ax",%progbits
+ 430              		.align	1
+ 431              		.global	_unlink
+ 432              		.syntax unified
+ 433              		.thumb
+ 434              		.thumb_func
+ 436              	_unlink:
+ 437              	.LVL30:
+ 438              	.LFB37:
  134:Core/Src/syscalls.c **** 
  135:Core/Src/syscalls.c **** int _unlink(char *name)
  136:Core/Src/syscalls.c **** {
- 435              		.loc 1 136 1 is_stmt 1 view -0
- 436              		.cfi_startproc
- 437              		@ args = 0, pretend = 0, frame = 0
- 438              		@ frame_needed = 0, uses_anonymous_args = 0
- 439              		.loc 1 136 1 is_stmt 0 view .LVU90
- 440 0000 08B5     		push	{r3, lr}
- 441              	.LCFI7:
- 442              		.cfi_def_cfa_offset 8
- 443              		.cfi_offset 3, -8
- 444              		.cfi_offset 14, -4
+ 439              		.loc 1 136 1 is_stmt 1 view -0
+ 440              		.cfi_startproc
+ 441              		@ args = 0, pretend = 0, frame = 0
+ 442              		@ frame_needed = 0, uses_anonymous_args = 0
+ 443              		.loc 1 136 1 is_stmt 0 view .LVU94
+ 444 0000 08B5     		push	{r3, lr}
+ 445              	.LCFI7:
+ 446              		.cfi_def_cfa_offset 8
+ 447              		.cfi_offset 3, -8
+ 448              		.cfi_offset 14, -4
  137:Core/Src/syscalls.c ****   (void)name;
- 445              		.loc 1 137 3 is_stmt 1 view .LVU91
+ 449              		.loc 1 137 3 is_stmt 1 view .LVU95
  138:Core/Src/syscalls.c ****   errno = ENOENT;
- 446              		.loc 1 138 3 view .LVU92
- 447 0002 FFF7FEFF 		bl	__errno
- 448              	.LVL31:
- 449              		.loc 1 138 9 is_stmt 0 view .LVU93
- 450 0006 0223     		movs	r3, #2
- 451 0008 0360     		str	r3, [r0]
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s 			page 11
+
+
+ 450              		.loc 1 138 3 view .LVU96
+ 451 0002 FFF7FEFF 		bl	__errno
+ 452              	.LVL31:
+ 453              		.loc 1 138 9 is_stmt 0 view .LVU97
+ 454 0006 0223     		movs	r3, #2
+ 455 0008 0360     		str	r3, [r0]
  139:Core/Src/syscalls.c ****   return -1;
- 452              		.loc 1 139 3 is_stmt 1 view .LVU94
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s 			page 11
-
-
+ 456              		.loc 1 139 3 is_stmt 1 view .LVU98
  140:Core/Src/syscalls.c **** }
- 453              		.loc 1 140 1 is_stmt 0 view .LVU95
- 454 000a 4FF0FF30 		mov	r0, #-1
- 455 000e 08BD     		pop	{r3, pc}
- 456              		.cfi_endproc
- 457              	.LFE37:
- 459              		.section	.text._times,"ax",%progbits
- 460              		.align	1
- 461              		.global	_times
- 462              		.syntax unified
- 463              		.thumb
- 464              		.thumb_func
- 466              	_times:
- 467              	.LVL32:
- 468              	.LFB38:
+ 457              		.loc 1 140 1 is_stmt 0 view .LVU99
+ 458 000a 4FF0FF30 		mov	r0, #-1
+ 459 000e 08BD     		pop	{r3, pc}
+ 460              		.cfi_endproc
+ 461              	.LFE37:
+ 463              		.section	.text._times,"ax",%progbits
+ 464              		.align	1
+ 465              		.global	_times
+ 466              		.syntax unified
+ 467              		.thumb
+ 468              		.thumb_func
+ 470              	_times:
+ 471              	.LVL32:
+ 472              	.LFB38:
  141:Core/Src/syscalls.c **** 
  142:Core/Src/syscalls.c **** int _times(struct tms *buf)
  143:Core/Src/syscalls.c **** {
- 469              		.loc 1 143 1 is_stmt 1 view -0
- 470              		.cfi_startproc
- 471              		@ args = 0, pretend = 0, frame = 0
- 472              		@ frame_needed = 0, uses_anonymous_args = 0
- 473              		@ link register save eliminated.
+ 473              		.loc 1 143 1 is_stmt 1 view -0
+ 474              		.cfi_startproc
+ 475              		@ args = 0, pretend = 0, frame = 0
+ 476              		@ frame_needed = 0, uses_anonymous_args = 0
+ 477              		@ link register save eliminated.
  144:Core/Src/syscalls.c ****   (void)buf;
- 474              		.loc 1 144 3 view .LVU97
+ 478              		.loc 1 144 3 view .LVU101
  145:Core/Src/syscalls.c ****   return -1;
- 475              		.loc 1 145 3 view .LVU98
+ 479              		.loc 1 145 3 view .LVU102
  146:Core/Src/syscalls.c **** }
- 476              		.loc 1 146 1 is_stmt 0 view .LVU99
- 477 0000 4FF0FF30 		mov	r0, #-1
- 478              	.LVL33:
- 479              		.loc 1 146 1 view .LVU100
- 480 0004 7047     		bx	lr
- 481              		.cfi_endproc
- 482              	.LFE38:
- 484              		.section	.text._stat,"ax",%progbits
- 485              		.align	1
- 486              		.global	_stat
- 487              		.syntax unified
- 488              		.thumb
- 489              		.thumb_func
- 491              	_stat:
- 492              	.LVL34:
- 493              	.LFB39:
+ 480              		.loc 1 146 1 is_stmt 0 view .LVU103
+ 481 0000 4FF0FF30 		mov	r0, #-1
+ 482              	.LVL33:
+ 483              		.loc 1 146 1 view .LVU104
+ 484 0004 7047     		bx	lr
+ 485              		.cfi_endproc
+ 486              	.LFE38:
+ 488              		.section	.text._stat,"ax",%progbits
+ 489              		.align	1
+ 490              		.global	_stat
+ 491              		.syntax unified
+ 492              		.thumb
+ 493              		.thumb_func
+ 495              	_stat:
+ 496              	.LVL34:
+ 497              	.LFB39:
  147:Core/Src/syscalls.c **** 
  148:Core/Src/syscalls.c **** int _stat(char *file, struct stat *st)
  149:Core/Src/syscalls.c **** {
- 494              		.loc 1 149 1 is_stmt 1 view -0
- 495              		.cfi_startproc
- 496              		@ args = 0, pretend = 0, frame = 0
- 497              		@ frame_needed = 0, uses_anonymous_args = 0
- 498              		@ link register save eliminated.
+ 498              		.loc 1 149 1 is_stmt 1 view -0
+ 499              		.cfi_startproc
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s 			page 12
+
+
+ 500              		@ args = 0, pretend = 0, frame = 0
+ 501              		@ frame_needed = 0, uses_anonymous_args = 0
+ 502              		@ link register save eliminated.
  150:Core/Src/syscalls.c ****   (void)file;
- 499              		.loc 1 150 3 view .LVU102
+ 503              		.loc 1 150 3 view .LVU106
  151:Core/Src/syscalls.c ****   st->st_mode = S_IFCHR;
- 500              		.loc 1 151 3 view .LVU103
- 501              		.loc 1 151 15 is_stmt 0 view .LVU104
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s 			page 12
-
-
- 502 0000 4FF40053 		mov	r3, #8192
- 503 0004 4B60     		str	r3, [r1, #4]
+ 504              		.loc 1 151 3 view .LVU107
+ 505              		.loc 1 151 15 is_stmt 0 view .LVU108
+ 506 0000 4FF40053 		mov	r3, #8192
+ 507 0004 4B60     		str	r3, [r1, #4]
  152:Core/Src/syscalls.c ****   return 0;
- 504              		.loc 1 152 3 is_stmt 1 view .LVU105
+ 508              		.loc 1 152 3 is_stmt 1 view .LVU109
  153:Core/Src/syscalls.c **** }
- 505              		.loc 1 153 1 is_stmt 0 view .LVU106
- 506 0006 0020     		movs	r0, #0
- 507              	.LVL35:
- 508              		.loc 1 153 1 view .LVU107
- 509 0008 7047     		bx	lr
- 510              		.cfi_endproc
- 511              	.LFE39:
- 513              		.section	.text._link,"ax",%progbits
- 514              		.align	1
- 515              		.global	_link
- 516              		.syntax unified
- 517              		.thumb
- 518              		.thumb_func
- 520              	_link:
- 521              	.LVL36:
- 522              	.LFB40:
+ 509              		.loc 1 153 1 is_stmt 0 view .LVU110
+ 510 0006 0020     		movs	r0, #0
+ 511              	.LVL35:
+ 512              		.loc 1 153 1 view .LVU111
+ 513 0008 7047     		bx	lr
+ 514              		.cfi_endproc
+ 515              	.LFE39:
+ 517              		.section	.text._link,"ax",%progbits
+ 518              		.align	1
+ 519              		.global	_link
+ 520              		.syntax unified
+ 521              		.thumb
+ 522              		.thumb_func
+ 524              	_link:
+ 525              	.LVL36:
+ 526              	.LFB40:
  154:Core/Src/syscalls.c **** 
  155:Core/Src/syscalls.c **** int _link(char *old, char *new)
  156:Core/Src/syscalls.c **** {
- 523              		.loc 1 156 1 is_stmt 1 view -0
- 524              		.cfi_startproc
- 525              		@ args = 0, pretend = 0, frame = 0
- 526              		@ frame_needed = 0, uses_anonymous_args = 0
- 527              		.loc 1 156 1 is_stmt 0 view .LVU109
- 528 0000 08B5     		push	{r3, lr}
- 529              	.LCFI8:
- 530              		.cfi_def_cfa_offset 8
- 531              		.cfi_offset 3, -8
- 532              		.cfi_offset 14, -4
+ 527              		.loc 1 156 1 is_stmt 1 view -0
+ 528              		.cfi_startproc
+ 529              		@ args = 0, pretend = 0, frame = 0
+ 530              		@ frame_needed = 0, uses_anonymous_args = 0
+ 531              		.loc 1 156 1 is_stmt 0 view .LVU113
+ 532 0000 08B5     		push	{r3, lr}
+ 533              	.LCFI8:
+ 534              		.cfi_def_cfa_offset 8
+ 535              		.cfi_offset 3, -8
+ 536              		.cfi_offset 14, -4
  157:Core/Src/syscalls.c ****   (void)old;
- 533              		.loc 1 157 3 is_stmt 1 view .LVU110
+ 537              		.loc 1 157 3 is_stmt 1 view .LVU114
  158:Core/Src/syscalls.c ****   (void)new;
- 534              		.loc 1 158 3 view .LVU111
+ 538              		.loc 1 158 3 view .LVU115
  159:Core/Src/syscalls.c ****   errno = EMLINK;
- 535              		.loc 1 159 3 view .LVU112
- 536 0002 FFF7FEFF 		bl	__errno
- 537              	.LVL37:
- 538              		.loc 1 159 9 is_stmt 0 view .LVU113
- 539 0006 1F23     		movs	r3, #31
- 540 0008 0360     		str	r3, [r0]
+ 539              		.loc 1 159 3 view .LVU116
+ 540 0002 FFF7FEFF 		bl	__errno
+ 541              	.LVL37:
+ 542              		.loc 1 159 9 is_stmt 0 view .LVU117
+ 543 0006 1F23     		movs	r3, #31
+ 544 0008 0360     		str	r3, [r0]
  160:Core/Src/syscalls.c ****   return -1;
- 541              		.loc 1 160 3 is_stmt 1 view .LVU114
+ 545              		.loc 1 160 3 is_stmt 1 view .LVU118
  161:Core/Src/syscalls.c **** }
- 542              		.loc 1 161 1 is_stmt 0 view .LVU115
- 543 000a 4FF0FF30 		mov	r0, #-1
- 544 000e 08BD     		pop	{r3, pc}
- 545              		.cfi_endproc
- 546              	.LFE40:
- 548              		.section	.text._fork,"ax",%progbits
- 549              		.align	1
- 550              		.global	_fork
- 551              		.syntax unified
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s 			page 13
+ 546              		.loc 1 161 1 is_stmt 0 view .LVU119
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s 			page 13
 
 
- 552              		.thumb
- 553              		.thumb_func
- 555              	_fork:
- 556              	.LFB41:
+ 547 000a 4FF0FF30 		mov	r0, #-1
+ 548 000e 08BD     		pop	{r3, pc}
+ 549              		.cfi_endproc
+ 550              	.LFE40:
+ 552              		.section	.text._fork,"ax",%progbits
+ 553              		.align	1
+ 554              		.global	_fork
+ 555              		.syntax unified
+ 556              		.thumb
+ 557              		.thumb_func
+ 559              	_fork:
+ 560              	.LFB41:
  162:Core/Src/syscalls.c **** 
  163:Core/Src/syscalls.c **** int _fork(void)
  164:Core/Src/syscalls.c **** {
- 557              		.loc 1 164 1 is_stmt 1 view -0
- 558              		.cfi_startproc
- 559              		@ args = 0, pretend = 0, frame = 0
- 560              		@ frame_needed = 0, uses_anonymous_args = 0
- 561 0000 08B5     		push	{r3, lr}
- 562              	.LCFI9:
- 563              		.cfi_def_cfa_offset 8
- 564              		.cfi_offset 3, -8
- 565              		.cfi_offset 14, -4
+ 561              		.loc 1 164 1 is_stmt 1 view -0
+ 562              		.cfi_startproc
+ 563              		@ args = 0, pretend = 0, frame = 0
+ 564              		@ frame_needed = 0, uses_anonymous_args = 0
+ 565 0000 08B5     		push	{r3, lr}
+ 566              	.LCFI9:
+ 567              		.cfi_def_cfa_offset 8
+ 568              		.cfi_offset 3, -8
+ 569              		.cfi_offset 14, -4
  165:Core/Src/syscalls.c ****   errno = EAGAIN;
- 566              		.loc 1 165 3 view .LVU117
- 567 0002 FFF7FEFF 		bl	__errno
- 568              	.LVL38:
- 569              		.loc 1 165 9 is_stmt 0 view .LVU118
- 570 0006 0B23     		movs	r3, #11
- 571 0008 0360     		str	r3, [r0]
+ 570              		.loc 1 165 3 view .LVU121
+ 571 0002 FFF7FEFF 		bl	__errno
+ 572              	.LVL38:
+ 573              		.loc 1 165 9 is_stmt 0 view .LVU122
+ 574 0006 0B23     		movs	r3, #11
+ 575 0008 0360     		str	r3, [r0]
  166:Core/Src/syscalls.c ****   return -1;
- 572              		.loc 1 166 3 is_stmt 1 view .LVU119
+ 576              		.loc 1 166 3 is_stmt 1 view .LVU123
  167:Core/Src/syscalls.c **** }
- 573              		.loc 1 167 1 is_stmt 0 view .LVU120
- 574 000a 4FF0FF30 		mov	r0, #-1
- 575 000e 08BD     		pop	{r3, pc}
- 576              		.cfi_endproc
- 577              	.LFE41:
- 579              		.section	.text._execve,"ax",%progbits
- 580              		.align	1
- 581              		.global	_execve
- 582              		.syntax unified
- 583              		.thumb
- 584              		.thumb_func
- 586              	_execve:
- 587              	.LVL39:
- 588              	.LFB42:
+ 577              		.loc 1 167 1 is_stmt 0 view .LVU124
+ 578 000a 4FF0FF30 		mov	r0, #-1
+ 579 000e 08BD     		pop	{r3, pc}
+ 580              		.cfi_endproc
+ 581              	.LFE41:
+ 583              		.section	.text._execve,"ax",%progbits
+ 584              		.align	1
+ 585              		.global	_execve
+ 586              		.syntax unified
+ 587              		.thumb
+ 588              		.thumb_func
+ 590              	_execve:
+ 591              	.LVL39:
+ 592              	.LFB42:
  168:Core/Src/syscalls.c **** 
  169:Core/Src/syscalls.c **** int _execve(char *name, char **argv, char **env)
  170:Core/Src/syscalls.c **** {
- 589              		.loc 1 170 1 is_stmt 1 view -0
- 590              		.cfi_startproc
- 591              		@ args = 0, pretend = 0, frame = 0
- 592              		@ frame_needed = 0, uses_anonymous_args = 0
- 593              		.loc 1 170 1 is_stmt 0 view .LVU122
- 594 0000 08B5     		push	{r3, lr}
- 595              	.LCFI10:
- 596              		.cfi_def_cfa_offset 8
- 597              		.cfi_offset 3, -8
- 598              		.cfi_offset 14, -4
+ 593              		.loc 1 170 1 is_stmt 1 view -0
+ 594              		.cfi_startproc
+ 595              		@ args = 0, pretend = 0, frame = 0
+ 596              		@ frame_needed = 0, uses_anonymous_args = 0
+ 597              		.loc 1 170 1 is_stmt 0 view .LVU126
+ 598 0000 08B5     		push	{r3, lr}
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s 			page 14
+
+
+ 599              	.LCFI10:
+ 600              		.cfi_def_cfa_offset 8
+ 601              		.cfi_offset 3, -8
+ 602              		.cfi_offset 14, -4
  171:Core/Src/syscalls.c ****   (void)name;
- 599              		.loc 1 171 3 is_stmt 1 view .LVU123
+ 603              		.loc 1 171 3 is_stmt 1 view .LVU127
  172:Core/Src/syscalls.c ****   (void)argv;
- 600              		.loc 1 172 3 view .LVU124
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s 			page 14
-
-
+ 604              		.loc 1 172 3 view .LVU128
  173:Core/Src/syscalls.c ****   (void)env;
- 601              		.loc 1 173 3 view .LVU125
+ 605              		.loc 1 173 3 view .LVU129
  174:Core/Src/syscalls.c ****   errno = ENOMEM;
- 602              		.loc 1 174 3 view .LVU126
- 603 0002 FFF7FEFF 		bl	__errno
- 604              	.LVL40:
- 605              		.loc 1 174 9 is_stmt 0 view .LVU127
- 606 0006 0C23     		movs	r3, #12
- 607 0008 0360     		str	r3, [r0]
+ 606              		.loc 1 174 3 view .LVU130
+ 607 0002 FFF7FEFF 		bl	__errno
+ 608              	.LVL40:
+ 609              		.loc 1 174 9 is_stmt 0 view .LVU131
+ 610 0006 0C23     		movs	r3, #12
+ 611 0008 0360     		str	r3, [r0]
  175:Core/Src/syscalls.c ****   return -1;
- 608              		.loc 1 175 3 is_stmt 1 view .LVU128
+ 612              		.loc 1 175 3 is_stmt 1 view .LVU132
  176:Core/Src/syscalls.c **** }
- 609              		.loc 1 176 1 is_stmt 0 view .LVU129
- 610 000a 4FF0FF30 		mov	r0, #-1
- 611 000e 08BD     		pop	{r3, pc}
- 612              		.cfi_endproc
- 613              	.LFE42:
- 615              		.global	environ
- 616              		.global	__env
- 617              		.section	.bss.__env,"aw",%nobits
- 618              		.align	2
- 621              	__env:
- 622 0000 00000000 		.space	4
- 623              		.section	.data.environ,"aw"
- 624              		.align	2
- 627              	environ:
- 628 0000 00000000 		.word	__env
- 629              		.weak	__io_putchar
- 630              		.weak	__io_getchar
- 631              		.text
- 632              	.Letext0:
- 633              		.file 2 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
- 634              		.file 3 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
- 635              		.file 4 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
- 636              		.file 5 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
- 637              		.file 6 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
- 638              		.file 7 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
- 639              		.file 8 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
- 640              		.file 9 "D:\\STM_CUBE_IDE\\STM32CubeIDE_1.14.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ex
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s 			page 15
+ 613              		.loc 1 176 1 is_stmt 0 view .LVU133
+ 614 000a 4FF0FF30 		mov	r0, #-1
+ 615 000e 08BD     		pop	{r3, pc}
+ 616              		.cfi_endproc
+ 617              	.LFE42:
+ 619              		.global	environ
+ 620              		.global	__env
+ 621              		.section	.bss.__env,"aw",%nobits
+ 622              		.align	2
+ 625              	__env:
+ 626 0000 00000000 		.space	4
+ 627              		.section	.data.environ,"aw"
+ 628              		.align	2
+ 631              	environ:
+ 632 0000 00000000 		.word	__env
+ 633              		.weak	__io_putchar
+ 634              		.weak	__io_getchar
+ 635              		.text
+ 636              	.Letext0:
+ 637              		.file 2 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 638              		.file 3 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 639              		.file 4 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 640              		.file 5 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 641              		.file 6 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 642              		.file 7 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 643              		.file 8 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 644              		.file 9 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s 			page 15
 
 
 DEFINED SYMBOLS
-                            *ABS*:0000000000000000 syscalls.c
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:20     .text.initialise_monitor_handles:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:26     .text.initialise_monitor_handles:0000000000000000 initialise_monitor_handles
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:40     .text._getpid:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:46     .text._getpid:0000000000000000 _getpid
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:61     .text._kill:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:67     .text._kill:0000000000000000 _kill
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:96     .text._exit:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:102    .text._exit:0000000000000000 _exit
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:129    .text._read:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:135    .text._read:0000000000000000 _read
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:191    .text._write:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:197    .text._write:0000000000000000 _write
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:247    .text._close:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:253    .text._close:0000000000000000 _close
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:272    .text._fstat:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:278    .text._fstat:0000000000000000 _fstat
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:301    .text._isatty:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:307    .text._isatty:0000000000000000 _isatty
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:326    .text._lseek:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:332    .text._lseek:0000000000000000 _lseek
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:353    .text._open:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:359    .text._open:0000000000000000 _open
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:392    .text._wait:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:398    .text._wait:0000000000000000 _wait
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:426    .text._unlink:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:432    .text._unlink:0000000000000000 _unlink
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:460    .text._times:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:466    .text._times:0000000000000000 _times
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:485    .text._stat:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:491    .text._stat:0000000000000000 _stat
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:514    .text._link:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:520    .text._link:0000000000000000 _link
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:549    .text._fork:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:555    .text._fork:0000000000000000 _fork
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:580    .text._execve:0000000000000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:586    .text._execve:0000000000000000 _execve
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:627    .data.environ:0000000000000000 environ
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:621    .bss.__env:0000000000000000 __env
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:618    .bss.__env:0000000000000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cco8jKy4.s:624    .data.environ:0000000000000000 $d
+                            *ABS*:00000000 syscalls.c
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:20     .text.initialise_monitor_handles:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:26     .text.initialise_monitor_handles:00000000 initialise_monitor_handles
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:40     .text._getpid:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:46     .text._getpid:00000000 _getpid
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:61     .text._kill:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:67     .text._kill:00000000 _kill
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:96     .text._exit:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:102    .text._exit:00000000 _exit
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:129    .text._read:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:135    .text._read:00000000 _read
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:193    .text._write:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:199    .text._write:00000000 _write
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:251    .text._close:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:257    .text._close:00000000 _close
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:276    .text._fstat:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:282    .text._fstat:00000000 _fstat
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:305    .text._isatty:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:311    .text._isatty:00000000 _isatty
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:330    .text._lseek:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:336    .text._lseek:00000000 _lseek
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:357    .text._open:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:363    .text._open:00000000 _open
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:396    .text._wait:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:402    .text._wait:00000000 _wait
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:430    .text._unlink:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:436    .text._unlink:00000000 _unlink
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:464    .text._times:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:470    .text._times:00000000 _times
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:489    .text._stat:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:495    .text._stat:00000000 _stat
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:518    .text._link:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:524    .text._link:00000000 _link
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:553    .text._fork:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:559    .text._fork:00000000 _fork
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:584    .text._execve:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:590    .text._execve:00000000 _execve
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:631    .data.environ:00000000 environ
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:625    .bss.__env:00000000 __env
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:622    .bss.__env:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccrovjjA.s:628    .data.environ:00000000 $d
 
 UNDEFINED SYMBOLS
 __errno
