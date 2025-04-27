@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 1
   27:modules/JY61P/JY61P.c ****     WitInit(WIT_PROTOCOL_NORMAL, 0x50);
   28:modules/JY61P/JY61P.c ****     WitSerialWriteRegister(USART_JY61P_SEND); // 注册传感器串口发送函数
   29:modules/JY61P/JY61P.c ****     WitDelayMsRegister(DWT_Delay_ms);// 注册传感器延时函数
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 2
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s 			page 2
 
 
   30:modules/JY61P/JY61P.c ****     WitRegisterCallBack(JY61P_DataUpdate);// 注册传感器数据更新函数
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 1
   70:modules/JY61P/JY61P.c ****                 JY61P_instance.JY61P_data.fGyro[i] = sReg[GX+i] / 32768.0f * 2000.0f;
   71:modules/JY61P/JY61P.c ****             }
   72:modules/JY61P/JY61P.c ****             break;
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 3
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s 			page 3
 
 
   73:modules/JY61P/JY61P.c ****         case Roll:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 1
   77 0042 7047     		bx	lr
   78              	.LVL4:
   79              	.L17:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 4
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s 			page 4
 
 
   62:modules/JY61P/JY61P.c ****             {
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 1
   59:modules/JY61P/JY61P.c ****     {
  121              		.loc 1 59 5 view .LVU26
  122 007e 0023     		movs	r3, #0
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 5
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s 			page 5
 
 
  123 0080 FAE7     		b	.L2
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 1
  163 00be F1EE10FA 		vmrs	APSR_nzcv, FPSCR
  164 00c2 09DD     		ble	.L16
   78:modules/JY61P/JY61P.c ****             break;
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 6
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s 			page 6
 
 
  165              		.loc 1 78 135 discriminator 1 view .LVU41
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 1
  215              		.loc 1 50 5 view .LVU48
  216              	.LBB5:
   50:modules/JY61P/JY61P.c ****   {
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 7
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s 			page 7
 
 
  217              		.loc 1 50 10 view .LVU49
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 1
  262              	.LVL18:
  263              	.LFB138:
   19:modules/JY61P/JY61P.c ****     
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 8
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s 			page 8
 
 
  264              		.loc 1 19 1 is_stmt 1 view -0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 1
  305 0024 FFF7FEFF 		bl	WitInit
  306              	.LVL21:
   28:modules/JY61P/JY61P.c ****     WitDelayMsRegister(DWT_Delay_ms);// 注册传感器延时函数
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 9
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s 			page 9
 
 
  307              		.loc 1 28 5 view .LVU75
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 1
  355              		.thumb_func
  357              	INS_Init:
  358              	.LFB137:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 10
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s 			page 10
 
 
   10:modules/JY61P/JY61P.c ****     DWT_Init(168);
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 1
  406              	.LFB139:
   38:modules/JY61P/JY61P.c ****     WitReadReg(AX, 3);
  407              		.loc 1 38 1 is_stmt 1 view -0
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 11
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s 			page 11
 
 
  408              		.cfi_startproc
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 1
  454              		.loc 1 46 1 is_stmt 0 view .LVU100
  455 0042 BDEC028B 		vldm	sp!, {d8}
  456              	.LCFI7:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 12
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s 			page 12
 
 
  457              		.cfi_restore 80
@@ -698,30 +698,30 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 1
  492              		.file 10 "modules/JY61P/wit_c_sdk.h"
  493              		.file 11 "modules/JY61P/JY61P.h"
  494              		.file 12 "bsp/dwt/bsp_dwt.h"
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s 			page 13
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s 			page 13
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 JY61P.c
-C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s:20     .text.JY61P_DataUpdate:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s:26     .text.JY61P_DataUpdate:00000000 JY61P_DataUpdate
-C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s:188    .text.JY61P_DataUpdate:000000e0 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s:198    .text.WITSerialDecode:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s:204    .text.WITSerialDecode:00000000 WITSerialDecode
-C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s:250    .text.WITSerialDecode:00000018 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s:255    .text.JY61P_Init:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s:261    .text.JY61P_Init:00000000 JY61P_Init
-C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s:341    .text.JY61P_Init:00000050 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s:351    .text.INS_Init:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s:357    .text.INS_Init:00000000 INS_Init
-C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s:394    .text.INS_Init:00000024 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s:399    .text.JY61P_ReadData:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s:405    .text.JY61P_ReadData:00000000 JY61P_ReadData
-C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s:464    .text.JY61P_ReadData:00000048 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s:469    .bss.JY61P_data:00000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s:473    .bss.JY61P_data:00000000 JY61P_data
-C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s:476    .bss.JY61P_instance:00000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccqDEoUc.s:480    .bss.JY61P_instance:00000000 JY61P_instance
+C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s:20     .text.JY61P_DataUpdate:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s:26     .text.JY61P_DataUpdate:00000000 JY61P_DataUpdate
+C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s:188    .text.JY61P_DataUpdate:000000e0 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s:198    .text.WITSerialDecode:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s:204    .text.WITSerialDecode:00000000 WITSerialDecode
+C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s:250    .text.WITSerialDecode:00000018 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s:255    .text.JY61P_Init:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s:261    .text.JY61P_Init:00000000 JY61P_Init
+C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s:341    .text.JY61P_Init:00000050 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s:351    .text.INS_Init:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s:357    .text.INS_Init:00000000 INS_Init
+C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s:394    .text.INS_Init:00000024 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s:399    .text.JY61P_ReadData:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s:405    .text.JY61P_ReadData:00000000 JY61P_ReadData
+C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s:464    .text.JY61P_ReadData:00000048 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s:469    .bss.JY61P_data:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s:473    .bss.JY61P_data:00000000 JY61P_data
+C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s:476    .bss.JY61P_instance:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccA6aYjd.s:480    .bss.JY61P_instance:00000000 JY61P_instance
 
 UNDEFINED SYMBOLS
 sReg

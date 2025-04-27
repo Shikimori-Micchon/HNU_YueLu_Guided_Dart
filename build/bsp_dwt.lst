@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 1
   29:bsp/dwt/bsp_dwt.c **** {
   28              		.loc 1 29 1 view -0
   29              		.cfi_startproc
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 2
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s 			page 2
 
 
   30              		@ args = 0, pretend = 0, frame = 8
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 1
   74 0028 5A68     		ldr	r2, [r3, #4]
   75              		.loc 1 38 21 view .LVU18
   76 002a 064B     		ldr	r3, .L8+8
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 3
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s 			page 3
 
 
   77 002c 1A60     		str	r2, [r3]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 1
  125 0004 D2F8FC30 		ldr	r3, [r2, #252]
  126 0008 43F08073 		orr	r3, r3, #16777216
  127 000c C2F8FC30 		str	r3, [r2, #252]
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 4
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s 			page 4
 
 
   47:bsp/dwt/bsp_dwt.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 1
   60:bsp/dwt/bsp_dwt.c **** }
  169              		.loc 1 60 1 is_stmt 0 view .LVU42
  170 0048 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 5
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s 			page 5
 
 
  171              	.L13:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 1
  222              		.loc 1 65 38 view .LVU50
  223 0010 0268     		ldr	r2, [r0]
  224              		.loc 1 65 17 view .LVU51
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 6
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s 			page 6
 
 
  225 0012 9B1A     		subs	r3, r3, r2
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 1
  275              	DWT_GetDeltaT64:
  276              	.LVL7:
  277              	.LFB137:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 7
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s 			page 7
 
 
   72:bsp/dwt/bsp_dwt.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 1
  327 002e FFF7FEFF 		bl	__aeabi_ddiv
  328              	.LVL11:
  329 0032 41EC180B 		vmov	d8, r0, r1
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 8
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s 			page 8
 
 
  330              	.LVL12:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 1
  377              		@ frame_needed = 0, uses_anonymous_args = 0
  378 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
  379              	.LCFI13:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 9
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s 			page 9
 
 
  380              		.cfi_def_cfa_offset 24
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 1
  427 003c 2A46     		mov	r2, r5
  428 003e 3346     		mov	r3, r6
  429 0040 2046     		mov	r0, r4
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 10
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s 			page 10
 
 
  430 0042 3946     		mov	r1, r7
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 1
  479 0094 3346     		mov	r3, r6
  480 0096 FFF7FEFF 		bl	__aeabi_uldivmod
  481              	.LVL19:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 11
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s 			page 11
 
 
  482              		.loc 1 97 16 view .LVU109
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 1
  531 0008 9A88     		ldrh	r2, [r3, #4]
  532 000a 00EE102A 		vmov	s0, r2	@ int
  533              		.loc 1 104 52 view .LVU116
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 12
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s 			page 12
 
 
  534 000e B8EEC00A 		vcvt.f32.s32	s0, s0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 1
  583 0002 FFF7FEFF 		bl	DWT_SysTimeUpdate
  584              	.LVL23:
  112:bsp/dwt/bsp_dwt.c **** 
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 13
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s 			page 13
 
 
  113:bsp/dwt/bsp_dwt.c ****     float DWT_Timelinef32 = SysTime.s * 1000 + SysTime.ms + SysTime.us * 0.001f;
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 1
  634              		.cfi_def_cfa_offset 8
  635              		.cfi_offset 3, -8
  636              		.cfi_offset 14, -4
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 14
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s 			page 14
 
 
  120:bsp/dwt/bsp_dwt.c ****     DWT_SysTimeUpdate();
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 1
  684              		@ link register save eliminated.
  129:bsp/dwt/bsp_dwt.c ****     uint32_t tickstart = DWT->CYCCNT;
  685              		.loc 1 129 5 view .LVU147
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 15
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s 			page 15
 
 
  686              		.loc 1 129 14 is_stmt 0 view .LVU148
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 1
  730              	DWT_Delay_ms:
  731              	.LVL31:
  732              	.LFB143:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 16
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s 			page 16
 
 
  135:bsp/dwt/bsp_dwt.c **** 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 1
  788 0000 00000000 		.space	4
  789              		.section	.bss.CPU_FREQ_Hz_ms,"aw",%nobits
  790              		.align	2
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 17
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s 			page 17
 
 
  791              		.set	.LANCHOR4,. + 0
@@ -1001,67 +1001,67 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 1
  840              		.file 3 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
  841              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
  842              		.file 5 "bsp/dwt/bsp_dwt.h"
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 18
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s 			page 18
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 bsp_dwt.c
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:20     .text.DWT_CNT_Update:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:25     .text.DWT_CNT_Update:00000000 DWT_CNT_Update
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:95     .text.DWT_CNT_Update:0000003c $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:103    .text.DWT_Init:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:109    .text.DWT_Init:00000000 DWT_Init
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:174    .text.DWT_Init:0000004c $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:187    .text.DWT_GetDeltaT:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:193    .text.DWT_GetDeltaT:00000000 DWT_GetDeltaT
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:261    .text.DWT_GetDeltaT:00000040 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:269    .text.DWT_GetDeltaT64:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:275    .text.DWT_GetDeltaT64:00000000 DWT_GetDeltaT64
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:359    .text.DWT_GetDeltaT64:00000050 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:366    .text.DWT_SysTimeUpdate:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:372    .text.DWT_SysTimeUpdate:00000000 DWT_SysTimeUpdate
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:493    .text.DWT_SysTimeUpdate:000000a4 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:507    .text.DWT_GetTimeline_s:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:513    .text.DWT_GetTimeline_s:00000000 DWT_GetTimeline_s
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:558    .text.DWT_GetTimeline_s:00000040 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:565    .text.DWT_GetTimeline_ms:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:571    .text.DWT_GetTimeline_ms:00000000 DWT_GetTimeline_ms
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:614    .text.DWT_GetTimeline_ms:00000034 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:620    .text.DWT_GetTimeline_us:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:626    .text.DWT_GetTimeline_us:00000000 DWT_GetTimeline_us
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:665    .text.DWT_GetTimeline_us:00000024 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:671    .text.DWT_Delay:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:677    .text.DWT_Delay:00000000 DWT_Delay
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:718    .text.DWT_Delay:0000002c $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:724    .text.DWT_Delay_ms:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:730    .text.DWT_Delay_ms:00000000 DWT_Delay_ms
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:757    .text.DWT_Delay_ms:00000018 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:762    .bss.CNT_TEMP1.2:00000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:766    .bss.CNT_TEMP1.2:00000000 CNT_TEMP1.2
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:769    .bss.CNT_TEMP2.1:00000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:773    .bss.CNT_TEMP2.1:00000000 CNT_TEMP2.1
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:776    .bss.CNT_TEMP3.0:00000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:780    .bss.CNT_TEMP3.0:00000000 CNT_TEMP3.0
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:783    .bss.CPU_FREQ_Hz:00000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:787    .bss.CPU_FREQ_Hz:00000000 CPU_FREQ_Hz
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:790    .bss.CPU_FREQ_Hz_ms:00000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:794    .bss.CPU_FREQ_Hz_ms:00000000 CPU_FREQ_Hz_ms
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:797    .bss.CPU_FREQ_Hz_us:00000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:801    .bss.CPU_FREQ_Hz_us:00000000 CPU_FREQ_Hz_us
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:804    .bss.CYCCNT64:00000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:808    .bss.CYCCNT64:00000000 CYCCNT64
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:811    .bss.CYCCNT_LAST:00000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:815    .bss.CYCCNT_LAST:00000000 CYCCNT_LAST
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:818    .bss.CYCCNT_RountCount:00000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:822    .bss.CYCCNT_RountCount:00000000 CYCCNT_RountCount
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:825    .bss.SysTime:00000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:829    .bss.SysTime:00000000 SysTime
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:835    .bss.bit_locker.3:00000000 bit_locker.3
-C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s:836    .bss.bit_locker.3:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:20     .text.DWT_CNT_Update:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:25     .text.DWT_CNT_Update:00000000 DWT_CNT_Update
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:95     .text.DWT_CNT_Update:0000003c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:103    .text.DWT_Init:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:109    .text.DWT_Init:00000000 DWT_Init
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:174    .text.DWT_Init:0000004c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:187    .text.DWT_GetDeltaT:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:193    .text.DWT_GetDeltaT:00000000 DWT_GetDeltaT
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:261    .text.DWT_GetDeltaT:00000040 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:269    .text.DWT_GetDeltaT64:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:275    .text.DWT_GetDeltaT64:00000000 DWT_GetDeltaT64
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:359    .text.DWT_GetDeltaT64:00000050 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:366    .text.DWT_SysTimeUpdate:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:372    .text.DWT_SysTimeUpdate:00000000 DWT_SysTimeUpdate
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:493    .text.DWT_SysTimeUpdate:000000a4 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:507    .text.DWT_GetTimeline_s:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:513    .text.DWT_GetTimeline_s:00000000 DWT_GetTimeline_s
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:558    .text.DWT_GetTimeline_s:00000040 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:565    .text.DWT_GetTimeline_ms:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:571    .text.DWT_GetTimeline_ms:00000000 DWT_GetTimeline_ms
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:614    .text.DWT_GetTimeline_ms:00000034 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:620    .text.DWT_GetTimeline_us:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:626    .text.DWT_GetTimeline_us:00000000 DWT_GetTimeline_us
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:665    .text.DWT_GetTimeline_us:00000024 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:671    .text.DWT_Delay:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:677    .text.DWT_Delay:00000000 DWT_Delay
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:718    .text.DWT_Delay:0000002c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:724    .text.DWT_Delay_ms:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:730    .text.DWT_Delay_ms:00000000 DWT_Delay_ms
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:757    .text.DWT_Delay_ms:00000018 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:762    .bss.CNT_TEMP1.2:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:766    .bss.CNT_TEMP1.2:00000000 CNT_TEMP1.2
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:769    .bss.CNT_TEMP2.1:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:773    .bss.CNT_TEMP2.1:00000000 CNT_TEMP2.1
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:776    .bss.CNT_TEMP3.0:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:780    .bss.CNT_TEMP3.0:00000000 CNT_TEMP3.0
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:783    .bss.CPU_FREQ_Hz:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:787    .bss.CPU_FREQ_Hz:00000000 CPU_FREQ_Hz
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:790    .bss.CPU_FREQ_Hz_ms:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:794    .bss.CPU_FREQ_Hz_ms:00000000 CPU_FREQ_Hz_ms
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:797    .bss.CPU_FREQ_Hz_us:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:801    .bss.CPU_FREQ_Hz_us:00000000 CPU_FREQ_Hz_us
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:804    .bss.CYCCNT64:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:808    .bss.CYCCNT64:00000000 CYCCNT64
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:811    .bss.CYCCNT_LAST:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:815    .bss.CYCCNT_LAST:00000000 CYCCNT_LAST
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:818    .bss.CYCCNT_RountCount:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:822    .bss.CYCCNT_RountCount:00000000 CYCCNT_RountCount
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:825    .bss.SysTime:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:829    .bss.SysTime:00000000 SysTime
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:835    .bss.bit_locker.3:00000000 bit_locker.3
+C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s:836    .bss.bit_locker.3:00000000 $d
 
 UNDEFINED SYMBOLS
 __aeabi_ui2d
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc4OY1kc.s 			page 19
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccKn9xX6.s 			page 19
 
 
 __aeabi_ddiv
