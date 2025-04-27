@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s 			page 1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s 			page 1
   27:bsp/usart/bsp_usart.c **** void USARTServiceInit(USARTInstance *_instance)
   28:bsp/usart/bsp_usart.c **** {
   30              		.loc 1 28 1 view -0
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s 			page 2
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s 			page 2
 
 
   31              		.cfi_startproc
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s 			page 1
   77 0000 38B5     		push	{r3, r4, r5, lr}
   78              	.LCFI1:
   79              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s 			page 3
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s 			page 3
 
 
   80              		.cfi_offset 3, -16
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s 			page 1
  117 002c 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
  118 002e 591C     		adds	r1, r3, #1
  119 0030 1170     		strb	r1, [r2]
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s 			page 4
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s 			page 4
 
 
  120              		.loc 1 55 27 view .LVU24
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s 			page 1
  168              	.L10:
   64:bsp/usart/bsp_usart.c ****     {
   65:bsp/usart/bsp_usart.c ****     case USART_TRANSFER_BLOCKING:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s 			page 5
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s 			page 5
 
 
   66:bsp/usart/bsp_usart.c ****         HAL_UART_Transmit(_instance->usart_handle, send_buf, send_size, 100);
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s 			page 1
  200 0026 D0F80401 		ldr	r0, [r0, #260]
  201              	.LVL18:
   72:bsp/usart/bsp_usart.c ****         break;
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s 			page 6
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s 			page 6
 
 
  202              		.loc 1 72 9 is_stmt 0 view .LVU44
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s 			page 1
  252              		.global	USARTIsReady
  253              		.syntax unified
  254              		.thumb
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s 			page 7
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s 			page 7
 
 
  255              		.thumb_func
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s 			page 1
  109:bsp/usart/bsp_usart.c **** //         }
  110:bsp/usart/bsp_usart.c **** //     }
  111:bsp/usart/bsp_usart.c **** // }
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s 			page 8
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s 			page 8
 
 
  112:bsp/usart/bsp_usart.c **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s 			page 1
  326              		.loc 1 128 9 is_stmt 1 view .LVU70
  327              		.loc 1 128 36 is_stmt 0 view .LVU71
  328 0016 1D46     		mov	r5, r3
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s 			page 9
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s 			page 9
 
 
  329 0018 0E4A     		ldr	r2, .L26+4
@@ -538,58 +538,158 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s 			page 1
  371              	.L26:
  372 0050 00000000 		.word	.LANCHOR0
  373 0054 00000000 		.word	.LANCHOR1
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s 			page 10
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s 			page 10
 
 
  374              		.cfi_endproc
  375              	.LFE139:
- 377              		.section	.bss.idx,"aw",%nobits
- 378              		.set	.LANCHOR0,. + 0
- 381              	idx:
- 382 0000 00       		.space	1
- 383              		.section	.bss.usart_instance,"aw",%nobits
- 384              		.align	2
- 385              		.set	.LANCHOR1,. + 0
- 388              	usart_instance:
- 389 0000 00000000 		.space	12
- 389      00000000 
- 389      00000000 
- 390              		.text
- 391              	.Letext0:
- 392              		.file 2 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
- 393              		.file 3 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
- 394              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
- 395              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 396              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 397              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 398              		.file 8 "bsp/usart/bsp_usart.h"
- 399              		.file 9 "Core/Inc/usart.h"
- 400              		.file 10 "<built-in>"
- 401              		.file 11 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win3
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s 			page 11
+ 377              		.section	.text.HAL_UART_ErrorCallback,"ax",%progbits
+ 378              		.align	1
+ 379              		.global	HAL_UART_ErrorCallback
+ 380              		.syntax unified
+ 381              		.thumb
+ 382              		.thumb_func
+ 384              	HAL_UART_ErrorCallback:
+ 385              	.LVL35:
+ 386              	.LFB140:
+ 141:bsp/usart/bsp_usart.c **** 
+ 142:bsp/usart/bsp_usart.c **** /**
+ 143:bsp/usart/bsp_usart.c ****  * @brief 当串口发送/接收出现错误时,会调用此函数,此时这个函数要做的就�
+ 144:bsp/usart/bsp_usart.c ****  *
+ 145:bsp/usart/bsp_usart.c ****  * @note  最常见的错误:奇偶校验/溢出/帧错误
+ 146:bsp/usart/bsp_usart.c ****  *
+ 147:bsp/usart/bsp_usart.c ****  * @param huart 发生错误的串口
+ 148:bsp/usart/bsp_usart.c ****  */
+ 149:bsp/usart/bsp_usart.c **** void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
+ 150:bsp/usart/bsp_usart.c **** {
+ 387              		.loc 1 150 1 is_stmt 1 view -0
+ 388              		.cfi_startproc
+ 389              		@ args = 0, pretend = 0, frame = 0
+ 390              		@ frame_needed = 0, uses_anonymous_args = 0
+ 391              		.loc 1 150 1 is_stmt 0 view .LVU85
+ 392 0000 08B5     		push	{r3, lr}
+ 393              	.LCFI5:
+ 394              		.cfi_def_cfa_offset 8
+ 395              		.cfi_offset 3, -8
+ 396              		.cfi_offset 14, -4
+ 397 0002 8446     		mov	ip, r0
+ 151:bsp/usart/bsp_usart.c ****     for (uint8_t i = 0; i < idx; ++i)
+ 398              		.loc 1 151 5 is_stmt 1 view .LVU86
+ 399              	.LBB4:
+ 400              		.loc 1 151 10 view .LVU87
+ 401              	.LVL36:
+ 402              		.loc 1 151 18 is_stmt 0 view .LVU88
+ 403 0004 0023     		movs	r3, #0
+ 404              		.loc 1 151 5 view .LVU89
+ 405 0006 01E0     		b	.L29
+ 406              	.LVL37:
+ 407              	.L30:
+ 408              		.loc 1 151 34 is_stmt 1 discriminator 2 view .LVU90
+ 409 0008 0133     		adds	r3, r3, #1
+ 410              	.LVL38:
+ 411              		.loc 1 151 34 is_stmt 0 discriminator 2 view .LVU91
+ 412 000a DBB2     		uxtb	r3, r3
+ 413              	.LVL39:
+ 414              	.L29:
+ 415              		.loc 1 151 25 is_stmt 1 discriminator 1 view .LVU92
+ 416              		.loc 1 151 27 is_stmt 0 discriminator 1 view .LVU93
+ 417 000c 074A     		ldr	r2, .L34
+ 418 000e 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ 419              		.loc 1 151 5 discriminator 1 view .LVU94
+ 420 0010 9A42     		cmp	r2, r3
+ 421 0012 0AD9     		bls	.L28
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s 			page 11
+
+
+ 152:bsp/usart/bsp_usart.c ****     {
+ 153:bsp/usart/bsp_usart.c ****         if (huart == usart_instance[i]->usart_handle)
+ 422              		.loc 1 153 9 is_stmt 1 view .LVU95
+ 423              		.loc 1 153 36 is_stmt 0 view .LVU96
+ 424 0014 064A     		ldr	r2, .L34+4
+ 425 0016 52F82310 		ldr	r1, [r2, r3, lsl #2]
+ 426              		.loc 1 153 39 view .LVU97
+ 427 001a D1F80401 		ldr	r0, [r1, #260]
+ 428              		.loc 1 153 12 view .LVU98
+ 429 001e 6045     		cmp	r0, ip
+ 430 0020 F2D1     		bne	.L30
+ 154:bsp/usart/bsp_usart.c ****         {
+ 155:bsp/usart/bsp_usart.c ****             HAL_UARTEx_ReceiveToIdle_DMA(usart_instance[i]->usart_handle, usart_instance[i]->recv_b
+ 431              		.loc 1 155 13 is_stmt 1 view .LVU99
+ 432 0022 91F80021 		ldrb	r2, [r1, #256]	@ zero_extendqisi2
+ 433 0026 FFF7FEFF 		bl	HAL_UARTEx_ReceiveToIdle_DMA
+ 434              	.LVL40:
+ 156:bsp/usart/bsp_usart.c ****             // __HAL_DMA_DISABLE_IT(usart_instance[i]->usart_handle->hdmarx, DMA_IT_HT);
+ 157:bsp/usart/bsp_usart.c ****             // LOGWARNING("[bsp_usart] USART error callback triggered, instance idx [%d]", i);
+ 158:bsp/usart/bsp_usart.c ****             return;
+ 435              		.loc 1 158 13 view .LVU100
+ 436              	.L28:
+ 437              		.loc 1 158 13 is_stmt 0 view .LVU101
+ 438              	.LBE4:
+ 159:bsp/usart/bsp_usart.c ****         }
+ 160:bsp/usart/bsp_usart.c ****     }
+ 161:bsp/usart/bsp_usart.c **** }...
+ 439              		.loc 1 161 1 view .LVU102
+ 440 002a 08BD     		pop	{r3, pc}
+ 441              	.L35:
+ 442              		.align	2
+ 443              	.L34:
+ 444 002c 00000000 		.word	.LANCHOR0
+ 445 0030 00000000 		.word	.LANCHOR1
+ 446              		.cfi_endproc
+ 447              	.LFE140:
+ 449              		.section	.bss.idx,"aw",%nobits
+ 450              		.set	.LANCHOR0,. + 0
+ 453              	idx:
+ 454 0000 00       		.space	1
+ 455              		.section	.bss.usart_instance,"aw",%nobits
+ 456              		.align	2
+ 457              		.set	.LANCHOR1,. + 0
+ 460              	usart_instance:
+ 461 0000 00000000 		.space	12
+ 461      00000000 
+ 461      00000000 
+ 462              		.text
+ 463              	.Letext0:
+ 464              		.file 2 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 465              		.file 3 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 466              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ 467              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 468              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 469              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 470              		.file 8 "bsp/usart/bsp_usart.h"
+ 471              		.file 9 "Core/Inc/usart.h"
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s 			page 12
+
+
+ 472              		.file 10 "<built-in>"
+ 473              		.file 11 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win3
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s 			page 13
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 bsp_usart.c
-C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s:20     .text.USARTServiceInit:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s:26     .text.USARTServiceInit:00000000 USARTServiceInit
-C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s:63     .text.USARTRegister:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s:69     .text.USARTRegister:00000000 USARTRegister
-C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s:136    .text.USARTRegister:00000044 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s:142    .text.USARTSend:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s:148    .text.USARTSend:00000000 USARTSend
-C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s:211    .text.USART_JY61P_SEND:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s:217    .text.USART_JY61P_SEND:00000000 USART_JY61P_SEND
-C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s:246    .text.USART_JY61P_SEND:00000010 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s:251    .text.USARTIsReady:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s:257    .text.USARTIsReady:00000000 USARTIsReady
-C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s:280    .text.HAL_UARTEx_RxEventCallback:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s:286    .text.HAL_UARTEx_RxEventCallback:00000000 HAL_UARTEx_RxEventCallback
-C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s:372    .text.HAL_UARTEx_RxEventCallback:00000050 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s:381    .bss.idx:00000000 idx
-C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s:382    .bss.idx:00000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s:384    .bss.usart_instance:00000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccsHfJ1c.s:388    .bss.usart_instance:00000000 usart_instance
+C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s:20     .text.USARTServiceInit:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s:26     .text.USARTServiceInit:00000000 USARTServiceInit
+C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s:63     .text.USARTRegister:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s:69     .text.USARTRegister:00000000 USARTRegister
+C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s:136    .text.USARTRegister:00000044 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s:142    .text.USARTSend:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s:148    .text.USARTSend:00000000 USARTSend
+C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s:211    .text.USART_JY61P_SEND:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s:217    .text.USART_JY61P_SEND:00000000 USART_JY61P_SEND
+C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s:246    .text.USART_JY61P_SEND:00000010 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s:251    .text.USARTIsReady:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s:257    .text.USARTIsReady:00000000 USARTIsReady
+C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s:280    .text.HAL_UARTEx_RxEventCallback:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s:286    .text.HAL_UARTEx_RxEventCallback:00000000 HAL_UARTEx_RxEventCallback
+C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s:372    .text.HAL_UARTEx_RxEventCallback:00000050 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s:378    .text.HAL_UART_ErrorCallback:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s:384    .text.HAL_UART_ErrorCallback:00000000 HAL_UART_ErrorCallback
+C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s:444    .text.HAL_UART_ErrorCallback:0000002c $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s:453    .bss.idx:00000000 idx
+C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s:454    .bss.idx:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s:456    .bss.usart_instance:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccaygBxf.s:460    .bss.usart_instance:00000000 usart_instance
 
 UNDEFINED SYMBOLS
 HAL_UARTEx_ReceiveToIdle_DMA

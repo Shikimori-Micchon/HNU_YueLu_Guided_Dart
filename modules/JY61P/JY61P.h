@@ -7,7 +7,7 @@
 #include "wit_c_sdk.h"
 typedef struct
 {
-float fEuler[3], fAcc[3], fGyro[3], fQuat[4];
+float fEuler[3], fAcc[3], fGyro[3];
 } JY61PData;
 
 typedef struct

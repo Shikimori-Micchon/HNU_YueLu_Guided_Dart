@@ -9,7 +9,7 @@ static JY61PData *JY61P_data; // 传感器数据结构体实例
 JY61PData *INS_Init(void)
 {
     DWT_Init(168);
-    JY61P_data = JY61P_Init(WIT_BAUD_115200);
+    JY61P_data = JY61P_Init(WIT_BAUD_9600);
     WitRestartSensor();
     DWT_Delay(2);
     return &JY61P_data;
@@ -49,6 +49,7 @@ void WITSerialDecode()
 {
     for (int i = 0; i < 33; i++)
   {
+    // HAL_UART_Transmit_IT(&huart1, &JY61P_instance.usart_instance->recv_buff[i], 1);
     WitSerialDataIn(JY61P_instance.usart_instance->recv_buff[i]);
   }
 }

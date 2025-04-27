@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -19,16 +19,15 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
   16              		.text
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
-  19              		.section	.text.HAL_TIM_PeriodElapsedCallback,"ax",%progbits
+  19              		.section	.text.Error_Handler,"ax",%progbits
   20              		.align	1
-  21              		.global	HAL_TIM_PeriodElapsedCallback
+  21              		.global	Error_Handler
   22              		.syntax unified
   23              		.thumb
   24              		.thumb_func
-  26              	HAL_TIM_PeriodElapsedCallback:
-  27              	.LVL0:
-  28              	.LFB144:
-  29              		.file 1 "Core/Src/main.c"
+  26              	Error_Handler:
+  27              	.LFB139:
+  28              		.file 1 "Core/Src/main.c"
    1:Core/Src/main.c **** /* USER CODE BEGIN Header */
    2:Core/Src/main.c **** /**
    3:Core/Src/main.c ****   ******************************************************************************
@@ -50,263 +49,183 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
   19:Core/Src/main.c **** /* USER CODE END Header */
   20:Core/Src/main.c **** /* Includes ------------------------------------------------------------------*/
   21:Core/Src/main.c **** #include "main.h"
-  22:Core/Src/main.c **** #include "cmsis_os.h"
-  23:Core/Src/main.c **** #include "dma.h"
-  24:Core/Src/main.c **** #include "tim.h"
-  25:Core/Src/main.c **** #include "usart.h"
-  26:Core/Src/main.c **** #include "gpio.h"
-  27:Core/Src/main.c **** 
-  28:Core/Src/main.c **** /* Private includes ----------------------------------------------------------*/
-  29:Core/Src/main.c **** /* USER CODE BEGIN Includes */
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 2
+  22:Core/Src/main.c **** #include "dma.h"
+  23:Core/Src/main.c **** #include "tim.h"
+  24:Core/Src/main.c **** #include "usart.h"
+  25:Core/Src/main.c **** #include "gpio.h"
+  26:Core/Src/main.c **** 
+  27:Core/Src/main.c **** /* Private includes ----------------------------------------------------------*/
+  28:Core/Src/main.c **** /* USER CODE BEGIN Includes */
+  29:Core/Src/main.c **** #include "JY61P.h"  // 传感器头文件
+  30:Core/Src/main.c **** /* USER CODE END Includes */
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 2
 
 
-  30:Core/Src/main.c **** #include "JY61P.h"  // 传感器头文件
-  31:Core/Src/main.c **** /* USER CODE END Includes */
-  32:Core/Src/main.c **** 
-  33:Core/Src/main.c **** /* Private typedef -----------------------------------------------------------*/
-  34:Core/Src/main.c **** /* USER CODE BEGIN PTD */
-  35:Core/Src/main.c **** 
-  36:Core/Src/main.c **** /* USER CODE END PTD */
-  37:Core/Src/main.c **** 
-  38:Core/Src/main.c **** /* Private define ------------------------------------------------------------*/
-  39:Core/Src/main.c **** /* USER CODE BEGIN PD */
-  40:Core/Src/main.c **** /* USER CODE END PD */
-  41:Core/Src/main.c **** 
-  42:Core/Src/main.c **** /* Private macro -------------------------------------------------------------*/
-  43:Core/Src/main.c **** /* USER CODE BEGIN PM */
-  44:Core/Src/main.c **** 
-  45:Core/Src/main.c **** /* USER CODE END PM */
-  46:Core/Src/main.c **** 
-  47:Core/Src/main.c **** /* Private variables ---------------------------------------------------------*/
-  48:Core/Src/main.c **** 
-  49:Core/Src/main.c **** /* USER CODE BEGIN PV */
-  50:Core/Src/main.c **** 
-  51:Core/Src/main.c **** /* USER CODE END PV */
-  52:Core/Src/main.c **** 
-  53:Core/Src/main.c **** /* Private function prototypes -----------------------------------------------*/
-  54:Core/Src/main.c **** void SystemClock_Config(void);
-  55:Core/Src/main.c **** void MX_FREERTOS_Init(void);
-  56:Core/Src/main.c **** /* USER CODE BEGIN PFP */
-  57:Core/Src/main.c **** void WITSerialDecode(void);
-  58:Core/Src/main.c **** // JY61PData *INS_Init(void)
-  59:Core/Src/main.c **** // {
-  60:Core/Src/main.c **** //   DWT_Init(168);
-  61:Core/Src/main.c **** //   JY61P_data = JY61P_Init(WIT_BAUD_115200);
-  62:Core/Src/main.c **** //   WitRestartSensor();
-  63:Core/Src/main.c **** //   DWT_Delay(2);
-  64:Core/Src/main.c **** //   return &JY61P_data;
-  65:Core/Src/main.c **** // }
-  66:Core/Src/main.c **** /* USER CODE END PFP */
-  67:Core/Src/main.c **** 
-  68:Core/Src/main.c **** /* Private user code ---------------------------------------------------------*/
-  69:Core/Src/main.c **** /* USER CODE BEGIN 0 */
-  70:Core/Src/main.c **** JY61PData *pJY61PData = NULL; // 传感器数据结构体指针
-  71:Core/Src/main.c **** // static JY61PData *JY61P_data; // 传感器数据结构体实例
-  72:Core/Src/main.c **** 
+  31:Core/Src/main.c **** 
+  32:Core/Src/main.c **** /* Private typedef -----------------------------------------------------------*/
+  33:Core/Src/main.c **** /* USER CODE BEGIN PTD */
+  34:Core/Src/main.c **** 
+  35:Core/Src/main.c **** /* USER CODE END PTD */
+  36:Core/Src/main.c **** 
+  37:Core/Src/main.c **** /* Private define ------------------------------------------------------------*/
+  38:Core/Src/main.c **** /* USER CODE BEGIN PD */
+  39:Core/Src/main.c **** /* USER CODE END PD */
+  40:Core/Src/main.c **** 
+  41:Core/Src/main.c **** /* Private macro -------------------------------------------------------------*/
+  42:Core/Src/main.c **** /* USER CODE BEGIN PM */
+  43:Core/Src/main.c **** 
+  44:Core/Src/main.c **** /* USER CODE END PM */
+  45:Core/Src/main.c **** 
+  46:Core/Src/main.c **** /* Private variables ---------------------------------------------------------*/
+  47:Core/Src/main.c **** 
+  48:Core/Src/main.c **** /* USER CODE BEGIN PV */
+  49:Core/Src/main.c **** 
+  50:Core/Src/main.c **** /* USER CODE END PV */
+  51:Core/Src/main.c **** 
+  52:Core/Src/main.c **** /* Private function prototypes -----------------------------------------------*/
+  53:Core/Src/main.c **** void SystemClock_Config(void);
+  54:Core/Src/main.c **** /* USER CODE BEGIN PFP */
+  55:Core/Src/main.c **** // void WITSerialDecode(void);
+  56:Core/Src/main.c **** // JY61PData *INS_Init(void)
+  57:Core/Src/main.c **** // {
+  58:Core/Src/main.c **** //   DWT_Init(168);
+  59:Core/Src/main.c **** //   JY61P_data = JY61P_Init(WIT_BAUD_115200);
+  60:Core/Src/main.c **** //   WitRestartSensor();
+  61:Core/Src/main.c **** //   DWT_Delay(2);
+  62:Core/Src/main.c **** //   return &JY61P_data;
+  63:Core/Src/main.c **** // }
+  64:Core/Src/main.c **** /* USER CODE END PFP */
+  65:Core/Src/main.c **** 
+  66:Core/Src/main.c **** /* Private user code ---------------------------------------------------------*/
+  67:Core/Src/main.c **** /* USER CODE BEGIN 0 */
+  68:Core/Src/main.c **** JY61PData *pJY61PData = NULL; // 传感器数据结构体指针
+  69:Core/Src/main.c **** // static JY61PData *JY61P_data; // 传感器数据结构体实例
+  70:Core/Src/main.c **** 
+  71:Core/Src/main.c **** 
+  72:Core/Src/main.c **** /* USER CODE END 0 */
   73:Core/Src/main.c **** 
-  74:Core/Src/main.c **** /* USER CODE END 0 */
-  75:Core/Src/main.c **** 
-  76:Core/Src/main.c **** /**
-  77:Core/Src/main.c ****   * @brief  The application entry point.
-  78:Core/Src/main.c ****   * @retval int
-  79:Core/Src/main.c ****   */
-  80:Core/Src/main.c **** int main(void)
-  81:Core/Src/main.c **** {
+  74:Core/Src/main.c **** /**
+  75:Core/Src/main.c ****   * @brief  The application entry point.
+  76:Core/Src/main.c ****   * @retval int
+  77:Core/Src/main.c ****   */
+  78:Core/Src/main.c **** int main(void)
+  79:Core/Src/main.c **** {
+  80:Core/Src/main.c **** 
+  81:Core/Src/main.c ****   /* USER CODE BEGIN 1 */
   82:Core/Src/main.c **** 
-  83:Core/Src/main.c ****   /* USER CODE BEGIN 1 */
+  83:Core/Src/main.c ****   /* USER CODE END 1 */
   84:Core/Src/main.c **** 
-  85:Core/Src/main.c ****   /* USER CODE END 1 */
+  85:Core/Src/main.c ****   /* MCU Configuration--------------------------------------------------------*/
   86:Core/Src/main.c **** 
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 3
+  87:Core/Src/main.c ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 3
 
 
-  87:Core/Src/main.c ****   /* MCU Configuration--------------------------------------------------------*/
-  88:Core/Src/main.c **** 
-  89:Core/Src/main.c ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  90:Core/Src/main.c ****   HAL_Init();
+  88:Core/Src/main.c ****   HAL_Init();
+  89:Core/Src/main.c **** 
+  90:Core/Src/main.c ****   /* USER CODE BEGIN Init */
   91:Core/Src/main.c **** 
-  92:Core/Src/main.c ****   /* USER CODE BEGIN Init */
+  92:Core/Src/main.c ****   /* USER CODE END Init */
   93:Core/Src/main.c **** 
-  94:Core/Src/main.c ****   /* USER CODE END Init */
-  95:Core/Src/main.c **** 
-  96:Core/Src/main.c ****   /* Configure the system clock */
-  97:Core/Src/main.c ****   SystemClock_Config();
+  94:Core/Src/main.c ****   /* Configure the system clock */
+  95:Core/Src/main.c ****   SystemClock_Config();
+  96:Core/Src/main.c **** 
+  97:Core/Src/main.c ****   /* USER CODE BEGIN SysInit */
   98:Core/Src/main.c **** 
-  99:Core/Src/main.c ****   /* USER CODE BEGIN SysInit */
+  99:Core/Src/main.c ****   /* USER CODE END SysInit */
  100:Core/Src/main.c **** 
- 101:Core/Src/main.c ****   /* USER CODE END SysInit */
- 102:Core/Src/main.c **** 
- 103:Core/Src/main.c ****   /* Initialize all configured peripherals */
- 104:Core/Src/main.c ****   MX_GPIO_Init();
- 105:Core/Src/main.c ****   MX_DMA_Init();
- 106:Core/Src/main.c ****   MX_USART3_UART_Init();
- 107:Core/Src/main.c ****   MX_TIM1_Init();
- 108:Core/Src/main.c ****   MX_USART1_UART_Init();
- 109:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
- 110:Core/Src/main.c ****   pJY61PData = INS_Init(); // 初始化传感器
- 111:Core/Src/main.c ****   /* USER CODE END 2 */
- 112:Core/Src/main.c **** 
- 113:Core/Src/main.c ****   /* Call init function for freertos objects (in cmsis_os2.c) */
- 114:Core/Src/main.c ****   MX_FREERTOS_Init();
- 115:Core/Src/main.c **** 
- 116:Core/Src/main.c ****   /* Start scheduler */
- 117:Core/Src/main.c ****   osKernelStart();
- 118:Core/Src/main.c **** 
- 119:Core/Src/main.c ****   /* We should never get here as control is now taken by the scheduler */
- 120:Core/Src/main.c **** 
- 121:Core/Src/main.c ****   /* Infinite loop */
- 122:Core/Src/main.c ****   /* USER CODE BEGIN WHILE */
- 123:Core/Src/main.c ****   while (1)
- 124:Core/Src/main.c ****   {
- 125:Core/Src/main.c ****     /* USER CODE END WHILE */
- 126:Core/Src/main.c **** 
- 127:Core/Src/main.c ****     /* USER CODE BEGIN 3 */
- 128:Core/Src/main.c ****   }
- 129:Core/Src/main.c ****   /* USER CODE END 3 */
- 130:Core/Src/main.c **** }
- 131:Core/Src/main.c **** 
- 132:Core/Src/main.c **** /**
- 133:Core/Src/main.c ****   * @brief System Clock Configuration
- 134:Core/Src/main.c ****   * @retval None
- 135:Core/Src/main.c ****   */
- 136:Core/Src/main.c **** void SystemClock_Config(void)
- 137:Core/Src/main.c **** {
- 138:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
- 139:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
- 140:Core/Src/main.c **** 
- 141:Core/Src/main.c ****   /** Configure the main internal regulator output voltage
- 142:Core/Src/main.c ****   */
- 143:Core/Src/main.c ****   __HAL_RCC_PWR_CLK_ENABLE();
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 4
+ 101:Core/Src/main.c ****   /* Initialize all configured peripherals */
+ 102:Core/Src/main.c ****   MX_GPIO_Init();
+ 103:Core/Src/main.c ****   MX_DMA_Init();
+ 104:Core/Src/main.c ****   MX_USART3_UART_Init();
+ 105:Core/Src/main.c ****   MX_TIM1_Init();
+ 106:Core/Src/main.c ****   MX_USART1_UART_Init();
+ 107:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
+ 108:Core/Src/main.c ****   pJY61PData = INS_Init(); // 初始化传感器
+ 109:Core/Src/main.c ****   /* USER CODE END 2 */
+ 110:Core/Src/main.c **** 
+ 111:Core/Src/main.c ****   /* Infinite loop */
+ 112:Core/Src/main.c ****   /* USER CODE BEGIN WHILE */
+ 113:Core/Src/main.c ****   while (1)
+ 114:Core/Src/main.c ****   {
+ 115:Core/Src/main.c ****     /* USER CODE END WHILE */
+ 116:Core/Src/main.c **** 
+ 117:Core/Src/main.c ****     /* USER CODE BEGIN 3 */
+ 118:Core/Src/main.c ****   }
+ 119:Core/Src/main.c ****   /* USER CODE END 3 */
+ 120:Core/Src/main.c **** }
+ 121:Core/Src/main.c **** 
+ 122:Core/Src/main.c **** /**
+ 123:Core/Src/main.c ****   * @brief System Clock Configuration
+ 124:Core/Src/main.c ****   * @retval None
+ 125:Core/Src/main.c ****   */
+ 126:Core/Src/main.c **** void SystemClock_Config(void)
+ 127:Core/Src/main.c **** {
+ 128:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+ 129:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+ 130:Core/Src/main.c **** 
+ 131:Core/Src/main.c ****   /** Configure the main internal regulator output voltage
+ 132:Core/Src/main.c ****   */
+ 133:Core/Src/main.c ****   __HAL_RCC_PWR_CLK_ENABLE();
+ 134:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+ 135:Core/Src/main.c **** 
+ 136:Core/Src/main.c ****   /** Initializes the RCC Oscillators according to the specified parameters
+ 137:Core/Src/main.c ****   * in the RCC_OscInitTypeDef structure.
+ 138:Core/Src/main.c ****   */
+ 139:Core/Src/main.c ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+ 140:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+ 141:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+ 142:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+ 143:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLM = 25;
+ 144:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLN = 336;
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 4
 
 
- 144:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
- 145:Core/Src/main.c **** 
- 146:Core/Src/main.c ****   /** Initializes the RCC Oscillators according to the specified parameters
- 147:Core/Src/main.c ****   * in the RCC_OscInitTypeDef structure.
- 148:Core/Src/main.c ****   */
- 149:Core/Src/main.c ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
- 150:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
- 151:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
- 152:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
- 153:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLM = 25;
- 154:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLN = 336;
- 155:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
- 156:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLQ = 4;
- 157:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
- 158:Core/Src/main.c ****   {
- 159:Core/Src/main.c ****     Error_Handler();
- 160:Core/Src/main.c ****   }
- 161:Core/Src/main.c **** 
- 162:Core/Src/main.c ****   /** Initializes the CPU, AHB and APB buses clocks
- 163:Core/Src/main.c ****   */
- 164:Core/Src/main.c ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
- 165:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
- 166:Core/Src/main.c ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
- 167:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 168:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
- 169:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
+ 145:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
+ 146:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLQ = 4;
+ 147:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 148:Core/Src/main.c ****   {
+ 149:Core/Src/main.c ****     Error_Handler();
+ 150:Core/Src/main.c ****   }
+ 151:Core/Src/main.c **** 
+ 152:Core/Src/main.c ****   /** Initializes the CPU, AHB and APB buses clocks
+ 153:Core/Src/main.c ****   */
+ 154:Core/Src/main.c ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+ 155:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ 156:Core/Src/main.c ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+ 157:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 158:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
+ 159:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
+ 160:Core/Src/main.c **** 
+ 161:Core/Src/main.c ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)
+ 162:Core/Src/main.c ****   {
+ 163:Core/Src/main.c ****     Error_Handler();
+ 164:Core/Src/main.c ****   }
+ 165:Core/Src/main.c **** }
+ 166:Core/Src/main.c **** 
+ 167:Core/Src/main.c **** /* USER CODE BEGIN 4 */
+ 168:Core/Src/main.c **** 
+ 169:Core/Src/main.c **** /* USER CODE END 4 */
  170:Core/Src/main.c **** 
- 171:Core/Src/main.c ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)
- 172:Core/Src/main.c ****   {
- 173:Core/Src/main.c ****     Error_Handler();
- 174:Core/Src/main.c ****   }
- 175:Core/Src/main.c **** }
- 176:Core/Src/main.c **** 
- 177:Core/Src/main.c **** /* USER CODE BEGIN 4 */
- 178:Core/Src/main.c **** 
- 179:Core/Src/main.c **** /* USER CODE END 4 */
- 180:Core/Src/main.c **** 
- 181:Core/Src/main.c **** /**
- 182:Core/Src/main.c ****   * @brief  Period elapsed callback in non blocking mode
- 183:Core/Src/main.c ****   * @note   This function is called  when TIM14 interrupt took place, inside
- 184:Core/Src/main.c ****   * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
- 185:Core/Src/main.c ****   * a global variable "uwTick" used as application time base.
- 186:Core/Src/main.c ****   * @param  htim : TIM handle
- 187:Core/Src/main.c ****   * @retval None
- 188:Core/Src/main.c ****   */
- 189:Core/Src/main.c **** void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
- 190:Core/Src/main.c **** {
-  30              		.loc 1 190 1 view -0
-  31              		.cfi_startproc
+ 171:Core/Src/main.c **** /**
+ 172:Core/Src/main.c ****   * @brief  This function is executed in case of error occurrence.
+ 173:Core/Src/main.c ****   * @retval None
+ 174:Core/Src/main.c ****   */
+ 175:Core/Src/main.c **** void Error_Handler(void)
+ 176:Core/Src/main.c **** {
+  29              		.loc 1 176 1 view -0
+  30              		.cfi_startproc
+  31              		@ Volatile: function does not return.
   32              		@ args = 0, pretend = 0, frame = 0
   33              		@ frame_needed = 0, uses_anonymous_args = 0
-  34              		.loc 1 190 1 is_stmt 0 view .LVU1
-  35 0000 08B5     		push	{r3, lr}
-  36              	.LCFI0:
-  37              		.cfi_def_cfa_offset 8
-  38              		.cfi_offset 3, -8
-  39              		.cfi_offset 14, -4
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 5
-
-
- 191:Core/Src/main.c ****   /* USER CODE BEGIN Callback 0 */
- 192:Core/Src/main.c **** 
- 193:Core/Src/main.c ****   /* USER CODE END Callback 0 */
- 194:Core/Src/main.c ****   if (htim->Instance == TIM14) {
-  40              		.loc 1 194 3 is_stmt 1 view .LVU2
-  41              		.loc 1 194 11 is_stmt 0 view .LVU3
-  42 0002 0268     		ldr	r2, [r0]
-  43              		.loc 1 194 6 view .LVU4
-  44 0004 034B     		ldr	r3, .L5
-  45 0006 9A42     		cmp	r2, r3
-  46 0008 00D0     		beq	.L4
-  47              	.LVL1:
-  48              	.L1:
- 195:Core/Src/main.c ****     HAL_IncTick();
- 196:Core/Src/main.c ****   }
- 197:Core/Src/main.c ****   /* USER CODE BEGIN Callback 1 */
- 198:Core/Src/main.c **** 
- 199:Core/Src/main.c ****   /* USER CODE END Callback 1 */
- 200:Core/Src/main.c **** }
-  49              		.loc 1 200 1 view .LVU5
-  50 000a 08BD     		pop	{r3, pc}
-  51              	.LVL2:
-  52              	.L4:
- 195:Core/Src/main.c ****     HAL_IncTick();
-  53              		.loc 1 195 5 is_stmt 1 view .LVU6
-  54 000c FFF7FEFF 		bl	HAL_IncTick
-  55              	.LVL3:
-  56              		.loc 1 200 1 is_stmt 0 view .LVU7
-  57 0010 FBE7     		b	.L1
-  58              	.L6:
-  59 0012 00BF     		.align	2
-  60              	.L5:
-  61 0014 00200040 		.word	1073750016
-  62              		.cfi_endproc
-  63              	.LFE144:
-  65              		.section	.text.Error_Handler,"ax",%progbits
-  66              		.align	1
-  67              		.global	Error_Handler
-  68              		.syntax unified
-  69              		.thumb
-  70              		.thumb_func
-  72              	Error_Handler:
-  73              	.LFB145:
- 201:Core/Src/main.c **** 
- 202:Core/Src/main.c **** /**
- 203:Core/Src/main.c ****   * @brief  This function is executed in case of error occurrence.
- 204:Core/Src/main.c ****   * @retval None
- 205:Core/Src/main.c ****   */
- 206:Core/Src/main.c **** void Error_Handler(void)
- 207:Core/Src/main.c **** {
-  74              		.loc 1 207 1 is_stmt 1 view -0
-  75              		.cfi_startproc
-  76              		@ Volatile: function does not return.
-  77              		@ args = 0, pretend = 0, frame = 0
-  78              		@ frame_needed = 0, uses_anonymous_args = 0
-  79              		@ link register save eliminated.
- 208:Core/Src/main.c ****   /* USER CODE BEGIN Error_Handler_Debug */
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 6
-
-
- 209:Core/Src/main.c ****   /* User can add his own implementation to report the HAL error return state */
- 210:Core/Src/main.c ****   __disable_irq();
-  80              		.loc 1 210 3 view .LVU9
-  81              	.LBB4:
-  82              	.LBI4:
-  83              		.file 2 "Drivers/CMSIS/Include/cmsis_gcc.h"
+  34              		@ link register save eliminated.
+ 177:Core/Src/main.c ****   /* USER CODE BEGIN Error_Handler_Debug */
+ 178:Core/Src/main.c ****   /* User can add his own implementation to report the HAL error return state */
+ 179:Core/Src/main.c ****   __disable_irq();
+  35              		.loc 1 179 3 view .LVU1
+  36              	.LBB4:
+  37              	.LBI4:
+  38              		.file 2 "Drivers/CMSIS/Include/cmsis_gcc.h"
    1:Drivers/CMSIS/Include/cmsis_gcc.h **** /**************************************************************************//**
    2:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @file     cmsis_gcc.h
    3:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @brief    CMSIS compiler GCC header file
@@ -319,6 +238,9 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
   10:Drivers/CMSIS/Include/cmsis_gcc.h ****  * SPDX-License-Identifier: Apache-2.0
   11:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
   12:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Licensed under the Apache License, Version 2.0 (the License); you may
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 5
+
+
   13:Drivers/CMSIS/Include/cmsis_gcc.h ****  * not use this file except in compliance with the License.
   14:Drivers/CMSIS/Include/cmsis_gcc.h ****  * You may obtain a copy of the License at
   15:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
@@ -358,9 +280,6 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
   49:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __STATIC_FORCEINLINE
   50:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static inline
   51:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 7
-
-
   52:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __NO_RETURN
   53:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __NO_RETURN                            __attribute__((__noreturn__))
   54:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -379,6 +298,9 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
   67:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED_UNION
   68:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED_UNION                         union __attribute__((packed, aligned(1)))
   69:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 6
+
+
   70:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32        /* deprecated */
   71:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
   72:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
@@ -418,9 +340,6 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  106:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_READ { uint32_t v; };
  107:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
  108:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(add
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 8
-
-
  109:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  110:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __ALIGNED
  111:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __ALIGNED(x)                           __attribute__((aligned(x)))
@@ -439,6 +358,9 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  124:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  125:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Initializes data and bss sections
  126:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details This default implementations initialized all data and additional bss
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 7
+
+
  127:Drivers/CMSIS/Include/cmsis_gcc.h ****            sections relying on .copy.table and .zero.table specified properly
  128:Drivers/CMSIS/Include/cmsis_gcc.h ****            in the used linker script.
  129:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -478,9 +400,6 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  163:Drivers/CMSIS/Include/cmsis_gcc.h ****   _start();
  164:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  165:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 9
-
-
  166:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __PROGRAM_START           __cmsis_start
  167:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  168:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -499,6 +418,9 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  181:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __VECTOR_TABLE_ATTRIBUTE
  182:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __VECTOR_TABLE_ATTRIBUTE  __attribute__((used, section(".vectors")))
  183:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 8
+
+
  184:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  185:Drivers/CMSIS/Include/cmsis_gcc.h **** #if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3U)
  186:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __STACK_SEAL
@@ -538,9 +460,6 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  220:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_RW_REG(r) "+r" (r)
  221:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_USE_REG(r) "r" (r)
  222:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 10
-
-
  223:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  224:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  225:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   No Operation
@@ -559,6 +478,9 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  238:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Wait For Event
  239:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Wait For Event is a hint instruction that permits the processor to enter
  240:Drivers/CMSIS/Include/cmsis_gcc.h ****            a low-power state until one of a number of events occurs.
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 9
+
+
  241:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  242:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __WFE()                             __ASM volatile ("wfe":::"memory")
  243:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -598,9 +520,6 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  277:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Ensures the apparent order of the explicit memory operations before
  278:Drivers/CMSIS/Include/cmsis_gcc.h ****            and after the instruction, without ensuring their completion.
  279:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 11
-
-
  280:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __DMB(void)
  281:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  282:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("dmb 0xF":::"memory");
@@ -619,6 +538,9 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  295:Drivers/CMSIS/Include/cmsis_gcc.h ****   return __builtin_bswap32(value);
  296:Drivers/CMSIS/Include/cmsis_gcc.h **** #else
  297:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 10
+
+
  298:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  299:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM ("rev %0, %1" : __CMSIS_GCC_OUT_REG (result) : __CMSIS_GCC_USE_REG (value) );
  300:Drivers/CMSIS/Include/cmsis_gcc.h ****   return result;
@@ -658,9 +580,6 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  334:Drivers/CMSIS/Include/cmsis_gcc.h ****   return result;
  335:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  336:Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 12
-
-
  337:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  338:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  339:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -679,6 +598,9 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  352:Drivers/CMSIS/Include/cmsis_gcc.h ****   }
  353:Drivers/CMSIS/Include/cmsis_gcc.h ****   return (op1 >> op2) | (op1 << (32U - op2));
  354:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 11
+
+
  355:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  356:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  357:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -718,9 +640,6 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  391:Drivers/CMSIS/Include/cmsis_gcc.h ****   result <<= s;                        /* shift when v's highest bits are zero */
  392:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  393:Drivers/CMSIS/Include/cmsis_gcc.h ****   return result;
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 13
-
-
  394:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  395:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  396:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -739,6 +658,9 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  409:Drivers/CMSIS/Include/cmsis_gcc.h ****      optimisations using the logic "value was passed to __builtin_clz, so it
  410:Drivers/CMSIS/Include/cmsis_gcc.h ****      is non-zero".
  411:Drivers/CMSIS/Include/cmsis_gcc.h ****      ARM GCC 7.3 and possibly earlier will optimise this test away, leaving a
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 12
+
+
  412:Drivers/CMSIS/Include/cmsis_gcc.h ****      single CLZ instruction.
  413:Drivers/CMSIS/Include/cmsis_gcc.h ****    */
  414:Drivers/CMSIS/Include/cmsis_gcc.h ****   if (value == 0U)
@@ -778,9 +700,6 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  448:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  449:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   LDR Exclusive (16 bit)
  450:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Executes a exclusive LDR instruction for 16 bit values.
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 14
-
-
  451:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
  452:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return        value of type uint16_t at (*ptr)
  453:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
@@ -799,6 +718,9 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  466:Drivers/CMSIS/Include/cmsis_gcc.h ****    return ((uint16_t) result);    /* Add explicit type cast here */
  467:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  468:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 13
+
+
  469:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  470:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  471:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   LDR Exclusive (32 bit)
@@ -838,9 +760,6 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  505:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]  value  Value to store
  506:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to location
  507:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return          0  Function succeeded
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 15
-
-
  508:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return          1  Function failed
  509:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  510:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __STREXH(uint16_t value, volatile uint16_t *addr)
@@ -859,6 +778,9 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  523:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to location
  524:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return          0  Function succeeded
  525:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return          1  Function failed
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 14
+
+
  526:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  527:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __STREXW(uint32_t value, volatile uint32_t *addr)
  528:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -898,9 +820,6 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  562:Drivers/CMSIS/Include/cmsis_gcc.h **** __extension__ \
  563:Drivers/CMSIS/Include/cmsis_gcc.h **** ({                          \
  564:Drivers/CMSIS/Include/cmsis_gcc.h ****   int32_t __RES, __ARG1 = (ARG1); \
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 16
-
-
  565:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("ssat %0, %1, %2" : "=r" (__RES) :  "I" (ARG2), "r" (__ARG1) : "cc" ); \
  566:Drivers/CMSIS/Include/cmsis_gcc.h ****   __RES; \
  567:Drivers/CMSIS/Include/cmsis_gcc.h ****  })
@@ -919,6 +838,9 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  580:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t __RES, __ARG1 = (ARG1); \
  581:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("usat %0, %1, %2" : "=r" (__RES) :  "I" (ARG2), "r" (__ARG1) : "cc" ); \
  582:Drivers/CMSIS/Include/cmsis_gcc.h ****   __RES; \
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 15
+
+
  583:Drivers/CMSIS/Include/cmsis_gcc.h ****  })
  584:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  585:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -958,9 +880,6 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  619:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  620:Drivers/CMSIS/Include/cmsis_gcc.h ****    return ((uint8_t) result);    /* Add explicit type cast here */
  621:Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 17
-
-
  622:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  623:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  624:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -979,6 +898,9 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  637:Drivers/CMSIS/Include/cmsis_gcc.h ****     /* Prior to GCC 4.8, "Q" will be expanded to [rx, #0] which is not
  638:Drivers/CMSIS/Include/cmsis_gcc.h ****        accepted by assembler. So has to use following less efficient pattern.
  639:Drivers/CMSIS/Include/cmsis_gcc.h ****     */
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 16
+
+
  640:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("ldrht %0, [%1]" : "=r" (result) : "r" (ptr) : "memory" );
  641:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  642:Drivers/CMSIS/Include/cmsis_gcc.h ****    return ((uint16_t) result);    /* Add explicit type cast here */
@@ -1018,9 +940,6 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  676:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]  value  Value to store
  677:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to location
  678:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 18
-
-
  679:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __STRHT(uint16_t value, volatile uint16_t *ptr)
  680:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  681:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("strht %1, %0" : "=Q" (*ptr) : "r" ((uint32_t)value) );
@@ -1039,6 +958,9 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  694:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  695:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  696:Drivers/CMSIS/Include/cmsis_gcc.h **** #else  /* ((defined (__ARM_ARCH_7M__      ) && (__ARM_ARCH_7M__      == 1)) || \
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 17
+
+
  697:Drivers/CMSIS/Include/cmsis_gcc.h ****            (defined (__ARM_ARCH_7EM__     ) && (__ARM_ARCH_7EM__     == 1)) || \
  698:Drivers/CMSIS/Include/cmsis_gcc.h ****            (defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1))    ) */
  699:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1078,9 +1000,6 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  733:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  734:Drivers/CMSIS/Include/cmsis_gcc.h ****   if (sat <= 31U)
  735:Drivers/CMSIS/Include/cmsis_gcc.h ****   {
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 19
-
-
  736:Drivers/CMSIS/Include/cmsis_gcc.h ****     const uint32_t max = ((1U << sat) - 1U);
  737:Drivers/CMSIS/Include/cmsis_gcc.h ****     if (val > (int32_t)max)
  738:Drivers/CMSIS/Include/cmsis_gcc.h ****     {
@@ -1099,6 +1018,9 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  751:Drivers/CMSIS/Include/cmsis_gcc.h ****            (defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1))    ) */
  752:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  753:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 18
+
+
  754:Drivers/CMSIS/Include/cmsis_gcc.h **** #if ((defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) || \
  755:Drivers/CMSIS/Include/cmsis_gcc.h ****      (defined (__ARM_ARCH_8M_BASE__ ) && (__ARM_ARCH_8M_BASE__ == 1))    )
  756:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -1138,9 +1060,6 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  790:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return        value of type uint32_t at (*ptr)
  791:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  792:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __LDA(volatile uint32_t *ptr)
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 20
-
-
  793:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  794:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t result;
  795:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1159,6 +1078,9 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  808:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  809:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("stlb %1, %0" : "=Q" (*ptr) : "r" ((uint32_t)value) : "memory" );
  810:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 19
+
+
  811:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  812:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  813:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -1198,9 +1120,6 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  847:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("ldaexb %0, %1" : "=r" (result) : "Q" (*ptr) : "memory" );
  848:Drivers/CMSIS/Include/cmsis_gcc.h ****    return ((uint8_t) result);
  849:Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 21
-
-
  850:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  851:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  852:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -1219,6 +1138,9 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  865:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  866:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  867:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 20
+
+
  868:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Load-Acquire Exclusive (32 bit)
  869:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Executes a LDA exclusive instruction for 32 bit values.
  870:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
@@ -1258,9 +1180,6 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  904:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return          0  Function succeeded
  905:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return          1  Function failed
  906:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 22
-
-
  907:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __STLEXH(uint16_t value, volatile uint16_t *ptr)
  908:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  909:Drivers/CMSIS/Include/cmsis_gcc.h ****    uint32_t result;
@@ -1279,6 +1198,9 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  922:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return          1  Function failed
  923:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  924:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __STLEX(uint32_t value, volatile uint32_t *ptr)
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 21
+
+
  925:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  926:Drivers/CMSIS/Include/cmsis_gcc.h ****    uint32_t result;
  927:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1315,382 +1237,367 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 1
  958:Drivers/CMSIS/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
  959:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  960:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __disable_irq(void)
-  84              		.loc 2 960 27 view .LVU10
-  85              	.LBB5:
+  39              		.loc 2 960 27 view .LVU2
+  40              	.LBB5:
  961:Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 23
-
-
  962:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsid i" : : : "memory");
-  86              		.loc 2 962 3 view .LVU11
-  87              		.syntax unified
-  88              	@ 962 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
-  89 0000 72B6     		cpsid i
-  90              	@ 0 "" 2
-  91              		.thumb
-  92              		.syntax unified
-  93              	.L8:
-  94              	.LBE5:
-  95              	.LBE4:
- 211:Core/Src/main.c ****   while (1)
-  96              		.loc 1 211 3 discriminator 1 view .LVU12
- 212:Core/Src/main.c ****   {
- 213:Core/Src/main.c ****   }
-  97              		.loc 1 213 3 discriminator 1 view .LVU13
- 211:Core/Src/main.c ****   while (1)
-  98              		.loc 1 211 9 discriminator 1 view .LVU14
-  99 0002 FEE7     		b	.L8
- 100              		.cfi_endproc
- 101              	.LFE145:
- 103              		.section	.text.SystemClock_Config,"ax",%progbits
- 104              		.align	1
- 105              		.global	SystemClock_Config
- 106              		.syntax unified
- 107              		.thumb
- 108              		.thumb_func
- 110              	SystemClock_Config:
- 111              	.LFB143:
- 137:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
- 112              		.loc 1 137 1 view -0
- 113              		.cfi_startproc
- 114              		@ args = 0, pretend = 0, frame = 80
- 115              		@ frame_needed = 0, uses_anonymous_args = 0
- 116 0000 00B5     		push	{lr}
- 117              	.LCFI1:
- 118              		.cfi_def_cfa_offset 4
- 119              		.cfi_offset 14, -4
- 120 0002 95B0     		sub	sp, sp, #84
- 121              	.LCFI2:
- 122              		.cfi_def_cfa_offset 88
- 138:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
- 123              		.loc 1 138 3 view .LVU16
- 138:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
- 124              		.loc 1 138 22 is_stmt 0 view .LVU17
- 125 0004 3022     		movs	r2, #48
- 126 0006 0021     		movs	r1, #0
- 127 0008 08A8     		add	r0, sp, #32
- 128 000a FFF7FEFF 		bl	memset
- 129              	.LVL4:
- 139:Core/Src/main.c **** 
- 130              		.loc 1 139 3 is_stmt 1 view .LVU18
- 139:Core/Src/main.c **** 
- 131              		.loc 1 139 22 is_stmt 0 view .LVU19
- 132 000e 0023     		movs	r3, #0
- 133 0010 0393     		str	r3, [sp, #12]
- 134 0012 0493     		str	r3, [sp, #16]
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 24
+  41              		.loc 2 962 3 view .LVU3
+  42              		.syntax unified
+  43              	@ 962 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+  44 0000 72B6     		cpsid i
+  45              	@ 0 "" 2
+  46              		.thumb
+  47              		.syntax unified
+  48              	.L2:
+  49              	.LBE5:
+  50              	.LBE4:
+ 180:Core/Src/main.c ****   while (1)
+  51              		.loc 1 180 3 discriminator 1 view .LVU4
+ 181:Core/Src/main.c ****   {
+ 182:Core/Src/main.c ****   }
+  52              		.loc 1 182 3 discriminator 1 view .LVU5
+ 180:Core/Src/main.c ****   while (1)
+  53              		.loc 1 180 9 discriminator 1 view .LVU6
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 22
 
 
- 135 0014 0593     		str	r3, [sp, #20]
- 136 0016 0693     		str	r3, [sp, #24]
- 137 0018 0793     		str	r3, [sp, #28]
- 143:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
- 138              		.loc 1 143 3 is_stmt 1 view .LVU20
- 139              	.LBB6:
- 143:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
- 140              		.loc 1 143 3 view .LVU21
- 141 001a 0193     		str	r3, [sp, #4]
- 143:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
- 142              		.loc 1 143 3 view .LVU22
- 143 001c 214A     		ldr	r2, .L15
- 144 001e 116C     		ldr	r1, [r2, #64]
- 145 0020 41F08051 		orr	r1, r1, #268435456
- 146 0024 1164     		str	r1, [r2, #64]
- 143:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
- 147              		.loc 1 143 3 view .LVU23
- 148 0026 126C     		ldr	r2, [r2, #64]
- 149 0028 02F08052 		and	r2, r2, #268435456
- 150 002c 0192     		str	r2, [sp, #4]
- 143:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
- 151              		.loc 1 143 3 view .LVU24
- 152 002e 019A     		ldr	r2, [sp, #4]
- 153              	.LBE6:
- 143:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
- 154              		.loc 1 143 3 view .LVU25
- 144:Core/Src/main.c **** 
- 155              		.loc 1 144 3 view .LVU26
- 156              	.LBB7:
- 144:Core/Src/main.c **** 
- 157              		.loc 1 144 3 view .LVU27
- 158 0030 0293     		str	r3, [sp, #8]
- 144:Core/Src/main.c **** 
- 159              		.loc 1 144 3 view .LVU28
- 160 0032 1D4B     		ldr	r3, .L15+4
- 161 0034 1A68     		ldr	r2, [r3]
- 162 0036 42F48042 		orr	r2, r2, #16384
- 163 003a 1A60     		str	r2, [r3]
- 144:Core/Src/main.c **** 
- 164              		.loc 1 144 3 view .LVU29
- 165 003c 1B68     		ldr	r3, [r3]
- 166 003e 03F48043 		and	r3, r3, #16384
- 167 0042 0293     		str	r3, [sp, #8]
- 144:Core/Src/main.c **** 
- 168              		.loc 1 144 3 view .LVU30
- 169 0044 029B     		ldr	r3, [sp, #8]
- 170              	.LBE7:
- 144:Core/Src/main.c **** 
- 171              		.loc 1 144 3 view .LVU31
- 149:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
- 172              		.loc 1 149 3 view .LVU32
- 149:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
- 173              		.loc 1 149 36 is_stmt 0 view .LVU33
- 174 0046 0123     		movs	r3, #1
- 175 0048 0893     		str	r3, [sp, #32]
- 150:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
- 176              		.loc 1 150 3 is_stmt 1 view .LVU34
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 25
+  54 0002 FEE7     		b	.L2
+  55              		.cfi_endproc
+  56              	.LFE139:
+  58              		.section	.text.SystemClock_Config,"ax",%progbits
+  59              		.align	1
+  60              		.global	SystemClock_Config
+  61              		.syntax unified
+  62              		.thumb
+  63              		.thumb_func
+  65              	SystemClock_Config:
+  66              	.LFB138:
+ 127:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  67              		.loc 1 127 1 view -0
+  68              		.cfi_startproc
+  69              		@ args = 0, pretend = 0, frame = 80
+  70              		@ frame_needed = 0, uses_anonymous_args = 0
+  71 0000 00B5     		push	{lr}
+  72              	.LCFI0:
+  73              		.cfi_def_cfa_offset 4
+  74              		.cfi_offset 14, -4
+  75 0002 95B0     		sub	sp, sp, #84
+  76              	.LCFI1:
+  77              		.cfi_def_cfa_offset 88
+ 128:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  78              		.loc 1 128 3 view .LVU8
+ 128:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  79              		.loc 1 128 22 is_stmt 0 view .LVU9
+  80 0004 3022     		movs	r2, #48
+  81 0006 0021     		movs	r1, #0
+  82 0008 08A8     		add	r0, sp, #32
+  83 000a FFF7FEFF 		bl	memset
+  84              	.LVL0:
+ 129:Core/Src/main.c **** 
+  85              		.loc 1 129 3 is_stmt 1 view .LVU10
+ 129:Core/Src/main.c **** 
+  86              		.loc 1 129 22 is_stmt 0 view .LVU11
+  87 000e 0023     		movs	r3, #0
+  88 0010 0393     		str	r3, [sp, #12]
+  89 0012 0493     		str	r3, [sp, #16]
+  90 0014 0593     		str	r3, [sp, #20]
+  91 0016 0693     		str	r3, [sp, #24]
+  92 0018 0793     		str	r3, [sp, #28]
+ 133:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+  93              		.loc 1 133 3 is_stmt 1 view .LVU12
+  94              	.LBB6:
+ 133:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+  95              		.loc 1 133 3 view .LVU13
+  96 001a 0193     		str	r3, [sp, #4]
+ 133:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+  97              		.loc 1 133 3 view .LVU14
+  98 001c 214A     		ldr	r2, .L9
+  99 001e 116C     		ldr	r1, [r2, #64]
+ 100 0020 41F08051 		orr	r1, r1, #268435456
+ 101 0024 1164     		str	r1, [r2, #64]
+ 133:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+ 102              		.loc 1 133 3 view .LVU15
+ 103 0026 126C     		ldr	r2, [r2, #64]
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 23
 
 
- 150:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
- 177              		.loc 1 150 30 is_stmt 0 view .LVU35
- 178 004a 4FF48033 		mov	r3, #65536
- 179 004e 0993     		str	r3, [sp, #36]
- 151:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
- 180              		.loc 1 151 3 is_stmt 1 view .LVU36
- 151:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
- 181              		.loc 1 151 34 is_stmt 0 view .LVU37
- 182 0050 0223     		movs	r3, #2
- 183 0052 0E93     		str	r3, [sp, #56]
- 152:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLM = 25;
- 184              		.loc 1 152 3 is_stmt 1 view .LVU38
- 152:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLM = 25;
- 185              		.loc 1 152 35 is_stmt 0 view .LVU39
- 186 0054 4FF48002 		mov	r2, #4194304
- 187 0058 0F92     		str	r2, [sp, #60]
- 153:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLN = 336;
- 188              		.loc 1 153 3 is_stmt 1 view .LVU40
- 153:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLN = 336;
- 189              		.loc 1 153 30 is_stmt 0 view .LVU41
- 190 005a 1922     		movs	r2, #25
- 191 005c 1092     		str	r2, [sp, #64]
- 154:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
- 192              		.loc 1 154 3 is_stmt 1 view .LVU42
- 154:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
- 193              		.loc 1 154 30 is_stmt 0 view .LVU43
- 194 005e 4FF4A872 		mov	r2, #336
- 195 0062 1192     		str	r2, [sp, #68]
- 155:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLQ = 4;
- 196              		.loc 1 155 3 is_stmt 1 view .LVU44
- 155:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLQ = 4;
- 197              		.loc 1 155 30 is_stmt 0 view .LVU45
- 198 0064 1293     		str	r3, [sp, #72]
- 156:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
- 199              		.loc 1 156 3 is_stmt 1 view .LVU46
- 156:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
- 200              		.loc 1 156 30 is_stmt 0 view .LVU47
- 201 0066 0423     		movs	r3, #4
- 202 0068 1393     		str	r3, [sp, #76]
- 157:Core/Src/main.c ****   {
- 203              		.loc 1 157 3 is_stmt 1 view .LVU48
- 157:Core/Src/main.c ****   {
- 204              		.loc 1 157 7 is_stmt 0 view .LVU49
- 205 006a 08A8     		add	r0, sp, #32
- 206 006c FFF7FEFF 		bl	HAL_RCC_OscConfig
- 207              	.LVL5:
- 157:Core/Src/main.c ****   {
- 208              		.loc 1 157 6 view .LVU50
- 209 0070 98B9     		cbnz	r0, .L13
- 164:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
- 210              		.loc 1 164 3 is_stmt 1 view .LVU51
- 164:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
- 211              		.loc 1 164 31 is_stmt 0 view .LVU52
- 212 0072 0F23     		movs	r3, #15
- 213 0074 0393     		str	r3, [sp, #12]
- 166:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 214              		.loc 1 166 3 is_stmt 1 view .LVU53
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 26
+ 104 0028 02F08052 		and	r2, r2, #268435456
+ 105 002c 0192     		str	r2, [sp, #4]
+ 133:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+ 106              		.loc 1 133 3 view .LVU16
+ 107 002e 019A     		ldr	r2, [sp, #4]
+ 108              	.LBE6:
+ 133:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+ 109              		.loc 1 133 3 view .LVU17
+ 134:Core/Src/main.c **** 
+ 110              		.loc 1 134 3 view .LVU18
+ 111              	.LBB7:
+ 134:Core/Src/main.c **** 
+ 112              		.loc 1 134 3 view .LVU19
+ 113 0030 0293     		str	r3, [sp, #8]
+ 134:Core/Src/main.c **** 
+ 114              		.loc 1 134 3 view .LVU20
+ 115 0032 1D4B     		ldr	r3, .L9+4
+ 116 0034 1A68     		ldr	r2, [r3]
+ 117 0036 42F48042 		orr	r2, r2, #16384
+ 118 003a 1A60     		str	r2, [r3]
+ 134:Core/Src/main.c **** 
+ 119              		.loc 1 134 3 view .LVU21
+ 120 003c 1B68     		ldr	r3, [r3]
+ 121 003e 03F48043 		and	r3, r3, #16384
+ 122 0042 0293     		str	r3, [sp, #8]
+ 134:Core/Src/main.c **** 
+ 123              		.loc 1 134 3 view .LVU22
+ 124 0044 029B     		ldr	r3, [sp, #8]
+ 125              	.LBE7:
+ 134:Core/Src/main.c **** 
+ 126              		.loc 1 134 3 view .LVU23
+ 139:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+ 127              		.loc 1 139 3 view .LVU24
+ 139:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+ 128              		.loc 1 139 36 is_stmt 0 view .LVU25
+ 129 0046 0123     		movs	r3, #1
+ 130 0048 0893     		str	r3, [sp, #32]
+ 140:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+ 131              		.loc 1 140 3 is_stmt 1 view .LVU26
+ 140:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+ 132              		.loc 1 140 30 is_stmt 0 view .LVU27
+ 133 004a 4FF48033 		mov	r3, #65536
+ 134 004e 0993     		str	r3, [sp, #36]
+ 141:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+ 135              		.loc 1 141 3 is_stmt 1 view .LVU28
+ 141:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+ 136              		.loc 1 141 34 is_stmt 0 view .LVU29
+ 137 0050 0223     		movs	r3, #2
+ 138 0052 0E93     		str	r3, [sp, #56]
+ 142:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLM = 25;
+ 139              		.loc 1 142 3 is_stmt 1 view .LVU30
+ 142:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLM = 25;
+ 140              		.loc 1 142 35 is_stmt 0 view .LVU31
+ 141 0054 4FF48002 		mov	r2, #4194304
+ 142 0058 0F92     		str	r2, [sp, #60]
+ 143:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLN = 336;
+ 143              		.loc 1 143 3 is_stmt 1 view .LVU32
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 24
 
 
- 166:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 215              		.loc 1 166 34 is_stmt 0 view .LVU54
- 216 0076 0223     		movs	r3, #2
- 217 0078 0493     		str	r3, [sp, #16]
- 167:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
- 218              		.loc 1 167 3 is_stmt 1 view .LVU55
- 167:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
- 219              		.loc 1 167 35 is_stmt 0 view .LVU56
- 220 007a 0023     		movs	r3, #0
- 221 007c 0593     		str	r3, [sp, #20]
- 168:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
- 222              		.loc 1 168 3 is_stmt 1 view .LVU57
- 168:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
- 223              		.loc 1 168 36 is_stmt 0 view .LVU58
- 224 007e 4FF4A053 		mov	r3, #5120
- 225 0082 0693     		str	r3, [sp, #24]
- 169:Core/Src/main.c **** 
- 226              		.loc 1 169 3 is_stmt 1 view .LVU59
- 169:Core/Src/main.c **** 
- 227              		.loc 1 169 36 is_stmt 0 view .LVU60
- 228 0084 4FF48053 		mov	r3, #4096
- 229 0088 0793     		str	r3, [sp, #28]
- 171:Core/Src/main.c ****   {
- 230              		.loc 1 171 3 is_stmt 1 view .LVU61
- 171:Core/Src/main.c ****   {
- 231              		.loc 1 171 7 is_stmt 0 view .LVU62
- 232 008a 0521     		movs	r1, #5
- 233 008c 03A8     		add	r0, sp, #12
- 234 008e FFF7FEFF 		bl	HAL_RCC_ClockConfig
- 235              	.LVL6:
- 171:Core/Src/main.c ****   {
- 236              		.loc 1 171 6 view .LVU63
- 237 0092 20B9     		cbnz	r0, .L14
- 175:Core/Src/main.c **** 
- 238              		.loc 1 175 1 view .LVU64
- 239 0094 15B0     		add	sp, sp, #84
- 240              	.LCFI3:
- 241              		.cfi_remember_state
- 242              		.cfi_def_cfa_offset 4
- 243              		@ sp needed
- 244 0096 5DF804FB 		ldr	pc, [sp], #4
- 245              	.L13:
- 246              	.LCFI4:
- 247              		.cfi_restore_state
- 159:Core/Src/main.c ****   }
- 248              		.loc 1 159 5 is_stmt 1 view .LVU65
- 249 009a FFF7FEFF 		bl	Error_Handler
- 250              	.LVL7:
- 251              	.L14:
- 173:Core/Src/main.c ****   }
- 252              		.loc 1 173 5 view .LVU66
- 253 009e FFF7FEFF 		bl	Error_Handler
- 254              	.LVL8:
- 255              	.L16:
- 256 00a2 00BF     		.align	2
- 257              	.L15:
- 258 00a4 00380240 		.word	1073887232
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 27
+ 143:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLN = 336;
+ 144              		.loc 1 143 30 is_stmt 0 view .LVU33
+ 145 005a 1922     		movs	r2, #25
+ 146 005c 1092     		str	r2, [sp, #64]
+ 144:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
+ 147              		.loc 1 144 3 is_stmt 1 view .LVU34
+ 144:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
+ 148              		.loc 1 144 30 is_stmt 0 view .LVU35
+ 149 005e 4FF4A872 		mov	r2, #336
+ 150 0062 1192     		str	r2, [sp, #68]
+ 145:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLQ = 4;
+ 151              		.loc 1 145 3 is_stmt 1 view .LVU36
+ 145:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLQ = 4;
+ 152              		.loc 1 145 30 is_stmt 0 view .LVU37
+ 153 0064 1293     		str	r3, [sp, #72]
+ 146:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 154              		.loc 1 146 3 is_stmt 1 view .LVU38
+ 146:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 155              		.loc 1 146 30 is_stmt 0 view .LVU39
+ 156 0066 0423     		movs	r3, #4
+ 157 0068 1393     		str	r3, [sp, #76]
+ 147:Core/Src/main.c ****   {
+ 158              		.loc 1 147 3 is_stmt 1 view .LVU40
+ 147:Core/Src/main.c ****   {
+ 159              		.loc 1 147 7 is_stmt 0 view .LVU41
+ 160 006a 08A8     		add	r0, sp, #32
+ 161 006c FFF7FEFF 		bl	HAL_RCC_OscConfig
+ 162              	.LVL1:
+ 147:Core/Src/main.c ****   {
+ 163              		.loc 1 147 6 view .LVU42
+ 164 0070 98B9     		cbnz	r0, .L7
+ 154:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ 165              		.loc 1 154 3 is_stmt 1 view .LVU43
+ 154:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ 166              		.loc 1 154 31 is_stmt 0 view .LVU44
+ 167 0072 0F23     		movs	r3, #15
+ 168 0074 0393     		str	r3, [sp, #12]
+ 156:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 169              		.loc 1 156 3 is_stmt 1 view .LVU45
+ 156:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 170              		.loc 1 156 34 is_stmt 0 view .LVU46
+ 171 0076 0223     		movs	r3, #2
+ 172 0078 0493     		str	r3, [sp, #16]
+ 157:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
+ 173              		.loc 1 157 3 is_stmt 1 view .LVU47
+ 157:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
+ 174              		.loc 1 157 35 is_stmt 0 view .LVU48
+ 175 007a 0023     		movs	r3, #0
+ 176 007c 0593     		str	r3, [sp, #20]
+ 158:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
+ 177              		.loc 1 158 3 is_stmt 1 view .LVU49
+ 158:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
+ 178              		.loc 1 158 36 is_stmt 0 view .LVU50
+ 179 007e 4FF4A053 		mov	r3, #5120
+ 180 0082 0693     		str	r3, [sp, #24]
+ 159:Core/Src/main.c **** 
+ 181              		.loc 1 159 3 is_stmt 1 view .LVU51
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 25
 
 
- 259 00a8 00700040 		.word	1073770496
- 260              		.cfi_endproc
- 261              	.LFE143:
- 263              		.section	.text.main,"ax",%progbits
- 264              		.align	1
- 265              		.global	main
- 266              		.syntax unified
- 267              		.thumb
- 268              		.thumb_func
- 270              	main:
- 271              	.LFB142:
-  81:Core/Src/main.c **** 
- 272              		.loc 1 81 1 view -0
- 273              		.cfi_startproc
- 274              		@ Volatile: function does not return.
- 275              		@ args = 0, pretend = 0, frame = 0
- 276              		@ frame_needed = 0, uses_anonymous_args = 0
- 277 0000 08B5     		push	{r3, lr}
- 278              	.LCFI5:
- 279              		.cfi_def_cfa_offset 8
- 280              		.cfi_offset 3, -8
- 281              		.cfi_offset 14, -4
-  90:Core/Src/main.c **** 
- 282              		.loc 1 90 3 view .LVU68
- 283 0002 FFF7FEFF 		bl	HAL_Init
- 284              	.LVL9:
-  97:Core/Src/main.c **** 
- 285              		.loc 1 97 3 view .LVU69
- 286 0006 FFF7FEFF 		bl	SystemClock_Config
- 287              	.LVL10:
- 104:Core/Src/main.c ****   MX_DMA_Init();
- 288              		.loc 1 104 3 view .LVU70
- 289 000a FFF7FEFF 		bl	MX_GPIO_Init
- 290              	.LVL11:
- 105:Core/Src/main.c ****   MX_USART3_UART_Init();
- 291              		.loc 1 105 3 view .LVU71
- 292 000e FFF7FEFF 		bl	MX_DMA_Init
- 293              	.LVL12:
- 106:Core/Src/main.c ****   MX_TIM1_Init();
- 294              		.loc 1 106 3 view .LVU72
- 295 0012 FFF7FEFF 		bl	MX_USART3_UART_Init
- 296              	.LVL13:
- 107:Core/Src/main.c ****   MX_USART1_UART_Init();
- 297              		.loc 1 107 3 view .LVU73
- 298 0016 FFF7FEFF 		bl	MX_TIM1_Init
- 299              	.LVL14:
- 108:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
- 300              		.loc 1 108 3 view .LVU74
- 301 001a FFF7FEFF 		bl	MX_USART1_UART_Init
- 302              	.LVL15:
- 110:Core/Src/main.c ****   /* USER CODE END 2 */
- 303              		.loc 1 110 3 view .LVU75
- 110:Core/Src/main.c ****   /* USER CODE END 2 */
- 304              		.loc 1 110 16 is_stmt 0 view .LVU76
- 305 001e FFF7FEFF 		bl	INS_Init
- 306              	.LVL16:
- 110:Core/Src/main.c ****   /* USER CODE END 2 */
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 28
+ 159:Core/Src/main.c **** 
+ 182              		.loc 1 159 36 is_stmt 0 view .LVU52
+ 183 0084 4FF48053 		mov	r3, #4096
+ 184 0088 0793     		str	r3, [sp, #28]
+ 161:Core/Src/main.c ****   {
+ 185              		.loc 1 161 3 is_stmt 1 view .LVU53
+ 161:Core/Src/main.c ****   {
+ 186              		.loc 1 161 7 is_stmt 0 view .LVU54
+ 187 008a 0521     		movs	r1, #5
+ 188 008c 03A8     		add	r0, sp, #12
+ 189 008e FFF7FEFF 		bl	HAL_RCC_ClockConfig
+ 190              	.LVL2:
+ 161:Core/Src/main.c ****   {
+ 191              		.loc 1 161 6 view .LVU55
+ 192 0092 20B9     		cbnz	r0, .L8
+ 165:Core/Src/main.c **** 
+ 193              		.loc 1 165 1 view .LVU56
+ 194 0094 15B0     		add	sp, sp, #84
+ 195              	.LCFI2:
+ 196              		.cfi_remember_state
+ 197              		.cfi_def_cfa_offset 4
+ 198              		@ sp needed
+ 199 0096 5DF804FB 		ldr	pc, [sp], #4
+ 200              	.L7:
+ 201              	.LCFI3:
+ 202              		.cfi_restore_state
+ 149:Core/Src/main.c ****   }
+ 203              		.loc 1 149 5 is_stmt 1 view .LVU57
+ 204 009a FFF7FEFF 		bl	Error_Handler
+ 205              	.LVL3:
+ 206              	.L8:
+ 163:Core/Src/main.c ****   }
+ 207              		.loc 1 163 5 view .LVU58
+ 208 009e FFF7FEFF 		bl	Error_Handler
+ 209              	.LVL4:
+ 210              	.L10:
+ 211 00a2 00BF     		.align	2
+ 212              	.L9:
+ 213 00a4 00380240 		.word	1073887232
+ 214 00a8 00700040 		.word	1073770496
+ 215              		.cfi_endproc
+ 216              	.LFE138:
+ 218              		.section	.text.main,"ax",%progbits
+ 219              		.align	1
+ 220              		.global	main
+ 221              		.syntax unified
+ 222              		.thumb
+ 223              		.thumb_func
+ 225              	main:
+ 226              	.LFB137:
+  79:Core/Src/main.c **** 
+ 227              		.loc 1 79 1 view -0
+ 228              		.cfi_startproc
+ 229              		@ Volatile: function does not return.
+ 230              		@ args = 0, pretend = 0, frame = 0
+ 231              		@ frame_needed = 0, uses_anonymous_args = 0
+ 232 0000 08B5     		push	{r3, lr}
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 26
 
 
- 307              		.loc 1 110 14 view .LVU77
- 308 0022 034B     		ldr	r3, .L20
- 309 0024 1860     		str	r0, [r3]
- 114:Core/Src/main.c **** 
- 310              		.loc 1 114 3 is_stmt 1 view .LVU78
- 311 0026 FFF7FEFF 		bl	MX_FREERTOS_Init
- 312              	.LVL17:
- 117:Core/Src/main.c **** 
- 313              		.loc 1 117 3 view .LVU79
- 314 002a FFF7FEFF 		bl	osKernelStart
- 315              	.LVL18:
- 316              	.L18:
- 123:Core/Src/main.c ****   {
- 317              		.loc 1 123 3 discriminator 1 view .LVU80
- 128:Core/Src/main.c ****   /* USER CODE END 3 */
- 318              		.loc 1 128 3 discriminator 1 view .LVU81
- 123:Core/Src/main.c ****   {
- 319              		.loc 1 123 9 discriminator 1 view .LVU82
- 320 002e FEE7     		b	.L18
- 321              	.L21:
- 322              		.align	2
- 323              	.L20:
- 324 0030 00000000 		.word	.LANCHOR0
- 325              		.cfi_endproc
- 326              	.LFE142:
- 328              		.global	pJY61PData
- 329              		.section	.bss.pJY61PData,"aw",%nobits
- 330              		.align	2
- 331              		.set	.LANCHOR0,. + 0
- 334              	pJY61PData:
- 335 0000 00000000 		.space	4
- 336              		.text
- 337              	.Letext0:
- 338              		.file 3 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
- 339              		.file 4 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
- 340              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
- 341              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 342              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"
- 343              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
- 344              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 345              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
- 346              		.file 11 "modules/JY61P/JY61P.h"
- 347              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 348              		.file 13 "Core/Inc/gpio.h"
- 349              		.file 14 "Core/Inc/dma.h"
- 350              		.file 15 "Core/Inc/usart.h"
- 351              		.file 16 "Core/Inc/tim.h"
- 352              		.file 17 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"
- 353              		.file 18 "<built-in>"
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s 			page 29
+ 233              	.LCFI4:
+ 234              		.cfi_def_cfa_offset 8
+ 235              		.cfi_offset 3, -8
+ 236              		.cfi_offset 14, -4
+  88:Core/Src/main.c **** 
+ 237              		.loc 1 88 3 view .LVU60
+ 238 0002 FFF7FEFF 		bl	HAL_Init
+ 239              	.LVL5:
+  95:Core/Src/main.c **** 
+ 240              		.loc 1 95 3 view .LVU61
+ 241 0006 FFF7FEFF 		bl	SystemClock_Config
+ 242              	.LVL6:
+ 102:Core/Src/main.c ****   MX_DMA_Init();
+ 243              		.loc 1 102 3 view .LVU62
+ 244 000a FFF7FEFF 		bl	MX_GPIO_Init
+ 245              	.LVL7:
+ 103:Core/Src/main.c ****   MX_USART3_UART_Init();
+ 246              		.loc 1 103 3 view .LVU63
+ 247 000e FFF7FEFF 		bl	MX_DMA_Init
+ 248              	.LVL8:
+ 104:Core/Src/main.c ****   MX_TIM1_Init();
+ 249              		.loc 1 104 3 view .LVU64
+ 250 0012 FFF7FEFF 		bl	MX_USART3_UART_Init
+ 251              	.LVL9:
+ 105:Core/Src/main.c ****   MX_USART1_UART_Init();
+ 252              		.loc 1 105 3 view .LVU65
+ 253 0016 FFF7FEFF 		bl	MX_TIM1_Init
+ 254              	.LVL10:
+ 106:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
+ 255              		.loc 1 106 3 view .LVU66
+ 256 001a FFF7FEFF 		bl	MX_USART1_UART_Init
+ 257              	.LVL11:
+ 108:Core/Src/main.c ****   /* USER CODE END 2 */
+ 258              		.loc 1 108 3 view .LVU67
+ 108:Core/Src/main.c ****   /* USER CODE END 2 */
+ 259              		.loc 1 108 16 is_stmt 0 view .LVU68
+ 260 001e FFF7FEFF 		bl	INS_Init
+ 261              	.LVL12:
+ 108:Core/Src/main.c ****   /* USER CODE END 2 */
+ 262              		.loc 1 108 14 view .LVU69
+ 263 0022 014B     		ldr	r3, .L14
+ 264 0024 1860     		str	r0, [r3]
+ 265              	.L12:
+ 113:Core/Src/main.c ****   {
+ 266              		.loc 1 113 3 is_stmt 1 discriminator 1 view .LVU70
+ 118:Core/Src/main.c ****   /* USER CODE END 3 */
+ 267              		.loc 1 118 3 discriminator 1 view .LVU71
+ 113:Core/Src/main.c ****   {
+ 268              		.loc 1 113 9 discriminator 1 view .LVU72
+ 269 0026 FEE7     		b	.L12
+ 270              	.L15:
+ 271              		.align	2
+ 272              	.L14:
+ 273 0028 00000000 		.word	.LANCHOR0
+ 274              		.cfi_endproc
+ 275              	.LFE137:
+ 277              		.global	pJY61PData
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 27
+
+
+ 278              		.section	.bss.pJY61PData,"aw",%nobits
+ 279              		.align	2
+ 280              		.set	.LANCHOR0,. + 0
+ 283              	pJY61PData:
+ 284 0000 00000000 		.space	4
+ 285              		.text
+ 286              	.Letext0:
+ 287              		.file 3 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 288              		.file 4 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 289              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ 290              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"
+ 291              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
+ 292              		.file 8 "modules/JY61P/JY61P.h"
+ 293              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 294              		.file 10 "Core/Inc/gpio.h"
+ 295              		.file 11 "Core/Inc/dma.h"
+ 296              		.file 12 "Core/Inc/usart.h"
+ 297              		.file 13 "Core/Inc/tim.h"
+ 298              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 299              		.file 15 "<built-in>"
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s 			page 28
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s:20     .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s:26     .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
-C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s:61     .text.HAL_TIM_PeriodElapsedCallback:00000014 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s:66     .text.Error_Handler:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s:72     .text.Error_Handler:00000000 Error_Handler
-C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s:104    .text.SystemClock_Config:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s:110    .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s:258    .text.SystemClock_Config:000000a4 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s:264    .text.main:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s:270    .text.main:00000000 main
-C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s:324    .text.main:00000030 $d
-C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s:334    .bss.pJY61PData:00000000 pJY61PData
-C:\Users\HUAWEI\AppData\Local\Temp\cc9neGR2.s:330    .bss.pJY61PData:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s:20     .text.Error_Handler:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s:26     .text.Error_Handler:00000000 Error_Handler
+C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s:59     .text.SystemClock_Config:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s:65     .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s:213    .text.SystemClock_Config:000000a4 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s:219    .text.main:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s:225    .text.main:00000000 main
+C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s:273    .text.main:00000028 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s:283    .bss.pJY61PData:00000000 pJY61PData
+C:\Users\HUAWEI\AppData\Local\Temp\ccUptxfa.s:279    .bss.pJY61PData:00000000 $d
 
 UNDEFINED SYMBOLS
-HAL_IncTick
 memset
 HAL_RCC_OscConfig
 HAL_RCC_ClockConfig
@@ -1701,5 +1608,3 @@ MX_USART3_UART_Init
 MX_TIM1_Init
 MX_USART1_UART_Init
 INS_Init
-MX_FREERTOS_Init
-osKernelStart

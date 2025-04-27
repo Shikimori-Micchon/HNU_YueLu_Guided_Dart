@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc5het27.s 			page 1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco5JpAd.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc5het27.s 			page 1
   28:Core/Src/dma.c **** /*----------------------------------------------------------------------------*/
   29:Core/Src/dma.c **** /* Configure DMA                                                              */
   30:Core/Src/dma.c **** /*----------------------------------------------------------------------------*/
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc5het27.s 			page 2
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco5JpAd.s 			page 2
 
 
   31:Core/Src/dma.c **** 
@@ -107,10 +107,10 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc5het27.s 			page 1
   44:Core/Src/dma.c **** 
   45:Core/Src/dma.c ****   /* DMA interrupt init */
   46:Core/Src/dma.c ****   /* DMA1_Stream1_IRQn interrupt configuration */
-  47:Core/Src/dma.c ****   HAL_NVIC_SetPriority(DMA1_Stream1_IRQn, 5, 0);
+  47:Core/Src/dma.c ****   HAL_NVIC_SetPriority(DMA1_Stream1_IRQn, 0, 0);
   59              		.loc 1 47 3 view .LVU7
   60 001c 2246     		mov	r2, r4
-  61 001e 0521     		movs	r1, #5
+  61 001e 2146     		mov	r1, r4
   62 0020 0C20     		movs	r0, #12
   63 0022 FFF7FEFF 		bl	HAL_NVIC_SetPriority
   64              	.LVL0:
@@ -118,15 +118,15 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc5het27.s 			page 1
   65              		.loc 1 48 3 view .LVU8
   66 0026 0C20     		movs	r0, #12
   67 0028 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc5het27.s 			page 3
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco5JpAd.s 			page 3
 
 
   68              	.LVL1:
   49:Core/Src/dma.c ****   /* DMA1_Stream3_IRQn interrupt configuration */
-  50:Core/Src/dma.c ****   HAL_NVIC_SetPriority(DMA1_Stream3_IRQn, 5, 0);
+  50:Core/Src/dma.c ****   HAL_NVIC_SetPriority(DMA1_Stream3_IRQn, 0, 0);
   69              		.loc 1 50 3 view .LVU9
   70 002c 2246     		mov	r2, r4
-  71 002e 0521     		movs	r1, #5
+  71 002e 2146     		mov	r1, r4
   72 0030 0E20     		movs	r0, #14
   73 0032 FFF7FEFF 		bl	HAL_NVIC_SetPriority
   74              	.LVL2:
@@ -155,14 +155,14 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc5het27.s 			page 1
   95              		.file 3 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
   96              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
   97              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cc5het27.s 			page 4
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\cco5JpAd.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 dma.c
-C:\Users\HUAWEI\AppData\Local\Temp\cc5het27.s:20     .text.MX_DMA_Init:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\cc5het27.s:26     .text.MX_DMA_Init:00000000 MX_DMA_Init
-C:\Users\HUAWEI\AppData\Local\Temp\cc5het27.s:88     .text.MX_DMA_Init:00000040 $d
+C:\Users\HUAWEI\AppData\Local\Temp\cco5JpAd.s:20     .text.MX_DMA_Init:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\cco5JpAd.s:26     .text.MX_DMA_Init:00000000 MX_DMA_Init
+C:\Users\HUAWEI\AppData\Local\Temp\cco5JpAd.s:88     .text.MX_DMA_Init:00000040 $d
 
 UNDEFINED SYMBOLS
 HAL_NVIC_SetPriority

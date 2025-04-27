@@ -9,7 +9,7 @@
  */
 
 #include "bsp_dwt.h"
-#include "cmsis_os.h"
+// #include "cmsis_os.h"
 
 static DWT_Time_t SysTime;
 static uint32_t CPU_FREQ_Hz, CPU_FREQ_Hz_ms, CPU_FREQ_Hz_us;

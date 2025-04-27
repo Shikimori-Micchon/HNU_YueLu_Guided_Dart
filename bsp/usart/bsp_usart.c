@@ -146,16 +146,16 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
  *
  * @param huart 发生错误的串口
  */
-// void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
-// {
-//     for (uint8_t i = 0; i < idx; ++i)
-//     {
-//         if (huart == usart_instance[i]->usart_handle)
-//         {
-//             HAL_UARTEx_ReceiveToIdle_DMA(usart_instance[i]->usart_handle, usart_instance[i]->recv_buff, usart_instance[i]->recv_buff_size);
-//             // __HAL_DMA_DISABLE_IT(usart_instance[i]->usart_handle->hdmarx, DMA_IT_HT);
-//             // LOGWARNING("[bsp_usart] USART error callback triggered, instance idx [%d]", i);
-//             return;
-//         }
-//     }
-// }
+void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
+{
+    for (uint8_t i = 0; i < idx; ++i)
+    {
+        if (huart == usart_instance[i]->usart_handle)
+        {
+            HAL_UARTEx_ReceiveToIdle_DMA(usart_instance[i]->usart_handle, usart_instance[i]->recv_buff, usart_instance[i]->recv_buff_size);
+            // __HAL_DMA_DISABLE_IT(usart_instance[i]->usart_handle->hdmarx, DMA_IT_HT);
+            // LOGWARNING("[bsp_usart] USART error callback triggered, instance idx [%d]", i);
+            return;
+        }
+    }
+}
