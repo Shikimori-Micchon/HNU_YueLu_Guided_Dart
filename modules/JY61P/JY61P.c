@@ -10,7 +10,7 @@ JY61PData *INS_Init(void)
 {
     DWT_Init(168);
     JY61P_data = JY61P_Init(WIT_BAUD_9600);
-    WitRestartSensor();
+    // WitRestartSensor();
     DWT_Delay(2);
     return &JY61P_data;
 }
@@ -49,7 +49,7 @@ void WITSerialDecode()
 {
     for (int i = 0; i < 33; i++)
   {
-    // HAL_UART_Transmit_IT(&huart1, &JY61P_instance.usart_instance->recv_buff[i], 1);
+    // HAL_UART_Transmit_IT(&huart1, &JY61P_instance.usart_instance->recv_buff,33);
     WitSerialDataIn(JY61P_instance.usart_instance->recv_buff[i]);
   }
 }
@@ -59,23 +59,23 @@ void JY61P_DataUpdate(uint32_t uiReg, uint32_t uiRegNum)
     switch(uiReg)
     {
         case AX:
-            for(int i = 0; i < uiRegNum; i++)
+            for(int i = 0; i < 3; i++)
             {
                 JY61P_instance.JY61P_data.fAcc[i] = sReg[AX+i] / 32768.0f * 16.0f;
             }
             break;
         case GX:
-            for(int i = 0; i < uiRegNum; i++)
+            for(int i = 0; i < 3; i++)
             {
                 JY61P_instance.JY61P_data.fGyro[i] = sReg[GX+i] / 32768.0f * 2000.0f;
             }
             break;
-        case Roll:
-            for(int i = 0; i < uiRegNum; i++)
+        case Roll: 
+            for(int i = 0; i < 3; i++)
             {
                 JY61P_instance.JY61P_data.fEuler[i] = sReg[Roll+i] / 32768.0f * 180.0f;
             }
-            JY61P_instance.JY61P_data.fEuler[2] = JY61P_instance.JY61P_data.fEuler[2] > 0 ? 360 - JY61P_instance.JY61P_data.fEuler[2] : -JY61P_instance.JY61P_data.fEuler[2];    
+            // JY61P_instance.JY61P_data.fEuler[2] = JY61P_instance.JY61P_data.fEuler[2] > 0 ? 360 - JY61P_instance.JY61P_data.fEuler[2] : -JY61P_instance.JY61P_data.fEuler[2];    
             break;
         default:
             break;
