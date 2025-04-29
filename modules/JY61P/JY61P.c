@@ -9,9 +9,9 @@ static JY61PData *JY61P_data; // 传感器数据结构体实例
 JY61PData *INS_Init(void)
 {
     DWT_Init(168);
-    JY61P_data = JY61P_Init(WIT_BAUD_9600);
+    JY61P_data = JY61P_Init(WIT_BAUD_115200);
     // WitRestartSensor();
-    DWT_Delay(2);
+    // DWT_Delay(2);
     return &JY61P_data;
 }
 
@@ -63,6 +63,7 @@ void JY61P_DataUpdate(uint32_t uiReg, uint32_t uiRegNum)
             {
                 JY61P_instance.JY61P_data.fAcc[i] = sReg[AX+i] / 32768.0f * 16.0f;
             }
+            // DWT_Delay(10);
             break;
         case GX:
             for(int i = 0; i < 3; i++)

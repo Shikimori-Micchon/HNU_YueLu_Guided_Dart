@@ -23,6 +23,7 @@
         "stm32f405xx.h": "c",
         "bsp_usart.h": "c",
         "main.h": "c",
-        "stm32f4xx_hal.h": "c"
+        "stm32f4xx_hal.h": "c",
+        "wit_c_sdk.h": "c"
     }
 }

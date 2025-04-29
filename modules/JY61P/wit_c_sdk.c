@@ -122,11 +122,10 @@ static void CopeWitData(uint8_t ucIndex, uint16_t *p_data, uint32_t uiLen)
         uiReg2Len = 0;
     }
     if(uiReg1Len)
-	  {
-		   memcpy(&sReg[uiReg1], p_usReg1Val, uiReg1Len<<1);
-		   p_WitRegUpdateCbFunc(uiReg1, uiReg1Len);
-	  }
-      
+	{
+		memcpy(&sReg[uiReg1], p_usReg1Val, uiReg1Len<<1);
+		p_WitRegUpdateCbFunc(uiReg1, uiReg1Len);
+	}
     // if(uiReg2Len)
 	//   {
 	// 	   memcpy(&sReg[uiReg2], p_usReg2Val, uiReg2Len<<1);

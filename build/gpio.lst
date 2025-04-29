@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccQK2g54.s 			page 1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccRNZD2P.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccQK2g54.s 			page 1
   28:Core/Src/gpio.c **** /*----------------------------------------------------------------------------*/
   29:Core/Src/gpio.c **** /* Configure GPIO                                                             */
   30:Core/Src/gpio.c **** /*----------------------------------------------------------------------------*/
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccQK2g54.s 			page 2
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccRNZD2P.s 			page 2
 
 
   31:Core/Src/gpio.c **** /* USER CODE BEGIN 1 */
@@ -76,96 +76,154 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccQK2g54.s 			page 1
   43:Core/Src/gpio.c **** {
   29              		.loc 1 43 1 view -0
   30              		.cfi_startproc
-  31              		@ args = 0, pretend = 0, frame = 16
+  31              		@ args = 0, pretend = 0, frame = 32
   32              		@ frame_needed = 0, uses_anonymous_args = 0
-  33              		@ link register save eliminated.
-  34 0000 84B0     		sub	sp, sp, #16
-  35              	.LCFI0:
-  36              		.cfi_def_cfa_offset 16
+  33 0000 30B5     		push	{r4, r5, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 12
+  36              		.cfi_offset 4, -12
+  37              		.cfi_offset 5, -8
+  38              		.cfi_offset 14, -4
+  39 0002 89B0     		sub	sp, sp, #36
+  40              	.LCFI1:
+  41              		.cfi_def_cfa_offset 48
   44:Core/Src/gpio.c **** 
-  45:Core/Src/gpio.c ****   /* GPIO Ports Clock Enable */
-  46:Core/Src/gpio.c ****   __HAL_RCC_GPIOH_CLK_ENABLE();
-  37              		.loc 1 46 3 view .LVU1
-  38              	.LBB2:
-  39              		.loc 1 46 3 view .LVU2
-  40 0002 0022     		movs	r2, #0
-  41 0004 0192     		str	r2, [sp, #4]
-  42              		.loc 1 46 3 view .LVU3
-  43 0006 104B     		ldr	r3, .L3
-  44 0008 196B     		ldr	r1, [r3, #48]
-  45 000a 41F08001 		orr	r1, r1, #128
-  46 000e 1963     		str	r1, [r3, #48]
-  47              		.loc 1 46 3 view .LVU4
-  48 0010 196B     		ldr	r1, [r3, #48]
-  49 0012 01F08001 		and	r1, r1, #128
-  50 0016 0191     		str	r1, [sp, #4]
-  51              		.loc 1 46 3 view .LVU5
-  52 0018 0199     		ldr	r1, [sp, #4]
-  53              	.LBE2:
-  54              		.loc 1 46 3 view .LVU6
-  47:Core/Src/gpio.c ****   __HAL_RCC_GPIOB_CLK_ENABLE();
-  55              		.loc 1 47 3 view .LVU7
-  56              	.LBB3:
-  57              		.loc 1 47 3 view .LVU8
-  58 001a 0292     		str	r2, [sp, #8]
-  59              		.loc 1 47 3 view .LVU9
-  60 001c 196B     		ldr	r1, [r3, #48]
-  61 001e 41F00201 		orr	r1, r1, #2
-  62 0022 1963     		str	r1, [r3, #48]
-  63              		.loc 1 47 3 view .LVU10
-  64 0024 196B     		ldr	r1, [r3, #48]
-  65 0026 01F00201 		and	r1, r1, #2
-  66 002a 0291     		str	r1, [sp, #8]
-  67              		.loc 1 47 3 view .LVU11
-  68 002c 0299     		ldr	r1, [sp, #8]
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccQK2g54.s 			page 3
+  45:Core/Src/gpio.c ****   GPIO_InitTypeDef GPIO_InitStruct = {0};
+  42              		.loc 1 45 3 view .LVU1
+  43              		.loc 1 45 20 is_stmt 0 view .LVU2
+  44 0004 0024     		movs	r4, #0
+  45 0006 0394     		str	r4, [sp, #12]
+  46 0008 0494     		str	r4, [sp, #16]
+  47 000a 0594     		str	r4, [sp, #20]
+  48 000c 0694     		str	r4, [sp, #24]
+  49 000e 0794     		str	r4, [sp, #28]
+  46:Core/Src/gpio.c **** 
+  47:Core/Src/gpio.c ****   /* GPIO Ports Clock Enable */
+  48:Core/Src/gpio.c ****   __HAL_RCC_GPIOH_CLK_ENABLE();
+  50              		.loc 1 48 3 is_stmt 1 view .LVU3
+  51              	.LBB2:
+  52              		.loc 1 48 3 view .LVU4
+  53 0010 0094     		str	r4, [sp]
+  54              		.loc 1 48 3 view .LVU5
+  55 0012 184B     		ldr	r3, .L3
+  56 0014 1A6B     		ldr	r2, [r3, #48]
+  57 0016 42F08002 		orr	r2, r2, #128
+  58 001a 1A63     		str	r2, [r3, #48]
+  59              		.loc 1 48 3 view .LVU6
+  60 001c 1A6B     		ldr	r2, [r3, #48]
+  61 001e 02F08002 		and	r2, r2, #128
+  62 0022 0092     		str	r2, [sp]
+  63              		.loc 1 48 3 view .LVU7
+  64 0024 009A     		ldr	r2, [sp]
+  65              	.LBE2:
+  66              		.loc 1 48 3 view .LVU8
+  49:Core/Src/gpio.c ****   __HAL_RCC_GPIOA_CLK_ENABLE();
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccRNZD2P.s 			page 3
 
 
-  69              	.LBE3:
-  70              		.loc 1 47 3 view .LVU12
-  48:Core/Src/gpio.c ****   __HAL_RCC_GPIOA_CLK_ENABLE();
-  71              		.loc 1 48 3 view .LVU13
-  72              	.LBB4:
-  73              		.loc 1 48 3 view .LVU14
-  74 002e 0392     		str	r2, [sp, #12]
-  75              		.loc 1 48 3 view .LVU15
+  67              		.loc 1 49 3 view .LVU9
+  68              	.LBB3:
+  69              		.loc 1 49 3 view .LVU10
+  70 0026 0194     		str	r4, [sp, #4]
+  71              		.loc 1 49 3 view .LVU11
+  72 0028 1A6B     		ldr	r2, [r3, #48]
+  73 002a 42F00102 		orr	r2, r2, #1
+  74 002e 1A63     		str	r2, [r3, #48]
+  75              		.loc 1 49 3 view .LVU12
   76 0030 1A6B     		ldr	r2, [r3, #48]
-  77 0032 42F00102 		orr	r2, r2, #1
-  78 0036 1A63     		str	r2, [r3, #48]
-  79              		.loc 1 48 3 view .LVU16
-  80 0038 1B6B     		ldr	r3, [r3, #48]
-  81 003a 03F00103 		and	r3, r3, #1
-  82 003e 0393     		str	r3, [sp, #12]
-  83              		.loc 1 48 3 view .LVU17
-  84 0040 039B     		ldr	r3, [sp, #12]
-  85              	.LBE4:
-  86              		.loc 1 48 3 view .LVU18
-  49:Core/Src/gpio.c **** 
-  50:Core/Src/gpio.c **** }
-  87              		.loc 1 50 1 is_stmt 0 view .LVU19
-  88 0042 04B0     		add	sp, sp, #16
-  89              	.LCFI1:
-  90              		.cfi_def_cfa_offset 0
-  91              		@ sp needed
-  92 0044 7047     		bx	lr
-  93              	.L4:
-  94 0046 00BF     		.align	2
-  95              	.L3:
-  96 0048 00380240 		.word	1073887232
-  97              		.cfi_endproc
-  98              	.LFE134:
- 100              		.text
- 101              	.Letext0:
- 102              		.file 2 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
- 103              		.file 3 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
- 104              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccQK2g54.s 			page 4
+  77 0032 02F00102 		and	r2, r2, #1
+  78 0036 0192     		str	r2, [sp, #4]
+  79              		.loc 1 49 3 view .LVU13
+  80 0038 019A     		ldr	r2, [sp, #4]
+  81              	.LBE3:
+  82              		.loc 1 49 3 view .LVU14
+  50:Core/Src/gpio.c ****   __HAL_RCC_GPIOB_CLK_ENABLE();
+  83              		.loc 1 50 3 view .LVU15
+  84              	.LBB4:
+  85              		.loc 1 50 3 view .LVU16
+  86 003a 0294     		str	r4, [sp, #8]
+  87              		.loc 1 50 3 view .LVU17
+  88 003c 1A6B     		ldr	r2, [r3, #48]
+  89 003e 42F00202 		orr	r2, r2, #2
+  90 0042 1A63     		str	r2, [r3, #48]
+  91              		.loc 1 50 3 view .LVU18
+  92 0044 1B6B     		ldr	r3, [r3, #48]
+  93 0046 03F00203 		and	r3, r3, #2
+  94 004a 0293     		str	r3, [sp, #8]
+  95              		.loc 1 50 3 view .LVU19
+  96 004c 029B     		ldr	r3, [sp, #8]
+  97              	.LBE4:
+  98              		.loc 1 50 3 view .LVU20
+  51:Core/Src/gpio.c **** 
+  52:Core/Src/gpio.c ****   /*Configure GPIO pin Output Level */
+  53:Core/Src/gpio.c ****   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+  99              		.loc 1 53 3 view .LVU21
+ 100 004e 0A4D     		ldr	r5, .L3+4
+ 101 0050 2246     		mov	r2, r4
+ 102 0052 1021     		movs	r1, #16
+ 103 0054 2846     		mov	r0, r5
+ 104 0056 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 105              	.LVL0:
+  54:Core/Src/gpio.c **** 
+  55:Core/Src/gpio.c ****   /*Configure GPIO pin : PA4 */
+  56:Core/Src/gpio.c ****   GPIO_InitStruct.Pin = GPIO_PIN_4;
+ 106              		.loc 1 56 3 view .LVU22
+ 107              		.loc 1 56 23 is_stmt 0 view .LVU23
+ 108 005a 1023     		movs	r3, #16
+ 109 005c 0393     		str	r3, [sp, #12]
+  57:Core/Src/gpio.c ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+ 110              		.loc 1 57 3 is_stmt 1 view .LVU24
+ 111              		.loc 1 57 24 is_stmt 0 view .LVU25
+ 112 005e 0123     		movs	r3, #1
+ 113 0060 0493     		str	r3, [sp, #16]
+  58:Core/Src/gpio.c ****   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+ 114              		.loc 1 58 3 is_stmt 1 view .LVU26
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccRNZD2P.s 			page 4
+
+
+ 115              		.loc 1 58 24 is_stmt 0 view .LVU27
+ 116 0062 0223     		movs	r3, #2
+ 117 0064 0593     		str	r3, [sp, #20]
+  59:Core/Src/gpio.c ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 118              		.loc 1 59 3 is_stmt 1 view .LVU28
+ 119              		.loc 1 59 25 is_stmt 0 view .LVU29
+ 120 0066 0694     		str	r4, [sp, #24]
+  60:Core/Src/gpio.c ****   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+ 121              		.loc 1 60 3 is_stmt 1 view .LVU30
+ 122 0068 03A9     		add	r1, sp, #12
+ 123 006a 2846     		mov	r0, r5
+ 124 006c FFF7FEFF 		bl	HAL_GPIO_Init
+ 125              	.LVL1:
+  61:Core/Src/gpio.c **** 
+  62:Core/Src/gpio.c **** }
+ 126              		.loc 1 62 1 is_stmt 0 view .LVU31
+ 127 0070 09B0     		add	sp, sp, #36
+ 128              	.LCFI2:
+ 129              		.cfi_def_cfa_offset 12
+ 130              		@ sp needed
+ 131 0072 30BD     		pop	{r4, r5, pc}
+ 132              	.L4:
+ 133              		.align	2
+ 134              	.L3:
+ 135 0074 00380240 		.word	1073887232
+ 136 0078 00000240 		.word	1073872896
+ 137              		.cfi_endproc
+ 138              	.LFE134:
+ 140              		.text
+ 141              	.Letext0:
+ 142              		.file 2 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 143              		.file 3 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 144              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ 145              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccRNZD2P.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gpio.c
-C:\Users\HUAWEI\AppData\Local\Temp\ccQK2g54.s:20     .text.MX_GPIO_Init:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccQK2g54.s:26     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\HUAWEI\AppData\Local\Temp\ccQK2g54.s:96     .text.MX_GPIO_Init:00000048 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccRNZD2P.s:20     .text.MX_GPIO_Init:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccRNZD2P.s:26     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\HUAWEI\AppData\Local\Temp\ccRNZD2P.s:135    .text.MX_GPIO_Init:00000074 $d
 
-NO UNDEFINED SYMBOLS
+UNDEFINED SYMBOLS
+HAL_GPIO_WritePin
+HAL_GPIO_Init

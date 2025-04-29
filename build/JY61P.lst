@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -40,9 +40,9 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 1
    9:modules/JY61P/JY61P.c **** JY61PData *INS_Init(void)
   10:modules/JY61P/JY61P.c **** {
   11:modules/JY61P/JY61P.c ****     DWT_Init(168);
-  12:modules/JY61P/JY61P.c ****     JY61P_data = JY61P_Init(WIT_BAUD_9600);
+  12:modules/JY61P/JY61P.c ****     JY61P_data = JY61P_Init(WIT_BAUD_115200);
   13:modules/JY61P/JY61P.c ****     // WitRestartSensor();
-  14:modules/JY61P/JY61P.c ****     DWT_Delay(2);
+  14:modules/JY61P/JY61P.c ****     // DWT_Delay(2);
   15:modules/JY61P/JY61P.c ****     return &JY61P_data;
   16:modules/JY61P/JY61P.c **** }
   17:modules/JY61P/JY61P.c **** 
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 1
   27:modules/JY61P/JY61P.c ****     WitInit(WIT_PROTOCOL_NORMAL, 0x50);
   28:modules/JY61P/JY61P.c ****     WitSerialWriteRegister(USART_JY61P_SEND); // 注册传感器串口发送函数
   29:modules/JY61P/JY61P.c ****     WitDelayMsRegister(DWT_Delay_ms);// 注册传感器延时函数
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 2
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s 			page 2
 
 
   30:modules/JY61P/JY61P.c ****     WitRegisterCallBack(JY61P_DataUpdate);// 注册传感器数据更新函数
@@ -111,28 +111,29 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 1
   63:modules/JY61P/JY61P.c ****             {
   64:modules/JY61P/JY61P.c ****                 JY61P_instance.JY61P_data.fAcc[i] = sReg[AX+i] / 32768.0f * 16.0f;
   65:modules/JY61P/JY61P.c ****             }
-  66:modules/JY61P/JY61P.c ****             break;
-  67:modules/JY61P/JY61P.c ****         case GX:
-  68:modules/JY61P/JY61P.c ****             for(int i = 0; i < 3; i++)
-  69:modules/JY61P/JY61P.c ****             {
-  70:modules/JY61P/JY61P.c ****                 JY61P_instance.JY61P_data.fGyro[i] = sReg[GX+i] / 32768.0f * 2000.0f;
-  71:modules/JY61P/JY61P.c ****             }
-  72:modules/JY61P/JY61P.c ****             break;
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 3
+  66:modules/JY61P/JY61P.c ****             // DWT_Delay(10);
+  67:modules/JY61P/JY61P.c ****             break;
+  68:modules/JY61P/JY61P.c ****         case GX:
+  69:modules/JY61P/JY61P.c ****             for(int i = 0; i < 3; i++)
+  70:modules/JY61P/JY61P.c ****             {
+  71:modules/JY61P/JY61P.c ****                 JY61P_instance.JY61P_data.fGyro[i] = sReg[GX+i] / 32768.0f * 2000.0f;
+  72:modules/JY61P/JY61P.c ****             }
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s 			page 3
 
 
-  73:modules/JY61P/JY61P.c ****         case Roll:
-  74:modules/JY61P/JY61P.c ****             for(int i = 0; i < 3; i++)
-  75:modules/JY61P/JY61P.c ****             {
-  76:modules/JY61P/JY61P.c ****                 JY61P_instance.JY61P_data.fEuler[i] = sReg[Roll+i] / 32768.0f * 180.0f;
-  77:modules/JY61P/JY61P.c ****             }
-  78:modules/JY61P/JY61P.c ****             // JY61P_instance.JY61P_data.fEuler[2] = JY61P_instance.JY61P_data.fEuler[2] > 0 ? 360 
-  79:modules/JY61P/JY61P.c ****             break;
-  80:modules/JY61P/JY61P.c ****         default:
-  81:modules/JY61P/JY61P.c ****             break;
-  82:modules/JY61P/JY61P.c ****     }
-  83:modules/JY61P/JY61P.c **** }
-  44              		.loc 1 83 1 is_stmt 0 view .LVU2
+  73:modules/JY61P/JY61P.c ****             break;
+  74:modules/JY61P/JY61P.c ****         case Roll: 
+  75:modules/JY61P/JY61P.c ****             for(int i = 0; i < 3; i++)
+  76:modules/JY61P/JY61P.c ****             {
+  77:modules/JY61P/JY61P.c ****                 JY61P_instance.JY61P_data.fEuler[i] = sReg[Roll+i] / 32768.0f * 180.0f;
+  78:modules/JY61P/JY61P.c ****             }
+  79:modules/JY61P/JY61P.c ****             // JY61P_instance.JY61P_data.fEuler[2] = JY61P_instance.JY61P_data.fEuler[2] > 0 ? 360 
+  80:modules/JY61P/JY61P.c ****             break;
+  81:modules/JY61P/JY61P.c ****         default:
+  82:modules/JY61P/JY61P.c ****             break;
+  83:modules/JY61P/JY61P.c ****     }
+  84:modules/JY61P/JY61P.c **** }
+  44              		.loc 1 84 1 is_stmt 0 view .LVU2
   45 000c 7047     		bx	lr
   46              	.LVL2:
   47              	.L6:
@@ -177,10 +178,10 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 1
   76 0040 E5DD     		ble	.L6
   77 0042 7047     		bx	lr
   78              	.LVL4:
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s 			page 4
+
+
   79              	.L12:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 4
-
-
   62:modules/JY61P/JY61P.c ****             {
   80              		.loc 1 62 13 discriminator 1 view .LVU13
   81              	.LBE2:
@@ -191,102 +192,102 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 1
   85              	.LVL5:
   86              	.L7:
   87              	.LBB3:
-  70:modules/JY61P/JY61P.c ****             }
-  88              		.loc 1 70 17 is_stmt 1 discriminator 3 view .LVU15
-  70:modules/JY61P/JY61P.c ****             }
-  89              		.loc 1 70 61 is_stmt 0 discriminator 3 view .LVU16
+  71:modules/JY61P/JY61P.c ****             }
+  88              		.loc 1 71 17 is_stmt 1 discriminator 3 view .LVU15
+  71:modules/JY61P/JY61P.c ****             }
+  89              		.loc 1 71 61 is_stmt 0 discriminator 3 view .LVU16
   90 0048 03F13701 		add	r1, r3, #55
-  70:modules/JY61P/JY61P.c ****             }
-  91              		.loc 1 70 58 discriminator 3 view .LVU17
+  71:modules/JY61P/JY61P.c ****             }
+  91              		.loc 1 71 58 discriminator 3 view .LVU17
   92 004c 1B4A     		ldr	r2, .L13
   93 004e 32F91120 		ldrsh	r2, [r2, r1, lsl #1]
   94 0052 07EE902A 		vmov	s15, r2	@ int
-  70:modules/JY61P/JY61P.c ****             }
-  95              		.loc 1 70 65 discriminator 3 view .LVU18
+  71:modules/JY61P/JY61P.c ****             }
+  95              		.loc 1 71 65 discriminator 3 view .LVU18
   96 0056 F8EEE77A 		vcvt.f32.s32	s15, s15
   97 005a 9FED197A 		vldr.32	s14, .L13+4
   98 005e 67EE877A 		vmul.f32	s15, s15, s14
-  70:modules/JY61P/JY61P.c ****             }
-  99              		.loc 1 70 76 discriminator 3 view .LVU19
+  71:modules/JY61P/JY61P.c ****             }
+  99              		.loc 1 71 76 discriminator 3 view .LVU19
  100 0062 9FED197A 		vldr.32	s14, .L13+12
  101 0066 67EE877A 		vmul.f32	s15, s15, s14
-  70:modules/JY61P/JY61P.c ****             }
- 102              		.loc 1 70 52 discriminator 3 view .LVU20
+  71:modules/JY61P/JY61P.c ****             }
+ 102              		.loc 1 71 52 discriminator 3 view .LVU20
  103 006a 991D     		adds	r1, r3, #6
  104 006c 154A     		ldr	r2, .L13+8
  105 006e 02EB8102 		add	r2, r2, r1, lsl #2
  106 0072 C2ED017A 		vstr.32	s15, [r2, #4]
-  68:modules/JY61P/JY61P.c ****             {
- 107              		.loc 1 68 35 is_stmt 1 discriminator 3 view .LVU21
-  68:modules/JY61P/JY61P.c ****             {
- 108              		.loc 1 68 36 is_stmt 0 discriminator 3 view .LVU22
+  69:modules/JY61P/JY61P.c ****             {
+ 107              		.loc 1 69 35 is_stmt 1 discriminator 3 view .LVU21
+  69:modules/JY61P/JY61P.c ****             {
+ 108              		.loc 1 69 36 is_stmt 0 discriminator 3 view .LVU22
  109 0076 0133     		adds	r3, r3, #1
  110              	.LVL6:
  111              	.L2:
-  68:modules/JY61P/JY61P.c ****             {
- 112              		.loc 1 68 28 is_stmt 1 discriminator 1 view .LVU23
-  68:modules/JY61P/JY61P.c ****             {
- 113              		.loc 1 68 13 is_stmt 0 discriminator 1 view .LVU24
+  69:modules/JY61P/JY61P.c ****             {
+ 112              		.loc 1 69 28 is_stmt 1 discriminator 1 view .LVU23
+  69:modules/JY61P/JY61P.c ****             {
+ 113              		.loc 1 69 13 is_stmt 0 discriminator 1 view .LVU24
  114 0078 022B     		cmp	r3, #2
  115 007a E5DD     		ble	.L7
  116 007c 7047     		bx	lr
  117              	.LVL7:
  118              	.L9:
-  68:modules/JY61P/JY61P.c ****             {
- 119              		.loc 1 68 13 discriminator 1 view .LVU25
+  69:modules/JY61P/JY61P.c ****             {
+ 119              		.loc 1 69 13 discriminator 1 view .LVU25
  120              	.LBE3:
   59:modules/JY61P/JY61P.c ****     {
  121              		.loc 1 59 5 view .LVU26
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s 			page 5
+
+
  122 007e 0023     		movs	r3, #0
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 5
-
-
  123 0080 FAE7     		b	.L2
  124              	.LVL8:
  125              	.L8:
  126              	.LBB4:
-  76:modules/JY61P/JY61P.c ****             }
- 127              		.loc 1 76 17 is_stmt 1 discriminator 3 view .LVU27
-  76:modules/JY61P/JY61P.c ****             }
- 128              		.loc 1 76 64 is_stmt 0 discriminator 3 view .LVU28
+  77:modules/JY61P/JY61P.c ****             }
+ 127              		.loc 1 77 17 is_stmt 1 discriminator 3 view .LVU27
+  77:modules/JY61P/JY61P.c ****             }
+ 128              		.loc 1 77 64 is_stmt 0 discriminator 3 view .LVU28
  129 0082 03F13D01 		add	r1, r3, #61
-  76:modules/JY61P/JY61P.c ****             }
- 130              		.loc 1 76 59 discriminator 3 view .LVU29
+  77:modules/JY61P/JY61P.c ****             }
+ 130              		.loc 1 77 59 discriminator 3 view .LVU29
  131 0086 0D4A     		ldr	r2, .L13
  132 0088 32F91120 		ldrsh	r2, [r2, r1, lsl #1]
  133 008c 07EE902A 		vmov	s15, r2	@ int
-  76:modules/JY61P/JY61P.c ****             }
- 134              		.loc 1 76 68 discriminator 3 view .LVU30
+  77:modules/JY61P/JY61P.c ****             }
+ 134              		.loc 1 77 68 discriminator 3 view .LVU30
  135 0090 F8EEE77A 		vcvt.f32.s32	s15, s15
  136 0094 9FED0A7A 		vldr.32	s14, .L13+4
  137 0098 67EE877A 		vmul.f32	s15, s15, s14
-  76:modules/JY61P/JY61P.c ****             }
- 138              		.loc 1 76 79 discriminator 3 view .LVU31
+  77:modules/JY61P/JY61P.c ****             }
+ 138              		.loc 1 77 79 discriminator 3 view .LVU31
  139 009c 9FED0B7A 		vldr.32	s14, .L13+16
  140 00a0 67EE877A 		vmul.f32	s15, s15, s14
-  76:modules/JY61P/JY61P.c ****             }
- 141              		.loc 1 76 53 discriminator 3 view .LVU32
+  77:modules/JY61P/JY61P.c ****             }
+ 141              		.loc 1 77 53 discriminator 3 view .LVU32
  142 00a4 074A     		ldr	r2, .L13+8
  143 00a6 02EB8302 		add	r2, r2, r3, lsl #2
  144 00aa C2ED017A 		vstr.32	s15, [r2, #4]
-  74:modules/JY61P/JY61P.c ****             {
- 145              		.loc 1 74 35 is_stmt 1 discriminator 3 view .LVU33
-  74:modules/JY61P/JY61P.c ****             {
- 146              		.loc 1 74 36 is_stmt 0 discriminator 3 view .LVU34
+  75:modules/JY61P/JY61P.c ****             {
+ 145              		.loc 1 75 35 is_stmt 1 discriminator 3 view .LVU33
+  75:modules/JY61P/JY61P.c ****             {
+ 146              		.loc 1 75 36 is_stmt 0 discriminator 3 view .LVU34
  147 00ae 0133     		adds	r3, r3, #1
  148              	.LVL9:
  149              	.L3:
-  74:modules/JY61P/JY61P.c ****             {
- 150              		.loc 1 74 28 is_stmt 1 discriminator 1 view .LVU35
-  74:modules/JY61P/JY61P.c ****             {
- 151              		.loc 1 74 13 is_stmt 0 discriminator 1 view .LVU36
+  75:modules/JY61P/JY61P.c ****             {
+ 150              		.loc 1 75 28 is_stmt 1 discriminator 1 view .LVU35
+  75:modules/JY61P/JY61P.c ****             {
+ 151              		.loc 1 75 13 is_stmt 0 discriminator 1 view .LVU36
  152 00b0 022B     		cmp	r3, #2
  153 00b2 E6DD     		ble	.L8
  154 00b4 AAE7     		b	.L1
  155              	.LVL10:
  156              	.L10:
-  74:modules/JY61P/JY61P.c ****             {
- 157              		.loc 1 74 13 discriminator 1 view .LVU37
+  75:modules/JY61P/JY61P.c ****             {
+ 157              		.loc 1 75 13 discriminator 1 view .LVU37
  158              	.LBE4:
   59:modules/JY61P/JY61P.c ****     {
  159              		.loc 1 59 5 view .LVU38
@@ -297,10 +298,10 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 1
  164              	.L13:
  165 00bc 00000000 		.word	sReg
  166 00c0 00000038 		.word	939524096
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s 			page 6
+
+
  167 00c4 00000000 		.word	.LANCHOR0
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 6
-
-
  168 00c8 0000FA44 		.word	1157234688
  169 00cc 00003443 		.word	1127481344
  170              		.cfi_endproc
@@ -357,10 +358,10 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 1
  213              	.L16:
   50:modules/JY61P/JY61P.c ****   {
  214              		.loc 1 50 21 is_stmt 1 discriminator 1 view .LVU49
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s 			page 7
+
+
   50:modules/JY61P/JY61P.c ****   {
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 7
-
-
  215              		.loc 1 50 5 is_stmt 0 discriminator 1 view .LVU50
  216 0012 202C     		cmp	r4, #32
  217 0014 F7DD     		ble	.L17
@@ -417,10 +418,10 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 1
  261              		.loc 1 23 23 is_stmt 0 view .LVU59
  262 000a 124B     		ldr	r3, .L23+4
  263 000c 0293     		str	r3, [sp, #8]
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s 			page 8
+
+
   24:modules/JY61P/JY61P.c ****     JY61P_instance.usart_instance = USARTRegister(&conf);
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 8
-
-
  264              		.loc 1 24 5 is_stmt 1 view .LVU60
   24:modules/JY61P/JY61P.c ****     JY61P_instance.usart_instance = USARTRegister(&conf);
  265              		.loc 1 24 25 is_stmt 0 view .LVU61
@@ -477,10 +478,10 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 1
  305              	.LVL25:
   34:modules/JY61P/JY61P.c **** }
  306              		.loc 1 34 5 view .LVU73
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s 			page 9
+
+
   35:modules/JY61P/JY61P.c **** 
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 9
-
-
  307              		.loc 1 35 1 is_stmt 0 view .LVU74
  308 004a 2046     		mov	r0, r4
  309 004c 05B0     		add	sp, sp, #20
@@ -512,12 +513,12 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 1
  336              		.cfi_startproc
  337              		@ args = 0, pretend = 0, frame = 0
  338              		@ frame_needed = 0, uses_anonymous_args = 0
- 339 0000 10B5     		push	{r4, lr}
+ 339 0000 08B5     		push	{r3, lr}
  340              	.LCFI4:
  341              		.cfi_def_cfa_offset 8
- 342              		.cfi_offset 4, -8
+ 342              		.cfi_offset 3, -8
  343              		.cfi_offset 14, -4
-  11:modules/JY61P/JY61P.c ****     JY61P_data = JY61P_Init(WIT_BAUD_9600);
+  11:modules/JY61P/JY61P.c ****     JY61P_data = JY61P_Init(WIT_BAUD_115200);
  344              		.loc 1 11 5 view .LVU76
  345 0002 A820     		movs	r0, #168
  346 0004 FFF7FEFF 		bl	DWT_Init
@@ -526,167 +527,159 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 1
  348              		.loc 1 12 5 view .LVU77
   12:modules/JY61P/JY61P.c ****     // WitRestartSensor();
  349              		.loc 1 12 18 is_stmt 0 view .LVU78
- 350 0008 0220     		movs	r0, #2
+ 350 0008 0620     		movs	r0, #6
  351 000a FFF7FEFF 		bl	JY61P_Init
  352              	.LVL27:
   12:modules/JY61P/JY61P.c ****     // WitRestartSensor();
  353              		.loc 1 12 16 view .LVU79
- 354 000e 044C     		ldr	r4, .L27
- 355 0010 2060     		str	r0, [r4]
-  14:modules/JY61P/JY61P.c ****     return &JY61P_data;
- 356              		.loc 1 14 5 is_stmt 1 view .LVU80
- 357 0012 B0EE000A 		vmov.f32	s0, #2.0e+0
- 358 0016 FFF7FEFF 		bl	DWT_Delay
- 359              	.LVL28:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 10
-
-
+ 354 000e 024B     		ldr	r3, .L27
+ 355 0010 1860     		str	r0, [r3]
   15:modules/JY61P/JY61P.c **** }
- 360              		.loc 1 15 5 view .LVU81
+ 356              		.loc 1 15 5 is_stmt 1 view .LVU80
   16:modules/JY61P/JY61P.c **** 
- 361              		.loc 1 16 1 is_stmt 0 view .LVU82
- 362 001a 2046     		mov	r0, r4
- 363 001c 10BD     		pop	{r4, pc}
- 364              	.L28:
- 365 001e 00BF     		.align	2
- 366              	.L27:
- 367 0020 00000000 		.word	.LANCHOR1
- 368              		.cfi_endproc
- 369              	.LFE137:
- 371              		.section	.text.JY61P_ReadData,"ax",%progbits
- 372              		.align	1
- 373              		.global	JY61P_ReadData
- 374              		.syntax unified
- 375              		.thumb
- 376              		.thumb_func
- 378              	JY61P_ReadData:
- 379              	.LFB139:
+ 357              		.loc 1 16 1 is_stmt 0 view .LVU81
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s 			page 10
+
+
+ 358 0012 1846     		mov	r0, r3
+ 359 0014 08BD     		pop	{r3, pc}
+ 360              	.L28:
+ 361 0016 00BF     		.align	2
+ 362              	.L27:
+ 363 0018 00000000 		.word	.LANCHOR1
+ 364              		.cfi_endproc
+ 365              	.LFE137:
+ 367              		.section	.text.JY61P_ReadData,"ax",%progbits
+ 368              		.align	1
+ 369              		.global	JY61P_ReadData
+ 370              		.syntax unified
+ 371              		.thumb
+ 372              		.thumb_func
+ 374              	JY61P_ReadData:
+ 375              	.LFB139:
   38:modules/JY61P/JY61P.c ****     WitReadReg(AX, 3);
- 380              		.loc 1 38 1 is_stmt 1 view -0
- 381              		.cfi_startproc
- 382              		@ args = 0, pretend = 0, frame = 0
- 383              		@ frame_needed = 0, uses_anonymous_args = 0
- 384 0000 08B5     		push	{r3, lr}
- 385              	.LCFI5:
- 386              		.cfi_def_cfa_offset 8
- 387              		.cfi_offset 3, -8
- 388              		.cfi_offset 14, -4
- 389 0002 2DED028B 		vpush.64	{d8}
- 390              	.LCFI6:
- 391              		.cfi_def_cfa_offset 16
- 392              		.cfi_offset 80, -16
- 393              		.cfi_offset 81, -12
+ 376              		.loc 1 38 1 is_stmt 1 view -0
+ 377              		.cfi_startproc
+ 378              		@ args = 0, pretend = 0, frame = 0
+ 379              		@ frame_needed = 0, uses_anonymous_args = 0
+ 380 0000 08B5     		push	{r3, lr}
+ 381              	.LCFI5:
+ 382              		.cfi_def_cfa_offset 8
+ 383              		.cfi_offset 3, -8
+ 384              		.cfi_offset 14, -4
+ 385 0002 2DED028B 		vpush.64	{d8}
+ 386              	.LCFI6:
+ 387              		.cfi_def_cfa_offset 16
+ 388              		.cfi_offset 80, -16
+ 389              		.cfi_offset 81, -12
   39:modules/JY61P/JY61P.c ****     DWT_Delay(0.1);
- 394              		.loc 1 39 5 view .LVU84
- 395 0006 0321     		movs	r1, #3
- 396 0008 3420     		movs	r0, #52
- 397 000a FFF7FEFF 		bl	WitReadReg
- 398              	.LVL29:
+ 390              		.loc 1 39 5 view .LVU83
+ 391 0006 0321     		movs	r1, #3
+ 392 0008 3420     		movs	r0, #52
+ 393 000a FFF7FEFF 		bl	WitReadReg
+ 394              	.LVL28:
   40:modules/JY61P/JY61P.c ****     WitReadReg(GX, 3);
- 399              		.loc 1 40 5 view .LVU85
- 400 000e 9FED0E8A 		vldr.32	s16, .L31
- 401 0012 B0EE480A 		vmov.f32	s0, s16
- 402 0016 FFF7FEFF 		bl	DWT_Delay
- 403              	.LVL30:
+ 395              		.loc 1 40 5 view .LVU84
+ 396 000e 9FED0E8A 		vldr.32	s16, .L31
+ 397 0012 B0EE480A 		vmov.f32	s0, s16
+ 398 0016 FFF7FEFF 		bl	DWT_Delay
+ 399              	.LVL29:
   41:modules/JY61P/JY61P.c ****     DWT_Delay(0.1);
- 404              		.loc 1 41 5 view .LVU86
- 405 001a 0321     		movs	r1, #3
- 406 001c 3720     		movs	r0, #55
- 407 001e FFF7FEFF 		bl	WitReadReg
- 408              	.LVL31:
+ 400              		.loc 1 41 5 view .LVU85
+ 401 001a 0321     		movs	r1, #3
+ 402 001c 3720     		movs	r0, #55
+ 403 001e FFF7FEFF 		bl	WitReadReg
+ 404              	.LVL30:
   42:modules/JY61P/JY61P.c ****     WitReadReg(HX, 3);
- 409              		.loc 1 42 5 view .LVU87
- 410 0022 B0EE480A 		vmov.f32	s0, s16
- 411 0026 FFF7FEFF 		bl	DWT_Delay
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 11
-
-
- 412              	.LVL32:
+ 405              		.loc 1 42 5 view .LVU86
+ 406 0022 B0EE480A 		vmov.f32	s0, s16
+ 407 0026 FFF7FEFF 		bl	DWT_Delay
+ 408              	.LVL31:
   43:modules/JY61P/JY61P.c ****     DWT_Delay(0.1);
- 413              		.loc 1 43 5 view .LVU88
- 414 002a 0321     		movs	r1, #3
- 415 002c 3A20     		movs	r0, #58
- 416 002e FFF7FEFF 		bl	WitReadReg
- 417              	.LVL33:
+ 409              		.loc 1 43 5 view .LVU87
+ 410 002a 0321     		movs	r1, #3
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s 			page 11
+
+
+ 411 002c 3A20     		movs	r0, #58
+ 412 002e FFF7FEFF 		bl	WitReadReg
+ 413              	.LVL32:
   44:modules/JY61P/JY61P.c ****     WitReadReg(Roll, 3);
- 418              		.loc 1 44 5 view .LVU89
- 419 0032 B0EE480A 		vmov.f32	s0, s16
- 420 0036 FFF7FEFF 		bl	DWT_Delay
- 421              	.LVL34:
+ 414              		.loc 1 44 5 view .LVU88
+ 415 0032 B0EE480A 		vmov.f32	s0, s16
+ 416 0036 FFF7FEFF 		bl	DWT_Delay
+ 417              	.LVL33:
   45:modules/JY61P/JY61P.c **** }
- 422              		.loc 1 45 5 view .LVU90
- 423 003a 0321     		movs	r1, #3
- 424 003c 3D20     		movs	r0, #61
- 425 003e FFF7FEFF 		bl	WitReadReg
- 426              	.LVL35:
+ 418              		.loc 1 45 5 view .LVU89
+ 419 003a 0321     		movs	r1, #3
+ 420 003c 3D20     		movs	r0, #61
+ 421 003e FFF7FEFF 		bl	WitReadReg
+ 422              	.LVL34:
   46:modules/JY61P/JY61P.c **** 
- 427              		.loc 1 46 1 is_stmt 0 view .LVU91
- 428 0042 BDEC028B 		vldm	sp!, {d8}
- 429              	.LCFI7:
- 430              		.cfi_restore 80
- 431              		.cfi_restore 81
- 432              		.cfi_def_cfa_offset 8
- 433 0046 08BD     		pop	{r3, pc}
- 434              	.L32:
- 435              		.align	2
- 436              	.L31:
- 437 0048 CDCCCC3D 		.word	1036831949
- 438              		.cfi_endproc
- 439              	.LFE139:
- 441              		.section	.bss.JY61P_data,"aw",%nobits
- 442              		.align	2
- 443              		.set	.LANCHOR1,. + 0
- 446              	JY61P_data:
- 447 0000 00000000 		.space	4
- 448              		.section	.bss.JY61P_instance,"aw",%nobits
- 449              		.align	2
- 450              		.set	.LANCHOR0,. + 0
- 453              	JY61P_instance:
- 454 0000 00000000 		.space	40
- 454      00000000 
- 454      00000000 
- 454      00000000 
- 454      00000000 
- 455              		.text
- 456              	.Letext0:
- 457              		.file 2 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
- 458              		.file 3 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
- 459              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
- 460              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 461              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 462              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 463              		.file 8 "bsp/usart/bsp_usart.h"
- 464              		.file 9 "Core/Inc/usart.h"
- 465              		.file 10 "modules/JY61P/wit_c_sdk.h"
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 12
-
-
- 466              		.file 11 "modules/JY61P/JY61P.h"
- 467              		.file 12 "bsp/dwt/bsp_dwt.h"
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s 			page 13
+ 423              		.loc 1 46 1 is_stmt 0 view .LVU90
+ 424 0042 BDEC028B 		vldm	sp!, {d8}
+ 425              	.LCFI7:
+ 426              		.cfi_restore 80
+ 427              		.cfi_restore 81
+ 428              		.cfi_def_cfa_offset 8
+ 429 0046 08BD     		pop	{r3, pc}
+ 430              	.L32:
+ 431              		.align	2
+ 432              	.L31:
+ 433 0048 CDCCCC3D 		.word	1036831949
+ 434              		.cfi_endproc
+ 435              	.LFE139:
+ 437              		.section	.bss.JY61P_data,"aw",%nobits
+ 438              		.align	2
+ 439              		.set	.LANCHOR1,. + 0
+ 442              	JY61P_data:
+ 443 0000 00000000 		.space	4
+ 444              		.section	.bss.JY61P_instance,"aw",%nobits
+ 445              		.align	2
+ 446              		.set	.LANCHOR0,. + 0
+ 449              	JY61P_instance:
+ 450 0000 00000000 		.space	40
+ 450      00000000 
+ 450      00000000 
+ 450      00000000 
+ 450      00000000 
+ 451              		.text
+ 452              	.Letext0:
+ 453              		.file 2 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 454              		.file 3 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 455              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ 456              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 457              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 458              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 459              		.file 8 "bsp/usart/bsp_usart.h"
+ 460              		.file 9 "Core/Inc/usart.h"
+ 461              		.file 10 "modules/JY61P/wit_c_sdk.h"
+ 462              		.file 11 "modules/JY61P/JY61P.h"
+ 463              		.file 12 "bsp/dwt/bsp_dwt.h"
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s 			page 12
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 JY61P.c
-C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s:20     .text.JY61P_DataUpdate:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s:26     .text.JY61P_DataUpdate:00000000 JY61P_DataUpdate
-C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s:165    .text.JY61P_DataUpdate:000000bc $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s:174    .text.WITSerialDecode:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s:180    .text.WITSerialDecode:00000000 WITSerialDecode
-C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s:226    .text.WITSerialDecode:00000018 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s:231    .text.JY61P_Init:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s:237    .text.JY61P_Init:00000000 JY61P_Init
-C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s:317    .text.JY61P_Init:00000050 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s:327    .text.INS_Init:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s:333    .text.INS_Init:00000000 INS_Init
-C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s:367    .text.INS_Init:00000020 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s:372    .text.JY61P_ReadData:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s:378    .text.JY61P_ReadData:00000000 JY61P_ReadData
-C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s:437    .text.JY61P_ReadData:00000048 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s:442    .bss.JY61P_data:00000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s:446    .bss.JY61P_data:00000000 JY61P_data
-C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s:449    .bss.JY61P_instance:00000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccUhJOmm.s:453    .bss.JY61P_instance:00000000 JY61P_instance
+C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s:20     .text.JY61P_DataUpdate:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s:26     .text.JY61P_DataUpdate:00000000 JY61P_DataUpdate
+C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s:165    .text.JY61P_DataUpdate:000000bc $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s:174    .text.WITSerialDecode:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s:180    .text.WITSerialDecode:00000000 WITSerialDecode
+C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s:226    .text.WITSerialDecode:00000018 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s:231    .text.JY61P_Init:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s:237    .text.JY61P_Init:00000000 JY61P_Init
+C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s:317    .text.JY61P_Init:00000050 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s:327    .text.INS_Init:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s:333    .text.INS_Init:00000000 INS_Init
+C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s:363    .text.INS_Init:00000018 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s:368    .text.JY61P_ReadData:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s:374    .text.JY61P_ReadData:00000000 JY61P_ReadData
+C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s:433    .text.JY61P_ReadData:00000048 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s:438    .bss.JY61P_data:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s:442    .bss.JY61P_data:00000000 JY61P_data
+C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s:445    .bss.JY61P_instance:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccJfXVyU.s:449    .bss.JY61P_instance:00000000 JY61P_instance
 
 UNDEFINED SYMBOLS
 sReg
@@ -702,5 +695,5 @@ DWT_Delay_ms
 huart3
 USART_JY61P_SEND
 DWT_Init
-DWT_Delay
 WitReadReg
+DWT_Delay
