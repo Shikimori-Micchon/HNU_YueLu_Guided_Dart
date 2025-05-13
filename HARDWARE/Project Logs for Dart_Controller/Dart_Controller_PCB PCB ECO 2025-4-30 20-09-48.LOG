@@ -1,0 +1,4 @@
+Change Component Footprint: Designator=JP10 Old Footprint=HDR2.54-LI-2P New Footprint=HDR2.54-WI-3P
+Change Component Footprint: Designator=Head_LED Old Footprint=XT30UPB-F New Footprint=XT30PW-F
+Change Component Footprint: Designator=Motor Old Footprint=XT30UPB-F New Footprint=XT30PW-F
+Change Component Footprint: Designator=BAT Old Footprint=XT30UPB-M New Footprint=XT30PW-M

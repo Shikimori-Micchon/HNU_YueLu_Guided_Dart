@@ -1,0 +1,10 @@
+Change Component Footprint: Designator=JP10 Old Footprint=HDR2.54-WI-3P New Footprint=HDR2.54-LI-2P
+Change Component Footprint: Designator=Head_LED Old Footprint=XT30PW-F New Footprint=XT30UPB-F
+Change Component Footprint: Designator=Motor Old Footprint=XT30PW-F New Footprint=XT30UPB-F
+Change Component Footprint: Designator=BAT Old Footprint=XT30PW-M New Footprint=XT30UPB-M
+Change Component Comment: Designator=JP10 Old Comment=HDR-1X3 New Comment=Header 2
+Change Component Comment: Designator=Head_LED Old Comment=XT30-PW-F New Comment=XT30UPB-F
+Change Component Comment: Designator=Motor Old Comment=XT30-PW-F New Comment=XT30UPB-F
+Change Component Comment: Designator=BAT Old Comment=XT30-PW-M New Comment=XT30UPB-M
+Change Pin Designator/Name:  Old Designator=JP10-2 Old Name=2 New Designator =3 New Name=3
+Change Pin Designator/Name:  Old Designator=JP10-3 Old Name=3 New Designator =2 New Name=2

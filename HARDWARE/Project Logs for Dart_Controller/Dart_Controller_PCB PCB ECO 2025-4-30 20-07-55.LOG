@@ -1,0 +1,4 @@
+Change component parameters: Designator = "JP10" ("JP10"); Footprint = "HDR2.54-LI-2P"; UniqueID = "\JQMIMAJV" ("\JQMIMAJV")
+Change component parameters (AddParameter): Name = "BOM名称"; Value = "3P接插件"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "学习资源"; Value = "https://shop463601444.taobao.com"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "版权归属"; Value = "封装库来自淘宝 ID：黄晶宝石"; VariantName = "[No Variations]"
