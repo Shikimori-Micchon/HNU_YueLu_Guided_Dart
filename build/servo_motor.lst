@@ -1,0 +1,247 @@
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccQTYEqN.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"servo_motor.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.Servo_Motor_Init,"ax",%progbits
+  20              		.align	1
+  21              		.global	Servo_Motor_Init
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	Servo_Motor_Init:
+  27              	.LFB134:
+  28              		.file 1 "modules/MOTOR/servo_motor/servo_motor.c"
+   1:modules/MOTOR/servo_motor/servo_motor.c **** #include "servo_motor.h"
+   2:modules/MOTOR/servo_motor/servo_motor.c **** #include <stdint.h>
+   3:modules/MOTOR/servo_motor/servo_motor.c **** 
+   4:modules/MOTOR/servo_motor/servo_motor.c **** void Servo_Motor_Init(void)
+   5:modules/MOTOR/servo_motor/servo_motor.c **** {
+  29              		.loc 1 5 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 10B5     		push	{r4, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 4, -8
+  37              		.cfi_offset 14, -4
+   6:modules/MOTOR/servo_motor/servo_motor.c ****     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+  38              		.loc 1 6 5 view .LVU1
+  39 0002 094C     		ldr	r4, .L3
+  40 0004 0021     		movs	r1, #0
+  41 0006 2046     		mov	r0, r4
+  42 0008 FFF7FEFF 		bl	HAL_TIM_PWM_Start
+  43              	.LVL0:
+   7:modules/MOTOR/servo_motor/servo_motor.c ****     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2); 
+  44              		.loc 1 7 5 view .LVU2
+  45 000c 0421     		movs	r1, #4
+  46 000e 2046     		mov	r0, r4
+  47 0010 FFF7FEFF 		bl	HAL_TIM_PWM_Start
+  48              	.LVL1:
+   8:modules/MOTOR/servo_motor/servo_motor.c ****     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
+  49              		.loc 1 8 5 view .LVU3
+  50 0014 0821     		movs	r1, #8
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccQTYEqN.s 			page 2
+
+
+  51 0016 2046     		mov	r0, r4
+  52 0018 FFF7FEFF 		bl	HAL_TIM_PWM_Start
+  53              	.LVL2:
+   9:modules/MOTOR/servo_motor/servo_motor.c ****     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
+  54              		.loc 1 9 5 view .LVU4
+  55 001c 0C21     		movs	r1, #12
+  56 001e 2046     		mov	r0, r4
+  57 0020 FFF7FEFF 		bl	HAL_TIM_PWM_Start
+  58              	.LVL3:
+  10:modules/MOTOR/servo_motor/servo_motor.c **** }
+  59              		.loc 1 10 1 is_stmt 0 view .LVU5
+  60 0024 10BD     		pop	{r4, pc}
+  61              	.L4:
+  62 0026 00BF     		.align	2
+  63              	.L3:
+  64 0028 00000000 		.word	htim1
+  65              		.cfi_endproc
+  66              	.LFE134:
+  68              		.section	.text.angle_to_pwm,"ax",%progbits
+  69              		.align	1
+  70              		.global	angle_to_pwm
+  71              		.syntax unified
+  72              		.thumb
+  73              		.thumb_func
+  75              	angle_to_pwm:
+  76              	.LVL4:
+  77              	.LFB135:
+  11:modules/MOTOR/servo_motor/servo_motor.c **** void angle_to_pwm(int16_t angle,  uint16_t*pwm)
+  12:modules/MOTOR/servo_motor/servo_motor.c **** {
+  78              		.loc 1 12 1 is_stmt 1 view -0
+  79              		.cfi_startproc
+  80              		@ args = 0, pretend = 0, frame = 0
+  81              		@ frame_needed = 0, uses_anonymous_args = 0
+  82              		@ link register save eliminated.
+  13:modules/MOTOR/servo_motor/servo_motor.c ****     if (angle < -60 || angle > 60) {
+  83              		.loc 1 13 5 view .LVU7
+  84              		.loc 1 13 21 is_stmt 0 view .LVU8
+  85 0000 80B2     		uxth	r0, r0
+  86              		.loc 1 13 21 view .LVU9
+  87 0002 00F13C03 		add	r3, r0, #60
+  88 0006 9BB2     		uxth	r3, r3
+  89              		.loc 1 13 8 view .LVU10
+  90 0008 782B     		cmp	r3, #120
+  91 000a 06D8     		bhi	.L5
+  14:modules/MOTOR/servo_motor/servo_motor.c ****         return; // Invalid angle
+  15:modules/MOTOR/servo_motor/servo_motor.c ****     }
+  16:modules/MOTOR/servo_motor/servo_motor.c ****     *pwm = (uint16_t)(angle * 10 + 1500); // Convert angle to PWM value
+  92              		.loc 1 16 5 is_stmt 1 view .LVU11
+  93              		.loc 1 16 29 is_stmt 0 view .LVU12
+  94 000c 00EB8000 		add	r0, r0, r0, lsl #2
+  95              	.LVL5:
+  96              		.loc 1 16 29 view .LVU13
+  97 0010 4000     		lsls	r0, r0, #1
+  98 0012 80B2     		uxth	r0, r0
+  99              		.loc 1 16 12 view .LVU14
+ 100 0014 00F2DC50 		addw	r0, r0, #1500
+ 101              		.loc 1 16 10 view .LVU15
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccQTYEqN.s 			page 3
+
+
+ 102 0018 0880     		strh	r0, [r1]	@ movhi
+ 103              	.L5:
+  17:modules/MOTOR/servo_motor/servo_motor.c **** }
+ 104              		.loc 1 17 1 view .LVU16
+ 105 001a 7047     		bx	lr
+ 106              		.cfi_endproc
+ 107              	.LFE135:
+ 109              		.section	.text.Servo_Motor_Task,"ax",%progbits
+ 110              		.align	1
+ 111              		.global	Servo_Motor_Task
+ 112              		.syntax unified
+ 113              		.thumb
+ 114              		.thumb_func
+ 116              	Servo_Motor_Task:
+ 117              	.LVL6:
+ 118              	.LFB136:
+  18:modules/MOTOR/servo_motor/servo_motor.c **** 
+  19:modules/MOTOR/servo_motor/servo_motor.c **** void Servo_Motor_Task(int16_t angle1, int16_t angle2, int16_t angle3, int16_t angle4)
+  20:modules/MOTOR/servo_motor/servo_motor.c **** {
+ 119              		.loc 1 20 1 is_stmt 1 view -0
+ 120              		.cfi_startproc
+ 121              		@ args = 0, pretend = 0, frame = 8
+ 122              		@ frame_needed = 0, uses_anonymous_args = 0
+ 123              		.loc 1 20 1 is_stmt 0 view .LVU18
+ 124 0000 70B5     		push	{r4, r5, r6, lr}
+ 125              	.LCFI1:
+ 126              		.cfi_def_cfa_offset 16
+ 127              		.cfi_offset 4, -16
+ 128              		.cfi_offset 5, -12
+ 129              		.cfi_offset 6, -8
+ 130              		.cfi_offset 14, -4
+ 131 0002 82B0     		sub	sp, sp, #8
+ 132              	.LCFI2:
+ 133              		.cfi_def_cfa_offset 24
+ 134 0004 0E46     		mov	r6, r1
+ 135 0006 1546     		mov	r5, r2
+ 136 0008 1C46     		mov	r4, r3
+  21:modules/MOTOR/servo_motor/servo_motor.c ****     uint16_t pwm1, pwm2, pwm3, pwm4;
+ 137              		.loc 1 21 5 is_stmt 1 view .LVU19
+  22:modules/MOTOR/servo_motor/servo_motor.c ****     angle_to_pwm(angle1, &pwm1);
+ 138              		.loc 1 22 5 view .LVU20
+ 139 000a 0DF10601 		add	r1, sp, #6
+ 140              	.LVL7:
+ 141              		.loc 1 22 5 is_stmt 0 view .LVU21
+ 142 000e FFF7FEFF 		bl	angle_to_pwm
+ 143              	.LVL8:
+  23:modules/MOTOR/servo_motor/servo_motor.c ****     angle_to_pwm(angle2, &pwm2);
+ 144              		.loc 1 23 5 is_stmt 1 view .LVU22
+ 145 0012 01A9     		add	r1, sp, #4
+ 146 0014 3046     		mov	r0, r6
+ 147 0016 FFF7FEFF 		bl	angle_to_pwm
+ 148              	.LVL9:
+  24:modules/MOTOR/servo_motor/servo_motor.c ****     angle_to_pwm(angle3, &pwm3);
+ 149              		.loc 1 24 5 view .LVU23
+ 150 001a 0DF10201 		add	r1, sp, #2
+ 151 001e 2846     		mov	r0, r5
+ 152 0020 FFF7FEFF 		bl	angle_to_pwm
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccQTYEqN.s 			page 4
+
+
+ 153              	.LVL10:
+  25:modules/MOTOR/servo_motor/servo_motor.c ****     angle_to_pwm(angle4, &pwm4);
+ 154              		.loc 1 25 5 view .LVU24
+ 155 0024 6946     		mov	r1, sp
+ 156 0026 2046     		mov	r0, r4
+ 157 0028 FFF7FEFF 		bl	angle_to_pwm
+ 158              	.LVL11:
+  26:modules/MOTOR/servo_motor/servo_motor.c ****     __HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_1, pwm1);
+ 159              		.loc 1 26 5 view .LVU25
+ 160 002c 074B     		ldr	r3, .L9
+ 161 002e 1B68     		ldr	r3, [r3]
+ 162 0030 BDF80620 		ldrh	r2, [sp, #6]
+ 163 0034 5A63     		str	r2, [r3, #52]
+  27:modules/MOTOR/servo_motor/servo_motor.c ****     __HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_2, pwm2);
+ 164              		.loc 1 27 5 view .LVU26
+ 165 0036 BDF80420 		ldrh	r2, [sp, #4]
+ 166 003a 9A63     		str	r2, [r3, #56]
+  28:modules/MOTOR/servo_motor/servo_motor.c ****     __HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_3, pwm3);
+ 167              		.loc 1 28 5 view .LVU27
+ 168 003c BDF80220 		ldrh	r2, [sp, #2]
+ 169 0040 DA63     		str	r2, [r3, #60]
+  29:modules/MOTOR/servo_motor/servo_motor.c ****     __HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_4, pwm4);
+ 170              		.loc 1 29 5 view .LVU28
+ 171 0042 BDF80020 		ldrh	r2, [sp]
+ 172 0046 1A64     		str	r2, [r3, #64]
+  30:modules/MOTOR/servo_motor/servo_motor.c **** }...
+ 173              		.loc 1 30 1 is_stmt 0 view .LVU29
+ 174 0048 02B0     		add	sp, sp, #8
+ 175              	.LCFI3:
+ 176              		.cfi_def_cfa_offset 16
+ 177              		@ sp needed
+ 178 004a 70BD     		pop	{r4, r5, r6, pc}
+ 179              	.L10:
+ 180              		.align	2
+ 181              	.L9:
+ 182 004c 00000000 		.word	htim1
+ 183              		.cfi_endproc
+ 184              	.LFE136:
+ 186              		.text
+ 187              	.Letext0:
+ 188              		.file 2 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 189              		.file 3 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 190              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ 191              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 192              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 193              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 194              		.file 8 "Core/Inc/tim.h"
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccQTYEqN.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 servo_motor.c
+C:\Users\HUAWEI\AppData\Local\Temp\ccQTYEqN.s:20     .text.Servo_Motor_Init:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccQTYEqN.s:26     .text.Servo_Motor_Init:00000000 Servo_Motor_Init
+C:\Users\HUAWEI\AppData\Local\Temp\ccQTYEqN.s:64     .text.Servo_Motor_Init:00000028 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccQTYEqN.s:69     .text.angle_to_pwm:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccQTYEqN.s:75     .text.angle_to_pwm:00000000 angle_to_pwm
+C:\Users\HUAWEI\AppData\Local\Temp\ccQTYEqN.s:110    .text.Servo_Motor_Task:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccQTYEqN.s:116    .text.Servo_Motor_Task:00000000 Servo_Motor_Task
+C:\Users\HUAWEI\AppData\Local\Temp\ccQTYEqN.s:182    .text.Servo_Motor_Task:0000004c $d
+
+UNDEFINED SYMBOLS
+HAL_TIM_PWM_Start
+htim1

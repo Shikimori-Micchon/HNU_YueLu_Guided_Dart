@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccNJWDnP.s 			page 1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccCgWKSA.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccNJWDnP.s 			page 1
   28:Core/Src/dma.c **** /*----------------------------------------------------------------------------*/
   29:Core/Src/dma.c **** /* Configure DMA                                                              */
   30:Core/Src/dma.c **** /*----------------------------------------------------------------------------*/
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccNJWDnP.s 			page 2
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccCgWKSA.s 			page 2
 
 
   31:Core/Src/dma.c **** 
@@ -90,79 +90,125 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccNJWDnP.s 			page 1
   42              	.LBB2:
   43              		.loc 1 43 3 view .LVU2
   44 0004 0024     		movs	r4, #0
-  45 0006 0194     		str	r4, [sp, #4]
+  45 0006 0094     		str	r4, [sp]
   46              		.loc 1 43 3 view .LVU3
-  47 0008 0D4B     		ldr	r3, .L3
+  47 0008 1A4B     		ldr	r3, .L3
   48 000a 1A6B     		ldr	r2, [r3, #48]
   49 000c 42F40012 		orr	r2, r2, #2097152
   50 0010 1A63     		str	r2, [r3, #48]
   51              		.loc 1 43 3 view .LVU4
-  52 0012 1B6B     		ldr	r3, [r3, #48]
-  53 0014 03F40013 		and	r3, r3, #2097152
-  54 0018 0193     		str	r3, [sp, #4]
+  52 0012 1A6B     		ldr	r2, [r3, #48]
+  53 0014 02F40012 		and	r2, r2, #2097152
+  54 0018 0092     		str	r2, [sp]
   55              		.loc 1 43 3 view .LVU5
-  56 001a 019B     		ldr	r3, [sp, #4]
+  56 001a 009A     		ldr	r2, [sp]
   57              	.LBE2:
   58              		.loc 1 43 3 view .LVU6
-  44:Core/Src/dma.c **** 
-  45:Core/Src/dma.c ****   /* DMA interrupt init */
-  46:Core/Src/dma.c ****   /* DMA1_Stream1_IRQn interrupt configuration */
-  47:Core/Src/dma.c ****   HAL_NVIC_SetPriority(DMA1_Stream1_IRQn, 0, 0);
-  59              		.loc 1 47 3 view .LVU7
-  60 001c 2246     		mov	r2, r4
-  61 001e 2146     		mov	r1, r4
-  62 0020 0C20     		movs	r0, #12
-  63 0022 FFF7FEFF 		bl	HAL_NVIC_SetPriority
-  64              	.LVL0:
-  48:Core/Src/dma.c ****   HAL_NVIC_EnableIRQ(DMA1_Stream1_IRQn);
-  65              		.loc 1 48 3 view .LVU8
-  66 0026 0C20     		movs	r0, #12
-  67 0028 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccNJWDnP.s 			page 3
+  44:Core/Src/dma.c ****   __HAL_RCC_DMA2_CLK_ENABLE();
+  59              		.loc 1 44 3 view .LVU7
+  60              	.LBB3:
+  61              		.loc 1 44 3 view .LVU8
+  62 001c 0194     		str	r4, [sp, #4]
+  63              		.loc 1 44 3 view .LVU9
+  64 001e 1A6B     		ldr	r2, [r3, #48]
+  65 0020 42F48002 		orr	r2, r2, #4194304
+  66 0024 1A63     		str	r2, [r3, #48]
+  67              		.loc 1 44 3 view .LVU10
+  68 0026 1B6B     		ldr	r3, [r3, #48]
+  69 0028 03F48003 		and	r3, r3, #4194304
+  70 002c 0193     		str	r3, [sp, #4]
+  71              		.loc 1 44 3 view .LVU11
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccCgWKSA.s 			page 3
 
 
-  68              	.LVL1:
-  49:Core/Src/dma.c ****   /* DMA1_Stream3_IRQn interrupt configuration */
-  50:Core/Src/dma.c ****   HAL_NVIC_SetPriority(DMA1_Stream3_IRQn, 0, 0);
-  69              		.loc 1 50 3 view .LVU9
-  70 002c 2246     		mov	r2, r4
-  71 002e 2146     		mov	r1, r4
-  72 0030 0E20     		movs	r0, #14
-  73 0032 FFF7FEFF 		bl	HAL_NVIC_SetPriority
-  74              	.LVL2:
-  51:Core/Src/dma.c ****   HAL_NVIC_EnableIRQ(DMA1_Stream3_IRQn);
-  75              		.loc 1 51 3 view .LVU10
-  76 0036 0E20     		movs	r0, #14
-  77 0038 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
-  78              	.LVL3:
-  52:Core/Src/dma.c **** 
-  53:Core/Src/dma.c **** }
-  79              		.loc 1 53 1 is_stmt 0 view .LVU11
-  80 003c 02B0     		add	sp, sp, #8
-  81              	.LCFI2:
-  82              		.cfi_def_cfa_offset 8
-  83              		@ sp needed
-  84 003e 10BD     		pop	{r4, pc}
-  85              	.L4:
-  86              		.align	2
-  87              	.L3:
-  88 0040 00380240 		.word	1073887232
-  89              		.cfi_endproc
-  90              	.LFE134:
-  92              		.text
-  93              	.Letext0:
-  94              		.file 2 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
-  95              		.file 3 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
-  96              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
-  97              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccNJWDnP.s 			page 4
+  72 002e 019B     		ldr	r3, [sp, #4]
+  73              	.LBE3:
+  74              		.loc 1 44 3 view .LVU12
+  45:Core/Src/dma.c **** 
+  46:Core/Src/dma.c ****   /* DMA interrupt init */
+  47:Core/Src/dma.c ****   /* DMA1_Stream1_IRQn interrupt configuration */
+  48:Core/Src/dma.c ****   HAL_NVIC_SetPriority(DMA1_Stream1_IRQn, 0, 0);
+  75              		.loc 1 48 3 view .LVU13
+  76 0030 2246     		mov	r2, r4
+  77 0032 2146     		mov	r1, r4
+  78 0034 0C20     		movs	r0, #12
+  79 0036 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+  80              	.LVL0:
+  49:Core/Src/dma.c ****   HAL_NVIC_EnableIRQ(DMA1_Stream1_IRQn);
+  81              		.loc 1 49 3 view .LVU14
+  82 003a 0C20     		movs	r0, #12
+  83 003c FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+  84              	.LVL1:
+  50:Core/Src/dma.c ****   /* DMA1_Stream3_IRQn interrupt configuration */
+  51:Core/Src/dma.c ****   HAL_NVIC_SetPriority(DMA1_Stream3_IRQn, 0, 0);
+  85              		.loc 1 51 3 view .LVU15
+  86 0040 2246     		mov	r2, r4
+  87 0042 2146     		mov	r1, r4
+  88 0044 0E20     		movs	r0, #14
+  89 0046 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+  90              	.LVL2:
+  52:Core/Src/dma.c ****   HAL_NVIC_EnableIRQ(DMA1_Stream3_IRQn);
+  91              		.loc 1 52 3 view .LVU16
+  92 004a 0E20     		movs	r0, #14
+  93 004c FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+  94              	.LVL3:
+  53:Core/Src/dma.c ****   /* DMA2_Stream2_IRQn interrupt configuration */
+  54:Core/Src/dma.c ****   HAL_NVIC_SetPriority(DMA2_Stream2_IRQn, 0, 0);
+  95              		.loc 1 54 3 view .LVU17
+  96 0050 2246     		mov	r2, r4
+  97 0052 2146     		mov	r1, r4
+  98 0054 3A20     		movs	r0, #58
+  99 0056 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 100              	.LVL4:
+  55:Core/Src/dma.c ****   HAL_NVIC_EnableIRQ(DMA2_Stream2_IRQn);
+ 101              		.loc 1 55 3 view .LVU18
+ 102 005a 3A20     		movs	r0, #58
+ 103 005c FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 104              	.LVL5:
+  56:Core/Src/dma.c ****   /* DMA2_Stream7_IRQn interrupt configuration */
+  57:Core/Src/dma.c ****   HAL_NVIC_SetPriority(DMA2_Stream7_IRQn, 0, 0);
+ 105              		.loc 1 57 3 view .LVU19
+ 106 0060 2246     		mov	r2, r4
+ 107 0062 2146     		mov	r1, r4
+ 108 0064 4620     		movs	r0, #70
+ 109 0066 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 110              	.LVL6:
+  58:Core/Src/dma.c ****   HAL_NVIC_EnableIRQ(DMA2_Stream7_IRQn);
+ 111              		.loc 1 58 3 view .LVU20
+ 112 006a 4620     		movs	r0, #70
+ 113 006c FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 114              	.LVL7:
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccCgWKSA.s 			page 4
+
+
+  59:Core/Src/dma.c **** 
+  60:Core/Src/dma.c **** }
+ 115              		.loc 1 60 1 is_stmt 0 view .LVU21
+ 116 0070 02B0     		add	sp, sp, #8
+ 117              	.LCFI2:
+ 118              		.cfi_def_cfa_offset 8
+ 119              		@ sp needed
+ 120 0072 10BD     		pop	{r4, pc}
+ 121              	.L4:
+ 122              		.align	2
+ 123              	.L3:
+ 124 0074 00380240 		.word	1073887232
+ 125              		.cfi_endproc
+ 126              	.LFE134:
+ 128              		.text
+ 129              	.Letext0:
+ 130              		.file 2 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 131              		.file 3 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 132              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ 133              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccCgWKSA.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 dma.c
-C:\Users\HUAWEI\AppData\Local\Temp\ccNJWDnP.s:20     .text.MX_DMA_Init:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccNJWDnP.s:26     .text.MX_DMA_Init:00000000 MX_DMA_Init
-C:\Users\HUAWEI\AppData\Local\Temp\ccNJWDnP.s:88     .text.MX_DMA_Init:00000040 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccCgWKSA.s:20     .text.MX_DMA_Init:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccCgWKSA.s:26     .text.MX_DMA_Init:00000000 MX_DMA_Init
+C:\Users\HUAWEI\AppData\Local\Temp\ccCgWKSA.s:124    .text.MX_DMA_Init:00000074 $d
 
 UNDEFINED SYMBOLS
 HAL_NVIC_SetPriority

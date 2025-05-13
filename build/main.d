@@ -27,7 +27,9 @@ build/main.o: Core/Src/main.c Core/Inc/main.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h Core/Inc/dma.h \
  Core/Inc/main.h Core/Inc/tim.h Core/Inc/usart.h Core/Inc/gpio.h \
  modules/JY61P/JY61P.h bsp/usart/bsp_usart.h bsp/dwt/bsp_dwt.h \
- modules/JY61P/wit_c_sdk.h modules/JY61P/REG.h
+ modules/JY61P/wit_c_sdk.h modules/JY61P/REG.h \
+ modules/MOTOR/servo_motor/servo_motor.h modules/OPENMV/openmv.h \
+ modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.h
 Core/Inc/main.h:
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 Core/Inc/stm32f4xx_hal_conf.h:
@@ -67,3 +69,6 @@ bsp/usart/bsp_usart.h:
 bsp/dwt/bsp_dwt.h:
 modules/JY61P/wit_c_sdk.h:
 modules/JY61P/REG.h:
+modules/MOTOR/servo_motor/servo_motor.h:
+modules/OPENMV/openmv.h:
+modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.h:

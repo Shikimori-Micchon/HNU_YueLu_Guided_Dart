@@ -48,4 +48,11 @@ void WITSerialDecode(void); // JY61P传感器回传数据解码函�????????
 void JY61P_DataUpdate(uint32_t uiReg, uint32_t uiRegNum);
 
 JY61PData *INS_Init(void); // 初始化传感器函数，返回传感器数据结构体指针
+
+extern double gyro_x; // 陀螺仪x轴数据
+extern double gyro_y; // 陀螺仪y轴数据
+extern double dart_speed; 
+extern double IMU_ax; // 加速度计x轴数据
+extern double IMU_ay; // 加速度计y轴数据    
+extern double IMU_az; // 加速度计z轴数据
 #endif // ! JY61P_H

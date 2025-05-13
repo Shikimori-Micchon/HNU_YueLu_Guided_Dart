@@ -1,0 +1,181 @@
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccg93z0K.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"Ducted_fan_Motor.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.Ducted_Fan_Motor_Init,"ax",%progbits
+  20              		.align	1
+  21              		.global	Ducted_Fan_Motor_Init
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	Ducted_Fan_Motor_Init:
+  27              	.LFB134:
+  28              		.file 1 "modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c"
+   1:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c **** #include"Ducted_fan_Motor.h"
+   2:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c **** 
+   3:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c **** void Ducted_Fan_Motor_Init()
+   4:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c **** {
+  29              		.loc 1 4 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 38B5     		push	{r3, r4, r5, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 16
+  36              		.cfi_offset 3, -16
+  37              		.cfi_offset 4, -12
+  38              		.cfi_offset 5, -8
+  39              		.cfi_offset 14, -4
+   5:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c ****     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
+  40              		.loc 1 5 5 view .LVU1
+  41 0002 0122     		movs	r2, #1
+  42 0004 1021     		movs	r1, #16
+  43 0006 0F48     		ldr	r0, .L3
+  44 0008 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  45              	.LVL0:
+   6:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c ****     HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
+  46              		.loc 1 6 5 view .LVU2
+  47 000c 0E4C     		ldr	r4, .L3+4
+  48 000e 0421     		movs	r1, #4
+  49 0010 2046     		mov	r0, r4
+  50 0012 FFF7FEFF 		bl	HAL_TIM_PWM_Start
+  51              	.LVL1:
+   7:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c ****     DWT_Delay_ms(3000);
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccg93z0K.s 			page 2
+
+
+  52              		.loc 1 7 5 view .LVU3
+  53 0016 40F6B830 		movw	r0, #3000
+  54 001a FFF7FEFF 		bl	DWT_Delay_ms
+  55              	.LVL2:
+   8:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c ****     __HAL_TIM_SetCompare(&htim2, TIM_CHANNEL_2, 1000);
+  56              		.loc 1 8 5 view .LVU4
+  57 001e 2368     		ldr	r3, [r4]
+  58 0020 4FF47A75 		mov	r5, #1000
+  59 0024 9D63     		str	r5, [r3, #56]
+   9:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c ****     DWT_Delay_ms(1000);
+  60              		.loc 1 9 5 view .LVU5
+  61 0026 2846     		mov	r0, r5
+  62 0028 FFF7FEFF 		bl	DWT_Delay_ms
+  63              	.LVL3:
+  10:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c ****     __HAL_TIM_SetCompare(&htim2, TIM_CHANNEL_2, 1900);
+  64              		.loc 1 10 5 view .LVU6
+  65 002c 2368     		ldr	r3, [r4]
+  66 002e 40F26C72 		movw	r2, #1900
+  67 0032 9A63     		str	r2, [r3, #56]
+  11:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c ****     DWT_Delay_ms(1000);
+  68              		.loc 1 11 5 view .LVU7
+  69 0034 2846     		mov	r0, r5
+  70 0036 FFF7FEFF 		bl	DWT_Delay_ms
+  71              	.LVL4:
+  12:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c ****     // __HAL_TIM_SetCompare(&htim2, TIM_CHANNEL_2, 1700);
+  13:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c ****     // DWT_Delay_ms(1000);
+  14:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c ****     __HAL_TIM_SetCompare(&htim2, TIM_CHANNEL_2, 1200);
+  72              		.loc 1 14 5 view .LVU8
+  73 003a 2368     		ldr	r3, [r4]
+  74 003c 4FF49662 		mov	r2, #1200
+  75 0040 9A63     		str	r2, [r3, #56]
+  15:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c ****     // HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+  16:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c **** }
+  76              		.loc 1 16 1 is_stmt 0 view .LVU9
+  77 0042 38BD     		pop	{r3, r4, r5, pc}
+  78              	.L4:
+  79              		.align	2
+  80              	.L3:
+  81 0044 00000240 		.word	1073872896
+  82 0048 00000000 		.word	htim2
+  83              		.cfi_endproc
+  84              	.LFE134:
+  86              		.section	.text.Ducted_Fan_Motor_Task,"ax",%progbits
+  87              		.align	1
+  88              		.global	Ducted_Fan_Motor_Task
+  89              		.syntax unified
+  90              		.thumb
+  91              		.thumb_func
+  93              	Ducted_Fan_Motor_Task:
+  94              	.LFB135:
+  17:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c **** 
+  18:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c **** void Ducted_Fan_Motor_Task()
+  19:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c **** {
+  95              		.loc 1 19 1 is_stmt 1 view -0
+  96              		.cfi_startproc
+  97              		@ args = 0, pretend = 0, frame = 0
+  98              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccg93z0K.s 			page 3
+
+
+  99 0000 08B5     		push	{r3, lr}
+ 100              	.LCFI1:
+ 101              		.cfi_def_cfa_offset 8
+ 102              		.cfi_offset 3, -8
+ 103              		.cfi_offset 14, -4
+  20:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c **** 
+  21:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c ****     __HAL_TIM_SetCompare(&htim2, TIM_CHANNEL_2, 1900);
+ 104              		.loc 1 21 5 view .LVU11
+ 105 0002 054B     		ldr	r3, .L7
+ 106 0004 1B68     		ldr	r3, [r3]
+ 107 0006 40F26C72 		movw	r2, #1900
+ 108 000a 9A63     		str	r2, [r3, #56]
+  22:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c **** 
+  23:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c ****     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+ 109              		.loc 1 23 5 view .LVU12
+ 110 000c 0022     		movs	r2, #0
+ 111 000e 1021     		movs	r1, #16
+ 112 0010 0248     		ldr	r0, .L7+4
+ 113 0012 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 114              	.LVL5:
+  24:modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c **** }  
+ 115              		.loc 1 24 1 is_stmt 0 view .LVU13
+ 116 0016 08BD     		pop	{r3, pc}
+ 117              	.L8:
+ 118              		.align	2
+ 119              	.L7:
+ 120 0018 00000000 		.word	htim2
+ 121 001c 00000240 		.word	1073872896
+ 122              		.cfi_endproc
+ 123              	.LFE135:
+ 125              		.text
+ 126              	.Letext0:
+ 127              		.file 2 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 128              		.file 3 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 129              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ 130              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 131              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 132              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 133              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 134              		.file 9 "bsp/dwt/bsp_dwt.h"
+ 135              		.file 10 "Core/Inc/tim.h"
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccg93z0K.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 Ducted_fan_Motor.c
+C:\Users\HUAWEI\AppData\Local\Temp\ccg93z0K.s:20     .text.Ducted_Fan_Motor_Init:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccg93z0K.s:26     .text.Ducted_Fan_Motor_Init:00000000 Ducted_Fan_Motor_Init
+C:\Users\HUAWEI\AppData\Local\Temp\ccg93z0K.s:81     .text.Ducted_Fan_Motor_Init:00000044 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccg93z0K.s:87     .text.Ducted_Fan_Motor_Task:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccg93z0K.s:93     .text.Ducted_Fan_Motor_Task:00000000 Ducted_Fan_Motor_Task
+C:\Users\HUAWEI\AppData\Local\Temp\ccg93z0K.s:120    .text.Ducted_Fan_Motor_Task:00000018 $d
+
+UNDEFINED SYMBOLS
+HAL_GPIO_WritePin
+HAL_TIM_PWM_Start
+DWT_Delay_ms
+htim2

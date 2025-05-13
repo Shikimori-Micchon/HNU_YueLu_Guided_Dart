@@ -27,6 +27,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "JY61P.h"  // 传感器头文件
+#include "servo_motor.h" // 舵机头文�?
+#include"openmv.h" // openmv头文�?
+#include"Ducted_fan_Motor.h" // 电机头文�?
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -52,23 +55,13 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-// void WITSerialDecode(void);
-// JY61PData *INS_Init(void)
-// {
-//   DWT_Init(168);
-//   JY61P_data = JY61P_Init(WIT_BAUD_115200);
-//   WitRestartSensor();
-//   DWT_Delay(2);
-//   return &JY61P_data;
-// }
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 JY61PData *pJY61PData = NULL; // 传感器数据结构体指针
-// static JY61PData *JY61P_data; // 传感器数据结构体实例
-
-
+OPENMV_Instance_s *pOPENMVData = NULL; // openmv数据结构体指�?
 /* USER CODE END 0 */
 
 /**
@@ -107,27 +100,16 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   pJY61PData = INS_Init(); // 初始化传感器
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
-  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2); 
-  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
-  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2); 
-  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
-  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
-  // __HAL_TIM_SetCompare(&htim2, TIM_CHANNEL_2, 2000);   
+  pOPENMVData = OPENMVInit(&huart1); // 初始化openmv
+  // Ducted_Fan_Motor_Init(); // 初始化电机
+  Servo_Motor_Init(); // 初始化舵机
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
-  {
-    __HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_3, 900);
-    HAL_Delay(1000);
-    __HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_3, 2000);
-    HAL_Delay(1000);
-    // __HAL_TIM_SetCompare(&htim2, TIM_CHANNEL_2, 2000); 
-    // HAL_Delay(10000);
-    // __HAL_TIM_SetCompare(&htim2, TIM_CHANNEL_2, 0);
-    // HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+  { 
+    Servo_Motor_Task(0, 0, 0, 0); // 舵机任务
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
