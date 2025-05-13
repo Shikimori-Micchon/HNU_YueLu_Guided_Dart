@@ -20,5 +20,10 @@ void Ducted_Fan_Motor_Task()
 
     __HAL_TIM_SetCompare(&htim2, TIM_CHANNEL_2, 1900);
 
+}
+
+void Ducted_Fan_Motor_Stop()
+{
+    __HAL_TIM_SetCompare(&htim2, TIM_CHANNEL_2, 1200);
     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
-}  
+}

@@ -53,7 +53,7 @@ modules/MOTOR/Ducted_fan_Motor/Ducted_fan_Motor.c \
 modules/MOTOR/servo_motor/servo_motor.c \
 modules/OPENMV/openmv.c \
 modules/algorithm/controller.c \
-modules/PNG/png.c \
+modules/PNG/PNG.c \
 Core/Src/sysmem.c \
 Core/Src/syscalls.c \
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c \

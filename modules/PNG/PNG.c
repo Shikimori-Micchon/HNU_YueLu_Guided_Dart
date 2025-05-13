@@ -87,9 +87,9 @@ void PNG_TASK(){
     target_x_speed = (target_x_angle - target_x_angle_last) / delta_time-gyro_x;
     target_y_speed = (target_y_angle - target_y_angle_last) / delta_time-gyro_y;
     q = 0.5*1.225*pow(dart_speed,2);
-    ax = N*dart_speed*target_x_speed;
-    ay = N*dart_speed*target_y_speed;
-    K_theta =q*S*Cl*l;
+    ax = N_PNG*dart_speed*target_x_speed;
+    ay = N_PNG*dart_speed*target_y_speed;
+    K_theta =q*S_area*Cl*l;
     K_cmd = (m*l)/K_theta;
     servo_x_angle = K_cmd*ax;
     servo_y_angle = K_cmd*ay;

@@ -60,8 +60,6 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-JY61PData *pJY61PData = NULL; // 传感器数据结构体指针
-OPENMV_Instance_s *pOPENMVData = NULL; // openmv数据结构体指�?
 /* USER CODE END 0 */
 
 /**
@@ -99,17 +97,14 @@ int main(void)
   MX_USART1_UART_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-  pJY61PData = INS_Init(); // 初始化传感器
-  pOPENMVData = OPENMVInit(&huart1); // 初始化openmv
-  // Ducted_Fan_Motor_Init(); // 初始化电机
-  Servo_Motor_Init(); // 初始化舵机
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   { 
-    Servo_Motor_Task(0, 0, 0, 0); // 舵机任务
+    // Servo_Motor_Task(0, 0, 0, 0); // 舵机任务
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

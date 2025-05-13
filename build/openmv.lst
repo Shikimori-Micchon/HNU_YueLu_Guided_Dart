@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccywRdB6.s 			page 1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdYtUuf.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -35,7 +35,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccywRdB6.s 			page 1
    6:modules/OPENMV/openmv.c **** #define OPENMV_END_FLAG 0x55
    7:modules/OPENMV/openmv.c **** 
    8:modules/OPENMV/openmv.c **** static OPENMV_Instance_s openmv_instance;
-   9:modules/OPENMV/openmv.c **** uint16_t target_x, target_y;
+   9:modules/OPENMV/openmv.c **** uint16_t target_x, target_y,flag = 0;
   10:modules/OPENMV/openmv.c **** 
   11:modules/OPENMV/openmv.c **** static void OPENMVRxCallback()
   12:modules/OPENMV/openmv.c **** {
@@ -49,7 +49,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccywRdB6.s 			page 1
   14:modules/OPENMV/openmv.c ****     rxbuff = openmv_instance.usart_instance->recv_buff;
   34              		.loc 1 14 5 view .LVU2
   35              		.loc 1 14 29 is_stmt 0 view .LVU3
-  36 0000 134B     		ldr	r3, .L7
+  36 0000 174B     		ldr	r3, .L9
   37 0002 1B68     		ldr	r3, [r3]
   38              	.LVL0:
   15:modules/OPENMV/openmv.c **** 
@@ -58,12 +58,12 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccywRdB6.s 			page 1
   39              		.loc 1 17 5 is_stmt 1 view .LVU4
   40              		.loc 1 17 14 is_stmt 0 view .LVU5
   41 0004 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccywRdB6.s 			page 2
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdYtUuf.s 			page 2
 
 
   42              		.loc 1 17 7 view .LVU6
   43 0006 AA2A     		cmp	r2, #170
-  44 0008 0FD0     		beq	.L6
+  44 0008 14D0     		beq	.L8
   45              	.L2:
   18:modules/OPENMV/openmv.c ****     {
   19:modules/OPENMV/openmv.c ****         for(int i = 0; i < OPENMV_DATA_SIZE; i++)
@@ -87,7 +87,7 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccywRdB6.s 			page 1
   51              		.loc 1 31 60 view .LVU10
   52 000e 42EA0122 		orr	r2, r2, r1, lsl #8
   53              		.loc 1 31 41 view .LVU11
-  54 0012 0F49     		ldr	r1, .L7
+  54 0012 1349     		ldr	r1, .L9
   55 0014 0A82     		strh	r2, [r1, #16]	@ movhi
   32:modules/OPENMV/openmv.c ****     openmv_instance.TargetData.target_y = (rxbuff[3] << 8) | rxbuff[4];
   56              		.loc 1 32 5 is_stmt 1 view .LVU12
@@ -103,207 +103,245 @@ ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccywRdB6.s 			page 1
   33:modules/OPENMV/openmv.c ****     target_x = openmv_instance.TargetData.target_x;
   66              		.loc 1 33 5 is_stmt 1 view .LVU17
   67              		.loc 1 33 14 is_stmt 0 view .LVU18
-  68 0020 0C49     		ldr	r1, .L7+4
+  68 0020 1049     		ldr	r1, .L9+4
   69 0022 0A80     		strh	r2, [r1]	@ movhi
   34:modules/OPENMV/openmv.c ****     target_y = openmv_instance.TargetData.target_y;
   70              		.loc 1 34 5 is_stmt 1 view .LVU19
   71              		.loc 1 34 14 is_stmt 0 view .LVU20
-  72 0024 0C4A     		ldr	r2, .L7+8
-  73 0026 1380     		strh	r3, [r2]	@ movhi
-  35:modules/OPENMV/openmv.c **** 
-  36:modules/OPENMV/openmv.c ****     return;
-  74              		.loc 1 36 5 is_stmt 1 view .LVU21
-  37:modules/OPENMV/openmv.c **** }
-  75              		.loc 1 37 1 is_stmt 0 view .LVU22
-  76 0028 7047     		bx	lr
-  77              	.LVL2:
-  78              	.L6:
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccywRdB6.s 			page 3
+  72 0024 1049     		ldr	r1, .L9+8
+  73 0026 0B80     		strh	r3, [r1]	@ movhi
+  35:modules/OPENMV/openmv.c ****     if(target_x > 0 && target_y > 0)
+  74              		.loc 1 35 5 is_stmt 1 view .LVU21
+  75              		.loc 1 35 7 is_stmt 0 view .LVU22
+  76 0028 B2B1     		cbz	r2, .L5
+  77              		.loc 1 35 21 discriminator 1 view .LVU23
+  78 002a ABB1     		cbz	r3, .L5
+  36:modules/OPENMV/openmv.c ****     {
+  37:modules/OPENMV/openmv.c ****         flag = 1;
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdYtUuf.s 			page 3
 
 
+  79              		.loc 1 37 9 is_stmt 1 view .LVU24
+  80              		.loc 1 37 14 is_stmt 0 view .LVU25
+  81 002c 0F4B     		ldr	r3, .L9+12
+  82 002e 0122     		movs	r2, #1
+  83 0030 1A80     		strh	r2, [r3]	@ movhi
+  84 0032 7047     		bx	lr
+  85              	.LVL2:
+  86              	.L8:
   17:modules/OPENMV/openmv.c ****     {
-  79              		.loc 1 17 48 discriminator 1 view .LVU23
-  80 002a 9A79     		ldrb	r2, [r3, #6]	@ zero_extendqisi2
+  87              		.loc 1 17 48 discriminator 1 view .LVU26
+  88 0034 9A79     		ldrb	r2, [r3, #6]	@ zero_extendqisi2
   17:modules/OPENMV/openmv.c ****     {
-  81              		.loc 1 17 39 discriminator 1 view .LVU24
-  82 002c 552A     		cmp	r2, #85
-  83 002e ECD1     		bne	.L2
-  84              	.LBB2:
+  89              		.loc 1 17 39 discriminator 1 view .LVU27
+  90 0036 552A     		cmp	r2, #85
+  91 0038 E7D1     		bne	.L2
+  92              	.LBB2:
   19:modules/OPENMV/openmv.c ****             openmv_instance.OPENMV_data.data[i] = rxbuff[i+1];
-  85              		.loc 1 19 17 view .LVU25
-  86 0030 0022     		movs	r2, #0
-  87 0032 06E0     		b	.L3
-  88              	.LVL3:
-  89              	.L4:
+  93              		.loc 1 19 17 view .LVU28
+  94 003a 0022     		movs	r2, #0
+  95 003c 06E0     		b	.L3
+  96              	.LVL3:
+  97              	.L4:
   20:modules/OPENMV/openmv.c ****             openmv_instance.OPENMV_data.checksum = rxbuff[OPENMV_DATA_SIZE];
-  90              		.loc 1 20 13 is_stmt 1 discriminator 3 view .LVU26
+  98              		.loc 1 20 13 is_stmt 1 discriminator 3 view .LVU29
   20:modules/OPENMV/openmv.c ****             openmv_instance.OPENMV_data.checksum = rxbuff[OPENMV_DATA_SIZE];
-  91              		.loc 1 20 57 is_stmt 0 discriminator 3 view .LVU27
-  92 0034 9918     		adds	r1, r3, r2
-  93 0036 4878     		ldrb	r0, [r1, #1]	@ zero_extendqisi2
+  99              		.loc 1 20 57 is_stmt 0 discriminator 3 view .LVU30
+ 100 003e 9918     		adds	r1, r3, r2
+ 101 0040 4878     		ldrb	r0, [r1, #1]	@ zero_extendqisi2
   20:modules/OPENMV/openmv.c ****             openmv_instance.OPENMV_data.checksum = rxbuff[OPENMV_DATA_SIZE];
-  94              		.loc 1 20 49 discriminator 3 view .LVU28
-  95 0038 0549     		ldr	r1, .L7
-  96 003a 01EB4201 		add	r1, r1, r2, lsl #1
-  97 003e 8880     		strh	r0, [r1, #4]	@ movhi
+ 102              		.loc 1 20 49 discriminator 3 view .LVU31
+ 103 0042 0749     		ldr	r1, .L9
+ 104 0044 01EB4201 		add	r1, r1, r2, lsl #1
+ 105 0048 8880     		strh	r0, [r1, #4]	@ movhi
   19:modules/OPENMV/openmv.c ****             openmv_instance.OPENMV_data.data[i] = rxbuff[i+1];
-  98              		.loc 1 19 46 is_stmt 1 discriminator 3 view .LVU29
+ 106              		.loc 1 19 46 is_stmt 1 discriminator 3 view .LVU32
   19:modules/OPENMV/openmv.c ****             openmv_instance.OPENMV_data.data[i] = rxbuff[i+1];
-  99              		.loc 1 19 47 is_stmt 0 discriminator 3 view .LVU30
- 100 0040 0132     		adds	r2, r2, #1
- 101              	.LVL4:
- 102              	.L3:
+ 107              		.loc 1 19 47 is_stmt 0 discriminator 3 view .LVU33
+ 108 004a 0132     		adds	r2, r2, #1
+ 109              	.LVL4:
+ 110              	.L3:
   19:modules/OPENMV/openmv.c ****             openmv_instance.OPENMV_data.data[i] = rxbuff[i+1];
- 103              		.loc 1 19 24 is_stmt 1 discriminator 1 view .LVU31
+ 111              		.loc 1 19 24 is_stmt 1 discriminator 1 view .LVU34
   19:modules/OPENMV/openmv.c ****             openmv_instance.OPENMV_data.data[i] = rxbuff[i+1];
- 104              		.loc 1 19 9 is_stmt 0 discriminator 1 view .LVU32
- 105 0042 042A     		cmp	r2, #4
- 106 0044 F6DD     		ble	.L4
- 107              	.LBE2:
+ 112              		.loc 1 19 9 is_stmt 0 discriminator 1 view .LVU35
+ 113 004c 042A     		cmp	r2, #4
+ 114 004e F6DD     		ble	.L4
+ 115              	.LBE2:
   21:modules/OPENMV/openmv.c ****     }
- 108              		.loc 1 21 13 is_stmt 1 view .LVU33
+ 116              		.loc 1 21 13 is_stmt 1 view .LVU36
   21:modules/OPENMV/openmv.c ****     }
- 109              		.loc 1 21 58 is_stmt 0 view .LVU34
- 110 0046 5979     		ldrb	r1, [r3, #5]	@ zero_extendqisi2
+ 117              		.loc 1 21 58 is_stmt 0 view .LVU37
+ 118 0050 5979     		ldrb	r1, [r3, #5]	@ zero_extendqisi2
   21:modules/OPENMV/openmv.c ****     }
- 111              		.loc 1 21 50 view .LVU35
- 112 0048 014A     		ldr	r2, .L7
- 113              	.LVL5:
+ 119              		.loc 1 21 50 view .LVU38
+ 120 0052 034A     		ldr	r2, .L9
+ 121              	.LVL5:
   21:modules/OPENMV/openmv.c ****     }
- 114              		.loc 1 21 50 view .LVU36
- 115 004a D181     		strh	r1, [r2, #14]	@ movhi
- 116 004c DDE7     		b	.L2
- 117              	.L8:
- 118 004e 00BF     		.align	2
- 119              	.L7:
- 120 0050 00000000 		.word	.LANCHOR0
- 121 0054 00000000 		.word	.LANCHOR1
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccywRdB6.s 			page 4
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdYtUuf.s 			page 4
 
 
- 122 0058 00000000 		.word	.LANCHOR2
- 123              		.cfi_endproc
- 124              	.LFE134:
- 126              		.section	.text.OPENMVInit,"ax",%progbits
- 127              		.align	1
- 128              		.global	OPENMVInit
- 129              		.syntax unified
- 130              		.thumb
- 131              		.thumb_func
- 133              	OPENMVInit:
- 134              	.LVL6:
- 135              	.LFB135:
-  38:modules/OPENMV/openmv.c **** 
-  39:modules/OPENMV/openmv.c **** OPENMV_Instance_s *OPENMVInit(UART_HandleTypeDef *OPENMV_usart_handle)
-  40:modules/OPENMV/openmv.c **** {
- 136              		.loc 1 40 1 is_stmt 1 view -0
- 137              		.cfi_startproc
- 138              		@ args = 0, pretend = 0, frame = 16
- 139              		@ frame_needed = 0, uses_anonymous_args = 0
- 140              		.loc 1 40 1 is_stmt 0 view .LVU38
- 141 0000 00B5     		push	{lr}
- 142              	.LCFI0:
- 143              		.cfi_def_cfa_offset 4
- 144              		.cfi_offset 14, -4
- 145 0002 85B0     		sub	sp, sp, #20
- 146              	.LCFI1:
- 147              		.cfi_def_cfa_offset 24
-  41:modules/OPENMV/openmv.c ****     USART_Init_Config_s conf;
- 148              		.loc 1 41 5 is_stmt 1 view .LVU39
-  42:modules/OPENMV/openmv.c ****     conf.module_callback = OPENMVRxCallback;
- 149              		.loc 1 42 5 view .LVU40
- 150              		.loc 1 42 26 is_stmt 0 view .LVU41
- 151 0004 074B     		ldr	r3, .L11
- 152 0006 0393     		str	r3, [sp, #12]
-  43:modules/OPENMV/openmv.c ****     conf.usart_handle = OPENMV_usart_handle;
- 153              		.loc 1 43 5 is_stmt 1 view .LVU42
- 154              		.loc 1 43 23 is_stmt 0 view .LVU43
- 155 0008 0290     		str	r0, [sp, #8]
-  44:modules/OPENMV/openmv.c ****     conf.recv_buff_size = OPENMV_BUFFER_SIZE;
- 156              		.loc 1 44 5 is_stmt 1 view .LVU44
- 157              		.loc 1 44 25 is_stmt 0 view .LVU45
- 158 000a 0723     		movs	r3, #7
- 159 000c 8DF80430 		strb	r3, [sp, #4]
-  45:modules/OPENMV/openmv.c ****     openmv_instance.usart_instance = USARTRegister(&conf);
- 160              		.loc 1 45 5 is_stmt 1 view .LVU46
- 161              		.loc 1 45 38 is_stmt 0 view .LVU47
- 162 0010 01A8     		add	r0, sp, #4
- 163              	.LVL7:
- 164              		.loc 1 45 38 view .LVU48
- 165 0012 FFF7FEFF 		bl	USARTRegister
- 166              	.LVL8:
- 167              		.loc 1 45 36 view .LVU49
- 168 0016 044B     		ldr	r3, .L11+4
- 169 0018 1860     		str	r0, [r3]
+ 122              		.loc 1 21 50 view .LVU39
+ 123 0054 D181     		strh	r1, [r2, #14]	@ movhi
+ 124 0056 D8E7     		b	.L2
+ 125              	.LVL6:
+ 126              	.L5:
+  38:modules/OPENMV/openmv.c ****     }
+  39:modules/OPENMV/openmv.c ****     else
+  40:modules/OPENMV/openmv.c ****     {
+  41:modules/OPENMV/openmv.c ****         flag = 0;
+ 127              		.loc 1 41 9 is_stmt 1 view .LVU40
+ 128              		.loc 1 41 14 is_stmt 0 view .LVU41
+ 129 0058 044B     		ldr	r3, .L9+12
+ 130 005a 0022     		movs	r2, #0
+ 131 005c 1A80     		strh	r2, [r3]	@ movhi
+  42:modules/OPENMV/openmv.c ****     }
+  43:modules/OPENMV/openmv.c **** 
+  44:modules/OPENMV/openmv.c ****     return;
+ 132              		.loc 1 44 5 is_stmt 1 view .LVU42
+  45:modules/OPENMV/openmv.c **** }
+ 133              		.loc 1 45 1 is_stmt 0 view .LVU43
+ 134 005e 7047     		bx	lr
+ 135              	.L10:
+ 136              		.align	2
+ 137              	.L9:
+ 138 0060 00000000 		.word	.LANCHOR0
+ 139 0064 00000000 		.word	.LANCHOR1
+ 140 0068 00000000 		.word	.LANCHOR2
+ 141 006c 00000000 		.word	.LANCHOR3
+ 142              		.cfi_endproc
+ 143              	.LFE134:
+ 145              		.section	.text.OPENMVInit,"ax",%progbits
+ 146              		.align	1
+ 147              		.global	OPENMVInit
+ 148              		.syntax unified
+ 149              		.thumb
+ 150              		.thumb_func
+ 152              	OPENMVInit:
+ 153              	.LVL7:
+ 154              	.LFB135:
   46:modules/OPENMV/openmv.c **** 
-  47:modules/OPENMV/openmv.c ****     return (OPENMV_Instance_s*)&openmv_instance;
- 170              		.loc 1 47 5 is_stmt 1 view .LVU50
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccywRdB6.s 			page 5
+  47:modules/OPENMV/openmv.c **** OPENMV_Instance_s *OPENMVInit(UART_HandleTypeDef *OPENMV_usart_handle)
+  48:modules/OPENMV/openmv.c **** {
+ 155              		.loc 1 48 1 is_stmt 1 view -0
+ 156              		.cfi_startproc
+ 157              		@ args = 0, pretend = 0, frame = 16
+ 158              		@ frame_needed = 0, uses_anonymous_args = 0
+ 159              		.loc 1 48 1 is_stmt 0 view .LVU45
+ 160 0000 00B5     		push	{lr}
+ 161              	.LCFI0:
+ 162              		.cfi_def_cfa_offset 4
+ 163              		.cfi_offset 14, -4
+ 164 0002 85B0     		sub	sp, sp, #20
+ 165              	.LCFI1:
+ 166              		.cfi_def_cfa_offset 24
+  49:modules/OPENMV/openmv.c ****     USART_Init_Config_s conf;
+ 167              		.loc 1 49 5 is_stmt 1 view .LVU46
+  50:modules/OPENMV/openmv.c ****     conf.module_callback = OPENMVRxCallback;
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdYtUuf.s 			page 5
 
 
-  48:modules/OPENMV/openmv.c **** }...
- 171              		.loc 1 48 1 is_stmt 0 view .LVU51
- 172 001a 1846     		mov	r0, r3
- 173 001c 05B0     		add	sp, sp, #20
- 174              	.LCFI2:
- 175              		.cfi_def_cfa_offset 4
- 176              		@ sp needed
- 177 001e 5DF804FB 		ldr	pc, [sp], #4
- 178              	.L12:
- 179 0022 00BF     		.align	2
- 180              	.L11:
- 181 0024 00000000 		.word	OPENMVRxCallback
- 182 0028 00000000 		.word	.LANCHOR0
- 183              		.cfi_endproc
- 184              	.LFE135:
- 186              		.global	target_y
- 187              		.global	target_x
- 188              		.section	.bss.openmv_instance,"aw",%nobits
- 189              		.align	2
- 190              		.set	.LANCHOR0,. + 0
- 193              	openmv_instance:
- 194 0000 00000000 		.space	20
- 194      00000000 
- 194      00000000 
- 194      00000000 
- 194      00000000 
- 195              		.section	.bss.target_x,"aw",%nobits
- 196              		.align	1
- 197              		.set	.LANCHOR1,. + 0
- 200              	target_x:
- 201 0000 0000     		.space	2
- 202              		.section	.bss.target_y,"aw",%nobits
- 203              		.align	1
- 204              		.set	.LANCHOR2,. + 0
- 207              	target_y:
- 208 0000 0000     		.space	2
- 209              		.text
- 210              	.Letext0:
- 211              		.file 2 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
- 212              		.file 3 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
- 213              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
- 214              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 215              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 216              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 217              		.file 8 "bsp/usart/bsp_usart.h"
- 218              		.file 9 "modules/OPENMV/openmv.h"
-ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccywRdB6.s 			page 6
+ 168              		.loc 1 50 5 view .LVU47
+ 169              		.loc 1 50 26 is_stmt 0 view .LVU48
+ 170 0004 074B     		ldr	r3, .L13
+ 171 0006 0393     		str	r3, [sp, #12]
+  51:modules/OPENMV/openmv.c ****     conf.usart_handle = OPENMV_usart_handle;
+ 172              		.loc 1 51 5 is_stmt 1 view .LVU49
+ 173              		.loc 1 51 23 is_stmt 0 view .LVU50
+ 174 0008 0290     		str	r0, [sp, #8]
+  52:modules/OPENMV/openmv.c ****     conf.recv_buff_size = OPENMV_BUFFER_SIZE;
+ 175              		.loc 1 52 5 is_stmt 1 view .LVU51
+ 176              		.loc 1 52 25 is_stmt 0 view .LVU52
+ 177 000a 0723     		movs	r3, #7
+ 178 000c 8DF80430 		strb	r3, [sp, #4]
+  53:modules/OPENMV/openmv.c ****     openmv_instance.usart_instance = USARTRegister(&conf);
+ 179              		.loc 1 53 5 is_stmt 1 view .LVU53
+ 180              		.loc 1 53 38 is_stmt 0 view .LVU54
+ 181 0010 01A8     		add	r0, sp, #4
+ 182              	.LVL8:
+ 183              		.loc 1 53 38 view .LVU55
+ 184 0012 FFF7FEFF 		bl	USARTRegister
+ 185              	.LVL9:
+ 186              		.loc 1 53 36 view .LVU56
+ 187 0016 044B     		ldr	r3, .L13+4
+ 188 0018 1860     		str	r0, [r3]
+  54:modules/OPENMV/openmv.c **** 
+  55:modules/OPENMV/openmv.c ****     return (OPENMV_Instance_s*)&openmv_instance;
+ 189              		.loc 1 55 5 is_stmt 1 view .LVU57
+  56:modules/OPENMV/openmv.c **** }...
+ 190              		.loc 1 56 1 is_stmt 0 view .LVU58
+ 191 001a 1846     		mov	r0, r3
+ 192 001c 05B0     		add	sp, sp, #20
+ 193              	.LCFI2:
+ 194              		.cfi_def_cfa_offset 4
+ 195              		@ sp needed
+ 196 001e 5DF804FB 		ldr	pc, [sp], #4
+ 197              	.L14:
+ 198 0022 00BF     		.align	2
+ 199              	.L13:
+ 200 0024 00000000 		.word	OPENMVRxCallback
+ 201 0028 00000000 		.word	.LANCHOR0
+ 202              		.cfi_endproc
+ 203              	.LFE135:
+ 205              		.global	flag
+ 206              		.global	target_y
+ 207              		.global	target_x
+ 208              		.section	.bss.flag,"aw",%nobits
+ 209              		.align	1
+ 210              		.set	.LANCHOR3,. + 0
+ 213              	flag:
+ 214 0000 0000     		.space	2
+ 215              		.section	.bss.openmv_instance,"aw",%nobits
+ 216              		.align	2
+ 217              		.set	.LANCHOR0,. + 0
+ 220              	openmv_instance:
+ 221 0000 00000000 		.space	20
+ 221      00000000 
+ 221      00000000 
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdYtUuf.s 			page 6
+
+
+ 221      00000000 
+ 221      00000000 
+ 222              		.section	.bss.target_x,"aw",%nobits
+ 223              		.align	1
+ 224              		.set	.LANCHOR1,. + 0
+ 227              	target_x:
+ 228 0000 0000     		.space	2
+ 229              		.section	.bss.target_y,"aw",%nobits
+ 230              		.align	1
+ 231              		.set	.LANCHOR2,. + 0
+ 234              	target_y:
+ 235 0000 0000     		.space	2
+ 236              		.text
+ 237              	.Letext0:
+ 238              		.file 2 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 239              		.file 3 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 240              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ 241              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 242              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 243              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 244              		.file 8 "bsp/usart/bsp_usart.h"
+ 245              		.file 9 "modules/OPENMV/openmv.h"
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccdYtUuf.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 openmv.c
-C:\Users\HUAWEI\AppData\Local\Temp\ccywRdB6.s:20     .text.OPENMVRxCallback:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccywRdB6.s:25     .text.OPENMVRxCallback:00000000 OPENMVRxCallback
-C:\Users\HUAWEI\AppData\Local\Temp\ccywRdB6.s:120    .text.OPENMVRxCallback:00000050 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccywRdB6.s:127    .text.OPENMVInit:00000000 $t
-C:\Users\HUAWEI\AppData\Local\Temp\ccywRdB6.s:133    .text.OPENMVInit:00000000 OPENMVInit
-C:\Users\HUAWEI\AppData\Local\Temp\ccywRdB6.s:181    .text.OPENMVInit:00000024 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccywRdB6.s:207    .bss.target_y:00000000 target_y
-C:\Users\HUAWEI\AppData\Local\Temp\ccywRdB6.s:200    .bss.target_x:00000000 target_x
-C:\Users\HUAWEI\AppData\Local\Temp\ccywRdB6.s:189    .bss.openmv_instance:00000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccywRdB6.s:193    .bss.openmv_instance:00000000 openmv_instance
-C:\Users\HUAWEI\AppData\Local\Temp\ccywRdB6.s:196    .bss.target_x:00000000 $d
-C:\Users\HUAWEI\AppData\Local\Temp\ccywRdB6.s:203    .bss.target_y:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccdYtUuf.s:20     .text.OPENMVRxCallback:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccdYtUuf.s:25     .text.OPENMVRxCallback:00000000 OPENMVRxCallback
+C:\Users\HUAWEI\AppData\Local\Temp\ccdYtUuf.s:138    .text.OPENMVRxCallback:00000060 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccdYtUuf.s:146    .text.OPENMVInit:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccdYtUuf.s:152    .text.OPENMVInit:00000000 OPENMVInit
+C:\Users\HUAWEI\AppData\Local\Temp\ccdYtUuf.s:200    .text.OPENMVInit:00000024 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccdYtUuf.s:213    .bss.flag:00000000 flag
+C:\Users\HUAWEI\AppData\Local\Temp\ccdYtUuf.s:234    .bss.target_y:00000000 target_y
+C:\Users\HUAWEI\AppData\Local\Temp\ccdYtUuf.s:227    .bss.target_x:00000000 target_x
+C:\Users\HUAWEI\AppData\Local\Temp\ccdYtUuf.s:209    .bss.flag:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccdYtUuf.s:216    .bss.openmv_instance:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccdYtUuf.s:220    .bss.openmv_instance:00000000 openmv_instance
+C:\Users\HUAWEI\AppData\Local\Temp\ccdYtUuf.s:223    .bss.target_x:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccdYtUuf.s:230    .bss.target_y:00000000 $d
 
 UNDEFINED SYMBOLS
 USARTRegister

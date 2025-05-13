@@ -7,6 +7,13 @@ void Servo_Motor_Init(void)
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2); 
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
+    Servo_Motor_SetAngle(0, 0, 0, 0); // 初始化舵机角度
+    DWT_Delay_ms(500);
+    Servo_Motor_SetAngle(30, 30, 30, 30); // 初始化舵机角度
+    DWT_Delay_ms(500);
+    Servo_Motor_SetAngle(-30, -30, -30, -30); // 初始化舵机角度
+    DWT_Delay_ms(500);
+    Servo_Motor_SetAngle(0, 0, 0, 0); // 初始化舵机角度
 }
 void angle_to_pwm(int16_t angle,  uint16_t*pwm)
 {

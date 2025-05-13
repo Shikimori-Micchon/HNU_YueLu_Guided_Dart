@@ -14,7 +14,7 @@ double IMU_ax = 0;
 double IMU_ay = 0;
 double IMU_az = 0;
 
-uint32_t last_count = 0;
+uint32_t last_count_time = 0;
 
 JY61PData *INS_Init(void)
 {
@@ -72,10 +72,10 @@ void JY61P_DataUpdate(uint32_t uiReg, uint32_t uiRegNum)
             {
                 JY61P_instance.JY61P_data.fAcc[i] = sReg[AX+i] / 32768.0f * 16.0f;
             }
-            DWT_GetDeltaT(&last_count);
-            dart_speed = JY61P_instance.JY61P_data.fAcc[1] * DWT_GetDeltaT(&last_count);
-            ay = JY61P_instance.JY61P_data.fAcc[0];
-            az = JY61P_instance.JY61P_data.fAcc[2];
+            DWT_GetDeltaT(&last_count_time);
+            dart_speed = JY61P_instance.JY61P_data.fAcc[1] * DWT_GetDeltaT(&last_count_time);
+            IMU_ay = JY61P_instance.JY61P_data.fAcc[0];
+            IMU_az = JY61P_instance.JY61P_data.fAcc[2];
 
             break;
         case GX:

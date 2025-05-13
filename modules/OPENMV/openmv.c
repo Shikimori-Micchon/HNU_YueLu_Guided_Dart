@@ -6,7 +6,7 @@
 #define OPENMV_END_FLAG 0x55
 
 static OPENMV_Instance_s openmv_instance;
-uint16_t target_x, target_y;
+uint16_t target_x, target_y,flag = 0;
 
 static void OPENMVRxCallback()
 {
@@ -32,6 +32,14 @@ static void OPENMVRxCallback()
     openmv_instance.TargetData.target_y = (rxbuff[3] << 8) | rxbuff[4];
     target_x = openmv_instance.TargetData.target_x;
     target_y = openmv_instance.TargetData.target_y;
+    if(target_x > 0 && target_y > 0)
+    {
+        flag = 1;
+    }
+    else
+    {
+        flag = 0;
+    }
 
     return;
 }

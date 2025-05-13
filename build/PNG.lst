@@ -1,0 +1,1154 @@
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"PNG.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	__aeabi_i2d
+  20              		.global	__aeabi_ddiv
+  21              		.global	__aeabi_dmul
+  22              		.section	.text.calculate_angles,"ax",%progbits
+  23              		.align	1
+  24              		.global	calculate_angles
+  25              		.syntax unified
+  26              		.thumb
+  27              		.thumb_func
+  29              	calculate_angles:
+  30              	.LFB181:
+  31              		.file 1 "modules/PNG/PNG.c"
+   1:modules/PNG/PNG.c **** #include"PNG.h"
+   2:modules/PNG/PNG.c **** #include"math.h"
+   3:modules/PNG/PNG.c **** #include "openmv.h"
+   4:modules/PNG/PNG.c **** #include "JY61P.h"
+   5:modules/PNG/PNG.c **** #include"bsp_dwt.h"
+   6:modules/PNG/PNG.c **** #include "servo_motor.h"
+   7:modules/PNG/PNG.c **** #include"controller.h"
+   8:modules/PNG/PNG.c **** static double theta_x = 0;
+   9:modules/PNG/PNG.c **** static double theta_y = 0;
+  10:modules/PNG/PNG.c **** 
+  11:modules/PNG/PNG.c **** double target_x_angle_last = 0;
+  12:modules/PNG/PNG.c **** double target_y_angle_last = 0;
+  13:modules/PNG/PNG.c **** 
+  14:modules/PNG/PNG.c **** double target_x_angle = 0;
+  15:modules/PNG/PNG.c **** double target_y_angle = 0;
+  16:modules/PNG/PNG.c **** 
+  17:modules/PNG/PNG.c **** double target_x_speed = 0;
+  18:modules/PNG/PNG.c **** double target_y_speed = 0;
+  19:modules/PNG/PNG.c **** 
+  20:modules/PNG/PNG.c **** double ax = 0;
+  21:modules/PNG/PNG.c **** double ay = 0;
+  22:modules/PNG/PNG.c **** 
+  23:modules/PNG/PNG.c **** float q = 0;
+  24:modules/PNG/PNG.c **** 
+  25:modules/PNG/PNG.c **** float K_theta =0;
+  26:modules/PNG/PNG.c **** float K_cmd = 0;
+  27:modules/PNG/PNG.c **** uint32_t last_count = 0;
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s 			page 2
+
+
+  28:modules/PNG/PNG.c **** 
+  29:modules/PNG/PNG.c **** double delta_time = 0;
+  30:modules/PNG/PNG.c **** 
+  31:modules/PNG/PNG.c **** float servo_1_angle = 0;
+  32:modules/PNG/PNG.c **** float servo_2_angle = 0;
+  33:modules/PNG/PNG.c **** float servo_3_angle = 0;
+  34:modules/PNG/PNG.c **** float servo_4_angle = 0;
+  35:modules/PNG/PNG.c **** 
+  36:modules/PNG/PNG.c **** float servo_x_angle = 0;
+  37:modules/PNG/PNG.c **** float servo_y_angle = 0;
+  38:modules/PNG/PNG.c **** float servo_z_angle = 0;
+  39:modules/PNG/PNG.c **** 
+  40:modules/PNG/PNG.c **** float servo_x_angle_imu = 0;
+  41:modules/PNG/PNG.c **** float servo_y_angle_imu = 0;
+  42:modules/PNG/PNG.c **** float servo_z_angle_imu = 0;
+  43:modules/PNG/PNG.c **** 
+  44:modules/PNG/PNG.c **** PID_Init_Config_s PNG_PID_Config_X;
+  45:modules/PNG/PNG.c **** PID_Init_Config_s PNG_PID_Config_Y;
+  46:modules/PNG/PNG.c **** PID_Init_Config_s PNG_PID_Config_Z;
+  47:modules/PNG/PNG.c **** 
+  48:modules/PNG/PNG.c **** PIDInstance PNG_PID_X;
+  49:modules/PNG/PNG.c **** PIDInstance PNG_PID_Y;
+  50:modules/PNG/PNG.c **** PIDInstance PNG_PID_Z;
+  51:modules/PNG/PNG.c **** 
+  52:modules/PNG/PNG.c **** void calculate_angles() {
+  32              		.loc 1 52 25 view -0
+  33              		.cfi_startproc
+  34              		@ args = 0, pretend = 0, frame = 0
+  35              		@ frame_needed = 0, uses_anonymous_args = 0
+  36 0000 08B5     		push	{r3, lr}
+  37              	.LCFI0:
+  38              		.cfi_def_cfa_offset 8
+  39              		.cfi_offset 3, -8
+  40              		.cfi_offset 14, -4
+  53:modules/PNG/PNG.c **** 	theta_x = atan((target_x - u0) / f) * 180 / M_PI;
+  41              		.loc 1 53 2 view .LVU1
+  42              		.loc 1 53 27 is_stmt 0 view .LVU2
+  43 0002 254B     		ldr	r3, .L3+16
+  44 0004 1888     		ldrh	r0, [r3]
+  45              		.loc 1 53 33 view .LVU3
+  46 0006 A038     		subs	r0, r0, #160
+  47 0008 FFF7FEFF 		bl	__aeabi_i2d
+  48              	.LVL0:
+  49 000c 1EA3     		adr	r3, .L3
+  50 000e D3E90023 		ldrd	r2, [r3]
+  51 0012 FFF7FEFF 		bl	__aeabi_ddiv
+  52              	.LVL1:
+  53              		.loc 1 53 12 view .LVU4
+  54 0016 0022     		movs	r2, #0
+  55 0018 204B     		ldr	r3, .L3+20
+  56 001a FFF7FEFF 		bl	__aeabi_dmul
+  57              	.LVL2:
+  58 001e 41EC100B 		vmov	d0, r0, r1
+  59 0022 FFF7FEFF 		bl	atan
+  60              	.LVL3:
+  61 0026 51EC100B 		vmov	r0, r1, d0
+  62              		.loc 1 53 38 view .LVU5
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s 			page 3
+
+
+  63 002a 0022     		movs	r2, #0
+  64 002c 1C4B     		ldr	r3, .L3+24
+  65 002e FFF7FEFF 		bl	__aeabi_dmul
+  66              	.LVL4:
+  67              		.loc 1 53 44 view .LVU6
+  68 0032 17A3     		adr	r3, .L3+8
+  69 0034 D3E90023 		ldrd	r2, [r3]
+  70 0038 FFF7FEFF 		bl	__aeabi_ddiv
+  71              	.LVL5:
+  72              		.loc 1 53 10 view .LVU7
+  73 003c 194B     		ldr	r3, .L3+28
+  74 003e C3E90001 		strd	r0, [r3]
+  54:modules/PNG/PNG.c **** 	theta_y = atan((target_y - v0) / f) * 180 / M_PI;
+  75              		.loc 1 54 2 is_stmt 1 view .LVU8
+  76              		.loc 1 54 27 is_stmt 0 view .LVU9
+  77 0042 194B     		ldr	r3, .L3+32
+  78 0044 1888     		ldrh	r0, [r3]
+  79              		.loc 1 54 33 view .LVU10
+  80 0046 7838     		subs	r0, r0, #120
+  81 0048 FFF7FEFF 		bl	__aeabi_i2d
+  82              	.LVL6:
+  83 004c 0EA3     		adr	r3, .L3
+  84 004e D3E90023 		ldrd	r2, [r3]
+  85 0052 FFF7FEFF 		bl	__aeabi_ddiv
+  86              	.LVL7:
+  87              		.loc 1 54 12 view .LVU11
+  88 0056 0022     		movs	r2, #0
+  89 0058 104B     		ldr	r3, .L3+20
+  90 005a FFF7FEFF 		bl	__aeabi_dmul
+  91              	.LVL8:
+  92 005e 41EC100B 		vmov	d0, r0, r1
+  93 0062 FFF7FEFF 		bl	atan
+  94              	.LVL9:
+  95 0066 51EC100B 		vmov	r0, r1, d0
+  96              		.loc 1 54 38 view .LVU12
+  97 006a 0022     		movs	r2, #0
+  98 006c 0C4B     		ldr	r3, .L3+24
+  99 006e FFF7FEFF 		bl	__aeabi_dmul
+ 100              	.LVL10:
+ 101              		.loc 1 54 44 view .LVU13
+ 102 0072 07A3     		adr	r3, .L3+8
+ 103 0074 D3E90023 		ldrd	r2, [r3]
+ 104 0078 FFF7FEFF 		bl	__aeabi_ddiv
+ 105              	.LVL11:
+ 106              		.loc 1 54 10 view .LVU14
+ 107 007c 0B4B     		ldr	r3, .L3+36
+ 108 007e C3E90001 		strd	r0, [r3]
+  55:modules/PNG/PNG.c **** }
+ 109              		.loc 1 55 1 view .LVU15
+ 110 0082 08BD     		pop	{r3, pc}
+ 111              	.L4:
+ 112 0084 AFF30080 		.align	3
+ 113              	.L3:
+ 114 0088 66666666 		.word	1717986918
+ 115 008c 6666F23F 		.word	1072850534
+ 116 0090 182D4454 		.word	1413754136
+ 117 0094 FB210940 		.word	1074340347
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s 			page 4
+
+
+ 118 0098 00000000 		.word	target_x
+ 119 009c 00408F40 		.word	1083129856
+ 120 00a0 00806640 		.word	1080459264
+ 121 00a4 00000000 		.word	.LANCHOR0
+ 122 00a8 00000000 		.word	target_y
+ 123 00ac 00000000 		.word	.LANCHOR1
+ 124              		.cfi_endproc
+ 125              	.LFE181:
+ 127              		.section	.text.PNG_Init,"ax",%progbits
+ 128              		.align	1
+ 129              		.global	PNG_Init
+ 130              		.syntax unified
+ 131              		.thumb
+ 132              		.thumb_func
+ 134              	PNG_Init:
+ 135              	.LFB182:
+  56:modules/PNG/PNG.c **** 
+  57:modules/PNG/PNG.c **** void PNG_Init() {
+ 136              		.loc 1 57 17 is_stmt 1 view -0
+ 137              		.cfi_startproc
+ 138              		@ args = 0, pretend = 0, frame = 0
+ 139              		@ frame_needed = 0, uses_anonymous_args = 0
+ 140 0000 38B5     		push	{r3, r4, r5, lr}
+ 141              	.LCFI1:
+ 142              		.cfi_def_cfa_offset 16
+ 143              		.cfi_offset 3, -16
+ 144              		.cfi_offset 4, -12
+ 145              		.cfi_offset 5, -8
+ 146              		.cfi_offset 14, -4
+  58:modules/PNG/PNG.c ****     PNG_PID_Config_X.Kp = 0.5;
+ 147              		.loc 1 58 5 view .LVU17
+ 148              		.loc 1 58 25 is_stmt 0 view .LVU18
+ 149 0002 1149     		ldr	r1, .L7
+ 150 0004 4FF07C5C 		mov	ip, #1056964608
+ 151 0008 C1F800C0 		str	ip, [r1]	@ float
+  59:modules/PNG/PNG.c ****     PNG_PID_Config_X.Ki = 0.01;
+ 152              		.loc 1 59 5 is_stmt 1 view .LVU19
+ 153              		.loc 1 59 25 is_stmt 0 view .LVU20
+ 154 000c 0F48     		ldr	r0, .L7+4
+ 155 000e 4860     		str	r0, [r1, #4]	@ float
+  60:modules/PNG/PNG.c ****     PNG_PID_Config_X.Kd = 0.1;
+ 156              		.loc 1 60 5 is_stmt 1 view .LVU21
+ 157              		.loc 1 60 25 is_stmt 0 view .LVU22
+ 158 0010 0F4A     		ldr	r2, .L7+8
+ 159 0012 8A60     		str	r2, [r1, #8]	@ float
+  61:modules/PNG/PNG.c ****     PNG_PID_Config_X.MaxOut = 100;
+ 160              		.loc 1 61 5 is_stmt 1 view .LVU23
+ 161              		.loc 1 61 29 is_stmt 0 view .LVU24
+ 162 0014 0F4B     		ldr	r3, .L7+12
+ 163 0016 CB60     		str	r3, [r1, #12]	@ float
+  62:modules/PNG/PNG.c **** 
+  63:modules/PNG/PNG.c ****     PNG_PID_Config_Y.Kp = 0.5;
+ 164              		.loc 1 63 5 is_stmt 1 view .LVU25
+ 165              		.loc 1 63 25 is_stmt 0 view .LVU26
+ 166 0018 0F4D     		ldr	r5, .L7+16
+ 167 001a C5F800C0 		str	ip, [r5]	@ float
+  64:modules/PNG/PNG.c ****     PNG_PID_Config_Y.Ki = 0.01;
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s 			page 5
+
+
+ 168              		.loc 1 64 5 is_stmt 1 view .LVU27
+ 169              		.loc 1 64 25 is_stmt 0 view .LVU28
+ 170 001e 6860     		str	r0, [r5, #4]	@ float
+  65:modules/PNG/PNG.c ****     PNG_PID_Config_Y.Kd = 0.1;
+ 171              		.loc 1 65 5 is_stmt 1 view .LVU29
+ 172              		.loc 1 65 25 is_stmt 0 view .LVU30
+ 173 0020 AA60     		str	r2, [r5, #8]	@ float
+  66:modules/PNG/PNG.c ****     PNG_PID_Config_Y.MaxOut = 100;
+ 174              		.loc 1 66 5 is_stmt 1 view .LVU31
+ 175              		.loc 1 66 29 is_stmt 0 view .LVU32
+ 176 0022 EB60     		str	r3, [r5, #12]	@ float
+  67:modules/PNG/PNG.c **** 
+  68:modules/PNG/PNG.c ****     PNG_PID_Config_Z.Kp = 0.5;
+ 177              		.loc 1 68 5 is_stmt 1 view .LVU33
+ 178              		.loc 1 68 25 is_stmt 0 view .LVU34
+ 179 0024 0D4C     		ldr	r4, .L7+20
+ 180 0026 C4F800C0 		str	ip, [r4]	@ float
+  69:modules/PNG/PNG.c ****     PNG_PID_Config_Z.Ki = 0.01;
+ 181              		.loc 1 69 5 is_stmt 1 view .LVU35
+ 182              		.loc 1 69 25 is_stmt 0 view .LVU36
+ 183 002a 6060     		str	r0, [r4, #4]	@ float
+  70:modules/PNG/PNG.c ****     PNG_PID_Config_Z.Kd = 0.1;
+ 184              		.loc 1 70 5 is_stmt 1 view .LVU37
+ 185              		.loc 1 70 25 is_stmt 0 view .LVU38
+ 186 002c A260     		str	r2, [r4, #8]	@ float
+  71:modules/PNG/PNG.c ****     PNG_PID_Config_Z.MaxOut = 100;
+ 187              		.loc 1 71 5 is_stmt 1 view .LVU39
+ 188              		.loc 1 71 29 is_stmt 0 view .LVU40
+ 189 002e E360     		str	r3, [r4, #12]	@ float
+  72:modules/PNG/PNG.c **** 
+  73:modules/PNG/PNG.c ****     PIDInit(&PNG_PID_X, &PNG_PID_Config_X);
+ 190              		.loc 1 73 5 is_stmt 1 view .LVU41
+ 191 0030 0B48     		ldr	r0, .L7+24
+ 192 0032 FFF7FEFF 		bl	PIDInit
+ 193              	.LVL12:
+  74:modules/PNG/PNG.c ****     PIDInit(&PNG_PID_Y, &PNG_PID_Config_Y);
+ 194              		.loc 1 74 5 view .LVU42
+ 195 0036 2946     		mov	r1, r5
+ 196 0038 0A48     		ldr	r0, .L7+28
+ 197 003a FFF7FEFF 		bl	PIDInit
+ 198              	.LVL13:
+  75:modules/PNG/PNG.c ****     PIDInit(&PNG_PID_Z, &PNG_PID_Config_Z);
+ 199              		.loc 1 75 5 view .LVU43
+ 200 003e 2146     		mov	r1, r4
+ 201 0040 0948     		ldr	r0, .L7+32
+ 202 0042 FFF7FEFF 		bl	PIDInit
+ 203              	.LVL14:
+  76:modules/PNG/PNG.c **** }
+ 204              		.loc 1 76 1 is_stmt 0 view .LVU44
+ 205 0046 38BD     		pop	{r3, r4, r5, pc}
+ 206              	.L8:
+ 207              		.align	2
+ 208              	.L7:
+ 209 0048 00000000 		.word	.LANCHOR2
+ 210 004c 0AD7233C 		.word	1008981770
+ 211 0050 CDCCCC3D 		.word	1036831949
+ 212 0054 0000C842 		.word	1120403456
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s 			page 6
+
+
+ 213 0058 00000000 		.word	.LANCHOR3
+ 214 005c 00000000 		.word	.LANCHOR4
+ 215 0060 00000000 		.word	.LANCHOR5
+ 216 0064 00000000 		.word	.LANCHOR6
+ 217 0068 00000000 		.word	.LANCHOR7
+ 218              		.cfi_endproc
+ 219              	.LFE182:
+ 221              		.global	__aeabi_dsub
+ 222              		.global	__aeabi_d2f
+ 223              		.global	__aeabi_f2d
+ 224              		.global	__aeabi_dadd
+ 225              		.section	.text.PNG_TASK,"ax",%progbits
+ 226              		.align	1
+ 227              		.global	PNG_TASK
+ 228              		.syntax unified
+ 229              		.thumb
+ 230              		.thumb_func
+ 232              	PNG_TASK:
+ 233              	.LFB183:
+  77:modules/PNG/PNG.c **** 
+  78:modules/PNG/PNG.c **** void PNG_TASK(){
+ 234              		.loc 1 78 16 is_stmt 1 view -0
+ 235              		.cfi_startproc
+ 236              		@ args = 0, pretend = 0, frame = 0
+ 237              		@ frame_needed = 0, uses_anonymous_args = 0
+ 238 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
+ 239              	.LCFI2:
+ 240              		.cfi_def_cfa_offset 32
+ 241              		.cfi_offset 4, -32
+ 242              		.cfi_offset 5, -28
+ 243              		.cfi_offset 6, -24
+ 244              		.cfi_offset 7, -20
+ 245              		.cfi_offset 8, -16
+ 246              		.cfi_offset 9, -12
+ 247              		.cfi_offset 10, -8
+ 248              		.cfi_offset 14, -4
+ 249 0004 2DED048B 		vpush.64	{d8, d9}
+ 250              	.LCFI3:
+ 251              		.cfi_def_cfa_offset 48
+ 252              		.cfi_offset 80, -48
+ 253              		.cfi_offset 81, -44
+ 254              		.cfi_offset 82, -40
+ 255              		.cfi_offset 83, -36
+  79:modules/PNG/PNG.c ****     calculate_angles();
+ 256              		.loc 1 79 5 view .LVU46
+ 257 0008 FFF7FEFF 		bl	calculate_angles
+ 258              	.LVL15:
+  80:modules/PNG/PNG.c ****     target_x_angle_last = theta_x;
+ 259              		.loc 1 80 5 view .LVU47
+ 260              		.loc 1 80 25 is_stmt 0 view .LVU48
+ 261 000c DFF86893 		ldr	r9, .L11+168
+ 262 0010 BB4E     		ldr	r6, .L11+48
+ 263 0012 D6E90023 		ldrd	r2, [r6]
+ 264 0016 C9E90023 		strd	r2, [r9]
+  81:modules/PNG/PNG.c ****     target_y_angle_last = theta_y;
+ 265              		.loc 1 81 5 is_stmt 1 view .LVU49
+ 266              		.loc 1 81 25 is_stmt 0 view .LVU50
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s 			page 7
+
+
+ 267 001a DFF86083 		ldr	r8, .L11+172
+ 268 001e B94D     		ldr	r5, .L11+52
+ 269 0020 D5E90023 		ldrd	r2, [r5]
+ 270 0024 C8E90023 		strd	r2, [r8]
+  82:modules/PNG/PNG.c ****     delta_time = DWT_GetDeltaT64(&last_count);
+ 271              		.loc 1 82 5 is_stmt 1 view .LVU51
+ 272              		.loc 1 82 18 is_stmt 0 view .LVU52
+ 273 0028 B74C     		ldr	r4, .L11+56
+ 274 002a 2046     		mov	r0, r4
+ 275 002c FFF7FEFF 		bl	DWT_GetDeltaT64
+ 276              	.LVL16:
+ 277              		.loc 1 82 16 view .LVU53
+ 278 0030 DFF84CA3 		ldr	r10, .L11+176
+ 279 0034 8AED000B 		vstr.64	d0, [r10]
+  83:modules/PNG/PNG.c ****     calculate_angles();
+ 280              		.loc 1 83 5 is_stmt 1 view .LVU54
+ 281 0038 FFF7FEFF 		bl	calculate_angles
+ 282              	.LVL17:
+  84:modules/PNG/PNG.c ****     target_x_angle = theta_x;
+ 283              		.loc 1 84 5 view .LVU55
+ 284              		.loc 1 84 20 is_stmt 0 view .LVU56
+ 285 003c B34F     		ldr	r7, .L11+60
+ 286 003e D6E90023 		ldrd	r2, [r6]
+ 287 0042 C7E90023 		strd	r2, [r7]
+  85:modules/PNG/PNG.c ****     target_y_angle = theta_y;
+ 288              		.loc 1 85 5 is_stmt 1 view .LVU57
+ 289              		.loc 1 85 20 is_stmt 0 view .LVU58
+ 290 0046 B24E     		ldr	r6, .L11+64
+ 291 0048 D5E90023 		ldrd	r2, [r5]
+ 292 004c C6E90023 		strd	r2, [r6]
+  86:modules/PNG/PNG.c ****     delta_time = DWT_GetDeltaT64(&last_count);
+ 293              		.loc 1 86 5 is_stmt 1 view .LVU59
+ 294              		.loc 1 86 18 is_stmt 0 view .LVU60
+ 295 0050 2046     		mov	r0, r4
+ 296 0052 FFF7FEFF 		bl	DWT_GetDeltaT64
+ 297              	.LVL18:
+ 298 0056 55EC104B 		vmov	r4, r5, d0
+ 299              		.loc 1 86 16 view .LVU61
+ 300 005a 8AED000B 		vstr.64	d0, [r10]
+  87:modules/PNG/PNG.c ****     target_x_speed = (target_x_angle - target_x_angle_last) / delta_time-gyro_x;
+ 301              		.loc 1 87 5 is_stmt 1 view .LVU62
+ 302              		.loc 1 87 38 is_stmt 0 view .LVU63
+ 303 005e D9E90023 		ldrd	r2, [r9]
+ 304 0062 D7E90001 		ldrd	r0, [r7]
+ 305 0066 FFF7FEFF 		bl	__aeabi_dsub
+ 306              	.LVL19:
+ 307              		.loc 1 87 61 view .LVU64
+ 308 006a 2246     		mov	r2, r4
+ 309 006c 2B46     		mov	r3, r5
+ 310 006e FFF7FEFF 		bl	__aeabi_ddiv
+ 311              	.LVL20:
+ 312              		.loc 1 87 73 view .LVU65
+ 313 0072 A84B     		ldr	r3, .L11+68
+ 314 0074 D3E90023 		ldrd	r2, [r3]
+ 315 0078 FFF7FEFF 		bl	__aeabi_dsub
+ 316              	.LVL21:
+ 317              		.loc 1 87 20 view .LVU66
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s 			page 8
+
+
+ 318 007c A64F     		ldr	r7, .L11+72
+ 319 007e C7E90001 		strd	r0, [r7]
+  88:modules/PNG/PNG.c ****     target_y_speed = (target_y_angle - target_y_angle_last) / delta_time-gyro_y;
+ 320              		.loc 1 88 5 is_stmt 1 view .LVU67
+ 321              		.loc 1 88 38 is_stmt 0 view .LVU68
+ 322 0082 D8E90023 		ldrd	r2, [r8]
+ 323 0086 D6E90001 		ldrd	r0, [r6]
+ 324 008a FFF7FEFF 		bl	__aeabi_dsub
+ 325              	.LVL22:
+ 326              		.loc 1 88 61 view .LVU69
+ 327 008e 2246     		mov	r2, r4
+ 328 0090 2B46     		mov	r3, r5
+ 329 0092 FFF7FEFF 		bl	__aeabi_ddiv
+ 330              	.LVL23:
+ 331              		.loc 1 88 73 view .LVU70
+ 332 0096 A14B     		ldr	r3, .L11+76
+ 333 0098 D3E90023 		ldrd	r2, [r3]
+ 334 009c FFF7FEFF 		bl	__aeabi_dsub
+ 335              	.LVL24:
+ 336              		.loc 1 88 20 view .LVU71
+ 337 00a0 9F4E     		ldr	r6, .L11+80
+ 338 00a2 C6E90001 		strd	r0, [r6]
+  89:modules/PNG/PNG.c ****     q = 0.5*1.225*pow(dart_speed,2);
+ 339              		.loc 1 89 5 is_stmt 1 view .LVU72
+ 340              		.loc 1 89 19 is_stmt 0 view .LVU73
+ 341 00a6 9F4C     		ldr	r4, .L11+84
+ 342 00a8 9FED891B 		vldr.64	d1, .L11
+ 343 00ac 94ED000B 		vldr.64	d0, [r4]
+ 344 00b0 FFF7FEFF 		bl	pow
+ 345              	.LVL25:
+ 346 00b4 51EC100B 		vmov	r0, r1, d0
+ 347              		.loc 1 89 18 view .LVU74
+ 348 00b8 87A3     		adr	r3, .L11+8
+ 349 00ba D3E90023 		ldrd	r2, [r3]
+ 350 00be FFF7FEFF 		bl	__aeabi_dmul
+ 351              	.LVL26:
+ 352 00c2 FFF7FEFF 		bl	__aeabi_d2f
+ 353              	.LVL27:
+ 354 00c6 08EE100A 		vmov	s16, r0
+ 355              		.loc 1 89 7 view .LVU75
+ 356 00ca 974B     		ldr	r3, .L11+88
+ 357 00cc 1860     		str	r0, [r3]	@ float
+  90:modules/PNG/PNG.c ****     ax = N_PNG*dart_speed*target_x_speed;
+ 358              		.loc 1 90 5 is_stmt 1 view .LVU76
+ 359              		.loc 1 90 15 is_stmt 0 view .LVU77
+ 360 00ce 0022     		movs	r2, #0
+ 361 00d0 964B     		ldr	r3, .L11+92
+ 362 00d2 D4E90001 		ldrd	r0, [r4]
+ 363 00d6 FFF7FEFF 		bl	__aeabi_dmul
+ 364              	.LVL28:
+ 365 00da 0446     		mov	r4, r0
+ 366 00dc 0D46     		mov	r5, r1
+ 367              		.loc 1 90 26 view .LVU78
+ 368 00de D7E90023 		ldrd	r2, [r7]
+ 369 00e2 FFF7FEFF 		bl	__aeabi_dmul
+ 370              	.LVL29:
+ 371 00e6 8046     		mov	r8, r0
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s 			page 9
+
+
+ 372 00e8 8946     		mov	r9, r1
+ 373              		.loc 1 90 8 view .LVU79
+ 374 00ea 914B     		ldr	r3, .L11+96
+ 375 00ec C3E90089 		strd	r8, [r3]
+  91:modules/PNG/PNG.c ****     ay = N_PNG*dart_speed*target_y_speed;
+ 376              		.loc 1 91 5 is_stmt 1 view .LVU80
+ 377              		.loc 1 91 26 is_stmt 0 view .LVU81
+ 378 00f0 D6E90023 		ldrd	r2, [r6]
+ 379 00f4 2046     		mov	r0, r4
+ 380 00f6 2946     		mov	r1, r5
+ 381 00f8 FFF7FEFF 		bl	__aeabi_dmul
+ 382              	.LVL30:
+ 383 00fc 0646     		mov	r6, r0
+ 384 00fe 0F46     		mov	r7, r1
+ 385              		.loc 1 91 8 view .LVU82
+ 386 0100 8C4B     		ldr	r3, .L11+100
+ 387 0102 C3E90067 		strd	r6, [r3]
+  92:modules/PNG/PNG.c ****     K_theta =q*S_area*Cl*l;
+ 388              		.loc 1 92 5 is_stmt 1 view .LVU83
+ 389              		.loc 1 92 15 is_stmt 0 view .LVU84
+ 390 0106 DFED8C7A 		vldr.32	s15, .L11+104
+ 391 010a 68EE277A 		vmul.f32	s15, s16, s15
+ 392 010e 17EE900A 		vmov	r0, s15
+ 393 0112 FFF7FEFF 		bl	__aeabi_f2d
+ 394              	.LVL31:
+ 395              		.loc 1 92 16 view .LVU85
+ 396 0116 72A3     		adr	r3, .L11+16
+ 397 0118 D3E90023 		ldrd	r2, [r3]
+ 398 011c FFF7FEFF 		bl	__aeabi_dmul
+ 399              	.LVL32:
+ 400              		.loc 1 92 22 view .LVU86
+ 401 0120 71A3     		adr	r3, .L11+24
+ 402 0122 D3E90023 		ldrd	r2, [r3]
+ 403 0126 FFF7FEFF 		bl	__aeabi_dmul
+ 404              	.LVL33:
+ 405              		.loc 1 92 25 view .LVU87
+ 406 012a 71A3     		adr	r3, .L11+32
+ 407 012c D3E90023 		ldrd	r2, [r3]
+ 408 0130 FFF7FEFF 		bl	__aeabi_dmul
+ 409              	.LVL34:
+ 410 0134 FFF7FEFF 		bl	__aeabi_d2f
+ 411              	.LVL35:
+ 412              		.loc 1 92 13 view .LVU88
+ 413 0138 804B     		ldr	r3, .L11+108
+ 414 013a 1860     		str	r0, [r3]	@ float
+  93:modules/PNG/PNG.c ****     K_cmd = (m*l)/K_theta;
+ 415              		.loc 1 93 5 is_stmt 1 view .LVU89
+ 416              		.loc 1 93 18 is_stmt 0 view .LVU90
+ 417 013c FFF7FEFF 		bl	__aeabi_f2d
+ 418              	.LVL36:
+ 419 0140 0246     		mov	r2, r0
+ 420 0142 0B46     		mov	r3, r1
+ 421 0144 6CA1     		adr	r1, .L11+40
+ 422 0146 D1E90001 		ldrd	r0, [r1]
+ 423 014a FFF7FEFF 		bl	__aeabi_ddiv
+ 424              	.LVL37:
+ 425 014e FFF7FEFF 		bl	__aeabi_d2f
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s 			page 10
+
+
+ 426              	.LVL38:
+ 427              		.loc 1 93 11 view .LVU91
+ 428 0152 7B4B     		ldr	r3, .L11+112
+ 429 0154 1860     		str	r0, [r3]	@ float
+  94:modules/PNG/PNG.c ****     servo_x_angle = K_cmd*ax;
+ 430              		.loc 1 94 5 is_stmt 1 view .LVU92
+ 431              		.loc 1 94 26 is_stmt 0 view .LVU93
+ 432 0156 FFF7FEFF 		bl	__aeabi_f2d
+ 433              	.LVL39:
+ 434 015a 0446     		mov	r4, r0
+ 435 015c 0D46     		mov	r5, r1
+ 436 015e 0246     		mov	r2, r0
+ 437 0160 0B46     		mov	r3, r1
+ 438 0162 4046     		mov	r0, r8
+ 439 0164 4946     		mov	r1, r9
+ 440 0166 FFF7FEFF 		bl	__aeabi_dmul
+ 441              	.LVL40:
+ 442 016a FFF7FEFF 		bl	__aeabi_d2f
+ 443              	.LVL41:
+ 444 016e 08EE900A 		vmov	s17, r0
+ 445              		.loc 1 94 19 view .LVU94
+ 446 0172 DFF81082 		ldr	r8, .L11+180
+ 447 0176 C8F80000 		str	r0, [r8]	@ float
+  95:modules/PNG/PNG.c ****     servo_y_angle = K_cmd*ay;
+ 448              		.loc 1 95 5 is_stmt 1 view .LVU95
+ 449              		.loc 1 95 26 is_stmt 0 view .LVU96
+ 450 017a 2246     		mov	r2, r4
+ 451 017c 2B46     		mov	r3, r5
+ 452 017e 3046     		mov	r0, r6
+ 453 0180 3946     		mov	r1, r7
+ 454 0182 FFF7FEFF 		bl	__aeabi_dmul
+ 455              	.LVL42:
+ 456 0186 FFF7FEFF 		bl	__aeabi_d2f
+ 457              	.LVL43:
+ 458              		.loc 1 95 19 view .LVU97
+ 459 018a 6E4E     		ldr	r6, .L11+116
+ 460 018c 3060     		str	r0, [r6]	@ float
+  96:modules/PNG/PNG.c ****     servo_x_angle_imu = K_cmd*IMU_ay;
+ 461              		.loc 1 96 5 is_stmt 1 view .LVU98
+ 462              		.loc 1 96 30 is_stmt 0 view .LVU99
+ 463 018e 6E4B     		ldr	r3, .L11+120
+ 464 0190 D3E90023 		ldrd	r2, [r3]
+ 465 0194 2046     		mov	r0, r4
+ 466 0196 2946     		mov	r1, r5
+ 467 0198 FFF7FEFF 		bl	__aeabi_dmul
+ 468              	.LVL44:
+ 469 019c FFF7FEFF 		bl	__aeabi_d2f
+ 470              	.LVL45:
+ 471 01a0 08EE100A 		vmov	s16, r0
+ 472              		.loc 1 96 23 view .LVU100
+ 473 01a4 694B     		ldr	r3, .L11+124
+ 474 01a6 1860     		str	r0, [r3]	@ float
+  97:modules/PNG/PNG.c ****     servo_y_angle_imu = K_cmd*IMU_az;
+ 475              		.loc 1 97 5 is_stmt 1 view .LVU101
+ 476              		.loc 1 97 30 is_stmt 0 view .LVU102
+ 477 01a8 694B     		ldr	r3, .L11+128
+ 478 01aa D3E90023 		ldrd	r2, [r3]
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s 			page 11
+
+
+ 479 01ae 2046     		mov	r0, r4
+ 480 01b0 2946     		mov	r1, r5
+ 481 01b2 FFF7FEFF 		bl	__aeabi_dmul
+ 482              	.LVL46:
+ 483 01b6 FFF7FEFF 		bl	__aeabi_d2f
+ 484              	.LVL47:
+ 485              		.loc 1 97 23 view .LVU103
+ 486 01ba 664C     		ldr	r4, .L11+132
+ 487 01bc 2060     		str	r0, [r4]	@ float
+  98:modules/PNG/PNG.c ****     servo_x_angle = PIDCalculate(&PNG_PID_X, servo_x_angle_imu, servo_x_angle);
+ 488              		.loc 1 98 5 is_stmt 1 view .LVU104
+ 489              		.loc 1 98 21 is_stmt 0 view .LVU105
+ 490 01be F0EE680A 		vmov.f32	s1, s17
+ 491 01c2 B0EE480A 		vmov.f32	s0, s16
+ 492 01c6 6448     		ldr	r0, .L11+136
+ 493 01c8 FFF7FEFF 		bl	PIDCalculate
+ 494              	.LVL48:
+ 495              		.loc 1 98 19 view .LVU106
+ 496 01cc 88ED000A 		vstr.32	s0, [r8]
+  99:modules/PNG/PNG.c ****     servo_y_angle = PIDCalculate(&PNG_PID_Y, servo_y_angle_imu, servo_y_angle);
+ 497              		.loc 1 99 5 is_stmt 1 view .LVU107
+ 498              		.loc 1 99 21 is_stmt 0 view .LVU108
+ 499 01d0 D6ED000A 		vldr.32	s1, [r6]
+ 500 01d4 94ED000A 		vldr.32	s0, [r4]
+ 501 01d8 6048     		ldr	r0, .L11+140
+ 502 01da FFF7FEFF 		bl	PIDCalculate
+ 503              	.LVL49:
+ 504 01de 10EE104A 		vmov	r4, s0
+ 505              		.loc 1 99 19 view .LVU109
+ 506 01e2 86ED000A 		vstr.32	s0, [r6]
+ 100:modules/PNG/PNG.c ****     servo_1_angle = -1*(-0.25*servo_x_angle+0.25*servo_y_angle);
+ 507              		.loc 1 100 5 is_stmt 1 view .LVU110
+ 508              		.loc 1 100 30 is_stmt 0 view .LVU111
+ 509 01e6 D8F80000 		ldr	r0, [r8]	@ float
+ 510 01ea FFF7FEFF 		bl	__aeabi_f2d
+ 511              	.LVL50:
+ 512 01ee 8046     		mov	r8, r0
+ 513 01f0 8946     		mov	r9, r1
+ 514 01f2 0022     		movs	r2, #0
+ 515 01f4 5A4B     		ldr	r3, .L11+144
+ 516 01f6 FFF7FEFF 		bl	__aeabi_dmul
+ 517              	.LVL51:
+ 518 01fa 0646     		mov	r6, r0
+ 519 01fc 0F46     		mov	r7, r1
+ 520              		.loc 1 100 49 view .LVU112
+ 521 01fe 2046     		mov	r0, r4	@ float
+ 522 0200 FFF7FEFF 		bl	__aeabi_f2d
+ 523              	.LVL52:
+ 524 0204 0022     		movs	r2, #0
+ 525 0206 574B     		ldr	r3, .L11+148
+ 526 0208 FFF7FEFF 		bl	__aeabi_dmul
+ 527              	.LVL53:
+ 528 020c 0446     		mov	r4, r0
+ 529 020e 0D46     		mov	r5, r1
+ 530              		.loc 1 100 44 view .LVU113
+ 531 0210 0246     		mov	r2, r0
+ 532 0212 0B46     		mov	r3, r1
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s 			page 12
+
+
+ 533 0214 3046     		mov	r0, r6
+ 534 0216 3946     		mov	r1, r7
+ 535 0218 FFF7FEFF 		bl	__aeabi_dadd
+ 536              	.LVL54:
+ 537 021c FFF7FEFF 		bl	__aeabi_d2f
+ 538              	.LVL55:
+ 539              		.loc 1 100 19 view .LVU114
+ 540 0220 07EE900A 		vmov	s15, r0
+ 541 0224 B1EE678A 		vneg.f32	s16, s15
+ 542 0228 4F4B     		ldr	r3, .L11+152
+ 543 022a 83ED008A 		vstr.32	s16, [r3]
+ 101:modules/PNG/PNG.c ****     servo_2_angle = -1*(0.25*servo_x_angle+0.25*servo_y_angle);
+ 544              		.loc 1 101 5 is_stmt 1 view .LVU115
+ 545              		.loc 1 101 29 is_stmt 0 view .LVU116
+ 546 022e 0022     		movs	r2, #0
+ 547 0230 4C4B     		ldr	r3, .L11+148
+ 548 0232 4046     		mov	r0, r8
+ 549 0234 4946     		mov	r1, r9
+ 550 0236 FFF7FEFF 		bl	__aeabi_dmul
+ 551              	.LVL56:
+ 552 023a 8046     		mov	r8, r0
+ 553 023c 8946     		mov	r9, r1
+ 554              		.loc 1 101 43 view .LVU117
+ 555 023e 0246     		mov	r2, r0
+ 556 0240 0B46     		mov	r3, r1
+ 557 0242 2046     		mov	r0, r4
+ 558 0244 2946     		mov	r1, r5
+ 559 0246 FFF7FEFF 		bl	__aeabi_dadd
+ 560              	.LVL57:
+ 561 024a FFF7FEFF 		bl	__aeabi_d2f
+ 562              	.LVL58:
+ 563              		.loc 1 101 19 view .LVU118
+ 564 024e 07EE900A 		vmov	s15, r0
+ 565 0252 F1EE678A 		vneg.f32	s17, s15
+ 566 0256 454B     		ldr	r3, .L11+156
+ 567 0258 C3ED008A 		vstr.32	s17, [r3]
+ 102:modules/PNG/PNG.c ****     servo_3_angle = -1*(0.25*servo_x_angle-0.25*servo_y_angle);
+ 568              		.loc 1 102 5 is_stmt 1 view .LVU119
+ 569              		.loc 1 102 43 is_stmt 0 view .LVU120
+ 570 025c 2246     		mov	r2, r4
+ 571 025e 2B46     		mov	r3, r5
+ 572 0260 4046     		mov	r0, r8
+ 573 0262 4946     		mov	r1, r9
+ 574 0264 FFF7FEFF 		bl	__aeabi_dsub
+ 575              	.LVL59:
+ 576 0268 FFF7FEFF 		bl	__aeabi_d2f
+ 577              	.LVL60:
+ 578              		.loc 1 102 19 view .LVU121
+ 579 026c 07EE900A 		vmov	s15, r0
+ 580 0270 B1EE679A 		vneg.f32	s18, s15
+ 581 0274 3E4B     		ldr	r3, .L11+160
+ 582 0276 83ED009A 		vstr.32	s18, [r3]
+ 103:modules/PNG/PNG.c ****     servo_4_angle = -1*(-0.25*servo_x_angle-0.25*servo_y_angle);
+ 583              		.loc 1 103 5 is_stmt 1 view .LVU122
+ 584              		.loc 1 103 44 is_stmt 0 view .LVU123
+ 585 027a 2246     		mov	r2, r4
+ 586 027c 2B46     		mov	r3, r5
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s 			page 13
+
+
+ 587 027e 3046     		mov	r0, r6
+ 588 0280 3946     		mov	r1, r7
+ 589 0282 FFF7FEFF 		bl	__aeabi_dsub
+ 590              	.LVL61:
+ 591 0286 FFF7FEFF 		bl	__aeabi_d2f
+ 592              	.LVL62:
+ 593              		.loc 1 103 19 view .LVU124
+ 594 028a 07EE900A 		vmov	s15, r0
+ 595 028e F1EE677A 		vneg.f32	s15, s15
+ 596 0292 384B     		ldr	r3, .L11+164
+ 597 0294 C3ED007A 		vstr.32	s15, [r3]
+ 104:modules/PNG/PNG.c ****     Servo_Motor_Task(servo_1_angle, servo_2_angle, servo_3_angle, servo_4_angle);
+ 598              		.loc 1 104 5 is_stmt 1 view .LVU125
+ 599 0298 FDEEE77A 		vcvt.s32.f32	s15, s15
+ 600 029c BDEEC99A 		vcvt.s32.f32	s18, s18
+ 601 02a0 FDEEE88A 		vcvt.s32.f32	s17, s17
+ 602 02a4 BDEEC88A 		vcvt.s32.f32	s16, s16
+ 603 02a8 17EE903A 		vmov	r3, s15	@ int
+ 604 02ac 1BB2     		sxth	r3, r3
+ 605 02ae 19EE102A 		vmov	r2, s18	@ int
+ 606 02b2 12B2     		sxth	r2, r2
+ 607 02b4 18EE901A 		vmov	r1, s17	@ int
+ 608 02b8 09B2     		sxth	r1, r1
+ 609 02ba 18EE100A 		vmov	r0, s16	@ int
+ 610 02be 00B2     		sxth	r0, r0
+ 611 02c0 FFF7FEFF 		bl	Servo_Motor_Task
+ 612              	.LVL63:
+ 105:modules/PNG/PNG.c **** }...
+ 613              		.loc 1 105 1 is_stmt 0 view .LVU126
+ 614 02c4 BDEC048B 		vldm	sp!, {d8-d9}
+ 615              	.LCFI4:
+ 616              		.cfi_restore 82
+ 617              		.cfi_restore 83
+ 618              		.cfi_restore 80
+ 619              		.cfi_restore 81
+ 620              		.cfi_def_cfa_offset 32
+ 621 02c8 BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 622              	.L12:
+ 623 02cc AFF30080 		.align	3
+ 624              	.L11:
+ 625 02d0 00000000 		.word	0
+ 626 02d4 00000040 		.word	1073741824
+ 627 02d8 9A999999 		.word	-1717986918
+ 628 02dc 9999E33F 		.word	1071880601
+ 629 02e0 8DEDB5A0 		.word	-1598689907
+ 630 02e4 F7C6B03E 		.word	1051772663
+ 631 02e8 A4703D0A 		.word	171798692
+ 632 02ec D7A30440 		.word	1074045911
+ 633 02f0 79E92631 		.word	824633721
+ 634 02f4 08ACCC3F 		.word	1070377992
+ 635 02f8 158C4AEA 		.word	-364213227
+ 636 02fc 0434B13F 		.word	1068577796
+ 637 0300 00000000 		.word	.LANCHOR0
+ 638 0304 00000000 		.word	.LANCHOR1
+ 639 0308 00000000 		.word	.LANCHOR10
+ 640 030c 00000000 		.word	.LANCHOR12
+ 641 0310 00000000 		.word	.LANCHOR13
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s 			page 14
+
+
+ 642 0314 00000000 		.word	gyro_x
+ 643 0318 00000000 		.word	.LANCHOR14
+ 644 031c 00000000 		.word	gyro_y
+ 645 0320 00000000 		.word	.LANCHOR15
+ 646 0324 00000000 		.word	dart_speed
+ 647 0328 00000000 		.word	.LANCHOR16
+ 648 032c 00000840 		.word	1074266112
+ 649 0330 00000000 		.word	.LANCHOR17
+ 650 0334 00000000 		.word	.LANCHOR18
+ 651 0338 00800A44 		.word	1141538816
+ 652 033c 00000000 		.word	.LANCHOR19
+ 653 0340 00000000 		.word	.LANCHOR20
+ 654 0344 00000000 		.word	.LANCHOR22
+ 655 0348 00000000 		.word	IMU_ay
+ 656 034c 00000000 		.word	.LANCHOR23
+ 657 0350 00000000 		.word	IMU_az
+ 658 0354 00000000 		.word	.LANCHOR24
+ 659 0358 00000000 		.word	.LANCHOR5
+ 660 035c 00000000 		.word	.LANCHOR6
+ 661 0360 0000D0BF 		.word	-1076887552
+ 662 0364 0000D03F 		.word	1070596096
+ 663 0368 00000000 		.word	.LANCHOR25
+ 664 036c 00000000 		.word	.LANCHOR26
+ 665 0370 00000000 		.word	.LANCHOR27
+ 666 0374 00000000 		.word	.LANCHOR28
+ 667 0378 00000000 		.word	.LANCHOR8
+ 668 037c 00000000 		.word	.LANCHOR9
+ 669 0380 00000000 		.word	.LANCHOR11
+ 670 0384 00000000 		.word	.LANCHOR21
+ 671              		.cfi_endproc
+ 672              	.LFE183:
+ 674              		.global	PNG_PID_Z
+ 675              		.global	PNG_PID_Y
+ 676              		.global	PNG_PID_X
+ 677              		.global	PNG_PID_Config_Z
+ 678              		.global	PNG_PID_Config_Y
+ 679              		.global	PNG_PID_Config_X
+ 680              		.global	servo_z_angle_imu
+ 681              		.global	servo_y_angle_imu
+ 682              		.global	servo_x_angle_imu
+ 683              		.global	servo_z_angle
+ 684              		.global	servo_y_angle
+ 685              		.global	servo_x_angle
+ 686              		.global	servo_4_angle
+ 687              		.global	servo_3_angle
+ 688              		.global	servo_2_angle
+ 689              		.global	servo_1_angle
+ 690              		.global	delta_time
+ 691              		.global	last_count
+ 692              		.global	K_cmd
+ 693              		.global	K_theta
+ 694              		.global	q
+ 695              		.global	ay
+ 696              		.global	ax
+ 697              		.global	target_y_speed
+ 698              		.global	target_x_speed
+ 699              		.global	target_y_angle
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s 			page 15
+
+
+ 700              		.global	target_x_angle
+ 701              		.global	target_y_angle_last
+ 702              		.global	target_x_angle_last
+ 703              		.section	.bss.K_cmd,"aw",%nobits
+ 704              		.align	2
+ 705              		.set	.LANCHOR20,. + 0
+ 708              	K_cmd:
+ 709 0000 00000000 		.space	4
+ 710              		.section	.bss.K_theta,"aw",%nobits
+ 711              		.align	2
+ 712              		.set	.LANCHOR19,. + 0
+ 715              	K_theta:
+ 716 0000 00000000 		.space	4
+ 717              		.section	.bss.PNG_PID_Config_X,"aw",%nobits
+ 718              		.align	2
+ 719              		.set	.LANCHOR2,. + 0
+ 722              	PNG_PID_Config_X:
+ 723 0000 00000000 		.space	44
+ 723      00000000 
+ 723      00000000 
+ 723      00000000 
+ 723      00000000 
+ 724              		.section	.bss.PNG_PID_Config_Y,"aw",%nobits
+ 725              		.align	2
+ 726              		.set	.LANCHOR3,. + 0
+ 729              	PNG_PID_Config_Y:
+ 730 0000 00000000 		.space	44
+ 730      00000000 
+ 730      00000000 
+ 730      00000000 
+ 730      00000000 
+ 731              		.section	.bss.PNG_PID_Config_Z,"aw",%nobits
+ 732              		.align	2
+ 733              		.set	.LANCHOR4,. + 0
+ 736              	PNG_PID_Config_Z:
+ 737 0000 00000000 		.space	44
+ 737      00000000 
+ 737      00000000 
+ 737      00000000 
+ 737      00000000 
+ 738              		.section	.bss.PNG_PID_X,"aw",%nobits
+ 739              		.align	3
+ 740              		.set	.LANCHOR5,. + 0
+ 743              	PNG_PID_X:
+ 744 0000 00000000 		.space	120
+ 744      00000000 
+ 744      00000000 
+ 744      00000000 
+ 744      00000000 
+ 745              		.section	.bss.PNG_PID_Y,"aw",%nobits
+ 746              		.align	3
+ 747              		.set	.LANCHOR6,. + 0
+ 750              	PNG_PID_Y:
+ 751 0000 00000000 		.space	120
+ 751      00000000 
+ 751      00000000 
+ 751      00000000 
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s 			page 16
+
+
+ 751      00000000 
+ 752              		.section	.bss.PNG_PID_Z,"aw",%nobits
+ 753              		.align	3
+ 754              		.set	.LANCHOR7,. + 0
+ 757              	PNG_PID_Z:
+ 758 0000 00000000 		.space	120
+ 758      00000000 
+ 758      00000000 
+ 758      00000000 
+ 758      00000000 
+ 759              		.section	.bss.ax,"aw",%nobits
+ 760              		.align	3
+ 761              		.set	.LANCHOR17,. + 0
+ 764              	ax:
+ 765 0000 00000000 		.space	8
+ 765      00000000 
+ 766              		.section	.bss.ay,"aw",%nobits
+ 767              		.align	3
+ 768              		.set	.LANCHOR18,. + 0
+ 771              	ay:
+ 772 0000 00000000 		.space	8
+ 772      00000000 
+ 773              		.section	.bss.delta_time,"aw",%nobits
+ 774              		.align	3
+ 775              		.set	.LANCHOR11,. + 0
+ 778              	delta_time:
+ 779 0000 00000000 		.space	8
+ 779      00000000 
+ 780              		.section	.bss.last_count,"aw",%nobits
+ 781              		.align	2
+ 782              		.set	.LANCHOR10,. + 0
+ 785              	last_count:
+ 786 0000 00000000 		.space	4
+ 787              		.section	.bss.q,"aw",%nobits
+ 788              		.align	2
+ 789              		.set	.LANCHOR16,. + 0
+ 792              	q:
+ 793 0000 00000000 		.space	4
+ 794              		.section	.bss.servo_1_angle,"aw",%nobits
+ 795              		.align	2
+ 796              		.set	.LANCHOR25,. + 0
+ 799              	servo_1_angle:
+ 800 0000 00000000 		.space	4
+ 801              		.section	.bss.servo_2_angle,"aw",%nobits
+ 802              		.align	2
+ 803              		.set	.LANCHOR26,. + 0
+ 806              	servo_2_angle:
+ 807 0000 00000000 		.space	4
+ 808              		.section	.bss.servo_3_angle,"aw",%nobits
+ 809              		.align	2
+ 810              		.set	.LANCHOR27,. + 0
+ 813              	servo_3_angle:
+ 814 0000 00000000 		.space	4
+ 815              		.section	.bss.servo_4_angle,"aw",%nobits
+ 816              		.align	2
+ 817              		.set	.LANCHOR28,. + 0
+ 820              	servo_4_angle:
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s 			page 17
+
+
+ 821 0000 00000000 		.space	4
+ 822              		.section	.bss.servo_x_angle,"aw",%nobits
+ 823              		.align	2
+ 824              		.set	.LANCHOR21,. + 0
+ 827              	servo_x_angle:
+ 828 0000 00000000 		.space	4
+ 829              		.section	.bss.servo_x_angle_imu,"aw",%nobits
+ 830              		.align	2
+ 831              		.set	.LANCHOR23,. + 0
+ 834              	servo_x_angle_imu:
+ 835 0000 00000000 		.space	4
+ 836              		.section	.bss.servo_y_angle,"aw",%nobits
+ 837              		.align	2
+ 838              		.set	.LANCHOR22,. + 0
+ 841              	servo_y_angle:
+ 842 0000 00000000 		.space	4
+ 843              		.section	.bss.servo_y_angle_imu,"aw",%nobits
+ 844              		.align	2
+ 845              		.set	.LANCHOR24,. + 0
+ 848              	servo_y_angle_imu:
+ 849 0000 00000000 		.space	4
+ 850              		.section	.bss.servo_z_angle,"aw",%nobits
+ 851              		.align	2
+ 854              	servo_z_angle:
+ 855 0000 00000000 		.space	4
+ 856              		.section	.bss.servo_z_angle_imu,"aw",%nobits
+ 857              		.align	2
+ 860              	servo_z_angle_imu:
+ 861 0000 00000000 		.space	4
+ 862              		.section	.bss.target_x_angle,"aw",%nobits
+ 863              		.align	3
+ 864              		.set	.LANCHOR12,. + 0
+ 867              	target_x_angle:
+ 868 0000 00000000 		.space	8
+ 868      00000000 
+ 869              		.section	.bss.target_x_angle_last,"aw",%nobits
+ 870              		.align	3
+ 871              		.set	.LANCHOR8,. + 0
+ 874              	target_x_angle_last:
+ 875 0000 00000000 		.space	8
+ 875      00000000 
+ 876              		.section	.bss.target_x_speed,"aw",%nobits
+ 877              		.align	3
+ 878              		.set	.LANCHOR14,. + 0
+ 881              	target_x_speed:
+ 882 0000 00000000 		.space	8
+ 882      00000000 
+ 883              		.section	.bss.target_y_angle,"aw",%nobits
+ 884              		.align	3
+ 885              		.set	.LANCHOR13,. + 0
+ 888              	target_y_angle:
+ 889 0000 00000000 		.space	8
+ 889      00000000 
+ 890              		.section	.bss.target_y_angle_last,"aw",%nobits
+ 891              		.align	3
+ 892              		.set	.LANCHOR9,. + 0
+ 895              	target_y_angle_last:
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s 			page 18
+
+
+ 896 0000 00000000 		.space	8
+ 896      00000000 
+ 897              		.section	.bss.target_y_speed,"aw",%nobits
+ 898              		.align	3
+ 899              		.set	.LANCHOR15,. + 0
+ 902              	target_y_speed:
+ 903 0000 00000000 		.space	8
+ 903      00000000 
+ 904              		.section	.bss.theta_x,"aw",%nobits
+ 905              		.align	3
+ 906              		.set	.LANCHOR0,. + 0
+ 909              	theta_x:
+ 910 0000 00000000 		.space	8
+ 910      00000000 
+ 911              		.section	.bss.theta_y,"aw",%nobits
+ 912              		.align	3
+ 913              		.set	.LANCHOR1,. + 0
+ 916              	theta_y:
+ 917 0000 00000000 		.space	8
+ 917      00000000 
+ 918              		.text
+ 919              	.Letext0:
+ 920              		.file 2 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 921              		.file 3 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ 922              		.file 4 "modules/OPENMV/openmv.h"
+ 923              		.file 5 "modules/JY61P/JY61P.h"
+ 924              		.file 6 "modules/algorithm/controller.h"
+ 925              		.file 7 "bsp/dwt/bsp_dwt.h"
+ 926              		.file 8 "modules/MOTOR/servo_motor/servo_motor.h"
+ 927              		.file 9 "d:\\baidunetdiskdownload\\archive\\ec\\vscode_ozone\\gcc-arm-none-eabi-10.3-2021.10-win32
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s 			page 19
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 PNG.c
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:23     .text.calculate_angles:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:29     .text.calculate_angles:00000000 calculate_angles
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:114    .text.calculate_angles:00000088 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:128    .text.PNG_Init:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:134    .text.PNG_Init:00000000 PNG_Init
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:209    .text.PNG_Init:00000048 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:226    .text.PNG_TASK:00000000 $t
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:232    .text.PNG_TASK:00000000 PNG_TASK
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:625    .text.PNG_TASK:000002d0 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:757    .bss.PNG_PID_Z:00000000 PNG_PID_Z
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:750    .bss.PNG_PID_Y:00000000 PNG_PID_Y
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:743    .bss.PNG_PID_X:00000000 PNG_PID_X
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:736    .bss.PNG_PID_Config_Z:00000000 PNG_PID_Config_Z
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:729    .bss.PNG_PID_Config_Y:00000000 PNG_PID_Config_Y
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:722    .bss.PNG_PID_Config_X:00000000 PNG_PID_Config_X
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:860    .bss.servo_z_angle_imu:00000000 servo_z_angle_imu
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:848    .bss.servo_y_angle_imu:00000000 servo_y_angle_imu
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:834    .bss.servo_x_angle_imu:00000000 servo_x_angle_imu
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:854    .bss.servo_z_angle:00000000 servo_z_angle
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:841    .bss.servo_y_angle:00000000 servo_y_angle
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:827    .bss.servo_x_angle:00000000 servo_x_angle
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:820    .bss.servo_4_angle:00000000 servo_4_angle
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:813    .bss.servo_3_angle:00000000 servo_3_angle
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:806    .bss.servo_2_angle:00000000 servo_2_angle
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:799    .bss.servo_1_angle:00000000 servo_1_angle
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:778    .bss.delta_time:00000000 delta_time
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:785    .bss.last_count:00000000 last_count
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:708    .bss.K_cmd:00000000 K_cmd
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:715    .bss.K_theta:00000000 K_theta
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:792    .bss.q:00000000 q
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:771    .bss.ay:00000000 ay
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:764    .bss.ax:00000000 ax
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:902    .bss.target_y_speed:00000000 target_y_speed
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:881    .bss.target_x_speed:00000000 target_x_speed
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:888    .bss.target_y_angle:00000000 target_y_angle
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:867    .bss.target_x_angle:00000000 target_x_angle
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:895    .bss.target_y_angle_last:00000000 target_y_angle_last
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:874    .bss.target_x_angle_last:00000000 target_x_angle_last
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:704    .bss.K_cmd:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:711    .bss.K_theta:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:718    .bss.PNG_PID_Config_X:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:725    .bss.PNG_PID_Config_Y:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:732    .bss.PNG_PID_Config_Z:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:739    .bss.PNG_PID_X:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:746    .bss.PNG_PID_Y:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:753    .bss.PNG_PID_Z:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:760    .bss.ax:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:767    .bss.ay:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:774    .bss.delta_time:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:781    .bss.last_count:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:788    .bss.q:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:795    .bss.servo_1_angle:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:802    .bss.servo_2_angle:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:809    .bss.servo_3_angle:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:816    .bss.servo_4_angle:00000000 $d
+ARM GAS  C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s 			page 20
+
+
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:823    .bss.servo_x_angle:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:830    .bss.servo_x_angle_imu:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:837    .bss.servo_y_angle:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:844    .bss.servo_y_angle_imu:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:851    .bss.servo_z_angle:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:857    .bss.servo_z_angle_imu:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:863    .bss.target_x_angle:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:870    .bss.target_x_angle_last:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:877    .bss.target_x_speed:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:884    .bss.target_y_angle:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:891    .bss.target_y_angle_last:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:898    .bss.target_y_speed:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:905    .bss.theta_x:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:909    .bss.theta_x:00000000 theta_x
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:912    .bss.theta_y:00000000 $d
+C:\Users\HUAWEI\AppData\Local\Temp\ccskLekI.s:916    .bss.theta_y:00000000 theta_y
+
+UNDEFINED SYMBOLS
+__aeabi_i2d
+__aeabi_ddiv
+__aeabi_dmul
+atan
+target_x
+target_y
+PIDInit
+__aeabi_dsub
+__aeabi_d2f
+__aeabi_f2d
+__aeabi_dadd
+DWT_GetDeltaT64
+pow
+PIDCalculate
+Servo_Motor_Task
+gyro_x
+gyro_y
+dart_speed
+IMU_ay
+IMU_az

@@ -9,4 +9,5 @@ void Ducted_Fan_Motor_Init();
 
 void Ducted_Fan_Motor_Task();
 
+void Ducted_Fan_Motor_Stop();
 #endif 

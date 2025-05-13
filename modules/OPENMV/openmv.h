@@ -30,5 +30,6 @@ OPENMV_Instance_s *OPENMVInit(UART_HandleTypeDef *hc05_usart_handle);
 
 extern uint16_t target_x;
 extern uint16_t target_y;
+extern uint16_t flag;
 
 #endif 
